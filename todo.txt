@@ -1,0 +1,52 @@
+Hi Ruhaan,
+
+As the first step in our evaluation process at Loopworm, I would like you to complete a small technical assessment related to literature mining and semantic information extraction.
+
+The purpose of this task is to assess your problem-solving ability, Python development skills, and approach to building reliable information retrieval systems.
+
+Problem Statement: Build a Mini Literature Classification Engine
+
+Objective
+
+Develop a small Python-based prototype that retrieves scientific publications related to a user-provided entity and classifies whether each publication genuinely satisfies a user-defined criterion or merely mentions the entity.
+
+Requirements
+
+Literature retrieval: Use the Europe PMC API to retrieve publications for a user-provided search entity.
+Semantic classification: Given a natural-language inclusion criterion, classify each publication as qualifies or does_not_qualify. For example, distinguish a paper that actually synthesises a compound from one that merely uses the compound as a reagent.
+Evidence extraction: For each classification, return the sentence from the available publication text or abstract that best supports the decision. If sufficient evidence is unavailable, explicitly indicate that rather than inventing a sentence.
+Ranking and confidence: Rank the results using a clearly explained scoring method and provide a confidence score or band. Explain how the score is calculated and its limitations.
+Structured output: Return the results as JSON, including the publication title, DOI or PMID where available, classification, evidence sentence, and confidence.
+API implementation: Expose the functionality through a simple FastAPI endpoint that accepts the search entity and inclusion criterion as inputs.
+Technical constraints
+
+Use Python and freely accessible data sources.
+Do not use paid LLM APIs.
+You may use local embedding models, cross-encoders, or other appropriate NLP approaches.
+Keep the implementation small, modular, and easy to run.
+Document any assumptions and limitations.
+Expected deliverables
+
+Python source code and a requirements.txt file.
+A README containing setup instructions, architecture, and methodology.
+A sample JSON output generated using at least one test entity.
+A brief explanation of how you would evaluate classification accuracy and improve the system using user feedback.
+Evaluation criteria
+
+We will assess the solution based on:
+
+Correctness of the retrieval and classification logic.
+Ability to distinguish actual activity from simple mentions.
+Traceability and correctness of the supporting evidence.
+Quality of the Python implementation and API design.
+Reproducibility, documentation, and clarity of technical reasoning.
+Please prioritise a working, testable prototype over a large or overly complex implementation. The key challenge is not retrieving publications; it is reliably determining whether the available evidence supports the inclusion criterion.
+
+Please also include a few test cases demonstrating both qualifying and non-qualifying results, along with a brief explanation of any classification errors you identify.
+
+Once you have completed the assessment, we will review the implementation and discuss the results.
+
+
+Best regards,
+Jagadeeswara Reddy
+Loopworm
