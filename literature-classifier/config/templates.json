@@ -1,0 +1,20 @@
+{
+  "_comment": "Externalized paraphrase and contrast hypotheses. True paraphrases of full claims preserving in this work / as product context.",
+  "synthesis_paraphrases": [
+    "{entity} was synthesized in this study.",
+    "{entity} was prepared as the product of the reaction.",
+    "{entity} was produced or biosynthesized in this work."
+  ],
+  "negative_role_hypothesis": "{entity} is used as a reagent, catalyst, or starting material.",
+  "default_contrast_hypotheses": [
+    "{entity} was used as a starting material to synthesize other compounds.",
+    "{entity} is used as a starting material to produce other products.",
+    "{entity} is used as a precursor, reagent, or catalyst in this study.",
+    "{entity} is administered or added to the system, not generated."
+  ],
+  "extended_contrast_hypotheses": [
+    "{entity} serves as a substrate, reactant, or building block.",
+    "{entity} is purchased or obtained commercially and used as supplied.",
+    "{entity} is measured or detected as an analytical standard."
+  ]
+}
