@@ -1,0 +1,22 @@
+criterion_id,group,criterion,expected_arming
+C01,synthesis,"describes the synthesis of vanillin",armed
+C02,synthesis,"reports microbial production of vanillin",armed
+C03,synthesis,"biosynthesis and metabolic engineering of curcumin",armed
+C04,synthesis,"extraction and purification of chitin from black soldier fly",armed
+C05,synthesis,"chemical preparation and isolation of vanillin derivatives",armed
+C06,synthesis,"fermentative production of lipase by yeast",armed
+C07,non_synthesis,"describes anti-inflammatory activity in mice",not_armed
+C08,non_synthesis,"reports pharmacokinetics and biodistribution",not_armed
+C09,non_synthesis,"obtains ethical approval for animal trials",not_armed
+C10,non_synthesis,"obtain pharmacokinetic measurements in human serum",not_armed
+C11,non_synthesis,"evaluates cytotoxicity against cancer cell lines",not_armed
+C12,non_synthesis,"investigates antimicrobial mechanism of action",not_armed
+C13,ambiguous,"describes the use of vanillin in food preservation",ambiguous
+C14,ambiguous,"describes vanillin biosynthesis regulation and genetics",ambiguous
+C15,ambiguous,"application of chitin as a biomaterial",ambiguous
+C16,ambiguous,"role of lipase in lipid digestion",ambiguous
+C17,misspelled,"synthsis of vanillin",armed
+C18,misspelled,"extarction of vanillin",armed
+C19,misspelled,"producton of vanillin",armed
+C20,misspelled,"biosynthsis of curcumin",armed
+
