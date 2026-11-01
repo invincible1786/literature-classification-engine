@@ -148,11 +148,15 @@ class PaperClassificationResult(BaseModel):
     )
     confidence: Optional[Any] = Field(
         default=None,
-        description="Confidence details object {score, band} or numeric float for backward compatibility."
+        description="Confidence score as float in [0.0, 1.0] or band."
     )
     confidence_band: str = Field(
-        default="low",
-        description="'high', 'medium', 'low', or 'uncalibrated'."
+        default="Low",
+        description="'High', 'Medium', 'Low', or 'uncalibrated'."
+    )
+    confidence_details: Optional[ConfidenceDetails] = Field(
+        default=None,
+        description="Granular confidence details object {score, band}."
     )
     confidence_kind: str = Field(
         default="calibrated_platt_probability",
@@ -194,20 +198,33 @@ class PaperClassificationResult(BaseModel):
             if not self.evidence_source:
                 self.evidence_source = self.evidence.source
         elif self.evidence_sentence and not self.evidence:
-            start = self.evidence_offsets[0] if self.evidence_offsets and len(self.evidence_offsets) == 2 else 0
-            end = self.evidence_offsets[1] if self.evidence_offsets and len(self.evidence_offsets) == 2 else len(self.evidence_sentence)
-            self.evidence = EvidenceSpan(text=self.evidence_sentence, char_start=start, char_end=end, source=self.evidence_source or "abstract")
+            if self.evidence_status not in ("insufficient", "no_text") and not str(self.evidence_sentence).startswith("No "):
+                start = self.evidence_offsets[0] if self.evidence_offsets and len(self.evidence_offsets) == 2 else 0
+                end = self.evidence_offsets[1] if self.evidence_offsets and len(self.evidence_offsets) == 2 else len(self.evidence_sentence)
+                self.evidence = EvidenceSpan(text=self.evidence_sentence, char_start=start, char_end=end, source=self.evidence_source or "abstract")
 
-        # Mirror confidence object
+        # Mirror confidence fields
         if isinstance(self.confidence, dict):
-            self.confidence_band = self.confidence.get("band", self.confidence_band)
+            band_str = self.confidence.get("band", self.confidence_band)
+            self.confidence_band = band_str.capitalize() if band_str else "Low"
+            score_val = self.confidence.get("score")
+            if score_val is not None:
+                self.confidence_details = ConfidenceDetails(score=float(score_val), band=str(band_str).lower())
+                self.confidence = float(score_val)
         elif isinstance(self.confidence, ConfidenceDetails):
-            self.confidence_band = self.confidence.band
+            self.confidence_band = self.confidence.band.capitalize()
+            self.confidence_details = self.confidence
+            self.confidence = self.confidence.score
         elif isinstance(self.confidence, (int, float)):
             score_val = float(self.confidence)
-            band_val = "high" if score_val >= 0.80 else ("medium" if score_val >= 0.50 else "low")
-            self.confidence = ConfidenceDetails(score=score_val, band=band_val)
-            self.confidence_band = band_val
+            band_val = "High" if score_val >= 0.80 else ("Medium" if score_val >= 0.50 else "Low")
+            if not self.confidence_band or self.confidence_band == "low":
+                self.confidence_band = band_val
+            if not self.confidence_details:
+                self.confidence_details = ConfidenceDetails(score=score_val, band=self.confidence_band.lower())
+        elif isinstance(self.confidence, str):
+            self.confidence_band = self.confidence.capitalize()
+        return self
 
         return self
 

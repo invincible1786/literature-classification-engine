@@ -24,6 +24,8 @@ def test_live_vanillin_europe_pmc():
     assert len(res.results) == len(pubs)
     for r in res.results:
         assert r["classification"] in ("qualifies", "does_not_qualify")
-        if r["evidence_sentence"]:
+        if r["evidence"]:
             assert r["evidence_status"] in ("supported", "found", "contradicted")
+        elif r["evidence_status"] == "insufficient":
+            assert r["evidence_sentence"] == "No sufficient evidence found in abstract"
 

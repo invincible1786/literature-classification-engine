@@ -1,0 +1,256 @@
+{
+  "entity": "artemisinic acid",
+  "query_entity": "artemisinic acid",
+  "criterion": "The paper reports microbial biosynthesis of artemisinic acid in this study.",
+  "intent": "synthesis",
+  "query_used": "TITLE_ABS:(\"artemisinic acid\" AND (synthesis OR biosynthesis OR \"produced by\" OR fermentation OR preparation OR yielded))",
+  "model_revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+  "calibration_version": "platt-v1-seed30",
+  "n_retrieved": 5,
+  "total_retrieved": 5,
+  "n_after_dedupe": 5,
+  "total_classified": 5,
+  "dedup_count": 0,
+  "entity_aliases_used": [
+    "arteannuic acid"
+  ],
+  "execution_time_ms": 1479.81,
+  "ensemble_size": 4,
+  "hypotheses_used": [
+    "The paper reports microbial biosynthesis of artemisinic acid in this study.",
+    "artemisinic acid was synthesized in this study.",
+    "artemisinic acid was prepared as the product of the reaction.",
+    "artemisinic acid was produced or biosynthesized in this work."
+  ],
+  "contrast_guard_active": true,
+  "guard_arming": {
+    "intent": "synthesis",
+    "lexical": true,
+    "armed": true
+  },
+  "results": [
+    {
+      "paper_id": "PMC8456789",
+      "rank": 1,
+      "title": "High-titer microbial biosynthesis of artemisinic acid in engineered Saccharomyces cerevisiae",
+      "doi": "10.1038/s41589-021-00890-z",
+      "pmid": "42107802",
+      "pmcid": "PMC8456789",
+      "pub_year": "2021",
+      "classification": "qualifies",
+      "classification_reason": "margin_above_threshold",
+      "evidence": {
+        "text": "Herein, artemisinic acid was biosynthesized by engineered Saccharomyces cerevisiae via the mevalonate pathway, reaching a fermentation titer of 25 g/L.",
+        "char_start": 0,
+        "char_end": 151,
+        "source": "abstract"
+      },
+      "evidence_sentence": "Herein, artemisinic acid was biosynthesized by engineered Saccharomyces cerevisiae via the mevalonate pathway, reaching a fermentation titer of 25 g/L.",
+      "evidence_status": "supported",
+      "evidence_source": "abstract",
+      "evidence_offsets": [
+        0,
+        151
+      ],
+      "text_sha256": "015df1f6e2e97b8ab37c97957114a465ed7caf938e82626c29822aec970e4767",
+      "qualify_score": 0.9935,
+      "confidence": 0.9772,
+      "confidence_band": "High",
+      "confidence_details": {
+        "score": 0.9772,
+        "band": "high"
+      },
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": {
+        "positive_margin": 0.9938,
+        "role_score": 0.0068,
+        "final_score": 0.987,
+        "gate_flags": [
+          "this_work_positive"
+        ]
+      },
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 1,
+      "k_scored": 1,
+      "reagent_signal": 0.024
+    },
+    {
+      "paper_id": "PMC8401234",
+      "rank": 2,
+      "title": "Enhanced production of artemisinic acid by modular pathway optimization in Pichia pastoris",
+      "doi": "10.1186/s12934-021-01654-3",
+      "pmid": "34567890",
+      "pmcid": "PMC8401234",
+      "pub_year": "2021",
+      "classification": "qualifies",
+      "classification_reason": "margin_above_threshold",
+      "evidence": {
+        "text": "In this study, artemisinic acid was produced by engineered Pichia pastoris under methanol-induced promoter control, affording 3.4 g/L in fed-batch fermentation.",
+        "char_start": 0,
+        "char_end": 160,
+        "source": "abstract"
+      },
+      "evidence_sentence": "In this study, artemisinic acid was produced by engineered Pichia pastoris under methanol-induced promoter control, affording 3.4 g/L in fed-batch fermentation.",
+      "evidence_status": "supported",
+      "evidence_source": "abstract",
+      "evidence_offsets": [
+        0,
+        160
+      ],
+      "text_sha256": "2782366e43d7482047eec6a69dff012743df8ab79f056c06c396178275be72ab",
+      "qualify_score": 0.9868,
+      "confidence": 0.975,
+      "confidence_band": "High",
+      "confidence_details": {
+        "score": 0.975,
+        "band": "high"
+      },
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": {
+        "positive_margin": 0.9935,
+        "role_score": 0.0199,
+        "final_score": 0.9736,
+        "gate_flags": [
+          "this_work_positive"
+        ]
+      },
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 1,
+      "k_scored": 1,
+      "reagent_signal": 0.0547
+    },
+    {
+      "paper_id": "PMC5801234",
+      "rank": 3,
+      "title": "Metabolic engineering of Yarrowia lipolytica for lipid and terpene co-production",
+      "doi": "10.1016/j.biortech.2017.10.045",
+      "pmid": "29104561",
+      "pmcid": "PMC5801234",
+      "pub_year": "2018",
+      "classification": "does_not_qualify",
+      "classification_reason": "margin_below_threshold",
+      "evidence": {
+        "text": "Artemisinic acid has been produced by engineered yeast in previous studies.",
+        "char_start": 0,
+        "char_end": 75,
+        "source": "abstract"
+      },
+      "evidence_sentence": "Artemisinic acid has been produced by engineered yeast in previous studies.",
+      "evidence_status": "contradicted",
+      "evidence_source": "abstract",
+      "evidence_offsets": [
+        0,
+        75
+      ],
+      "text_sha256": "0201b1c5ef46134093dc3b90139d5550fb01713b2f755b52e64f5d37b6f602b7",
+      "qualify_score": 0.6475,
+      "confidence": 0.7474,
+      "confidence_band": "Medium",
+      "confidence_details": {
+        "score": 0.7474,
+        "band": "medium"
+      },
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": {
+        "positive_margin": 0.9025,
+        "role_score": 0.0075,
+        "final_score": 0.295,
+        "gate_flags": [
+          "this_work_background"
+        ]
+      },
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 2,
+      "k_scored": 1,
+      "reagent_signal": 0.0074
+    },
+    {
+      "paper_id": "PMC9234567",
+      "rank": 4,
+      "title": "Network pharmacology and molecular docking analysis of Artemisia annua extracts in inflammatory bowel disease",
+      "doi": "10.3389/fphar.2022.912345",
+      "pmid": "35876219",
+      "pmcid": "PMC9234567",
+      "pub_year": "2022",
+      "classification": "does_not_qualify",
+      "classification_reason": "insufficient_evidence (no candidate sentence with production verb)",
+      "evidence": null,
+      "evidence_sentence": "No sufficient evidence found in abstract",
+      "evidence_status": "insufficient",
+      "evidence_source": "abstract",
+      "evidence_offsets": null,
+      "text_sha256": "cf6851f5cdfac0d1aac4d55fbd9f314d9114496582499a564d3baaa8e48f530a",
+      "qualify_score": 0.12,
+      "confidence": 0.12,
+      "confidence_band": "Low",
+      "confidence_details": {
+        "score": 0.12,
+        "band": "low"
+      },
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": {
+        "positive_margin": null,
+        "role_score": null,
+        "final_score": null,
+        "gate_flags": [
+          "no_production_verb"
+        ]
+      },
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 1,
+      "k_scored": 0,
+      "reagent_signal": 0.0
+    },
+    {
+      "paper_id": "31298450",
+      "rank": 5,
+      "title": "Stereoselective synthesis of antimalarial peroxide dimers from natural sesquiterpenes",
+      "doi": "10.1021/acs.joc.9b01234",
+      "pmid": "31298450",
+      "pmcid": null,
+      "pub_year": "2019",
+      "classification": "does_not_qualify",
+      "classification_reason": "disqualified_by_guard (role_pattern: In the presence of artemisinic acid)",
+      "evidence": {
+        "text": "In the presence of artemisinic acid as a starting material, synthetic peroxide dimers 7a\u20137f were prepared in 72% overall yield using ozonolysis and Lewis-acid-mediated cyclization.",
+        "char_start": 0,
+        "char_end": 180,
+        "source": "abstract"
+      },
+      "evidence_sentence": "In the presence of artemisinic acid as a starting material, synthetic peroxide dimers 7a\u20137f were prepared in 72% overall yield using ozonolysis and Lewis-acid-mediated cyclization.",
+      "evidence_status": "contradicted",
+      "evidence_source": "abstract",
+      "evidence_offsets": [
+        0,
+        180
+      ],
+      "text_sha256": "5396962ba5b46b8d40d388a8a2ab83b52cdc1554285482d24bdbc9bc352b63a1",
+      "qualify_score": 0.5322,
+      "confidence": 0.0,
+      "confidence_band": "Low",
+      "confidence_details": {
+        "score": 0.0,
+        "band": "low"
+      },
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": {
+        "positive_margin": 0.9268,
+        "role_score": 0.8626,
+        "final_score": 0.0643,
+        "gate_flags": [
+          "this_work_positive",
+          "role_pattern_match"
+        ]
+      },
+      "guard_reason": "role_pattern: In the presence of artemisinic acid",
+      "dedup_of": null,
+      "k_eligible": 1,
+      "k_scored": 1,
+      "reagent_signal": 0.8906
+    }
+  ]
+}

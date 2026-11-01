@@ -288,11 +288,13 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
 
 
 @app.post("/classify", response_model=ClassifyResponse)
+@app.post("/search-and-classify", response_model=ClassifyResponse)
 async def classify(request: ClassifyRequest, _=Depends(slot_dependency)):
     """
     Main literature classification endpoint.
     Retrieves candidate publications, applies intent-aware extraction,
     and runs cross-encoder NLI inference offloaded to AnyIO threadpools.
+    Accepts both entity and criterion in request body.
     """
     return await run_in_threadpool(_run_pipeline, request)
 
