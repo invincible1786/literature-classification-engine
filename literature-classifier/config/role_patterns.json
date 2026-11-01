@@ -1,0 +1,17 @@
+[
+  "in the presence of\\s+(?:the\\s+)?{E}",
+  "catalyz(?:ed|ed by)\\s+(?:by\\s+)?{E}",
+  "mediated by\\s+(?:the\\s+)?{E}",
+  "using\\s+(?:the\\s+)?{E}\\s+as\\s+(?:a\\s+)?(?:catalyst|reagent|precursor|substrate|starting material)",
+  "treated with\\s+(?:the\\s+)?{E}",
+  "(?:immobili[sz]ation|impregnation) of\\s+{E}",
+  "with\\s+{E}\\s+as\\s+(?:a\\s+)?(?:catalyst|reagent|precursor|substrate)",
+  "{E}[- ]catalyzed",
+  "{E}\\s+serves as\\s+(?:a\\s+)?(?:starting material|precursor|reagent|catalyst|substrate)",
+  "{E}\\s+was (?:used|employed)\\s+as\\s+(?:a\\s+)?(?:starting material|precursor|reagent|catalyst|substrate)",
+  "used\\s+{E}\\s+as (?:a\\s+)?(?:starting material|precursor|reagent|catalyst|substrate)",
+  "addition of\\s+(?:the\\s+)?{E}",
+  "supplemented with\\s+(?:the\\s+)?{E}",
+  "fed (?:with\\s+)?(?:diets containing\\s+)?{E}"
+]
+

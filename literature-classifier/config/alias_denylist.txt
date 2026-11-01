@@ -1,0 +1,28 @@
+# Known alias collisions, common English words, surnames, and ambiguous short tokens
+thein
+theine
+marinus thein
+mat
+aid
+lead
+acid
+salt
+base
+yield
+water
+cell
+light
+dark
+medium
+extract
+tea
+coffee
+standard
+control
+blank
+sample
+plant
+animal
+human
+first person
+
