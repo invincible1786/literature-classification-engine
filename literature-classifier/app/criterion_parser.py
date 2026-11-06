@@ -163,12 +163,13 @@ def parse_criterion_to_spec(
     # Check G1 (Product role)
     # e.g. "The paper describes the synthesis or production of vanillin."
     # e.g. "The paper reports microbial biosynthesis of artemisinic acid in yeast in this study."
-    # e.g. "The paper reports microbial biosynthesis of artemisinic acid in this study."
+    # e.g. "Psilocybin was synthesized or biosynthesized in this work."
+    # e.g. "The compound was produced by engineered microbial biosynthesis in this study."
     g1_patterns = [
         # G1 full with optional system
-        r"(?:The\s+)?(?:paper|study|article)?\s*(?:describes|reports|investigates|demonstrates)?\s*(?:the\s+)?(.+?)\s+of\s+(.+?)(?:\s+(?:in|by|using)\s+([a-zA-Z0-9\.\'\- ]+?))?(?:\s+in\s+this\s+study)?\.?$",
+        r"(?:The\s+)?(?:paper|study|article)?\s*(?:describes|reports|investigates|demonstrates)?\s*(?:the\s+)?(.+?)\s+of\s+(.+?)(?:\s+(?:in|by|using)\s+([a-zA-Z0-9\.\'\- ]+?))?(?:\s+in\s+this\s+(?:study|work))?\.?$",
         # Passive "was synthesized" or "production of X"
-        r"(?:synthesis|production|biosynthesis|preparation|isolation|fermentation)\s+of\s+(.+?)(?:\s+(?:in|by|using)\s+([a-zA-Z0-9\.\'\- ]+?))?(?:\s+in\s+this\s+study)?\.?$"
+        r"(?:synthesis|production|biosynthesis|preparation|isolation|fermentation)\s+of\s+(.+?)(?:\s+(?:in|by|using)\s+([a-zA-Z0-9\.\'\- ]+?))?(?:\s+in\s+this\s+(?:study|work))?\.?$"
     ]
 
     for pat in g1_patterns:
@@ -183,11 +184,11 @@ def parse_criterion_to_spec(
                 entity_raw = m.group(1).strip()
                 system_raw = m.group(2).strip() if m.group(2) else None
 
-            # Clean system_raw from trailing "in this study"
+            # Clean system_raw from trailing "in this study" or "in this work"
             system_spec = None
             if system_raw:
-                sys_clean = re.sub(r"\s+in\s+this\s+study\.?$", "", system_raw, flags=re.IGNORECASE).strip()
-                if sys_clean and sys_clean.lower() not in ("this study", "the study", "any"):
+                sys_clean = re.sub(r"\s+in\s+this\s+(?:study|work)\.?$", "", system_raw, flags=re.IGNORECASE).strip()
+                if sys_clean and sys_clean.lower() not in ("this study", "the study", "this work", "any"):
                     system_spec = match_system_in_text(sys_clean)
 
             # Ensure clean entity and activity
@@ -208,18 +209,22 @@ def parse_criterion_to_spec(
             )
 
     # Fallback product match for standard assessment prompts
-    if re.search(r"\b(synthesis|production|biosynthesis|preparation|fermentation)\b", clean_crit, re.IGNORECASE):
+    if re.search(r"\b(synthesis|synthesized|production|produced|biosynthesis|biosynthesized|preparation|prepared|isolation|isolated|fermentation|fermented)\b", clean_crit, re.IGNORECASE):
         # Look for host system
         sys_spec = None
         sys_m = re.search(r"\b(?:in|using|by)\s+(yeast|bacteria|e\.\s*coli|s\.\s*cerevisiae|microbial|fungi|plant)\b", clean_crit, re.IGNORECASE)
         if sys_m:
             sys_spec = match_system_in_text(sys_m.group(1))
 
+        # Extract activity keyword if available
+        act_m = re.search(r"\b(chemical\s+synthesis|microbial\s+biosynthesis|enzymatic\s+biosynthesis|biosynthesis|synthesis|production|preparation|fermentation)\b", clean_crit, re.IGNORECASE)
+        activity_str = act_m.group(1) if act_m else "synthesis or production"
+
         return CriterionSpec(
             entity=entity,
             entity_role="product",
             agent_kind=None,
-            activity="synthesis or production",
+            activity=activity_str,
             system=sys_spec,
             scope=scope,
             unparsed_clauses=unparsed_clauses,
