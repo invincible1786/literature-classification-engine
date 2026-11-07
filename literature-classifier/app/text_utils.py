@@ -172,36 +172,40 @@ def map_canonical_span_to_raw(raw_text: str, canon_start: int, canon_end: int) -
     if not target_sent:
         return 0, 0
 
-    # Locate candidate in raw text by word anchor match or substring search
-    first_word = target_sent.split()[0]
-    last_word = target_sent.split()[-1]
-
-    # Find approximate location in raw
-    clean_raw = clean_markup_and_unescape(raw_text)
-    idx = clean_raw.find(target_sent)
+    # 1. Exact verbatim match in raw_text
+    idx = raw_text.find(target_sent)
     if idx != -1:
-        # Simple mapping when length shifts are small
-        pass
+        return idx, idx + len(target_sent)
 
-    # Exact or outward boundary search
-    first_match = re.search(re.escape(first_word), raw_text, re.IGNORECASE)
-    last_matches = list(re.finditer(re.escape(last_word), raw_text, re.IGNORECASE))
+    # 2. Case-insensitive exact match in raw_text
+    m_exact = re.search(re.escape(target_sent), raw_text, re.IGNORECASE)
+    if m_exact:
+        return m_exact.start(), m_exact.end()
 
-    if first_match and last_matches:
-        start_pos = first_match.start()
-        # Find the last match that occurs after start_pos
-        valid_ends = [m.end() for m in last_matches if m.end() >= start_pos]
-        if valid_ends:
-            end_pos = valid_ends[-1]
-            return start_pos, end_pos
+    # 3. Match with whitespace normalization (handles XML linebreaks/multiple spaces)
+    words = target_sent.split()
+    if words:
+        norm_target = r"\s+".join(re.escape(w) for w in words)
+        m_norm = re.search(norm_target, raw_text, re.IGNORECASE)
+        if m_norm:
+            return m_norm.start(), m_norm.end()
 
-    # Fallback to direct search of entire stripped string
-    stripped_target = re.sub(r"\s+", " ", target_sent)
-    m = re.search(re.escape(stripped_target[:min(30, len(stripped_target))]), raw_text, re.IGNORECASE)
-    if m:
-        start_pos = m.start()
-        end_pos = min(len(raw_text), start_pos + len(target_sent) + 50)
-        return start_pos, end_pos
+    # 4. Fallback: bounded window search around canon_start
+    first_word = words[0] if words else ""
+    last_word = words[-1] if words else ""
+    if first_word and last_word:
+        window_start = max(0, canon_start - 120)
+        window_end = min(len(raw_text), canon_end + 120)
+        window_text = raw_text[window_start:window_end]
+
+        m_first = re.search(re.escape(first_word), window_text, re.IGNORECASE)
+        if m_first:
+            start_pos = window_start + m_first.start()
+            remaining = raw_text[start_pos:window_end]
+            m_last = list(re.finditer(re.escape(last_word), remaining, re.IGNORECASE))
+            if m_last:
+                end_pos = start_pos + m_last[-1].end()
+                return start_pos, end_pos
 
     return 0, len(raw_text)
 
@@ -332,7 +336,7 @@ def build_entity_regex(entity: str, aliases: Optional[List[str]] = None) -> re.P
         plural = r"(?:s|es)?" if term[-1].isalnum() else ""
         subpatterns.append(rf"(?:(?<!\w){escaped}{plural}(?!\w))")
 
-    pattern_str = "|".join(subpatterns)
+    pattern_str = rf"(?:{'|'.join(subpatterns)})"
     return re.compile(pattern_str, re.IGNORECASE)
 
 
