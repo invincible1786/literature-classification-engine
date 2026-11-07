@@ -197,7 +197,7 @@ def check_role_patterns(sentence: str, entity: Any, aliases: Optional[List[str]]
     """
     patterns = load_role_patterns()
     if hasattr(entity, "pattern"):
-        entity_regex = entity.pattern
+        entity_regex = f"(?:{entity.pattern})"
     else:
         vetted_aliases = vet_aliases(aliases, str(entity))
         terms = [str(entity)] + vetted_aliases
