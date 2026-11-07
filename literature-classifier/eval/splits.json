@@ -1,0 +1,27 @@
+{
+  "protocol": "entity_split_leave_one_entity_out",
+  "created_at": "2026-11-07T08:45:00Z",
+  "leakage_guard": "30-paper live audit and N1-N6 fixtures are strictly excluded from test splits",
+  "dev_entities": [
+    "vanillin",
+    "curcumin",
+    "chitin",
+    "lipase",
+    "insect_protein"
+  ],
+  "test_entities": [
+    "caffeine",
+    "palladium(II) acetate",
+    "artemisinic acid"
+  ],
+  "entity_families": {
+    "vanillin": "phenolics_and_aromatics",
+    "curcumin": "polyphenols",
+    "chitin": "polysaccharides_and_biopolymers",
+    "lipase": "enzymes",
+    "insect_protein": "macromolecules",
+    "caffeine": "purine_alkaloids",
+    "palladium(II) acetate": "transition_metal_catalysts",
+    "artemisinic acid": "sesquiterpenoids"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "families": {
+    "microbial": [
+      "yeast",
+      "bacteria",
+      "bacterium",
+      "fungi",
+      "fungus",
+      "microbe",
+      "microorganism",
+      "microbial"
+    ],
+    "yeast": [
+      "saccharomyces cerevisiae",
+      "s. cerevisiae",
+      "baker's yeast",
+      "brewer's yeast",
+      "pichia pastoris",
+      "p. pastoris",
+      "komagataella phaffii",
+      "yarrowia lipolytica",
+      "y. lipolytica",
+      "kluyveromyces lactis",
+      "k. lactis",
+      "schizosaccharomyces pombe",
+      "s. pombe",
+      "yeast"
+    ],
+    "bacteria": [
+      "escherichia coli",
+      "e. coli",
+      "bacillus subtilis",
+      "b. subtilis",
+      "corynebacterium glutamicum",
+      "c. glutamicum",
+      "pseudomonas putida",
+      "p. putida",
+      "streptomyces",
+      "streptomyces coelicolor",
+      "cyanobacteria",
+      "bacteria",
+      "bacterial"
+    ],
+    "fungi": [
+      "aspergillus niger",
+      "a. niger",
+      "aspergillus oryzae",
+      "a. oryzae",
+      "trichoderma reesei",
+      "t. reesei",
+      "penicillium chrysogenum",
+      "fungus",
+      "fungi",
+      "fungal"
+    ],
+    "plant": [
+      "arabidopsis thaliana",
+      "a. thaliana",
+      "nicotiana benthamiana",
+      "n. benthamiana",
+      "tobacco",
+      "artemisia annua",
+      "plant",
+      "plant cell"
+    ],
+    "mammalian": [
+      "chinese hamster ovary",
+      "cho cell",
+      "hek293",
+      "human",
+      "mouse",
+      "rat",
+      "mammalian",
+      "mammalian cell"
+    ]
+  },
+  "canonical_synonyms": {
+    "saccharomyces cerevisiae": ["s. cerevisiae", "baker's yeast", "brewer's yeast", "yeast"],
+    "pichia pastoris": ["p. pastoris", "komagataella phaffii", "yeast"],
+    "escherichia coli": ["e. coli", "bacteria"],
+    "bacillus subtilis": ["b. subtilis", "bacteria"],
+    "corynebacterium glutamicum": ["c. glutamicum", "bacteria"],
+    "yarrowia lipolytica": ["y. lipolytica", "yeast"]
+  }
+}

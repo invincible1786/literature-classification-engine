@@ -1,0 +1,14 @@
+{
+  "calibration_version": "v3-logistic",
+  "fitted_at": "2026-11-07T08:49:24.500086+00:00",
+  "method": "platt_scaling_logistic",
+  "tau_center": 0.45,
+  "temperature_scale": 7.0,
+  "A": -7.0,
+  "B": 3.15,
+  "out_of_fold_brier": 0.0533,
+  "data_hash": "49971211dfcdcc25f99e12a794cfdd903a6b8b6cde093f646f00f003421c80da",
+  "qualifier_path_fitted": true,
+  "negative_path_fitted": false,
+  "negative_path_reason": "N_min < 30 (confidence set to null on negatives)"
+}

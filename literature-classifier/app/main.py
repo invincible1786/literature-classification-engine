@@ -22,8 +22,8 @@ from app.schemas import (
     ScoreBreakdown,
 )
 from app.retrieval import (
-    build_query,
     search_europe_pmc,
+    search_europe_pmc_dual,
     fetch_pubchem_synonyms,
     deduplicate_papers,
     RetrievalError,
@@ -35,6 +35,11 @@ from app.classifier import (
     classify_publications,
     DEFAULT_THRESHOLD,
     DEFAULT_CONTRAST_DELTA,
+)
+from app.criterion_parser import (
+    CriterionSpec,
+    CriterionParseError,
+    parse_criterion_to_spec,
 )
 from app.scoring import CALIBRATION_VERSION
 
@@ -59,6 +64,20 @@ _FEEDBACK_LOCK = threading.Lock()
 # In-memory response cache (TTL 1 hour)
 _RESPONSE_CACHE: Dict[str, Tuple[float, ClassifyResponse]] = {}
 _CACHE_TTL_S = 3600.0
+
+
+def build_lucene_query(entity: str, aliases: Optional[list] = None, intent: str = "synthesis") -> str:
+    terms = [f'"{entity}"']
+    if aliases:
+        for a in aliases[:3]:
+            if a.lower() != entity.lower():
+                terms.append(f'"{a}"')
+    entity_part = " OR ".join(terms)
+    if intent == "synthesis":
+        return f'TITLE_ABS:(({entity_part}) AND (synthesis OR biosynthesis OR "produced by" OR fermentation OR preparation OR yielded))'
+    elif intent == "pharmacology":
+        return f'TITLE_ABS:(({entity_part}) AND (pharmacology OR receptor OR pharmacokinetic OR mechanism OR clinical))'
+    return f'TITLE_ABS:({entity_part})'
 
 
 async def slot_dependency():
@@ -98,8 +117,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Mini Literature Classification Engine",
-    description="Deterministic literature mining and semantic classification engine for Loopworm.",
-    version="2.0.0",
+    description="Deterministic literature mining and semantic classification engine for Loopworm (v3).",
+    version="3.0.0",
     lifespan=lifespan
 )
 
@@ -140,12 +159,36 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
 
     vetted_aliases = vet_aliases(raw_aliases, request.entity)
 
-    # 2. Intent detection and intent-augmented Lucene query construction
+    # 2. Intent detection and criterion parsing
     intent = detect_intent(request.criterion, request.entity)
-    query = build_query(request.entity, vetted_aliases, intent=intent)
+    query_intent = build_lucene_query(request.entity, vetted_aliases, intent=intent)
+    query_plain = f'TITLE_ABS:"{request.entity}"'
+
+    # Validate criterion grammar or catch unparsed clauses
+    criterion_spec = request.criterion_spec
+    if criterion_spec is None:
+        try:
+            criterion_spec = parse_criterion_to_spec(
+                criterion=request.criterion,
+                entity=request.entity,
+                allow_partial_criterion=request.allow_partial_criterion
+            )
+        except CriterionParseError as err:
+            logger.warning(f"Criterion parse error: {err}")
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                detail={
+                    "message": err.message,
+                    "unparsed_clauses": err.unparsed_clauses,
+                    "supported_grammars": [
+                        "G1: <paper> reports <activity> of <entity> [in <system>] [in this study]",
+                        "G2: <paper> uses <entity> as a <catalyst|reagent|substrate> [in <activity>]"
+                    ]
+                }
+            )
 
     # 3. Check response cache
-    cache_key = f"{request.entity.lower()}:{request.criterion.lower()}:{request.max_results}:{request.threshold}:{request.contrast_delta}:{getattr(active_scorer, 'revision', 'v2')}"
+    cache_key = f"{request.entity.lower()}:{request.criterion.lower()}:{request.max_results}:{request.threshold}:{request.pipeline}:{getattr(active_scorer, 'revision', 'v3')}"
     now = time.time()
     if cache_key in _RESPONSE_CACHE:
         cached_ts, cached_resp = _RESPONSE_CACHE[cache_key]
@@ -153,16 +196,28 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
             logger.info(f"Returning cached response for entity '{request.entity}'")
             return cached_resp
 
-    logger.info(f"Retrieving publications: entity='{request.entity}', intent='{intent}', query='{query}', max_results={request.max_results}")
+    logger.info(f"Retrieving publications: entity='{request.entity}', intent='{intent}', pipeline={request.pipeline}")
 
-    # 4. Search Europe PMC (or load offline snapshot)
+    # 4. Search Europe PMC (Dual Query in v3)
     try:
-        raw_publications = search_europe_pmc(
-            query=query,
-            max_results=request.max_results,
-            include_fulltext=request.include_fulltext,
-            offline_fallback_entity=request.entity if request.offline else None
-        )
+        if request.pipeline == "v3":
+            publications, dedup_count = search_europe_pmc_dual(
+                query_intent=query_intent,
+                query_plain=query_plain,
+                max_results=request.max_results,
+                include_fulltext=request.include_fulltext,
+                offline_fallback_entity=request.entity if request.offline else None,
+                search_fn=search_europe_pmc
+            )
+            raw_publications = publications
+        else:
+            raw_publications = search_europe_pmc(
+                query=query_intent,
+                max_results=request.max_results,
+                include_fulltext=request.include_fulltext,
+                offline_fallback_entity=request.entity if request.offline else None
+            )
+            publications, dedup_count = deduplicate_papers(raw_publications)
     except RetrievalError as err:
         logger.error(f"Retrieval error from Europe PMC: {err}")
         raise HTTPException(
@@ -170,45 +225,52 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
             detail=f"Europe PMC service error: {err}"
         )
 
-    # 5. Deduplicate publications (prefer published over preprints)
-    publications, dedup_count = deduplicate_papers(raw_publications)
-
-    # 6. Handle zero results gracefully
+    # 5. Handle zero results gracefully
     if not publications:
         elapsed_ms = (time.perf_counter() - start_time) * 1000.0
         return ClassifyResponse(
+            api_version="v3",
             entity=request.entity,
             query_entity=request.entity,
             criterion=request.criterion,
+            criterion_spec=criterion_spec,
             intent=intent,
-            query_used=query,
+            query_used=query_intent,
+            query_plain=query_plain,
             entity_aliases_used=vetted_aliases,
+            aliases_used=vetted_aliases,
             n_retrieved=len(raw_publications),
             total_retrieved=len(raw_publications),
             n_after_dedupe=0,
             total_classified=0,
             dedup_count=dedup_count,
+            retrieved_by="both",
             execution_time_ms=round(elapsed_ms, 2),
+            timings_ms={"retrieval_ms": round(elapsed_ms, 2)},
             model_revision=getattr(active_scorer, "revision", DEFAULT_REVISION),
             calibration_version=CALIBRATION_VERSION,
             ensemble_size=1,
             hypotheses_used=[request.criterion],
             contrast_guard_active=(intent == "synthesis"),
-            guard_arming={"intent": intent, "armed": (intent == "synthesis")},
+            guard_arming={"intent": intent, "spec": criterion_spec.model_dump() if hasattr(criterion_spec, "model_dump") else (criterion_spec.dict() if criterion_spec else {})},
             results=[]
         )
 
-    # 7. Execute semantic classification & sentence coupling
+    # 6. Execute classification
     run_output = classify_publications(
         publications=publications,
         entity=request.entity,
         criterion=request.criterion,
         aliases=vetted_aliases,
-        threshold=request.threshold,
-        contrast_delta=request.contrast_delta,
+        tau=request.threshold or DEFAULT_THRESHOLD,
+        delta=request.contrast_delta or DEFAULT_CONTRAST_DELTA,
         custom_contrast_hypotheses=request.custom_contrast_hypotheses,
         user_paraphrases=request.user_paraphrases,
-        scorer=active_scorer
+        scorer=active_scorer,
+        pipeline=request.pipeline,
+        abstract_negative_policy=request.abstract_negative_policy,
+        allow_partial_criterion=request.allow_partial_criterion,
+        criterion_spec=criterion_spec
     )
 
     elapsed_ms = (time.perf_counter() - start_time) * 1000.0
@@ -224,8 +286,8 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
             conf_obj = ConfidenceDetails(**conf_obj)
         elif isinstance(conf_obj, (int, float)):
             conf_score = float(conf_obj)
-            band = "high" if conf_score >= 0.80 else ("medium" if conf_score >= 0.50 else "low")
-            conf_obj = ConfidenceDetails(score=conf_score, band=band)
+            band = "High" if conf_score >= 0.80 else ("Medium" if conf_score >= 0.50 else "Low")
+            conf_obj = ConfidenceDetails(score=conf_score, value=conf_score, band=band)
 
         sb_obj = r.get("score_breakdown")
         if sb_obj and isinstance(sb_obj, dict):
@@ -233,6 +295,7 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
 
         pydantic_results.append(
             PaperClassificationResult(
+                api_version=r.get("api_version", "v3"),
                 paper_id=str(r["paper_id"]),
                 rank=r.get("rank", 1),
                 title=r.get("title"),
@@ -241,16 +304,23 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
                 pmcid=r.get("pmcid"),
                 pub_year=str(r.get("pub_year")) if r.get("pub_year") else None,
                 classification=r["classification"],
-                classification_reason=r["classification_reason"],
+                classification_reason=r.get("classification_reason", r["classification"]),
+                reason_code=r.get("reason_code"),
+                criterion_spec=criterion_spec,
                 evidence=ev_obj,
                 evidence_sentence=r.get("evidence_sentence"),
                 evidence_status=r["evidence_status"],
-                evidence_source=r.get("evidence_source", "abstract"),
+                evidence_source=r.get("evidence_source", "abstract_only"),
                 evidence_offsets=r.get("evidence_offsets"),
+                source_record_sha256=r.get("source_record_sha256"),
                 text_sha256=r.get("text_sha256"),
+                aliases_used=vetted_aliases,
+                retrieved_by=r.get("retrieved_by", "intent"),
+                conditions=r.get("conditions"),
                 qualify_score=r.get("qualify_score"),
                 confidence=conf_obj,
-                confidence_band=r.get("confidence_band", "low"),
+                confidence_band=r.get("confidence_band", "Low"),
+                confidence_details=conf_obj,
                 confidence_kind=r.get("confidence_kind", "calibrated_platt_probability"),
                 score_breakdown=sb_obj,
                 guard_reason=r.get("guard_reason"),
@@ -258,22 +328,29 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
                 k_eligible=r.get("k_eligible", 0),
                 k_scored=r.get("k_scored", 0),
                 reagent_signal=r.get("reagent_signal", 0.0),
+                timings_ms=r.get("timings_ms", {})
             )
         )
 
     response = ClassifyResponse(
+        api_version="v3",
         entity=request.entity,
         query_entity=request.entity,
         criterion=request.criterion,
+        criterion_spec=criterion_spec,
         intent=intent,
-        query_used=query,
+        query_used=query_intent,
+        query_plain=query_plain,
         entity_aliases_used=vetted_aliases,
+        aliases_used=vetted_aliases,
         n_retrieved=len(raw_publications),
         total_retrieved=len(raw_publications),
         n_after_dedupe=len(publications),
         total_classified=len(pydantic_results),
         dedup_count=dedup_count,
+        retrieved_by="both",
         execution_time_ms=round(elapsed_ms, 2),
+        timings_ms=getattr(run_output, "timings_ms", {"total_ms": round(elapsed_ms, 2)}),
         model_revision=getattr(active_scorer, "revision", DEFAULT_REVISION),
         calibration_version=CALIBRATION_VERSION,
         ensemble_size=len(run_output.hypotheses_used),
@@ -292,9 +369,8 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
 async def classify(request: ClassifyRequest, _=Depends(slot_dependency)):
     """
     Main literature classification endpoint.
-    Retrieves candidate publications, applies intent-aware extraction,
-    and runs cross-encoder NLI inference offloaded to AnyIO threadpools.
-    Accepts both entity and criterion in request body.
+    Retrieves candidate publications, parses CriterionSpec, applies multi-condition checks,
+    and runs cross-encoder NLI inference offloaded to AnyIO worker threadpools.
     """
     return await run_in_threadpool(_run_pipeline, request)
 
@@ -303,6 +379,7 @@ async def classify(request: ClassifyRequest, _=Depends(slot_dependency)):
 def submit_feedback(feedback: FeedbackRequest):
     """
     Atomically records user corrections to feedback.jsonl with thread safety.
+    Acts as a curator review queue.
     """
     base_dir = os.path.dirname(os.path.dirname(__file__))
     feedback_file = os.path.join(base_dir, "feedback.jsonl")

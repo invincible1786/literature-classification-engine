@@ -4,8 +4,9 @@ import os
 import html
 import unicodedata
 import logging
+import hashlib
 from dataclasses import dataclass
-from typing import List, Tuple, Optional, Set
+from typing import List, Tuple, Optional, Set, Dict, Any
 import nltk
 from nltk.tokenize.punkt import PunktSentenceTokenizer, PunktParameters
 
@@ -34,6 +35,18 @@ class Sent:
     text: str
     start: int
     end: int
+    sentence_index: int = 0
+    source: str = "abstract"
+
+
+@dataclass(frozen=True)
+class TextSegment:
+    """Section-aware text segment with raw and canonical boundary mapping."""
+    source: str  # 'abstract', 'intro', 'methods', 'results', 'discussion', 'caption', 'title'
+    raw_start: int
+    raw_end: int
+    canon_start: int
+    canon_end: int
 
 
 def load_alias_denylist() -> Set[str]:
@@ -124,21 +137,73 @@ def clean_markup_and_unescape(raw: Optional[str]) -> str:
 def canonicalize(raw: Optional[str]) -> str:
     """
     Canonicalize raw text into a clean, normalized string.
-    
     Single-pass rule:
     1. Strip inline tags (i, b, sup, sub) with NO gap.
     2. Convert all other HTML/XML tags into a single space.
     3. Unescape HTML entities exactly ONCE.
     4. Normalize Unicode to NFKC.
     5. Collapse multiple whitespaces and strip.
-    
-    All downstream operations (tokenization, candidate matching, scoring, evidence)
-    must operate exclusively on this canonical representation.
     """
     if not raw:
         return ""
     t = clean_markup_and_unescape(raw)
     return re.sub(r"\s+", " ", t).strip()
+
+
+def compute_sha256(text: str) -> str:
+    """Compute standard SHA-256 hex digest of raw string."""
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def map_canonical_span_to_raw(raw_text: str, canon_start: int, canon_end: int) -> Tuple[int, int]:
+    """
+    Map character slice offsets from canonical document text back to enclosing
+    character boundaries in the uncleaned raw document text.
+    Snaps outward to include enclosing tags/formatting if necessary.
+    """
+    if not raw_text:
+        return 0, 0
+
+    canon_doc = canonicalize(raw_text)
+    if canon_start >= len(canon_doc) or canon_end > len(canon_doc) or canon_start >= canon_end:
+        return 0, len(raw_text)
+
+    target_sent = canon_doc[canon_start:canon_end].strip()
+    if not target_sent:
+        return 0, 0
+
+    # Locate candidate in raw text by word anchor match or substring search
+    first_word = target_sent.split()[0]
+    last_word = target_sent.split()[-1]
+
+    # Find approximate location in raw
+    clean_raw = clean_markup_and_unescape(raw_text)
+    idx = clean_raw.find(target_sent)
+    if idx != -1:
+        # Simple mapping when length shifts are small
+        pass
+
+    # Exact or outward boundary search
+    first_match = re.search(re.escape(first_word), raw_text, re.IGNORECASE)
+    last_matches = list(re.finditer(re.escape(last_word), raw_text, re.IGNORECASE))
+
+    if first_match and last_matches:
+        start_pos = first_match.start()
+        # Find the last match that occurs after start_pos
+        valid_ends = [m.end() for m in last_matches if m.end() >= start_pos]
+        if valid_ends:
+            end_pos = valid_ends[-1]
+            return start_pos, end_pos
+
+    # Fallback to direct search of entire stripped string
+    stripped_target = re.sub(r"\s+", " ", target_sent)
+    m = re.search(re.escape(stripped_target[:min(30, len(stripped_target))]), raw_text, re.IGNORECASE)
+    if m:
+        start_pos = m.start()
+        end_pos = min(len(raw_text), start_pos + len(target_sent) + 50)
+        return start_pos, end_pos
+
+    return 0, len(raw_text)
 
 
 def verify(canon: str, s: Sent) -> bool:
@@ -175,7 +240,7 @@ _RE_FIG = re.compile(r"\b(fig|figs)\.\s*(\d+)", re.I)
 _RE_GENUS = re.compile(r"\b([A-Z])\.\s+([a-z]+)")
 
 
-def split_sentences_with_spans(canon: str) -> List[Sent]:
+def split_sentences_with_spans(canon: str, source: str = "abstract") -> List[Sent]:
     """
     Split canonical text into sentence spans using protected tokenization.
     Guarantees canon[sent.start:sent.end] == sent.text for all returned spans.
@@ -218,6 +283,7 @@ def split_sentences_with_spans(canon: str) -> List[Sent]:
         i += 1
 
     sentences: List[Sent] = []
+    sent_idx = 0
     for start, end in merged_spans:
         slice_text = canon[start:end]
         l_stripped = len(slice_text) - len(slice_text.lstrip())
@@ -228,7 +294,14 @@ def split_sentences_with_spans(canon: str) -> List[Sent]:
         clean_sent_text = canon[adj_start:adj_end]
 
         if len(clean_sent_text) > 3 and any(c.isalnum() for c in clean_sent_text):
-            sentences.append(Sent(text=clean_sent_text, start=adj_start, end=adj_end))
+            sentences.append(Sent(
+                text=clean_sent_text,
+                start=adj_start,
+                end=adj_end,
+                sentence_index=sent_idx,
+                source=source
+            ))
+            sent_idx += 1
 
     return sentences
 
@@ -274,7 +347,10 @@ _DEFAULT_PRODUCTION_VERBS = [
     "prepare", "prepared", "prepares", "preparing",
     "ferment", "fermented", "ferments", "fermenting",
     "generate", "generated", "generates", "generating",
-    "obtain", "obtained", "obtains", "obtaining"
+    "obtain", "obtained", "obtains", "obtaining",
+    "engineer", "engineered", "engineers", "engineering",
+    "express", "expressed", "expresses", "expressing",
+    "titer", "titers", "accumulation", "overproduction"
 ]
 
 _RE_COMMERCIAL_OBTAIN = re.compile(
@@ -309,9 +385,7 @@ def has_production_verb(sentence: str, custom_verbs: Optional[List[str]] = None)
     Check whether the sentence contains a genuine production or synthesis action verb.
     Rejects commercial purchase mentions ('obtained from Sigma').
     """
-    # Commercial purchase check
     if _RE_COMMERCIAL_OBTAIN.search(sentence):
-        # Unless it also mentions yield or synthesis
         if not re.search(r"\b(?:yield|synthesized|prepared|yielded)\b", sentence, re.I):
             return False
 

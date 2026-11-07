@@ -4,11 +4,12 @@ import re
 import json
 import time
 import logging
+import hashlib
 import urllib.parse
 from typing import List, Dict, Any, Optional, Tuple, Set
 import xml.etree.ElementTree as ET
 import requests
-from .text_utils import clean_markup_and_unescape, vet_aliases
+from .text_utils import clean_markup_and_unescape, vet_aliases, compute_sha256
 
 logger = logging.getLogger(__name__)
 
@@ -72,7 +73,6 @@ def is_preprint(paper: Dict[str, Any]) -> bool:
     ):
         return True
 
-    # If comparing against a paper with PMID, lack of PMID suggests preprint
     return pmid is None
 
 
@@ -81,6 +81,7 @@ def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
     Deduplicate publications by DOI and normalized title.
     Prefers peer-reviewed/published version over preprint.
     Attaches 'dedup_of' identifier to the surviving publication.
+    Preserves and unifies 'retrieved_by' ('intent', 'plain', or 'both').
     Returns: (unique_papers, count_of_deduped_records)
     """
     unique_papers: List[Dict[str, Any]] = []
@@ -92,6 +93,7 @@ def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
         doi = (paper.get("doi") or "").strip().lower()
         title = normalize_title_for_dedupe(paper.get("title"))
         paper_id = paper.get("pmid") or paper.get("doi") or paper.get("title") or "unknown"
+        curr_retrieved_by = paper.get("retrieved_by", "intent")
 
         matched_idx: Optional[int] = None
         if doi and doi in seen_dois:
@@ -100,34 +102,42 @@ def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
             matched_idx = seen_titles[title]
 
         if matched_idx is not None:
-            # Duplicate found
-            dedup_count += 1
             existing = unique_papers[matched_idx]
-            existing_is_preprint = is_preprint(existing)
-            current_is_preprint = is_preprint(paper)
+            existing_id = existing.get("pmid") or existing.get("doi") or "unknown"
+            dedup_count += 1
 
-            # Prefer published over preprint, or paper with PMID over one without
-            should_replace = False
-            if existing_is_preprint and not current_is_preprint:
-                should_replace = True
-            elif not existing.get("pmid") and paper.get("pmid"):
-                should_replace = True
+            # Update retrieved_by
+            existing_retrieved = existing.get("retrieved_by", "intent")
+            if existing_retrieved != curr_retrieved_by:
+                existing["retrieved_by"] = "both"
 
-            if should_replace:
-                absorbed_id = existing.get("pmid") or existing.get("doi") or "preprint"
-                paper["dedup_of"] = str(absorbed_id)
-                unique_papers[matched_idx] = paper
+            # Check if current paper is preferred (e.g. published version vs existing preprint)
+            existing_is_prep = is_preprint(existing)
+            curr_is_prep = is_preprint(paper)
+
+            if existing_is_prep and not curr_is_prep:
+                # Replace preprint with peer-reviewed publication
+                paper_copy = dict(paper)
+                paper_copy["dedup_of"] = str(existing_id)
+                paper_copy["retrieved_by"] = existing.get("retrieved_by", "both")
+                unique_papers[matched_idx] = paper_copy
                 if doi:
                     seen_dois[doi] = matched_idx
                 if title:
                     seen_titles[title] = matched_idx
             else:
+                # Keep existing record and mark absorbed ID
                 if not existing.get("dedup_of"):
                     existing["dedup_of"] = str(paper_id)
         else:
-            paper["dedup_of"] = None
+            paper_copy = dict(paper)
+            if "dedup_of" not in paper_copy:
+                paper_copy["dedup_of"] = None
+            if "retrieved_by" not in paper_copy:
+                paper_copy["retrieved_by"] = curr_retrieved_by
+
             idx = len(unique_papers)
-            unique_papers.append(paper)
+            unique_papers.append(paper_copy)
             if doi:
                 seen_dois[doi] = idx
             if title:
@@ -136,66 +146,30 @@ def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
     return unique_papers, dedup_count
 
 
-def build_query(entity: str, aliases: Optional[List[str]] = None, intent: str = "synthesis") -> str:
-    """
-    Build the Europe PMC TITLE_ABS query.
-    If intent is 'synthesis':
-      TITLE_ABS:("<entity>" AND (synthesis OR biosynthesis OR "produced by" OR fermentation OR preparation OR yielded))
-    If intent is 'pharmacology':
-      TITLE_ABS:("<entity>" AND (activity OR treatment OR inhibition OR efficacy OR pharmacology))
-    Otherwise:
-      TITLE_ABS:("<entity>")
-    """
-    clean_entity = escape_lucene(entity)
-    vetted_aliases = vet_aliases(aliases, entity)
-
-    terms = [clean_entity]
-    for a in vetted_aliases:
-        clean_a = escape_lucene(a)
-        if clean_a and clean_a.lower() != clean_entity.lower() and clean_a not in terms:
-            terms.append(clean_a)
-
-    if len(terms) == 1:
-        entity_clause = f'"{terms[0]}"'
-    else:
-        quoted = [f'"{t}"' for t in terms]
-        entity_clause = f'({" OR ".join(quoted)})'
-
-    if intent == "synthesis":
-        synth_clause = '(synthesis OR biosynthesis OR "produced by" OR fermentation OR preparation OR yielded)'
-        return f'TITLE_ABS:({entity_clause} AND {synth_clause})'
-    elif intent == "pharmacology":
-        pharm_clause = '(activity OR treatment OR inhibition OR efficacy OR pharmacology)'
-        return f'TITLE_ABS:({entity_clause} AND {pharm_clause})'
-    else:
-        return f'TITLE_ABS:{entity_clause}'
-
-
-def fetch_pubchem_synonyms(name: str, timeout: float = 5.0) -> List[str]:
-    """
-    Query PubChem PUG REST for chemical synonyms with disk caching and filtering.
-    Filters out short terms (< 5 chars), purely numeric IDs, and terms with brackets/pipes.
-    """
-    if not name or len(name.strip()) < 3:
+def fetch_pubchem_synonyms(entity_name: str, timeout: float = 5.0) -> List[str]:
+    """Fetch validated synonyms for an entity from PubChem PUG REST API."""
+    if os.getenv("USE_STUB_SCORER", "0") == "1":
         return []
 
-    clean_name = name.strip()
-    base_dir = os.path.dirname(os.path.dirname(__file__))
-    cache_path = os.path.join(base_dir, "data", "snapshots", "pubchem_cache.json")
-    os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+    clean_name = entity_name.strip()
+    if not clean_name:
+        return []
 
+    cache_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "snapshots")
+    cache_path = os.path.join(cache_dir, "pubchem_cache.json")
     cache: Dict[str, List[str]] = {}
     if os.path.exists(cache_path):
         try:
             with open(cache_path, "r", encoding="utf-8") as f:
                 cache = json.load(f)
+                if clean_name.lower() in cache:
+                    return cache[clean_name.lower()]
         except Exception:
-            cache = {}
+            pass
 
-    if clean_name.lower() in cache:
-        return cache[clean_name.lower()]
+    encoded_name = urllib.parse.quote(clean_name)
+    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{encoded_name}/synonyms/JSON"
 
-    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/{urllib.parse.quote(clean_name)}/synonyms/JSON"
     try:
         r = requests.get(url, timeout=timeout)
         if r.status_code == 200:
@@ -215,7 +189,6 @@ def fetch_pubchem_synonyms(name: str, timeout: float = 5.0) -> List[str]:
                 if len(valid_syns) >= 8:
                     break
 
-            # Vet against denylist
             vetted = vet_aliases(valid_syns, clean_name)
             cache[clean_name.lower()] = vetted
             try:
@@ -252,11 +225,7 @@ def search_europe_pmc(
     include_fulltext: bool = False,
     offline_fallback_entity: Optional[str] = None
 ) -> List[Dict[str, Any]]:
-    """
-    Retrieve publications from Europe PMC REST API with retry, backoff, and Retry-After support.
-    Cleans markup before returning records.
-    Falls back to offline snapshots if upstream is unavailable or offline mode requested.
-    """
+    """Retrieve publications from Europe PMC REST API with retry, backoff, and Retry-After support."""
     params = {
         "query": query,
         "resultType": "core",
@@ -265,7 +234,7 @@ def search_europe_pmc(
     }
 
     headers = {
-        "User-Agent": "LoopwormLiteratureClassifier/2.0 (mailto:ruhaankakar@gmail.com) Python-requests"
+        "User-Agent": "LoopwormLiteratureClassifier/3.0 (mailto:ruhaankakar@gmail.com) Python-requests"
     }
 
     response = None
@@ -284,9 +253,7 @@ def search_europe_pmc(
                 sleep_time = min(float(retry_after), 10.0)
 
             if response.status_code in (429, 500, 502, 503, 504) and attempt < max_attempts - 1:
-                logger.warning(
-                    f"Europe PMC returned HTTP {response.status_code}, retrying in {sleep_time}s..."
-                )
+                logger.warning(f"Europe PMC returned HTTP {response.status_code}, retrying in {sleep_time}s...")
                 time.sleep(sleep_time)
                 continue
             else:
@@ -300,7 +267,6 @@ def search_europe_pmc(
             logger.warning(f"Europe PMC request failed after {max_attempts} attempts: {exc}")
             break
 
-    # If network call succeeded, parse and clean results
     if response is not None and response.status_code == 200:
         try:
             data = response.json()
@@ -314,10 +280,13 @@ def search_europe_pmc(
                 pmid = item.get("pmid")
                 pmcid = item.get("pmcid")
                 pub_year = item.get("pubYear")
+                pub_type = item.get("pubType", "")
 
-                # Clean markup and unescape immediately
                 clean_title = clean_markup_and_unescape(str(raw_title)) if raw_title is not None else None
                 clean_abstract = clean_markup_and_unescape(str(raw_abstract)) if raw_abstract is not None else None
+
+                raw_record_str = f"{raw_title or ''} {raw_abstract or ''}"
+                record_sha = compute_sha256(raw_record_str)
 
                 fulltext_sections = None
                 if include_fulltext and pmcid:
@@ -331,19 +300,21 @@ def search_europe_pmc(
                     "pmid": str(pmid) if pmid is not None else None,
                     "pmcid": str(pmcid) if pmcid is not None else None,
                     "abstractText": clean_abstract,
+                    "raw_text": raw_record_str,
+                    "source_record_sha256": record_sha,
                     "pubYear": str(pub_year) if pub_year is not None else None,
-                    "fulltext_sections": fulltext_sections
+                    "pubType": pub_type,
+                    "fulltext_sections": fulltext_sections,
+                    "retrieved_by": "intent"
                 })
             return publications
         except Exception as e:
             logger.warning(f"Europe PMC JSON parse failed: {e}")
 
-    # Fallback to local offline snapshot if available
     if offline_fallback_entity:
         snapshot_papers = load_snapshot_papers(offline_fallback_entity)
         if snapshot_papers:
             logger.info(f"Loaded {len(snapshot_papers)} papers from offline snapshot for '{offline_fallback_entity}'")
-            # Ensure snapshot papers are also cleaned
             cleaned_snapshots = []
             for sp in snapshot_papers[:max_results]:
                 sp_clean = dict(sp)
@@ -351,6 +322,10 @@ def search_europe_pmc(
                     sp_clean["title"] = clean_markup_and_unescape(sp_clean["title"])
                 if sp_clean.get("abstractText"):
                     sp_clean["abstractText"] = clean_markup_and_unescape(sp_clean["abstractText"])
+                raw_str = f"{sp_clean.get('title') or ''} {sp_clean.get('abstractText') or ''}"
+                sp_clean["raw_text"] = raw_str
+                sp_clean["source_record_sha256"] = compute_sha256(raw_str)
+                sp_clean["retrieved_by"] = "intent"
                 cleaned_snapshots.append(sp_clean)
             return cleaned_snapshots
 
@@ -358,6 +333,69 @@ def search_europe_pmc(
         raise RetrievalError(f"Europe PMC temporary outage (HTTP {response.status_code}).")
 
     raise RetrievalError("Failed to retrieve response from Europe PMC.")
+
+
+def search_europe_pmc_dual(
+    query_intent: str,
+    query_plain: str,
+    max_results: int = 15,
+    timeout: float = 15.0,
+    include_fulltext: bool = False,
+    offline_fallback_entity: Optional[str] = None,
+    search_fn: Optional[Any] = None
+) -> Tuple[List[Dict[str, Any]], int]:
+    """
+    Dual Query Retrieval (Phase 8.1):
+    Unions intent-augmented query with plain entity query, tags each record with
+    retrieved_by ('intent', 'plain', or 'both'), and deduplicates.
+    Returns: (deduplicated_papers, dedup_count)
+    """
+    fn = search_fn or search_europe_pmc
+
+    try:
+        intent_results = fn(
+            query=query_intent,
+            max_results=max_results,
+            timeout=timeout,
+            include_fulltext=include_fulltext,
+            offline_fallback_entity=offline_fallback_entity
+        )
+        for r in intent_results:
+            r["retrieved_by"] = "intent"
+    except RetrievalError:
+        raise
+    except Exception as exc:
+        logger.warning(f"Intent query retrieval failed: {exc}")
+        intent_results = []
+
+    try:
+        plain_results = fn(
+            query=query_plain,
+            max_results=max_results,
+            timeout=timeout,
+            include_fulltext=include_fulltext,
+            offline_fallback_entity=offline_fallback_entity
+        )
+        for r in plain_results:
+            r["retrieved_by"] = "plain"
+    except RetrievalError:
+        raise
+    except Exception as exc:
+        logger.warning(f"Plain query retrieval failed: {exc}")
+        plain_results = []
+
+    # If both failed and offline fallback was requested
+    if not intent_results and not plain_results and offline_fallback_entity:
+        intent_results = fn(
+            query=query_intent,
+            max_results=max_results,
+            offline_fallback_entity=offline_fallback_entity
+        )
+
+    # Combine and deduplicate
+    combined = intent_results + plain_results
+    unique_papers, dedup_count = deduplicate_papers(combined)
+    return unique_papers[:max_results], dedup_count
 
 
 def fetch_fulltext_xml(pmcid: str, timeout: float = 10.0) -> Optional[str]:
@@ -380,26 +418,17 @@ def fetch_fulltext_xml(pmcid: str, timeout: float = 10.0) -> Optional[str]:
 
 
 def extract_fulltext_sections(xml_text: str) -> List[Tuple[str, str]]:
-    """
-    Extracts text paragraphs from target sections of full-text XML.
-    Matches on <sec sec-type="..."> OR <sec><title>...</title>.
-    Excludes references, acknowledgements, funding, and conflicts.
-    Strips <xref>, <table-wrap>, <fig>, <ref-list> nodes before reading text.
-    Returns: List of (paragraph_text, section_type) tuples.
-    """
+    """Extracts text paragraphs from target sections of full-text XML."""
     if not xml_text:
         return []
 
     sections: List[Tuple[str, str]] = []
     try:
         root = ET.fromstring(xml_text)
-
-        # Remove citation and figure markup nodes
         for tag in ("xref", "table-wrap", "fig", "ref-list"):
             for elem in root.findall(f".//{tag}"):
                 elem.clear()
 
-        # Iterate over section nodes
         for sec in root.iter("sec"):
             sec_type = sec.attrib.get("sec-type", "")
             title_node = sec.find("title")
@@ -410,7 +439,6 @@ def extract_fulltext_sections(xml_text: str) -> List[Tuple[str, str]]:
                 continue
 
             is_target = bool(TARGET_SECTIONS.search(combined_sec))
-
             if is_target or not (sec_type or title_text):
                 tag_name = sec_type if sec_type else (title_text[:20] if title_text else "body")
                 for p in sec.iter("p"):

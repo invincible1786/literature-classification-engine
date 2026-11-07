@@ -189,20 +189,22 @@ def lexical_intent_armed(criterion: str, entity: str = "") -> bool:
     return False
 
 
-def check_role_patterns(sentence: str, entity: str, aliases: Optional[List[str]] = None) -> Optional[str]:
+def check_role_patterns(sentence: str, entity: Any, aliases: Optional[List[str]] = None) -> Optional[str]:
     """
     Check if the sentence matches any negative-role patterns for the entity (e.g. catalyst, reagent, substrate).
     Returns the matching pattern or descriptive reason string, or None if no match.
+    Accepts either an entity string (and optional aliases) or a compiled re.Pattern.
     """
     patterns = load_role_patterns()
-    vetted_aliases = vet_aliases(aliases, entity)
-    terms = [entity] + vetted_aliases
-
-    # Build escaped regex group for target entity and aliases
-    escaped_terms = [re.escape(t.strip()) for t in terms if t.strip()]
-    if not escaped_terms:
-        return None
-    entity_regex = r"(?:" + "|".join(escaped_terms) + r")"
+    if hasattr(entity, "pattern"):
+        entity_regex = entity.pattern
+    else:
+        vetted_aliases = vet_aliases(aliases, str(entity))
+        terms = [str(entity)] + vetted_aliases
+        escaped_terms = [re.escape(t.strip()) for t in terms if t.strip()]
+        if not escaped_terms:
+            return None
+        entity_regex = r"(?:" + "|".join(escaped_terms) + r")"
 
     for pattern_template in patterns:
         try:

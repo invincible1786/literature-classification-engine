@@ -33,6 +33,16 @@ class NLIScorer(ABC):
         triples = self.score(pairs)
         return [p_ent - p_con for p_ent, _, p_con in triples]
 
+    def predict_proba(self, pairs: List[Tuple[str, str]]) -> List[Dict[str, float]]:
+        """
+        Convenience wrapper returning dictionary probabilities for entailment, neutral, contradiction.
+        """
+        triples = self.score(pairs)
+        return [
+            {"entailment": t[0], "neutral": t[1], "contradiction": t[2]}
+            for t in triples
+        ]
+
 
 class StubScorer(NLIScorer):
     """
