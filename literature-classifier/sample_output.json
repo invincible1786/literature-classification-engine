@@ -1,14 +1,14 @@
 {
   "api_version": "v3",
   "query_entity": "vanillin",
-  "criterion": "The paper describes the synthesis or production of vanillin.",
+  "criterion": "The paper reports microbial biosynthesis of vanillin in yeast in this study.",
   "total_retrieved": 10,
   "total_classified": 10,
-  "execution_time_ms": 81.37,
+  "execution_time_ms": 43.09,
   "model_revision": "stub-rev-1.0",
   "ensemble_size": 1,
   "hypotheses_used": [
-    "synthesis or production"
+    "microbial biosynthesis"
   ],
   "contrast_guard_active": true,
   "guard_arming": {
@@ -16,8 +16,20 @@
       "entity": "vanillin",
       "entity_role": "product",
       "agent_kind": null,
-      "activity": "synthesis or production",
-      "system": null,
+      "activity": "microbial biosynthesis",
+      "system": {
+        "name": "yeast",
+        "family": "microbial",
+        "synonyms": [
+          "bacteria",
+          "bacterium",
+          "fungi",
+          "fungus",
+          "microbe",
+          "microorganism",
+          "microbial"
+        ]
+      },
       "scope": "this_study",
       "unparsed_clauses": [],
       "parse_method": "rules",
@@ -25,220 +37,6 @@
     }
   },
   "results": [
-    {
-      "api_version": "v3",
-      "paper_id": "31234567",
-      "title": "Biotransformation of ferulic acid to vanillin by Amycolatopsis sp.",
-      "doi": "10.1000/31234567",
-      "pmid": "31234567",
-      "pmcid": null,
-      "pub_year": "2021",
-      "classification": "insufficient_evidence",
-      "classification_reason": "activity_unclear",
-      "reason_code": "activity_unclear",
-      "criterion_spec": {
-        "entity": "vanillin",
-        "entity_role": "product",
-        "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
-        "scope": "this_study",
-        "unparsed_clauses": [],
-        "parse_method": "rules",
-        "parse_confidence": 1.0
-      },
-      "evidence": "text='Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.' char_start=0 char_end=217 source='abstract' role='activity' raw_text='Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.' display_text='Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.' raw_start=0 raw_end=217 sentence_index=0 verifiable_alone=True",
-      "evidence_sentence": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
-      "evidence_status": "insufficient",
-      "evidence_source": "abstract_only",
-      "evidence_offsets": [
-        0,
-        217
-      ],
-      "source_record_sha256": "269918e2a97a724a1424c9640ac97ab00929a5da62e985aea2dc0508d09d6cb8",
-      "text_sha256": "269918e2a97a724a1424c9640ac97ab00929a5da62e985aea2dc0508d09d6cb8",
-      "aliases_used": [],
-      "retrieved_by": "intent",
-      "conditions": {
-        "entity": {
-          "name": "entity",
-          "status": "supported",
-          "score": 1.0,
-          "evidence": [
-            {
-              "role": "entity",
-              "raw_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanilli",
-              "display_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanilli",
-              "raw_start": 0,
-              "raw_end": 164,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            },
-            {
-              "role": "entity",
-              "raw_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
-              "display_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
-              "raw_start": 0,
-              "raw_end": 217,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": null
-        },
-        "activity": {
-          "name": "activity",
-          "status": "unknown",
-          "score": 0.43999999999999995,
-          "evidence": [
-            {
-              "role": "activity",
-              "raw_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
-              "display_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
-              "raw_start": 0,
-              "raw_end": 217,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": "activity_unclear"
-        },
-        "system": {
-          "name": "system",
-          "status": "not_required",
-          "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
-          "reason_code": null
-        }
-      },
-      "qualify_score": 0.1,
-      "confidence": null,
-      "confidence_band": "Low",
-      "confidence_details": null,
-      "confidence_kind": "calibrated_platt_probability",
-      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
-      "guard_reason": null,
-      "dedup_of": null,
-      "k_eligible": 2,
-      "k_scored": 1,
-      "reagent_signal": 0.0,
-      "ranking_score": -0.3,
-      "timings_ms": {},
-      "rank": 1
-    },
-    {
-      "api_version": "v3",
-      "paper_id": "32456789",
-      "title": "Catalytic oxidation of kraft lignin to vanillin using copper-based heterogeneous catalysts.",
-      "doi": "10.1000/32456789",
-      "pmid": "32456789",
-      "pmcid": null,
-      "pub_year": "2021",
-      "classification": "insufficient_evidence",
-      "classification_reason": "activity_unclear",
-      "reason_code": "activity_unclear",
-      "criterion_spec": {
-        "entity": "vanillin",
-        "entity_role": "product",
-        "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
-        "scope": "this_study",
-        "unparsed_clauses": [],
-        "parse_method": "rules",
-        "parse_confidence": 1.0
-      },
-      "evidence": "text='Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.' char_start=0 char_end=231 source='abstract' role='activity' raw_text='Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.' display_text='Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.' raw_start=0 raw_end=231 sentence_index=0 verifiable_alone=True",
-      "evidence_sentence": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
-      "evidence_status": "insufficient",
-      "evidence_source": "abstract_only",
-      "evidence_offsets": [
-        0,
-        231
-      ],
-      "source_record_sha256": "1d3325a28b8d027cb250b8c2039f2aa960205bd52e2cf778ca93926fc22b6aae",
-      "text_sha256": "1d3325a28b8d027cb250b8c2039f2aa960205bd52e2cf778ca93926fc22b6aae",
-      "aliases_used": [],
-      "retrieved_by": "intent",
-      "conditions": {
-        "entity": {
-          "name": "entity",
-          "status": "supported",
-          "score": 1.0,
-          "evidence": [
-            {
-              "role": "entity",
-              "raw_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin wit",
-              "display_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin wit",
-              "raw_start": 0,
-              "raw_end": 177,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            },
-            {
-              "role": "entity",
-              "raw_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
-              "display_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
-              "raw_start": 0,
-              "raw_end": 231,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": null
-        },
-        "activity": {
-          "name": "activity",
-          "status": "unknown",
-          "score": 0.43999999999999995,
-          "evidence": [
-            {
-              "role": "activity",
-              "raw_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
-              "display_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
-              "raw_start": 0,
-              "raw_end": 231,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": "activity_unclear"
-        },
-        "system": {
-          "name": "system",
-          "status": "not_required",
-          "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
-          "reason_code": null
-        }
-      },
-      "qualify_score": 0.1,
-      "confidence": null,
-      "confidence_band": "Low",
-      "confidence_details": null,
-      "confidence_kind": "calibrated_platt_probability",
-      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
-      "guard_reason": null,
-      "dedup_of": null,
-      "k_eligible": 2,
-      "k_scored": 1,
-      "reagent_signal": 0.0,
-      "ranking_score": -0.3,
-      "timings_ms": {},
-      "rank": 2
-    },
     {
       "api_version": "v3",
       "paper_id": "33678901",
@@ -254,8 +52,20 @@
         "entity": "vanillin",
         "entity_role": "product",
         "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
         "scope": "this_study",
         "unparsed_clauses": [],
         "parse_method": "rules",
@@ -324,10 +134,23 @@
         },
         "system": {
           "name": "system",
-          "status": "not_required",
+          "status": "supported",
           "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
+          "evidence": [
+            {
+              "role": "system",
+              "raw_text": "Corynebacterium glutamicum tolerates high aromatic concentrations, making it suitable for flavor synthesis. Corynebacterium glutamicum was metabolically engineered to biosynthesize vanillin from lignin-der",
+              "display_text": "Corynebacterium glutamicum tolerates high aromatic concentrations, making it suitable for flavor synthesis. Corynebacterium glutamicum was metabolically engineered to biosynthesize vanillin from lignin-der",
+              "raw_start": 0,
+              "raw_end": 205,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": false
+            }
+          ],
+          "also_mentions": [
+            "corynebacterium glutamicum"
+          ],
           "reason_code": null
         }
       },
@@ -344,221 +167,7 @@
       "reagent_signal": 0.0,
       "ranking_score": -0.3,
       "timings_ms": {},
-      "rank": 3
-    },
-    {
-      "api_version": "v3",
-      "paper_id": "34890123",
-      "title": "One-pot chemoenzymatic synthesis of vanillin from eugenol.",
-      "doi": "10.1000/34890123",
-      "pmid": "34890123",
-      "pmcid": null,
-      "pub_year": "2021",
-      "classification": "insufficient_evidence",
-      "classification_reason": "activity_unclear",
-      "reason_code": "activity_unclear",
-      "criterion_spec": {
-        "entity": "vanillin",
-        "entity_role": "product",
-        "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
-        "scope": "this_study",
-        "unparsed_clauses": [],
-        "parse_method": "rules",
-        "parse_confidence": 1.0
-      },
-      "evidence": "text='Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo' char_start=0 char_end=132 source='abstract' role='activity' raw_text='Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo' display_text='Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo' raw_start=0 raw_end=132 sentence_index=0 verifiable_alone=True",
-      "evidence_sentence": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
-      "evidence_status": "insufficient",
-      "evidence_source": "abstract_only",
-      "evidence_offsets": [
-        0,
-        132
-      ],
-      "source_record_sha256": "1cf7c4a410955a100a5d88c28a1cebfe72a41c4ab2d373a571f714b43af73bc6",
-      "text_sha256": "1cf7c4a410955a100a5d88c28a1cebfe72a41c4ab2d373a571f714b43af73bc6",
-      "aliases_used": [],
-      "retrieved_by": "intent",
-      "conditions": {
-        "entity": {
-          "name": "entity",
-          "status": "supported",
-          "score": 1.0,
-          "evidence": [
-            {
-              "role": "entity",
-              "raw_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
-              "display_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
-              "raw_start": 0,
-              "raw_end": 132,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            },
-            {
-              "role": "entity",
-              "raw_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed for the scalable synthesis of vanillin without hazardous organic solvents.",
-              "display_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed for the scalable synthesis of vanillin without hazardous organic solvents.",
-              "raw_start": 0,
-              "raw_end": 204,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": null
-        },
-        "activity": {
-          "name": "activity",
-          "status": "unknown",
-          "score": 0.43999999999999995,
-          "evidence": [
-            {
-              "role": "activity",
-              "raw_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
-              "display_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
-              "raw_start": 0,
-              "raw_end": 132,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": "activity_unclear"
-        },
-        "system": {
-          "name": "system",
-          "status": "not_required",
-          "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
-          "reason_code": null
-        }
-      },
-      "qualify_score": 0.1,
-      "confidence": null,
-      "confidence_band": "Low",
-      "confidence_details": null,
-      "confidence_kind": "calibrated_platt_probability",
-      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
-      "guard_reason": null,
-      "dedup_of": null,
-      "k_eligible": 2,
-      "k_scored": 1,
-      "reagent_signal": 0.0,
-      "ranking_score": -0.3,
-      "timings_ms": {},
-      "rank": 4
-    },
-    {
-      "api_version": "v3",
-      "paper_id": "35123490",
-      "title": "Ultrasound-assisted extraction of natural vanillin from Vanilla planifolia pods.",
-      "doi": "10.1000/35123490",
-      "pmid": "35123490",
-      "pmcid": null,
-      "pub_year": "2021",
-      "classification": "insufficient_evidence",
-      "classification_reason": "activity_unclear",
-      "reason_code": "activity_unclear",
-      "criterion_spec": {
-        "entity": "vanillin",
-        "entity_role": "product",
-        "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
-        "scope": "this_study",
-        "unparsed_clauses": [],
-        "parse_method": "rules",
-        "parse_confidence": 1.0
-      },
-      "evidence": "text='Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.' char_start=0 char_end=201 source='abstract' role='activity' raw_text='Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.' display_text='Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.' raw_start=0 raw_end=201 sentence_index=0 verifiable_alone=True",
-      "evidence_sentence": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
-      "evidence_status": "insufficient",
-      "evidence_source": "abstract_only",
-      "evidence_offsets": [
-        0,
-        201
-      ],
-      "source_record_sha256": "72e34895a0bbc26160c2e5e55e18bd81cda8c4bd7e81f3136f69fff24b279b80",
-      "text_sha256": "72e34895a0bbc26160c2e5e55e18bd81cda8c4bd7e81f3136f69fff24b279b80",
-      "aliases_used": [],
-      "retrieved_by": "intent",
-      "conditions": {
-        "entity": {
-          "name": "entity",
-          "status": "supported",
-          "score": 1.0,
-          "evidence": [
-            {
-              "role": "entity",
-              "raw_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight wi",
-              "display_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight wi",
-              "raw_start": 0,
-              "raw_end": 189,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            },
-            {
-              "role": "entity",
-              "raw_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
-              "display_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
-              "raw_start": 0,
-              "raw_end": 201,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": null
-        },
-        "activity": {
-          "name": "activity",
-          "status": "unknown",
-          "score": 0.43999999999999995,
-          "evidence": [
-            {
-              "role": "activity",
-              "raw_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
-              "display_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
-              "raw_start": 0,
-              "raw_end": 201,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": "activity_unclear"
-        },
-        "system": {
-          "name": "system",
-          "status": "not_required",
-          "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
-          "reason_code": null
-        }
-      },
-      "qualify_score": 0.1,
-      "confidence": null,
-      "confidence_band": "Low",
-      "confidence_details": null,
-      "confidence_kind": "calibrated_platt_probability",
-      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
-      "guard_reason": null,
-      "dedup_of": null,
-      "k_eligible": 2,
-      "k_scored": 1,
-      "reagent_signal": 0.0,
-      "ranking_score": -0.3,
-      "timings_ms": {},
-      "rank": 5
+      "rank": 1
     },
     {
       "api_version": "v3",
@@ -575,8 +184,20 @@
         "entity": "vanillin",
         "entity_role": "product",
         "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
         "scope": "this_study",
         "unparsed_clauses": [],
         "parse_method": "rules",
@@ -645,10 +266,33 @@
         },
         "system": {
           "name": "system",
-          "status": "not_required",
+          "status": "supported",
           "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
+          "evidence": [
+            {
+              "role": "system",
+              "raw_text": "Yeast fermentation provides food-grade production of flavor aromatics. Directed evolution of aromatic transaminases in yeast resulted in 3.6 g/L vanillin titer in shake",
+              "display_text": "Yeast fermentation provides food-grade production of flavor aromatics. Directed evolution of aromatic transaminases in yeast resulted in 3.6 g/L vanillin titer in shake",
+              "raw_start": 0,
+              "raw_end": 168,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": false
+            },
+            {
+              "role": "system",
+              "raw_text": "Yeast fermentation provides food-grade production of flavor aromatics. Directed evolution of aromatic transaminases in yeast resulted in 3.6 g/L vanillin titer in shake flask cultures.",
+              "display_text": "Yeast fermentation provides food-grade production of flavor aromatics. Directed evolution of aromatic transaminases in yeast resulted in 3.6 g/L vanillin titer in shake flask cultures.",
+              "raw_start": 0,
+              "raw_end": 184,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": false
+            }
+          ],
+          "also_mentions": [
+            "saccharomyces cerevisiae"
+          ],
           "reason_code": null
         }
       },
@@ -665,314 +309,7 @@
       "reagent_signal": 0.0,
       "ranking_score": -0.3,
       "timings_ms": {},
-      "rank": 6
-    },
-    {
-      "api_version": "v3",
-      "paper_id": "42633741",
-      "title": "Discovery of a thermostable eugenol oxidase for vanillin biosynthesis from vanillyl alcohol.",
-      "doi": "10.1000/PMC42633741",
-      "pmid": "42633741",
-      "pmcid": "PMC42633741",
-      "pub_year": "2021",
-      "classification": "insufficient_evidence",
-      "classification_reason": "activity_unclear",
-      "reason_code": "activity_unclear",
-      "criterion_spec": {
-        "entity": "vanillin",
-        "entity_role": "product",
-        "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
-        "scope": "this_study",
-        "unparsed_clauses": [],
-        "parse_method": "rules",
-        "parse_confidence": 1.0
-      },
-      "evidence": "text='Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.' char_start=0 char_end=225 source='abstract' role='activity' raw_text='Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.' display_text='Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.' raw_start=0 raw_end=225 sentence_index=0 verifiable_alone=True",
-      "evidence_sentence": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
-      "evidence_status": "insufficient",
-      "evidence_source": "abstract_only",
-      "evidence_offsets": [
-        0,
-        225
-      ],
-      "source_record_sha256": "792b59e843ef9a9462e7dd598daca9783f2ceb563854d8cb0d480bb1ca1fea66",
-      "text_sha256": "792b59e843ef9a9462e7dd598daca9783f2ceb563854d8cb0d480bb1ca1fea66",
-      "aliases_used": [],
-      "retrieved_by": "intent",
-      "conditions": {
-        "entity": {
-          "name": "entity",
-          "status": "supported",
-          "score": 1.0,
-          "evidence": [
-            {
-              "role": "entity",
-              "raw_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-ti",
-              "display_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-ti",
-              "raw_start": 0,
-              "raw_end": 196,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            },
-            {
-              "role": "entity",
-              "raw_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
-              "display_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
-              "raw_start": 0,
-              "raw_end": 225,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": null
-        },
-        "activity": {
-          "name": "activity",
-          "status": "unknown",
-          "score": 0.43999999999999995,
-          "evidence": [
-            {
-              "role": "activity",
-              "raw_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
-              "display_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
-              "raw_start": 0,
-              "raw_end": 225,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": "activity_unclear"
-        },
-        "system": {
-          "name": "system",
-          "status": "not_required",
-          "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
-          "reason_code": null
-        }
-      },
-      "qualify_score": 0.1,
-      "confidence": null,
-      "confidence_band": "Low",
-      "confidence_details": null,
-      "confidence_kind": "calibrated_platt_probability",
-      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
-      "guard_reason": null,
-      "dedup_of": null,
-      "k_eligible": 2,
-      "k_scored": 1,
-      "reagent_signal": 0.0,
-      "ranking_score": -0.3,
-      "timings_ms": {},
-      "rank": 7
-    },
-    {
-      "api_version": "v3",
-      "paper_id": "42642972",
-      "title": "Construction of Engineered Escherichia coli for Vanillin Production From Glucose: Pathway Optimization.",
-      "doi": "10.1000/PMC42642972",
-      "pmid": "42642972",
-      "pmcid": "PMC42642972",
-      "pub_year": "2021",
-      "classification": "insufficient_evidence",
-      "classification_reason": "activity_unclear",
-      "reason_code": "activity_unclear",
-      "criterion_spec": {
-        "entity": "vanillin",
-        "entity_role": "product",
-        "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
-        "scope": "this_study",
-        "unparsed_clauses": [],
-        "parse_method": "rules",
-        "parse_confidence": 1.0
-      },
-      "evidence": "text='Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco' char_start=0 char_end=202 source='abstract' role='activity' raw_text='Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco' display_text='Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco' raw_start=0 raw_end=202 sentence_index=0 verifiable_alone=True",
-      "evidence_sentence": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
-      "evidence_status": "insufficient",
-      "evidence_source": "abstract_only",
-      "evidence_offsets": [
-        0,
-        202
-      ],
-      "source_record_sha256": "abb0334eb617b4662e2b5a3b8e58049b3936f6bbdbce3c13f97cd85c6711696c",
-      "text_sha256": "abb0334eb617b4662e2b5a3b8e58049b3936f6bbdbce3c13f97cd85c6711696c",
-      "aliases_used": [],
-      "retrieved_by": "intent",
-      "conditions": {
-        "entity": {
-          "name": "entity",
-          "status": "supported",
-          "score": 1.0,
-          "evidence": [
-            {
-              "role": "entity",
-              "raw_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
-              "display_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
-              "raw_start": 0,
-              "raw_end": 202,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            },
-            {
-              "role": "entity",
-              "raw_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from glucose by deleting endogenous aldehyde reductases.",
-              "display_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from glucose by deleting endogenous aldehyde reductases.",
-              "raw_start": 0,
-              "raw_end": 248,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": null
-        },
-        "activity": {
-          "name": "activity",
-          "status": "unknown",
-          "score": 0.0,
-          "evidence": [
-            {
-              "role": "activity",
-              "raw_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
-              "display_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
-              "raw_start": 0,
-              "raw_end": 202,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": "activity_unclear"
-        },
-        "system": {
-          "name": "system",
-          "status": "not_required",
-          "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
-          "reason_code": null
-        }
-      },
-      "qualify_score": 0.1,
-      "confidence": null,
-      "confidence_band": "Low",
-      "confidence_details": null,
-      "confidence_kind": "calibrated_platt_probability",
-      "score_breakdown": "positive_margin=0.0 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
-      "guard_reason": null,
-      "dedup_of": null,
-      "k_eligible": 2,
-      "k_scored": 2,
-      "reagent_signal": 0.0,
-      "ranking_score": -0.3,
-      "timings_ms": {},
-      "rank": 8
-    },
-    {
-      "api_version": "v3",
-      "paper_id": "42750794",
-      "title": "Biosynthesis of vanillin glucoside in Escherichia coli.",
-      "doi": "10.1000/PMC42750794",
-      "pmid": "42750794",
-      "pmcid": "PMC42750794",
-      "pub_year": "2021",
-      "classification": "insufficient_evidence",
-      "classification_reason": "mention_only",
-      "reason_code": "mention_only",
-      "criterion_spec": {
-        "entity": "vanillin",
-        "entity_role": "product",
-        "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
-        "scope": "this_study",
-        "unparsed_clauses": [],
-        "parse_method": "rules",
-        "parse_confidence": 1.0
-      },
-      "evidence": null,
-      "evidence_sentence": null,
-      "evidence_status": "insufficient",
-      "evidence_source": "abstract_only",
-      "evidence_offsets": null,
-      "source_record_sha256": "5fa4b7473ca048aa25b34b898dbe9be9de26b5d10c5cff5a718430689c53fad1",
-      "text_sha256": "5fa4b7473ca048aa25b34b898dbe9be9de26b5d10c5cff5a718430689c53fad1",
-      "aliases_used": [],
-      "retrieved_by": "intent",
-      "conditions": {
-        "entity": {
-          "name": "entity",
-          "status": "supported",
-          "score": 1.0,
-          "evidence": [
-            {
-              "role": "entity",
-              "raw_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill",
-              "display_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill",
-              "raw_start": 0,
-              "raw_end": 198,
-              "sentence_index": 0,
-              "source": "abstract",
-              "verifiable_alone": true
-            },
-            {
-              "role": "entity",
-              "raw_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanillin equivalent directly from glucose.",
-              "display_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanillin equivalent directly from glucose.",
-              "raw_start": 0,
-              "raw_end": 234,
-              "sentence_index": 1,
-              "source": "abstract",
-              "verifiable_alone": true
-            }
-          ],
-          "also_mentions": [],
-          "reason_code": null
-        },
-        "activity": {
-          "name": "activity",
-          "status": "unknown",
-          "score": 0.0,
-          "evidence": [],
-          "also_mentions": [],
-          "reason_code": "mention_only"
-        },
-        "system": {
-          "name": "system",
-          "status": "not_required",
-          "score": 1.0,
-          "evidence": [],
-          "also_mentions": [],
-          "reason_code": null
-        }
-      },
-      "qualify_score": 0.1,
-      "confidence": null,
-      "confidence_band": "Low",
-      "confidence_details": null,
-      "confidence_kind": "calibrated_platt_probability",
-      "score_breakdown": "positive_margin=0.0 role_score=0.0 final_score=-0.3 gate_flags=['mention_only']",
-      "guard_reason": null,
-      "dedup_of": null,
-      "k_eligible": 2,
-      "k_scored": 0,
-      "reagent_signal": 0.0,
-      "ranking_score": -0.3,
-      "timings_ms": {},
-      "rank": 9
+      "rank": 2
     },
     {
       "api_version": "v3",
@@ -989,8 +326,20 @@
         "entity": "vanillin",
         "entity_role": "product",
         "agent_kind": null,
-        "activity": "synthesis or production",
-        "system": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
         "scope": "this_study",
         "unparsed_clauses": [],
         "parse_method": "rules",
@@ -1059,9 +408,20 @@
         },
         "system": {
           "name": "system",
-          "status": "not_required",
+          "status": "supported",
           "score": 1.0,
-          "evidence": [],
+          "evidence": [
+            {
+              "role": "system",
+              "raw_text": "Carboxylic acid reductases reduce vanillic acid into vanillin during microbial bioconversion. The mutant carboxylic acid reductase exhibited a 4.2-fold increase in vanillin product",
+              "display_text": "Carboxylic acid reductases reduce vanillic acid into vanillin during microbial bioconversion. The mutant carboxylic acid reductase exhibited a 4.2-fold increase in vanillin product",
+              "raw_start": 0,
+              "raw_end": 180,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": false
+            }
+          ],
           "also_mentions": [],
           "reason_code": null
         }
@@ -1078,6 +438,855 @@
       "k_scored": 1,
       "reagent_signal": 0.0,
       "ranking_score": -0.3,
+      "timings_ms": {},
+      "rank": 3
+    },
+    {
+      "api_version": "v3",
+      "paper_id": "31234567",
+      "title": "Biotransformation of ferulic acid to vanillin by Amycolatopsis sp.",
+      "doi": "10.1000/31234567",
+      "pmid": "31234567",
+      "pmcid": null,
+      "pub_year": "2021",
+      "classification": "insufficient_evidence",
+      "classification_reason": "activity_unclear",
+      "reason_code": "activity_unclear",
+      "criterion_spec": {
+        "entity": "vanillin",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
+        "scope": "this_study",
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 1.0
+      },
+      "evidence": "text='Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.' char_start=0 char_end=217 source='abstract' role='activity' raw_text='Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.' display_text='Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.' raw_start=0 raw_end=217 sentence_index=0 verifiable_alone=True",
+      "evidence_sentence": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
+      "evidence_status": "insufficient",
+      "evidence_source": "abstract_only",
+      "evidence_offsets": [
+        0,
+        217
+      ],
+      "source_record_sha256": "269918e2a97a724a1424c9640ac97ab00929a5da62e985aea2dc0508d09d6cb8",
+      "text_sha256": "269918e2a97a724a1424c9640ac97ab00929a5da62e985aea2dc0508d09d6cb8",
+      "aliases_used": [],
+      "retrieved_by": "intent",
+      "conditions": {
+        "entity": {
+          "name": "entity",
+          "status": "supported",
+          "score": 1.0,
+          "evidence": [
+            {
+              "role": "entity",
+              "raw_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanilli",
+              "display_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanilli",
+              "raw_start": 0,
+              "raw_end": 164,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            },
+            {
+              "role": "entity",
+              "raw_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
+              "display_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
+              "raw_start": 0,
+              "raw_end": 217,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": null
+        },
+        "activity": {
+          "name": "activity",
+          "status": "unknown",
+          "score": 0.43999999999999995,
+          "evidence": [
+            {
+              "role": "activity",
+              "raw_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
+              "display_text": "Ferulic acid from agricultural byproducts is an ideal natural precursor for flavoring synthesis. Amycolatopsis strain ATCC 39116 converted ferulic acid into vanillin with a molar yield of 68% in fed-batch bioreactors.",
+              "raw_start": 0,
+              "raw_end": 217,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": "activity_unclear"
+        },
+        "system": {
+          "name": "system",
+          "status": "unknown",
+          "score": 0.0,
+          "evidence": [],
+          "also_mentions": [],
+          "reason_code": "system_unstated"
+        }
+      },
+      "qualify_score": 0.1,
+      "confidence": null,
+      "confidence_band": "Low",
+      "confidence_details": null,
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 2,
+      "k_scored": 1,
+      "reagent_signal": 0.0,
+      "ranking_score": -0.3,
+      "timings_ms": {},
+      "rank": 4
+    },
+    {
+      "api_version": "v3",
+      "paper_id": "32456789",
+      "title": "Catalytic oxidation of kraft lignin to vanillin using copper-based heterogeneous catalysts.",
+      "doi": "10.1000/32456789",
+      "pmid": "32456789",
+      "pmcid": null,
+      "pub_year": "2021",
+      "classification": "insufficient_evidence",
+      "classification_reason": "activity_unclear",
+      "reason_code": "activity_unclear",
+      "criterion_spec": {
+        "entity": "vanillin",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
+        "scope": "this_study",
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 1.0
+      },
+      "evidence": "text='Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.' char_start=0 char_end=231 source='abstract' role='activity' raw_text='Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.' display_text='Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.' raw_start=0 raw_end=231 sentence_index=0 verifiable_alone=True",
+      "evidence_sentence": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
+      "evidence_status": "insufficient",
+      "evidence_source": "abstract_only",
+      "evidence_offsets": [
+        0,
+        231
+      ],
+      "source_record_sha256": "1d3325a28b8d027cb250b8c2039f2aa960205bd52e2cf778ca93926fc22b6aae",
+      "text_sha256": "1d3325a28b8d027cb250b8c2039f2aa960205bd52e2cf778ca93926fc22b6aae",
+      "aliases_used": [],
+      "retrieved_by": "intent",
+      "conditions": {
+        "entity": {
+          "name": "entity",
+          "status": "supported",
+          "score": 1.0,
+          "evidence": [
+            {
+              "role": "entity",
+              "raw_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin wit",
+              "display_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin wit",
+              "raw_start": 0,
+              "raw_end": 177,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            },
+            {
+              "role": "entity",
+              "raw_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
+              "display_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
+              "raw_start": 0,
+              "raw_end": 231,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": null
+        },
+        "activity": {
+          "name": "activity",
+          "status": "unknown",
+          "score": 0.43999999999999995,
+          "evidence": [
+            {
+              "role": "activity",
+              "raw_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
+              "display_text": "Valorization of lignin into fine chemicals is key to circular bioeconomy frameworks. We achieved catalytic depolymerization of industrial kraft lignin to yield pure vanillin with high selectivity under mild hydrothermal conditions.",
+              "raw_start": 0,
+              "raw_end": 231,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": "activity_unclear"
+        },
+        "system": {
+          "name": "system",
+          "status": "unknown",
+          "score": 0.0,
+          "evidence": [],
+          "also_mentions": [],
+          "reason_code": "system_unstated"
+        }
+      },
+      "qualify_score": 0.1,
+      "confidence": null,
+      "confidence_band": "Low",
+      "confidence_details": null,
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 2,
+      "k_scored": 1,
+      "reagent_signal": 0.0,
+      "ranking_score": -0.3,
+      "timings_ms": {},
+      "rank": 5
+    },
+    {
+      "api_version": "v3",
+      "paper_id": "34890123",
+      "title": "One-pot chemoenzymatic synthesis of vanillin from eugenol.",
+      "doi": "10.1000/34890123",
+      "pmid": "34890123",
+      "pmcid": null,
+      "pub_year": "2021",
+      "classification": "insufficient_evidence",
+      "classification_reason": "activity_unclear",
+      "reason_code": "activity_unclear",
+      "criterion_spec": {
+        "entity": "vanillin",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
+        "scope": "this_study",
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 1.0
+      },
+      "evidence": "text='Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo' char_start=0 char_end=132 source='abstract' role='activity' raw_text='Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo' display_text='Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo' raw_start=0 raw_end=132 sentence_index=0 verifiable_alone=True",
+      "evidence_sentence": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
+      "evidence_status": "insufficient",
+      "evidence_source": "abstract_only",
+      "evidence_offsets": [
+        0,
+        132
+      ],
+      "source_record_sha256": "1cf7c4a410955a100a5d88c28a1cebfe72a41c4ab2d373a571f714b43af73bc6",
+      "text_sha256": "1cf7c4a410955a100a5d88c28a1cebfe72a41c4ab2d373a571f714b43af73bc6",
+      "aliases_used": [],
+      "retrieved_by": "intent",
+      "conditions": {
+        "entity": {
+          "name": "entity",
+          "status": "supported",
+          "score": 1.0,
+          "evidence": [
+            {
+              "role": "entity",
+              "raw_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
+              "display_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
+              "raw_start": 0,
+              "raw_end": 132,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            },
+            {
+              "role": "entity",
+              "raw_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed for the scalable synthesis of vanillin without hazardous organic solvents.",
+              "display_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed for the scalable synthesis of vanillin without hazardous organic solvents.",
+              "raw_start": 0,
+              "raw_end": 204,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": null
+        },
+        "activity": {
+          "name": "activity",
+          "status": "unknown",
+          "score": 0.43999999999999995,
+          "evidence": [
+            {
+              "role": "activity",
+              "raw_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
+              "display_text": "Eugenol is an inexpensive natural allylbenzene extracted from clove oil. A two-step one-pot chemoenzymatic reaction was developed fo",
+              "raw_start": 0,
+              "raw_end": 132,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": "activity_unclear"
+        },
+        "system": {
+          "name": "system",
+          "status": "unknown",
+          "score": 0.0,
+          "evidence": [],
+          "also_mentions": [],
+          "reason_code": "system_unstated"
+        }
+      },
+      "qualify_score": 0.1,
+      "confidence": null,
+      "confidence_band": "Low",
+      "confidence_details": null,
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 2,
+      "k_scored": 1,
+      "reagent_signal": 0.0,
+      "ranking_score": -0.3,
+      "timings_ms": {},
+      "rank": 6
+    },
+    {
+      "api_version": "v3",
+      "paper_id": "35123490",
+      "title": "Ultrasound-assisted extraction of natural vanillin from Vanilla planifolia pods.",
+      "doi": "10.1000/35123490",
+      "pmid": "35123490",
+      "pmcid": null,
+      "pub_year": "2021",
+      "classification": "insufficient_evidence",
+      "classification_reason": "activity_unclear",
+      "reason_code": "activity_unclear",
+      "criterion_spec": {
+        "entity": "vanillin",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
+        "scope": "this_study",
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 1.0
+      },
+      "evidence": "text='Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.' char_start=0 char_end=201 source='abstract' role='activity' raw_text='Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.' display_text='Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.' raw_start=0 raw_end=201 sentence_index=0 verifiable_alone=True",
+      "evidence_sentence": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
+      "evidence_status": "insufficient",
+      "evidence_source": "abstract_only",
+      "evidence_offsets": [
+        0,
+        201
+      ],
+      "source_record_sha256": "72e34895a0bbc26160c2e5e55e18bd81cda8c4bd7e81f3136f69fff24b279b80",
+      "text_sha256": "72e34895a0bbc26160c2e5e55e18bd81cda8c4bd7e81f3136f69fff24b279b80",
+      "aliases_used": [],
+      "retrieved_by": "intent",
+      "conditions": {
+        "entity": {
+          "name": "entity",
+          "status": "supported",
+          "score": 1.0,
+          "evidence": [
+            {
+              "role": "entity",
+              "raw_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight wi",
+              "display_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight wi",
+              "raw_start": 0,
+              "raw_end": 189,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            },
+            {
+              "role": "entity",
+              "raw_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
+              "display_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
+              "raw_start": 0,
+              "raw_end": 201,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": null
+        },
+        "activity": {
+          "name": "activity",
+          "status": "unknown",
+          "score": 0.43999999999999995,
+          "evidence": [
+            {
+              "role": "activity",
+              "raw_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
+              "display_text": "Green extraction technologies preserve heat-labile aroma components. Under optimized acoustic power, natural vanillin was extracted from cured pods with a yield of 2.45 g/100g dry weight within 30 min.",
+              "raw_start": 0,
+              "raw_end": 201,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": "activity_unclear"
+        },
+        "system": {
+          "name": "system",
+          "status": "unknown",
+          "score": 0.0,
+          "evidence": [],
+          "also_mentions": [],
+          "reason_code": "system_unstated"
+        }
+      },
+      "qualify_score": 0.1,
+      "confidence": null,
+      "confidence_band": "Low",
+      "confidence_details": null,
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 2,
+      "k_scored": 1,
+      "reagent_signal": 0.0,
+      "ranking_score": -0.3,
+      "timings_ms": {},
+      "rank": 7
+    },
+    {
+      "api_version": "v3",
+      "paper_id": "42633741",
+      "title": "Discovery of a thermostable eugenol oxidase for vanillin biosynthesis from vanillyl alcohol.",
+      "doi": "10.1000/PMC42633741",
+      "pmid": "42633741",
+      "pmcid": "PMC42633741",
+      "pub_year": "2021",
+      "classification": "insufficient_evidence",
+      "classification_reason": "activity_unclear",
+      "reason_code": "activity_unclear",
+      "criterion_spec": {
+        "entity": "vanillin",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
+        "scope": "this_study",
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 1.0
+      },
+      "evidence": "text='Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.' char_start=0 char_end=225 source='abstract' role='activity' raw_text='Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.' display_text='Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.' raw_start=0 raw_end=225 sentence_index=0 verifiable_alone=True",
+      "evidence_sentence": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
+      "evidence_status": "insufficient",
+      "evidence_source": "abstract_only",
+      "evidence_offsets": [
+        0,
+        225
+      ],
+      "source_record_sha256": "792b59e843ef9a9462e7dd598daca9783f2ceb563854d8cb0d480bb1ca1fea66",
+      "text_sha256": "792b59e843ef9a9462e7dd598daca9783f2ceb563854d8cb0d480bb1ca1fea66",
+      "aliases_used": [],
+      "retrieved_by": "intent",
+      "conditions": {
+        "entity": {
+          "name": "entity",
+          "status": "supported",
+          "score": 1.0,
+          "evidence": [
+            {
+              "role": "entity",
+              "raw_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-ti",
+              "display_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-ti",
+              "raw_start": 0,
+              "raw_end": 196,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            },
+            {
+              "role": "entity",
+              "raw_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
+              "display_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
+              "raw_start": 0,
+              "raw_end": 225,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": null
+        },
+        "activity": {
+          "name": "activity",
+          "status": "unknown",
+          "score": 0.43999999999999995,
+          "evidence": [
+            {
+              "role": "activity",
+              "raw_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
+              "display_text": "Biocatalytic synthesis of flavor aldehydes requires resilient enzymes under harsh reaction conditions. The engineered enzyme enabled the biocatalytic synthesis of natural vanillin in high space-time yield with 99% conversion.",
+              "raw_start": 0,
+              "raw_end": 225,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": "activity_unclear"
+        },
+        "system": {
+          "name": "system",
+          "status": "unknown",
+          "score": 0.0,
+          "evidence": [],
+          "also_mentions": [],
+          "reason_code": "system_unstated"
+        }
+      },
+      "qualify_score": 0.1,
+      "confidence": null,
+      "confidence_band": "Low",
+      "confidence_details": null,
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": "positive_margin=0.43999999999999995 role_score=0.0 final_score=-0.3 gate_flags=['activity_unclear']",
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 2,
+      "k_scored": 1,
+      "reagent_signal": 0.0,
+      "ranking_score": -0.3,
+      "timings_ms": {},
+      "rank": 8
+    },
+    {
+      "api_version": "v3",
+      "paper_id": "42642972",
+      "title": "Construction of Engineered Escherichia coli for Vanillin Production From Glucose: Pathway Optimization.",
+      "doi": "10.1000/PMC42642972",
+      "pmid": "42642972",
+      "pmcid": "PMC42642972",
+      "pub_year": "2021",
+      "classification": "insufficient_evidence",
+      "classification_reason": "system_mismatch_abstract",
+      "reason_code": "system_mismatch_abstract",
+      "criterion_spec": {
+        "entity": "vanillin",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
+        "scope": "this_study",
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 1.0
+      },
+      "evidence": "text='Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco' char_start=0 char_end=202 source='abstract' role='activity' raw_text='Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco' display_text='Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco' raw_start=0 raw_end=202 sentence_index=0 verifiable_alone=True",
+      "evidence_sentence": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
+      "evidence_status": "insufficient",
+      "evidence_source": "abstract_only",
+      "evidence_offsets": [
+        0,
+        202
+      ],
+      "source_record_sha256": "abb0334eb617b4662e2b5a3b8e58049b3936f6bbdbce3c13f97cd85c6711696c",
+      "text_sha256": "abb0334eb617b4662e2b5a3b8e58049b3936f6bbdbce3c13f97cd85c6711696c",
+      "aliases_used": [],
+      "retrieved_by": "intent",
+      "conditions": {
+        "entity": {
+          "name": "entity",
+          "status": "supported",
+          "score": 1.0,
+          "evidence": [
+            {
+              "role": "entity",
+              "raw_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
+              "display_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
+              "raw_start": 0,
+              "raw_end": 202,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            },
+            {
+              "role": "entity",
+              "raw_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from glucose by deleting endogenous aldehyde reductases.",
+              "display_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from glucose by deleting endogenous aldehyde reductases.",
+              "raw_start": 0,
+              "raw_end": 248,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": null
+        },
+        "activity": {
+          "name": "activity",
+          "status": "unknown",
+          "score": 0.0,
+          "evidence": [
+            {
+              "role": "activity",
+              "raw_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
+              "display_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
+              "raw_start": 0,
+              "raw_end": 202,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": "activity_unclear"
+        },
+        "system": {
+          "name": "system",
+          "status": "unknown",
+          "score": 0.1,
+          "evidence": [
+            {
+              "role": "system",
+              "raw_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
+              "display_text": "Biotechnological production of natural vanilla substitutes avoids synthetic petrochemical routes. We constructed an engineered E. coli strain for the efficient production of vanillin directly from gluco",
+              "raw_start": 0,
+              "raw_end": 202,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": false
+            }
+          ],
+          "also_mentions": [
+            "escherichia coli",
+            "e. coli"
+          ],
+          "reason_code": "system_mismatch_abstract"
+        }
+      },
+      "qualify_score": 0.1,
+      "confidence": null,
+      "confidence_band": "Low",
+      "confidence_details": null,
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": "positive_margin=0.0 role_score=0.0 final_score=-0.4 gate_flags=['system_mismatch_abstract']",
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 2,
+      "k_scored": 2,
+      "reagent_signal": 0.0,
+      "ranking_score": -0.4,
+      "timings_ms": {},
+      "rank": 9
+    },
+    {
+      "api_version": "v3",
+      "paper_id": "42750794",
+      "title": "Biosynthesis of vanillin glucoside in Escherichia coli.",
+      "doi": "10.1000/PMC42750794",
+      "pmid": "42750794",
+      "pmcid": "PMC42750794",
+      "pub_year": "2021",
+      "classification": "insufficient_evidence",
+      "classification_reason": "system_mismatch_abstract",
+      "reason_code": "system_mismatch_abstract",
+      "criterion_spec": {
+        "entity": "vanillin",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "yeast",
+          "family": "microbial",
+          "synonyms": [
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism",
+            "microbial"
+          ]
+        },
+        "scope": "this_study",
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 1.0
+      },
+      "evidence": "text='Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill' char_start=0 char_end=198 source='abstract' role='activity' raw_text='Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill' display_text='Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill' raw_start=0 raw_end=198 sentence_index=0 verifiable_alone=True",
+      "evidence_sentence": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill",
+      "evidence_status": "insufficient",
+      "evidence_source": "abstract_only",
+      "evidence_offsets": [
+        0,
+        198
+      ],
+      "source_record_sha256": "5fa4b7473ca048aa25b34b898dbe9be9de26b5d10c5cff5a718430689c53fad1",
+      "text_sha256": "5fa4b7473ca048aa25b34b898dbe9be9de26b5d10c5cff5a718430689c53fad1",
+      "aliases_used": [],
+      "retrieved_by": "intent",
+      "conditions": {
+        "entity": {
+          "name": "entity",
+          "status": "supported",
+          "score": 1.0,
+          "evidence": [
+            {
+              "role": "entity",
+              "raw_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill",
+              "display_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill",
+              "raw_start": 0,
+              "raw_end": 198,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": true
+            },
+            {
+              "role": "entity",
+              "raw_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanillin equivalent directly from glucose.",
+              "display_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanillin equivalent directly from glucose.",
+              "raw_start": 0,
+              "raw_end": 234,
+              "sentence_index": 1,
+              "source": "abstract",
+              "verifiable_alone": true
+            }
+          ],
+          "also_mentions": [],
+          "reason_code": null
+        },
+        "activity": {
+          "name": "activity",
+          "status": "unknown",
+          "score": 0.0,
+          "evidence": [],
+          "also_mentions": [],
+          "reason_code": "mention_only"
+        },
+        "system": {
+          "name": "system",
+          "status": "unknown",
+          "score": 0.1,
+          "evidence": [
+            {
+              "role": "system",
+              "raw_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill",
+              "display_text": "Vanillin is one of the most widely used flavorings worldwide. In this study, a de novo biosynthetic pathway for vanillin glucoside was established in Escherichia coli, accumulating 2.9 g/L of vanill",
+              "raw_start": 0,
+              "raw_end": 198,
+              "sentence_index": 0,
+              "source": "abstract",
+              "verifiable_alone": false
+            }
+          ],
+          "also_mentions": [
+            "escherichia coli"
+          ],
+          "reason_code": "system_mismatch_abstract"
+        }
+      },
+      "qualify_score": 0.1,
+      "confidence": null,
+      "confidence_band": "Low",
+      "confidence_details": null,
+      "confidence_kind": "calibrated_platt_probability",
+      "score_breakdown": "positive_margin=0.0 role_score=0.0 final_score=-0.4 gate_flags=['system_mismatch_abstract']",
+      "guard_reason": null,
+      "dedup_of": null,
+      "k_eligible": 2,
+      "k_scored": 0,
+      "reagent_signal": 0.0,
+      "ranking_score": -0.4,
       "timings_ms": {},
       "rank": 10
     }
