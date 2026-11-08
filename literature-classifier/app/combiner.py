@@ -194,3 +194,4 @@ def combine_conditions(
         primary_evidence=None,
         ranking_score=0.0
     )
+

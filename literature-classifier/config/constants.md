@@ -23,3 +23,4 @@ This register records all hand-set constants used across the v3 classification p
 ## 2. Sensitivity Analysis Methodology
 
 Every constant was validated by running Leave-One-Entity-Out (LOEO) evaluation on the development split (excluding held-out test entities). Perturbing values by ±20% confirmed that the chosen defaults sit on a flat optimum plateau, avoiding fragile edge-tuning.
+

@@ -260,3 +260,4 @@ def test_t_truth_table():
     # Rule 11: All supported qualifies
     d11 = combine_conditions(c_supp, c_supp, c_supp, spec)
     assert d11.classification == "qualifies" and d11.reason_code is None
+

@@ -51,3 +51,4 @@ This document records the empirical probe results of running `cross-encoder/nli-
 | 28 | Substrate Usage | "Vanillin was used as substrate for peroxidase." | "Vanillin is used as a substrate." | 0.981 | 0.015 | 0.004 | Correct Substrate Entailment |
 | 29 | Formulation Study | "Vanillin was encapsulated in chitosan nanoparticles." | "Vanillin was synthesized in this study." | 0.018 | 0.142 | 0.840 | Formulation Contradiction |
 | 30 | Fermentation Broth | "Biosynthesized in batch fermentation of glucose." | "Biosynthesized in this study." | 0.941 | 0.048 | 0.011 | Fermentation Entailment |
+

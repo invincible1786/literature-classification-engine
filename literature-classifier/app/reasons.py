@@ -151,3 +151,4 @@ def validate_reason_code(code: str) -> bool:
 def list_registered_codes() -> List[str]:
     """List all registered reason codes."""
     return sorted(list(REASON_REGISTRY.keys()))
+

@@ -234,3 +234,4 @@ def parse_criterion_to_spec(
         "G2: '<paper> uses <entity> as a <catalyst|reagent|substrate> [in <activity>]'.",
         unparsed_clauses=unparsed_clauses
     )
+

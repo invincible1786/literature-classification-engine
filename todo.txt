@@ -1,52 +1,91 @@
-Hi Ruhaan,
+I have independently tested your literature classification engine using a new search entity and a user-defined inclusion criterion.
 
-As the first step in our evaluation process at Loopworm, I would like you to complete a small technical assessment related to literature mining and semantic information extraction.
+The initial implementation demonstrates good progress in API integration, information retrieval, and semantic classification. However, I identified some classification errors that need further investigation.
 
-The purpose of this task is to assess your problem-solving ability, Python development skills, and approach to building reliable information retrieval systems.
+The primary issue is that the system sometimes identifies documents as relevant simply because they contain semantically related terms, even when they do not satisfy all the conditions specified by the user.
 
-Problem Statement: Build a Mini Literature Classification Engine
+I would like you to work on the following improvements.
 
-Objective
+Technical Challenge: Improving Semantic Classification and Evidence Validation
+1. Multi-condition semantic classification
 
-Develop a small Python-based prototype that retrieves scientific publications related to a user-provided entity and classifies whether each publication genuinely satisfies a user-defined criterion or merely mentions the entity.
+Currently, the classifier appears to rely heavily on semantic similarity between the document content and the user query.
 
-Requirements
+Explore how to evaluate multiple conditions independently before assigning a final classification.
 
-Literature retrieval: Use the Europe PMC API to retrieve publications for a user-provided search entity.
-Semantic classification: Given a natural-language inclusion criterion, classify each publication as qualifies or does_not_qualify. For example, distinguish a paper that actually synthesises a compound from one that merely uses the compound as a reagent.
-Evidence extraction: For each classification, return the sentence from the available publication text or abstract that best supports the decision. If sufficient evidence is unavailable, explicitly indicate that rather than inventing a sentence.
-Ranking and confidence: Rank the results using a clearly explained scoring method and provide a confidence score or band. Explain how the score is calculated and its limitations.
-Structured output: Return the results as JSON, including the publication title, DOI or PMID where available, classification, evidence sentence, and confidence.
-API implementation: Expose the functionality through a simple FastAPI endpoint that accepts the search entity and inclusion criterion as inputs.
-Technical constraints
+For example, a document may need to satisfy three conditions:
 
-Use Python and freely accessible data sources.
-Do not use paid LLM APIs.
-You may use local embedding models, cross-encoders, or other appropriate NLP approaches.
-Keep the implementation small, modular, and easy to run.
-Document any assumptions and limitations.
-Expected deliverables
+The correct target entity must be present.
 
-Python source code and a requirements.txt file.
-A README containing setup instructions, architecture, and methodology.
-A sample JSON output generated using at least one test entity.
-A brief explanation of how you would evaluate classification accuracy and improve the system using user feedback.
-Evaluation criteria
+The document must describe the specific activity requested.
 
-We will assess the solution based on:
+The activity must be performed in the specified experimental system.
 
-Correctness of the retrieval and classification logic.
-Ability to distinguish actual activity from simple mentions.
-Traceability and correctness of the supporting evidence.
-Quality of the Python implementation and API design.
-Reproducibility, documentation, and clarity of technical reasoning.
-Please prioritise a working, testable prototype over a large or overly complex implementation. The key challenge is not retrieving publications; it is reliably determining whether the available evidence supports the inclusion criterion.
+The final classification should be positive only when the required conditions are sufficiently supported by the available evidence.
 
-Please also include a few test cases demonstrating both qualifying and non-qualifying results, along with a brief explanation of any classification errors you identify.
+2. Context-aware classification
 
-Once you have completed the assessment, we will review the implementation and discuss the results.
+Improve the classifier so that it can distinguish between:
 
+A document that actually performs the requested activity.
 
-Best regards,
-Jagadeeswara Reddy
-Loopworm
+A document that merely mentions the entity.
+
+A document that discusses a related but different activity.
+
+A document that does not provide sufficient information to make a decision.
+
+Consider introducing a third classification, insufficient_evidence, instead of forcing every document into a binary decision.
+
+3. Evidence validation
+
+Every classification must be supported by an actual sentence extracted from the source document.
+
+The system should:
+
+Avoid using publication titles as experimental evidence.
+
+Verify that the selected sentence supports the classification.
+
+Avoid generating or modifying sentences presented as source evidence.
+
+Return an appropriate uncertainty status when supporting evidence cannot be identified.
+
+4. Confidence and ranking improvements
+
+Investigate whether the current confidence-scoring approach reliably reflects classification quality.
+
+Explain how you would distinguish semantic similarity scores from actual classification probabilities and how you would validate confidence calibration.
+
+5. Model evaluation
+
+Evaluate the revised implementation against the same test dataset.
+
+Provide:
+
+Original versus revised classification results.
+
+Number of false positives and false negatives.
+
+Precision, recall, and F1-score.
+
+Examples of incorrectly classified documents and how they were addressed.
+
+A brief explanation of the changes made to the classification architecture.
+
+Expected Deliverables
+Updated Python source code.
+
+Updated classification methodology and architecture.
+
+A reproducible evaluation notebook.
+
+Original versus revised performance comparison.
+
+A brief technical report explaining the improvements and remaining limitations.
+
+Please work on the existing implementation rather than rebuilding the entire application.
+
+Important: The objective is not simply to adjust classification thresholds or improve the reported accuracy. We want to understand whether the system can interpret user-defined criteria, evaluate multiple conditions, identify relevant evidence, and make reliable classification decisions.
+
+Please focus on improving the underlying approach and document the reasoning behind your implementation.
