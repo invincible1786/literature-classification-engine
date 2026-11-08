@@ -385,12 +385,12 @@ Demonstrates statistically significant improvement of the hardened v2 pipeline o
 
 ---
 
-## 11. Automated Test Suite (34/34 Tests Green)
+## 11. Automated Test Suite (100% Pass Rate)
 
 The project includes an automated test suite structured into three distinct tiers:
 
 ```bash
-# Tier 1: Fast deterministic unit tests (35 tests, ~12.6s)
+# Tier 1: Fast deterministic unit tests (35 tests, ~4.0s)
 # Validates Reason Registry, Criterion Parser, C1/C2/C3 conditions, role polarity, truth table precedence, abstract carve-outs, lookarounds, alias vetting, and monotone bands.
 python -m pytest tests/unit -v
 
