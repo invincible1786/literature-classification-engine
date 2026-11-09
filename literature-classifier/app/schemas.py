@@ -3,6 +3,10 @@ from typing import List, Optional, Dict, Any, Literal
 from pydantic import BaseModel, Field, model_validator
 
 from app.criterion_parser import CriterionSpec
+from app.reasons import validate_reason_code
+
+CALIBRATION_VERSION_CANONICAL = "platt-v3.2-mle"
+NEGATIVE_CALIBRATED_REASONS = ("different_activity", "wrong_system")
 
 
 class ClassifyRequest(BaseModel):
@@ -71,9 +75,9 @@ class ClassifyRequest(BaseModel):
         default="v3",
         description="Pipeline version to run: 'v3' (default multi-condition 3-class) or 'v2' (legacy binary)."
     )
-    abstract_negative_policy: Literal["conservative", "strict"] = Field(
-        default="conservative",
-        description="Policy for abstract-only host mismatches: 'conservative' (insufficient_evidence) or 'strict' (does_not_qualify)."
+    abstract_negative_policy: Literal["strict", "conservative"] = Field(
+        default="strict",
+        description="D6 policy for abstract-only host mismatches: 'strict' (does_not_qualify/wrong_system, default) or 'conservative' (system_unstated)."
     )
     allow_partial_criterion: bool = Field(
         default=False,
@@ -133,7 +137,7 @@ class ConfidenceDetails(BaseModel):
     band: str = Field(default="Low", description="'High' (>=0.80), 'Medium' (0.50-0.80), or 'Low' (<0.50).")
     value: Optional[float] = Field(default=None, description="Numeric confidence value in [0.0, 1.0], or null.")
     method: str = Field(default="platt_scaling", description="Calibration methodology ('platt_scaling', 'not_fitted').")
-    calibration_version: str = Field(default="v3-logistic", description="Calibration model revision.")
+    calibration_version: str = Field(default=CALIBRATION_VERSION_CANONICAL, description="Calibration model revision.")
 
     @model_validator(mode="after")
     def sync_confidence_values(self) -> "ConfidenceDetails":
@@ -249,6 +253,10 @@ class PaperClassificationResult(BaseModel):
         default=None,
         description="Which role pattern or guard triggered disqualification."
     )
+    diagnostics: Optional[Dict[str, Any]] = Field(
+        default=None,
+        description="Diagnostic information including resolved antecedents and structural guard firings."
+    )
     dedup_of: Optional[str] = Field(
         default=None,
         description="Identifier of duplicate publication absorbed by this record."
@@ -280,7 +288,12 @@ class PaperClassificationResult(BaseModel):
                 self.classification_reason = self.classification
 
         # Mirror evidence object to evidence_sentence and evidence_offsets
-        if self.evidence is not None:
+        # F1: When evidence_status == "insufficient" or "no_text", set top-level evidence fields to null
+        if self.evidence_status in ("insufficient", "no_text"):
+            self.evidence = None
+            self.evidence_sentence = None
+            self.evidence_offsets = None
+        elif self.evidence is not None:
             if not self.evidence_sentence:
                 self.evidence_sentence = self.evidence.text
             if not self.evidence_offsets:
@@ -288,7 +301,7 @@ class PaperClassificationResult(BaseModel):
             if not self.evidence_source:
                 self.evidence_source = self.evidence.source
         elif self.evidence_sentence and not self.evidence:
-            if self.evidence_status not in ("insufficient", "no_text") and not str(self.evidence_sentence).startswith("No "):
+            if not str(self.evidence_sentence).startswith("No "):
                 start = self.evidence_offsets[0] if self.evidence_offsets and len(self.evidence_offsets) == 2 else 0
                 end = self.evidence_offsets[1] if self.evidence_offsets and len(self.evidence_offsets) == 2 else len(self.evidence_sentence)
                 self.evidence = EvidenceSpan(text=self.evidence_sentence, char_start=start, char_end=end, source=self.evidence_source or "abstract")
@@ -304,7 +317,7 @@ class PaperClassificationResult(BaseModel):
                     value=float(score_val),
                     band=str(band_str).capitalize(),
                     method=self.confidence.get("method", "platt_scaling"),
-                    calibration_version=self.confidence.get("calibration_version", "v3-logistic")
+                    calibration_version=self.confidence.get("calibration_version", CALIBRATION_VERSION_CANONICAL)
                 )
         elif isinstance(self.confidence, ConfidenceDetails):
             self.confidence_band = self.confidence.band.capitalize()
@@ -316,6 +329,40 @@ class PaperClassificationResult(BaseModel):
                 self.confidence_band = band_val
             if not self.confidence_details:
                 self.confidence_details = ConfidenceDetails(score=score_val, value=score_val, band=self.confidence_band)
+
+        # Enforce D5 confidence table and reason registry invariants in v3+
+        if self.api_version == "v3":
+            if self.classification == "qualifies" and self.reason_code is not None:
+                raise ValueError("reason_code must be None when classification == 'qualifies'")
+            if self.classification != "qualifies" and self.reason_code is not None:
+                if not validate_reason_code(self.reason_code):
+                    raise ValueError(f"Unregistered reason_code: {self.reason_code}")
+
+            # Extract numeric confidence if present
+            has_numeric_conf = False
+            if isinstance(self.confidence, (int, float)):
+                has_numeric_conf = True
+            elif isinstance(self.confidence, dict) and (
+                self.confidence.get("score") is not None or self.confidence.get("value") is not None
+            ):
+                has_numeric_conf = True
+            elif isinstance(self.confidence, ConfidenceDetails) and (
+                self.confidence.score is not None or self.confidence.value is not None
+            ):
+                has_numeric_conf = True
+
+            if self.classification == "insufficient_evidence" and has_numeric_conf:
+                raise ValueError("D5 invariant: insufficient_evidence must emit confidence=None")
+            if (
+                self.classification == "does_not_qualify"
+                and self.reason_code is not None
+                and self.reason_code not in NEGATIVE_CALIBRATED_REASONS
+                and has_numeric_conf
+            ):
+                raise ValueError(
+                    f"D5 invariant: categorical/veto negative '{self.reason_code}' must emit confidence=None"
+                )
+
         return self
 
 
@@ -330,7 +377,7 @@ class ClassifyResponse(BaseModel):
     query_used: str = Field(default="", description="Actual Lucene query used for retrieval.")
     query_plain: Optional[str] = Field(default=None, description="Plain entity Lucene query used in dual retrieval.")
     model_revision: str = Field(..., description="Pinned model revision hash.")
-    calibration_version: str = Field(default="v3-logistic", description="Calibration model version.")
+    calibration_version: str = Field(default=CALIBRATION_VERSION_CANONICAL, description="Calibration model version.")
     n_retrieved: int = Field(default=0, description="Total raw papers retrieved from Europe PMC.")
     total_retrieved: int = Field(default=0, description="Total raw papers retrieved (backwards compatibility).")
     n_after_dedupe: int = Field(default=0, description="Unique papers remaining after deduplication.")

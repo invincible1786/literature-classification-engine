@@ -30,9 +30,9 @@ REASON_REGISTRY: Dict[str, ReasonCodeInfo] = {
     ),
     "mention_only": ReasonCodeInfo(
         code="mention_only",
-        label="insufficient_evidence",
-        kind="abstain",
-        description="The entity is mentioned topically without any experimental activity claim.",
+        label="does_not_qualify",
+        kind="evidence-based",
+        description="The entity is mentioned topically without any experimental activity claim (verb-gate negative).",
         fixture_example="Network pharmacology paper discussing target receptors across disease states."
     ),
     "activity_unclear": ReasonCodeInfo(
@@ -67,8 +67,8 @@ REASON_REGISTRY: Dict[str, ReasonCodeInfo] = {
         code="system_mismatch_abstract",
         label="insufficient_evidence",
         kind="abstain",
-        description="Abstract mentions an alternative host organism (e.g. E. coli when yeast required), but under conservative policy full-text may have used yeast.",
-        fixture_example="Abstract reports production in E. coli while criterion specified Saccharomyces cerevisiae."
+        description="[DEPRECATED under D6] Retained for backward schema compatibility only; never emitted in v3.2+.",
+        fixture_example="Deprecated: abstract host contradictions now emit wrong_system."
     ),
     "conflicting_evidence": ReasonCodeInfo(
         code="conflicting_evidence",
@@ -114,9 +114,9 @@ REASON_REGISTRY: Dict[str, ReasonCodeInfo] = {
     ),
     "background_citation": ReasonCodeInfo(
         code="background_citation",
-        label="insufficient_evidence",
-        kind="abstain",
-        description="Activity mention is an epistemic citation of prior art ('previously reported', 'has been produced') rather than primary experimental finding of this study.",
+        label="does_not_qualify",
+        kind="evidence-based",
+        description="Activity mention is an epistemic citation of prior art ('previously reported', 'has been produced') rather than a primary finding of this study.",
         fixture_example="'Artemisinic acid has been produced by engineered yeast in previous studies (Ro et al., 2006).'"
     ),
     "possible_review": ReasonCodeInfo(
@@ -132,6 +132,13 @@ REASON_REGISTRY: Dict[str, ReasonCodeInfo] = {
         kind="veto",
         description="Rule veto: publication metadata pubType=review with no first-person experimental cues in scope of this_study.",
         fixture_example="Europe PMC pubType='Review' discussing synthetic literature without primary lab experimentation."
+    ),
+    "unstated_threshold": ReasonCodeInfo(
+        code="unstated_threshold",
+        label="insufficient_evidence",
+        kind="abstain",
+        description="A quantitative criterion threshold (e.g. yield or titer bound) could not be verified from available text.",
+        fixture_example="Criterion requires 'yield > 1 g/L', but the abstract reports biosynthesis without numeric titers."
     ),
 }
 

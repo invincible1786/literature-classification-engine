@@ -315,6 +315,228 @@ def split_sentences(text: str) -> List[str]:
     return [s.text for s in split_sentences_with_spans(canonicalize(text))]
 
 
+split_sentences_with_offsets = split_sentences_with_spans
+
+# WS15-B & WS14-E constants (registered in config/constants.md)
+CLAUSE_SPLIT_MIN = 180
+ANAPHORA_WINDOW = 2
+
+# F5: Unified chemical compound prefix list (registered in config/constants.md)
+COMPOUND_PREFIXES = ["dihydro", "deoxy", "iso", "nor", "epi"]
+_RELATED_PREFIXES = COMPOUND_PREFIXES
+
+# F6: Evidence quality threshold (registered in config/constants.md)
+MIN_EVIDENCE_CHARS = 30
+
+# F6: Finite production verbs (verb-lexicon check)
+FINITE_PRODUCTION_VERBS = [
+    "synthesize", "synthesized", "synthesizes", "synthesizing",
+    "synthesise", "synthesised", "synthesises", "synthesising",
+    "produce", "produced", "produces", "producing",
+    "afford", "afforded", "affords", "affording",
+    "yield", "yielded", "yields", "yielding",
+    "biosynthesize", "biosynthesized", "biosynthesizes", "biosynthesizing",
+    "biosynthesise", "biosynthesised", "biosynthesises", "biosynthesising",
+    "isolate", "isolated", "isolates", "isolating",
+    "obtain", "obtained", "obtains", "obtaining",
+    "prepare", "prepared", "prepares", "preparing",
+    "generate", "generated", "generates", "generating",
+    "construct", "constructed", "constructs", "constructing",
+    "engineer", "engineered", "engineers", "engineering",
+    "express", "expressed", "expresses", "expressing",
+    "accumulate", "accumulated", "accumulates", "accumulating",
+    "convert", "converted", "converts", "converting",
+    "ferment", "fermented", "ferments", "fermenting",
+    "assemble", "assembled", "assembles", "assembling",
+    "form", "formed", "forms", "forming",
+    "demonstrate", "demonstrated", "demonstrates",
+    "show", "showed", "shown", "shows",
+    "achieve", "achieved", "achieves",
+    "develop", "developed", "develops",
+]
+
+# F13: Review detection beyond pubType (registered in config/constants.md)
+REVIEW_STRONG_CUES = ["this review", "we review", "literature review", "here we summarize"]
+REVIEW_WEAK_CUES = [
+    "recent advances", "perspectives", "clinical potential", "mechanistic insights",
+    "biotechnological advances", "current understanding", "future perspectives", "state of the art"
+]
+RESULTS_MARKERS = ["we show", "we found", "we constructed", "was achieved", "were synthesized"]
+
+
+def has_finite_production_verb(text: str) -> bool:
+    """Check whether text contains a finite action verb from FINITE_PRODUCTION_VERBS (F4/F6)."""
+    low = text.lower()
+    return any(re.search(rf"\b{re.escape(v)}\b", low) for v in FINITE_PRODUCTION_VERBS)
+
+
+def detect_review_cues(title: Optional[str], text: Optional[str]) -> Tuple[bool, bool, bool]:
+    """
+    Evaluate text cues on title and abstract for review status (F13).
+    Returns: (has_strong_cue, has_weak_cue, has_results_marker)
+    Title is used for classification only, never as evidence.
+    """
+    combined = f"{title or ''} {text or ''}".lower()
+    has_results = any(marker in combined for marker in RESULTS_MARKERS)
+    has_strong = any(cue in combined for cue in REVIEW_STRONG_CUES)
+    has_weak = any(cue in combined for cue in REVIEW_WEAK_CUES)
+    return has_strong, has_weak, has_results
+
+
+def is_related_compound_collision(sentence: str, entity: str) -> bool:
+    """Detect if entity match in sentence is actually a modified related chemical derivative (F5)."""
+    clean_ent = entity.strip().lower()
+    for prefix in COMPOUND_PREFIXES:
+        pattern = rf"\b{prefix}[- ]?{re.escape(clean_ent)}\b"
+        pattern_concat = rf"\b{prefix}{re.escape(clean_ent)}\b"
+        if re.search(pattern, sentence, re.IGNORECASE) or re.search(pattern_concat, sentence, re.IGNORECASE):
+            standalone = rf"(?<!\w){re.escape(clean_ent)}(?!\w)"
+            matches = list(re.finditer(standalone, sentence, re.IGNORECASE))
+            if not matches or all(
+                (m.start() >= len(prefix) and sentence[m.start() - len(prefix):m.start()].lower().startswith(prefix))
+                for m in matches
+            ):
+                return True
+    return False
+
+_CONJUNCTION_MARKERS = (", however", ", whereas", ", although", ", but ")
+_ANAPHORA_RE = re.compile(
+    r"\b(?:this|the(?:\s+(?:resulting|target|same|above))?)\s+"
+    r"(?:compound|product|molecule|alkaloid|metabolite|substance|entity|ester|acid)\b|"
+    r"\bthe\s+former\b|"
+    r"(?<!\w)it(?!\w)(?!\s+(?:is|was|remains|has\s+been)\s+(?:known|clear|important|noteworthy|widely|reported|shown|found|suggested))",
+    re.IGNORECASE,
+)
+
+
+def _find_depth0_splits(text: str, mode: str) -> List[Tuple[int, int]]:
+    """
+    Scan text tracking bracket nesting depth across '([{' and ')]}'.
+    Returns list of (cut_end_of_left, start_of_right) at bracket depth 0.
+    """
+    splits: List[Tuple[int, int]] = []
+    depth = 0
+    lower = text.lower()
+    n = len(text)
+    i = 0
+    while i < n:
+        ch = text[i]
+        if ch in "([{":
+            depth += 1
+        elif ch in ")]}":
+            depth = max(0, depth - 1)
+        elif depth == 0:
+            if mode == "semicolon" and ch == ";":
+                splits.append((i, i + 1))
+            elif mode == "conjunction" and ch == ",":
+                matched_marker = None
+                for marker in _CONJUNCTION_MARKERS:
+                    if lower.startswith(marker, i):
+                        # Require word boundary / comma / space after marker word
+                        end_idx = i + len(marker)
+                        if end_idx >= n or not text[end_idx].isalnum():
+                            matched_marker = marker
+                            break
+                if matched_marker is not None:
+                    # Keep the conjunction word ('however', 'but', etc.) on the right clause
+                    splits.append((i, i + 1))
+            elif mode == "comma" and ch == "," and i + 1 < n and text[i + 1] == " ":
+                splits.append((i, i + 1))
+        i += 1
+    return splits
+
+
+def _apply_splits_to_span(sent: Sent, splits: List[Tuple[int, int]]) -> List[Sent]:
+    """Slice a Sent at (left_end, right_start) pairs while preserving byte-exact offsets."""
+    if not splits:
+        return [sent]
+    pieces: List[Sent] = []
+    cursor = 0
+    text = sent.text
+    for left_end, right_start in splits + [(len(text), len(text))]:
+        raw_piece = text[cursor:left_end]
+        l_strip = len(raw_piece) - len(raw_piece.lstrip())
+        r_strip = len(raw_piece) - len(raw_piece.rstrip())
+        trimmed = raw_piece.strip()
+        if trimmed and len(trimmed) >= 4:
+            p_start = sent.start + cursor + l_strip
+            p_end = sent.start + left_end - r_strip
+            pieces.append(Sent(
+                text=trimmed,
+                start=p_start,
+                end=p_end,
+                sentence_index=sent.sentence_index,
+                source=sent.source,
+            ))
+        cursor = right_start
+    return pieces if pieces else [sent]
+
+
+def split_clauses_bracket_aware(sent: Sent, min_len: int = CLAUSE_SPLIT_MIN) -> List[Sent]:
+    """
+    Bracket-depth-aware syntactic clause splitter (WS15-B / WS17-R5).
+    Only splits at bracket depth 0 so IUPAC chemical names like '2,2'-bipyridine',
+    'N,N-dimethyltryptamine', and 'dibenzo[b,d]oxepine' stay intact.
+    Priority order: ';' -> ', however/whereas/although/but' -> ', ' fallback.
+    """
+    if len(sent.text) < min_len:
+        return [sent]
+
+    # Step 1: semicolon splits (depth 0)
+    clauses = _apply_splits_to_span(sent, _find_depth0_splits(sent.text, "semicolon"))
+
+    # Step 2: conjunction splits for any clause still >= min_len
+    next_clauses: List[Sent] = []
+    for cl in clauses:
+        if len(cl.text) >= min_len:
+            next_clauses.extend(_apply_splits_to_span(cl, _find_depth0_splits(cl.text, "conjunction")))
+        else:
+            next_clauses.append(cl)
+    clauses = next_clauses
+
+    # Step 3: depth-0 ', ' fallback for any clause still >= min_len (min_len=0 forces all levels when requested)
+    final_clauses: List[Sent] = []
+    for cl in clauses:
+        if len(cl.text) >= min_len and len(cl.text) > 20:
+            # Skip splitting tiny introductory phrases unless still over min_len
+            comma_splits = _find_depth0_splits(cl.text, "comma")
+            split_parts = _apply_splits_to_span(cl, comma_splits)
+            # Only accept comma fallback if fragments are non-trivial (>= 12 chars each)
+            if all(len(p.text) >= 12 for p in split_parts):
+                final_clauses.extend(split_parts)
+            else:
+                final_clauses.append(cl)
+        else:
+            final_clauses.append(cl)
+
+    return final_clauses
+
+
+def resolve_anaphora(
+    sentences: List[Sent],
+    entity_regex: re.Pattern,
+    window: int = ANAPHORA_WINDOW,
+) -> Dict[int, int]:
+    """
+    Deterministic, zero-ML cross-sentence anaphora resolver (WS14-E).
+    Maps sentence index i (lacking literal entity match but containing chemical anaphora)
+    to nearest antecedent sentence index j in [i - window, i - 1] that matches entity_regex.
+    Strictly no lookahead.
+    """
+    resolved: Dict[int, int] = {}
+    for idx, sent in enumerate(sentences):
+        if entity_regex.search(sent.text):
+            continue
+        if not _ANAPHORA_RE.search(sent.text):
+            continue
+        start_back = max(0, idx - window)
+        for back in range(idx - 1, start_back - 1, -1):
+            if entity_regex.search(sentences[back].text):
+                resolved[idx] = back
+                break
+    return resolved
+
+
 def build_entity_regex(entity: str, aliases: Optional[List[str]] = None) -> re.Pattern:
     """
     Build a zero-width lookaround regex matching the entity and vetted aliases.
@@ -341,19 +563,20 @@ def build_entity_regex(entity: str, aliases: Optional[List[str]] = None) -> re.P
 
 
 _DEFAULT_PRODUCTION_VERBS = [
-    "synthesize", "synthesized", "synthesizes", "synthesizing", "synthesised",
-    "produce", "produced", "produces", "producing",
+    "synthesize", "synthesized", "synthesizes", "synthesizing", "synthesised", "synthesis",
+    "produce", "produced", "produces", "producing", "production",
     "afford", "afforded", "affords", "affording",
     "yield", "yielded", "yields", "yielding",
-    "biosynthesize", "biosynthesized", "biosynthesizes", "biosynthesizing",
+    "biosynthesize", "biosynthesized", "biosynthesizes", "biosynthesizing", "biosynthesis",
     "isolate", "isolated", "isolates", "isolating",
     "extract", "extracted", "extracts", "extracting",
     "prepare", "prepared", "prepares", "preparing",
-    "ferment", "fermented", "ferments", "fermenting",
+    "ferment", "fermented", "ferments", "fermenting", "fermentation",
     "generate", "generated", "generates", "generating",
     "obtain", "obtained", "obtains", "obtaining",
     "engineer", "engineered", "engineers", "engineering",
-    "express", "expressed", "expresses", "expressing",
+    "express", "expressed", "expresses", "expressing", "expression", "overexpression",
+    "secretion", "secreted", "secrete", "cloned",
     "titer", "titers", "accumulation", "overproduction"
 ]
 
@@ -377,9 +600,10 @@ _RE_THIS_WORK_POSITIVE = re.compile(
 )
 
 _RE_THIS_WORK_BACKGROUND = re.compile(
-    r"\b(?:has\s+been\s+(?:produced|synthesized|reported|isolated|prepared)|"
-    r"have\s+been\s+(?:produced|synthesized|reported|isolated|prepared)|"
-    r"reported\s+to|previously|it\s+is\s+known|prior\s+studies|earlier\s+reported|widely\s+used)\b",
+    r"\b(?:has\s+been\s+(?:produced|synthesized|reported|isolated|prepared|achieved|demonstrated|established|described|detailed)|"
+    r"have\s+been\s+(?:produced|synthesized|reported|isolated|prepared|achieved|demonstrated|established|described|detailed)|"
+    r"reported\s+to|previously|it\s+is\s+known|prior\s+studies|earlier\s+reported|widely\s+used|"
+    r"seminal\s+(?:study|work|report|paper)|et\s+al\.?)\b",
     re.I
 )
 

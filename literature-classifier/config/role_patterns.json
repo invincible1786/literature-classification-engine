@@ -1,7 +1,7 @@
 [
   "in the presence of\\s+(?:the\\s+)?{E}",
-  "catalyz(?:ed|ed by)\\s+(?:by\\s+)?{E}",
-  "mediated by\\s+(?:the\\s+)?{E}",
+  "catalyz(?:ed\\s+by|ed)\\s+(?:(?:a|an|the)\\s+)?(?:[a-zA-Z0-9\\-]+\\s+){0,2}{E}",
+  "mediated\\s+by\\s+(?:(?:a|an|the)\\s+)?(?:[a-zA-Z0-9\\-]+\\s+){0,2}{E}",
   "using\\s+(?:the\\s+)?{E}\\s+as\\s+(?:a\\s+)?(?:catalyst|reagent|precursor|substrate|starting material)",
   "treated with\\s+(?:the\\s+)?{E}",
   "(?:immobili[sz]ation|impregnation) of\\s+{E}",
@@ -12,6 +12,8 @@
   "used\\s+{E}\\s+as (?:a\\s+)?(?:starting material|precursor|reagent|catalyst|substrate)",
   "addition of\\s+(?:the\\s+)?{E}",
   "supplemented with\\s+(?:the\\s+)?{E}",
-  "fed (?:with\\s+)?(?:diets containing\\s+)?{E}"
+  "fed (?:with\\s+)?(?:diets containing\\s+)?{E}",
+  "(?:utilizing|employing|using)\\s+(?:the\\s+)?(?:[\\w\\-]+\\s+){0,2}{E}",
+  "{E}\\s+(?:salt\\s+)?as\\s+(?:the\\s+)?(?:precursor|catalyst|reagent|metal source)"
 ]
 

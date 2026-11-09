@@ -72,6 +72,16 @@
       "rat",
       "mammalian",
       "mammalian cell"
+    ],
+    "in_vitro": [
+      "in vitro",
+      "in-vitro",
+      "cell-free",
+      "cell free",
+      "cell-free extract",
+      "cell free extract",
+      "enzyme cascade",
+      "chemoenzymatic"
     ]
   },
   "canonical_synonyms": {
@@ -80,7 +90,8 @@
     "escherichia coli": ["e. coli", "bacteria"],
     "bacillus subtilis": ["b. subtilis", "bacteria"],
     "corynebacterium glutamicum": ["c. glutamicum", "bacteria"],
-    "yarrowia lipolytica": ["y. lipolytica", "yeast"]
+    "yarrowia lipolytica": ["y. lipolytica", "yeast"],
+    "in vitro": ["in-vitro", "cell-free", "cell free extract", "enzyme cascade", "chemoenzymatic"]
   }
 }
 
