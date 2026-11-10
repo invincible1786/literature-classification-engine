@@ -20,6 +20,8 @@ from app.text_utils import (
     detect_this_work_cues,
     compute_sha256,
     clean_markup_and_unescape,
+    resolve_anaphora,
+    detect_review_cues,
     Sent,
 )
 from app.hypotheses import (
@@ -34,12 +36,20 @@ from app.hypotheses import (
 from app.scoring import (
     margin_to_qualify_score,
     score_to_calibrated_prob,
+    calibrate_qualifier,
+    calibrate_negative,
     calculate_confidence,
     assign_confidence_band,
     ranking_sort_key,
     CONFIDENCE_KIND,
+    CALIBRATION_VERSION,
 )
-from app.schemas import EvidenceSpan, ConfidenceDetails, ScoreBreakdown
+from app.schemas import (
+    EvidenceSpan,
+    ConfidenceDetails,
+    ScoreBreakdown,
+    NEGATIVE_CALIBRATED_REASONS,
+)
 from app.criterion_parser import (
     CriterionSpec,
     CriterionParseError,
@@ -549,7 +559,7 @@ def classify_publications(
     two_hit_rule: bool = False,
     strict_verification: bool = False,
     pipeline: str = "v3",
-    abstract_negative_policy: str = "conservative",
+    abstract_negative_policy: str = "strict",
     allow_partial_criterion: bool = False,
     criterion_spec: Optional[CriterionSpec] = None
 ) -> ClassificationRunResult:
@@ -606,13 +616,23 @@ def classify_publications(
         raw_abstract = pub.get("abstractText")
         title = clean_markup_and_unescape(raw_title) if raw_title else None
         abstract = clean_markup_and_unescape(raw_abstract) if raw_abstract else None
-        raw_text = pub.get("raw_text") or f"{raw_title or ''} {raw_abstract or ''}".strip()
-        doc_sha = pub.get("source_record_sha256") or compute_sha256(raw_text)
+        raw_record_for_hash = pub.get("raw_text") or f"{raw_title or ''} {raw_abstract or ''}".strip()
+        doc_sha = pub.get("source_record_sha256") or compute_sha256(raw_record_for_hash)
 
         canon_title = canonicalize(title)
         canon_abstract = canonicalize(abstract)
-        combined_text = f"{canon_title}. {canon_abstract}".strip() if canon_title else canon_abstract
-        canon_doc = combined_text
+        fulltext_secs = pub.get("fulltext_sections")
+        is_fulltext = bool(fulltext_secs)
+
+        # Structural title/abstract isolation (WS15-A):
+        # Title is NEVER concatenated into body sentences or candidate evidence.
+        body_raw = raw_abstract or ""
+        if fulltext_secs and isinstance(fulltext_secs, dict):
+            sec_texts = [str(v) for v in fulltext_secs.values() if v]
+            if sec_texts:
+                extra_raw = " ".join(sec_texts)
+                body_raw = f"{body_raw} {extra_raw}".strip() if body_raw else extra_raw
+        canon_body = canonicalize(body_raw) if body_raw else canon_abstract
 
         paper_id = str(pub.get("pmid") or pub.get("doi") or pub.get("title") or f"paper_{idx}")
         doi = pub.get("doi")
@@ -622,10 +642,9 @@ def classify_publications(
         pub_type = pub.get("pubType", "")
         dedup_of = pub.get("dedup_of")
         retrieved_by = pub.get("retrieved_by", "intent")
-        is_fulltext = bool(pub.get("fulltext_sections"))
 
         # Precedence Rule 1: No usable text
-        if not canon_doc:
+        if not canon_body:
             results.append({
                 "api_version": "v3",
                 "paper_id": paper_id,
@@ -651,7 +670,7 @@ def classify_publications(
                 "qualify_score": None,
                 "confidence": None,
                 "confidence_band": "Low",
-                "confidence_details": ConfidenceDetails(score=None, band="Low", method="not_fitted"),
+                "confidence_details": None,
                 "confidence_kind": CONFIDENCE_KIND,
                 "score_breakdown": ScoreBreakdown(positive_margin=None, role_score=None, final_score=None, gate_flags=["no_text"]),
                 "guard_reason": None,
@@ -664,52 +683,76 @@ def classify_publications(
             })
             continue
 
-        # Split sentences
-        sentences = split_sentences_with_spans(canon_doc)
+        # Split ONLY abstract/fulltext body sentences (WS15-A)
+        sentences = split_sentences_with_spans(canon_body, source="fulltext" if is_fulltext else "abstract")
 
-        # Check pubType review veto
+        # Check pubType review veto and text-cue review detection (F13)
         has_pos_exp = any(detect_this_work_cues(s.text)[0] for s in sentences)
-        is_review = is_review_article(canon_title, canon_abstract) or "review" in pub_type.lower()
-        is_pubtype_review_veto = is_review and not has_pos_exp and spec.scope == "this_study"
+        has_strong, has_weak, has_results = detect_review_cues(canon_title, canon_body)
+        has_experimental_results = has_results or has_pos_exp
 
-        # Check C1: Entity
+        is_metadata_review = is_review_article(canon_title, canon_body) or "review" in pub_type.lower()
+        is_pubtype_review_veto = (
+            (is_metadata_review or has_strong)
+            and not has_experimental_results
+            and spec.scope == "this_study"
+        )
+
+        # Check C1: Entity + Anaphora resolution (WS14-E)
+        entity_regex = build_entity_regex(entity, vetted_aliases)
         c1, role_veto_reason = check_c1_entity(
             sentences=sentences,
-            raw_text=raw_text,
+            raw_text=body_raw,
             spec=spec,
             aliases=vetted_aliases,
             is_fulltext=is_fulltext
         )
+        anaphora_map = resolve_anaphora(sentences, entity_regex)
 
-        # Soft candidate selection for activity
-        entity_regex = build_entity_regex(entity, vetted_aliases)
-        eligible_sentences = [s for s in sentences if entity_regex.search(s.text)]
+        # Candidate selection (direct entity mentions + anaphora-resolved sentences)
+        eligible_sentences = [
+            s for s in sentences
+            if entity_regex.search(s.text) or s.sentence_index in anaphora_map
+        ]
         candidate_sentences = select_candidates_intent_aware(
             eligible_sentences,
             intent=intent,
             max_candidates=DEFAULT_MAX_CANDIDATES
         )
 
-        # Check C2: Activity
+        # Check C2: Activity (clause splitting + clause-local p_this_work + G3 constraints)
         c2 = check_c2_activity(
             candidate_sentences=candidate_sentences,
-            raw_text=raw_text,
+            raw_text=body_raw,
             spec=spec,
             nli_scorer=scorer,
             tau_activity=tau,
-            tau_review=0.60
+            tau_review=0.60,
+            all_sentences=sentences,
+            anaphora_map=anaphora_map,
+            entity_regex=entity_regex,
+            title=canon_title,
         )
 
-        # Check C3: System
+        # F13 weak review cue routing: weak cues only with no results marker -> possible_review (abstain)
+        if not is_pubtype_review_veto and has_weak and not has_experimental_results and spec.scope == "this_study":
+            c2.status = "unknown"
+            c2.reason_code = "possible_review"
+            c2.evidence = []
+
+        # Check C3: System (clause-attached + comparative exclusion + D6)
         c3 = check_c3_system(
             sentences=sentences,
-            raw_text=raw_text,
+            raw_text=body_raw,
             spec=spec,
             is_fulltext=is_fulltext,
-            abstract_negative_policy=abstract_negative_policy  # type: ignore
+            abstract_negative_policy=abstract_negative_policy,  # type: ignore
+            entity_regex=entity_regex,
         )
 
-        # Combine via strict 11 precedence rules
+        has_conflicting_synthesis_claim = bool(role_veto_reason and c2.synthesis_claim_sents)
+
+        # Combine via strict 12 precedence rules (WS17-R5)
         dec: DecisionResult = combine_conditions(
             c1=c1,
             c2=c2,
@@ -717,57 +760,72 @@ def classify_publications(
             spec=spec,
             has_usable_text=True,
             role_veto_reason=role_veto_reason,
+            has_conflicting_synthesis_claim=has_conflicting_synthesis_claim,
             is_pubtype_review_veto=is_pubtype_review_veto,
             is_evidence_split=False
         )
 
-        # Winning evidence processing & invariant assertion
+        # Winning evidence processing & byte-exact slice invariant (WS5 / WS15-A)
         winning_ev_obj = None
         evidence_text = None
         evidence_offsets = None
-        if dec.primary_evidence is not None:
-            winning_ev_obj = dec.primary_evidence.to_v2_span()
-            evidence_text = dec.primary_evidence.display_text
-            evidence_offsets = [dec.primary_evidence.raw_start, dec.primary_evidence.raw_end]
-
-            # Invariant check: ensure display_text is present in canonical document
-            if strict_verification:
-                assert evidence_text in canon_doc or dec.primary_evidence.raw_text in raw_text, (
-                    "Evidence text must be found verbatim in source!"
+        if dec.primary_evidence is not None and dec.evidence_status not in ("insufficient", "no_text"):
+            cand_ev = dec.primary_evidence.to_v2_span()
+            slice_ok = (
+                0 <= cand_ev.char_start < cand_ev.char_end <= len(canon_body)
+                and canon_body[cand_ev.char_start:cand_ev.char_end] == cand_ev.display_text
+            )
+            if not slice_ok:
+                if strict_verification:
+                    raise AssertionError(
+                        f"Evidence slice invariant failed: canon[{cand_ev.char_start}:{cand_ev.char_end}] != {cand_ev.display_text!r}"
+                    )
+                dec = DecisionResult(
+                    classification="insufficient_evidence",
+                    reason_code="evidence_split",
+                    evidence_status="insufficient",
+                    primary_evidence=None,
+                    ranking_score=-0.1,
                 )
+            else:
+                winning_ev_obj = cand_ev
+                evidence_text = cand_ev.display_text
+                evidence_offsets = [cand_ev.char_start, cand_ev.char_end]
 
-        # Confidence calculation
+        # D5 Confidence Calculation (WS17-R4)
         conf_obj = None
         conf_band_str = "Low"
         q_score = None
         if dec.classification == "qualifies":
-            # Logistic sigmoid centered at tau
-            calibrated_p = 1.0 / (1.0 + math.exp(-7.0 * (dec.ranking_score - tau)))
-            calibrated_p = max(0.01, min(0.99, calibrated_p))
-            q_score = calibrated_p
-            conf_band_str = "High" if calibrated_p >= 0.80 else ("Medium" if calibrated_p >= 0.50 else "Low")
-            conf_obj = ConfidenceDetails(
-                score=round(calibrated_p, 4),
-                value=round(calibrated_p, 4),
-                band=conf_band_str,
-                method="platt_scaling",
-                calibration_version="v3-logistic"
-            )
-        elif dec.classification == "does_not_qualify":
-            # For confident negatives, emit uncalibrated or null unless fitted
-            conf_obj = ConfidenceDetails(
-                score=0.15,
-                value=0.15,
-                band="Low",
-                method="heuristic_negative",
-                calibration_version="v3-logistic"
-            )
-            q_score = 0.15
+            calibrated_p = calibrate_qualifier(dec.ranking_score)
+            if calibrated_p is not None:
+                q_score = calibrated_p
+                conf_band_str = "High" if calibrated_p >= 0.80 else ("Medium" if calibrated_p >= 0.50 else "Low")
+                conf_obj = ConfidenceDetails(
+                    score=calibrated_p,
+                    value=calibrated_p,
+                    band=conf_band_str,
+                    method="platt_scaling",
+                    calibration_version=CALIBRATION_VERSION,
+                )
+        elif dec.classification == "does_not_qualify" and dec.reason_code in NEGATIVE_CALIBRATED_REASONS:
+            neg_m = c2.neg_margin if dec.reason_code == "different_activity" else c3.neg_margin
+            calibrated_neg = calibrate_negative(neg_m)
+            if calibrated_neg is not None:
+                q_score = round(1.0 - calibrated_neg, 4)
+                conf_band_str = "High" if calibrated_neg >= 0.80 else ("Medium" if calibrated_neg >= 0.50 else "Low")
+                conf_obj = ConfidenceDetails(
+                    score=calibrated_neg,
+                    value=calibrated_neg,
+                    band=conf_band_str,
+                    method="platt_scaling",
+                    calibration_version=CALIBRATION_VERSION,
+                )
         else:
-            # Insufficient evidence: NO pseudo-confidence on abstain!
+            # Categorical gates (mention_only, background_citation), vetoes, and abstentions emit confidence=None
             conf_obj = None
             conf_band_str = "Low"
-            q_score = 0.10
+            q_score = None
 
         conditions_dict = {
             "entity": c1.model_dump() if hasattr(c1, "model_dump") else c1.dict(),
@@ -811,6 +869,7 @@ def classify_publications(
             "confidence_kind": CONFIDENCE_KIND,
             "score_breakdown": score_breakdown,
             "guard_reason": dec.guard_reason,
+            "diagnostics": c2.diagnostics,
             "dedup_of": dedup_of,
             "k_eligible": len(eligible_sentences),
             "k_scored": len(candidate_sentences),

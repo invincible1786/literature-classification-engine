@@ -208,7 +208,7 @@ def check_role_patterns(sentence: str, entity: Any, aliases: Optional[List[str]]
 
     for pattern_template in patterns:
         try:
-            pat_str = pattern_template.format(E=entity_regex)
+            pat_str = pattern_template.replace("{E}", entity_regex)
             match = re.search(pat_str, sentence, re.IGNORECASE)
             if match:
                 return f"role_pattern: {match.group(0)}"

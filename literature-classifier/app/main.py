@@ -41,7 +41,7 @@ from app.criterion_parser import (
     CriterionParseError,
     parse_criterion_to_spec,
 )
-from app.scoring import CALIBRATION_VERSION
+from app.scoring import CALIBRATION_VERSION, load_calibration_config
 
 # Setup logging
 logging.basicConfig(
@@ -102,6 +102,7 @@ async def lifespan(app: FastAPI):
     global scorer
     logger.info("Initializing NLP components and pre-warming...")
     init_punkt()
+    load_calibration_config()
 
     if os.getenv("USE_STUB_SCORER", "0") == "1":
         logger.info("TEST_MODE active: using in-memory StubScorer")
@@ -134,6 +135,8 @@ def health():
         "status": "healthy",
         "model_name": model_name,
         "model_revision": revision,
+        "calibration_version": CALIBRATION_VERSION,
+        "pipeline": "v3.2",
         "device": str(device)
     }
 
@@ -199,6 +202,7 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
     logger.info(f"Retrieving publications: entity='{request.entity}', intent='{intent}', pipeline={request.pipeline}")
 
     # 4. Search Europe PMC (Dual Query in v3)
+    t_retrieval_start = time.perf_counter()
     try:
         if request.pipeline == "v3":
             publications, dedup_count = search_europe_pmc_dual(
@@ -224,6 +228,7 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
             status_code=status.HTTP_502_BAD_GATEWAY,
             detail=f"Europe PMC service error: {err}"
         )
+    retrieval_ms = (time.perf_counter() - t_retrieval_start) * 1000.0
 
     # 5. Handle zero results gracefully
     if not publications:
@@ -350,7 +355,11 @@ def _run_pipeline(request: ClassifyRequest) -> ClassifyResponse:
         dedup_count=dedup_count,
         retrieved_by="both",
         execution_time_ms=round(elapsed_ms, 2),
-        timings_ms=getattr(run_output, "timings_ms", {"total_ms": round(elapsed_ms, 2)}),
+        timings_ms={
+            **(getattr(run_output, "timings_ms", {}) or {}),
+            "retrieval_ms": round(retrieval_ms, 2),
+            "total_execution_ms": round(elapsed_ms, 2),
+        },
         model_revision=getattr(active_scorer, "revision", DEFAULT_REVISION),
         calibration_version=CALIBRATION_VERSION,
         ensemble_size=len(run_output.hypotheses_used),

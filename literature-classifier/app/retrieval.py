@@ -76,6 +76,17 @@ def is_preprint(paper: Dict[str, Any]) -> bool:
     return pmid is None
 
 
+def get_canonical_paper_id(paper: Dict[str, Any]) -> Optional[str]:
+    """Resolve canonical paper_id per F2: pmid -> doi -> pmcid -> id (never return 'unknown')."""
+    for k in ("pmid", "doi", "pmcid", "id"):
+        val = paper.get(k)
+        if val is not None:
+            s_val = str(val).strip()
+            if s_val and s_val.lower() != "unknown":
+                return s_val
+    return None
+
+
 def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], int]:
     """
     Deduplicate publications by DOI and normalized title.
@@ -92,7 +103,7 @@ def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
     for paper in papers:
         doi = (paper.get("doi") or "").strip().lower()
         title = normalize_title_for_dedupe(paper.get("title"))
-        paper_id = paper.get("pmid") or paper.get("doi") or paper.get("title") or "unknown"
+        paper_id = get_canonical_paper_id(paper)
         curr_retrieved_by = paper.get("retrieved_by", "intent")
 
         matched_idx: Optional[int] = None
@@ -103,7 +114,7 @@ def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
 
         if matched_idx is not None:
             existing = unique_papers[matched_idx]
-            existing_id = existing.get("pmid") or existing.get("doi") or "unknown"
+            existing_id = get_canonical_paper_id(existing)
             dedup_count += 1
 
             # Update retrieved_by
@@ -118,7 +129,7 @@ def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
             if existing_is_prep and not curr_is_prep:
                 # Replace preprint with peer-reviewed publication
                 paper_copy = dict(paper)
-                paper_copy["dedup_of"] = str(existing_id)
+                paper_copy["dedup_of"] = existing_id if (existing_id and existing_id != paper_id) else None
                 paper_copy["retrieved_by"] = existing.get("retrieved_by", "both")
                 unique_papers[matched_idx] = paper_copy
                 if doi:
@@ -128,7 +139,7 @@ def deduplicate_papers(papers: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any
             else:
                 # Keep existing record and mark absorbed ID
                 if not existing.get("dedup_of"):
-                    existing["dedup_of"] = str(paper_id)
+                    existing["dedup_of"] = paper_id if (paper_id and paper_id != existing_id) else None
         else:
             paper_copy = dict(paper)
             if "dedup_of" not in paper_copy:
@@ -281,6 +292,15 @@ def search_europe_pmc(
                 pmcid = item.get("pmcid")
                 pub_year = item.get("pubYear")
                 pub_type = item.get("pubType", "")
+                if not pub_type and "pubTypeList" in item:
+                    ptl = item.get("pubTypeList")
+                    if isinstance(ptl, dict) and "pubType" in ptl:
+                        pts = ptl["pubType"]
+                        pub_type = "; ".join(pts) if isinstance(pts, list) else str(pts)
+                    elif isinstance(ptl, list):
+                        pub_type = "; ".join(str(p) for p in ptl)
+                    elif isinstance(ptl, str):
+                        pub_type = ptl
 
                 clean_title = clean_markup_and_unescape(str(raw_title)) if raw_title is not None else None
                 clean_abstract = clean_markup_and_unescape(str(raw_abstract)) if raw_abstract is not None else None
