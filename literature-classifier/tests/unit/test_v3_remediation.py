@@ -25,14 +25,15 @@ from app.schemas import ClassifyResponse, PaperClassificationResult, EvidenceSpa
 
 
 def test_t_reason_registry():
-    """T-reason-registry: All 17 required reason codes must be registered and valid."""
+    """T-reason-registry: All 18 required reason codes must be registered and valid."""
     required_codes = [
         "no_text", "abstract_only", "mention_only", "activity_unclear",
         "entity_unclear", "entity_absent", "system_unstated", "system_mismatch_abstract",
         "conflicting_evidence", "evidence_split", "unsupported_criterion_clause",
         "different_activity", "wrong_system", "reagent_role", "background_citation",
-        "possible_review", "review_article"
+        "possible_review", "review_article", "unstated_threshold"
     ]
+    assert len(REASON_REGISTRY) == 18
     for code in required_codes:
         assert validate_reason_code(code), f"Missing registered reason code: {code}"
         info = get_reason_info(code)
@@ -146,24 +147,41 @@ def test_t_review_pubtype_and_we_review():
 
 
 def test_t_null_confidence_on_abstain():
-    """T-null-confidence: Abstentions (insufficient_evidence) return null confidence."""
+    """T-null-confidence (WS17-R2 / R4): Verb-gate mention_only AND abstain activity_unclear both return null confidence."""
     from app.classifier import classify_publications
-    pubs = [{
+    # 1. Verb-gate negative (mention_only -> does_not_qualify, confidence=None)
+    pub_mention = [{
         "title": "Random Pharmacology Study",
         "abstractText": "We studied caffeine receptor affinity in hippocampal rat brain slices.",
         "pmid": "99999999"
     }]
-    scorer = StubScorer(default_margin=-0.5)
-    res = classify_publications(
-        publications=pubs,
+    scorer = StubScorer(default_margin=-0.2)
+    res_m = classify_publications(
+        publications=pub_mention,
         entity="caffeine",
         criterion="The paper describes the chemical synthesis of caffeine.",
         scorer=scorer,
         pipeline="v3"
     )
-    first_res = res.results[0]
-    assert first_res["classification"] == "insufficient_evidence"
-    assert first_res["confidence"] is None or first_res["confidence"].get("score") is None
+    assert res_m.results[0]["classification"] == "does_not_qualify"
+    assert res_m.results[0]["reason_code"] == "mention_only"
+    assert res_m.results[0]["confidence"] is None
+
+    # 2. Ambiguous production abstain (activity_unclear -> insufficient_evidence, confidence=None)
+    pub_abstain = [{
+        "title": "Ambiguous Caffeine Yield Study",
+        "abstractText": "Caffeine generation pathways were discussed tentatively in cell extracts.",
+        "pmid": "99999998"
+    }]
+    res_a = classify_publications(
+        publications=pub_abstain,
+        entity="caffeine",
+        criterion="The paper describes the chemical synthesis of caffeine.",
+        scorer=scorer,
+        pipeline="v3"
+    )
+    assert res_a.results[0]["classification"] == "insufficient_evidence"
+    assert res_a.results[0]["confidence"] is None
 
 
 def test_t_entity_absent_fulltext_only():
@@ -183,7 +201,7 @@ def test_t_entity_absent_fulltext_only():
 
 
 def test_t_system_mismatch_abstract():
-    """T-system-mismatch-abstract: Abstract mentioning alternative organism gives system_mismatch_abstract under conservative policy."""
+    """T-system-mismatch-abstract (D6): Abstract mentioning alternative organism emits wrong_system by default."""
     spec = CriterionSpec(
         entity="vanillin",
         entity_role="product",
@@ -193,16 +211,16 @@ def test_t_system_mismatch_abstract():
     text = "We report production of vanillin using Escherichia coli in fermentation broth."
     sents = split_sentences_with_spans(text)
 
-    # Conservative policy (default): abstract-only emits system_mismatch_abstract
+    # D6 default (strict): abstract-explicit host contradiction -> wrong_system (does_not_qualify)
+    c3_d6 = check_c3_system(sents, text, spec, is_fulltext=False)
+    assert c3_d6.status == "contradicted"
+    assert c3_d6.reason_code == "wrong_system"
+    assert "escherichia coli" in [m.lower() for m in c3_d6.also_mentions]
+
+    # Legacy conservative override abstains safely via system_unstated
     c3_cons = check_c3_system(sents, text, spec, is_fulltext=False, abstract_negative_policy="conservative")
     assert c3_cons.status == "unknown"
-    assert c3_cons.reason_code == "system_mismatch_abstract"
-    assert "escherichia coli" in [m.lower() for m in c3_cons.also_mentions]
-
-    # Strict policy: emits wrong_system
-    c3_strict = check_c3_system(sents, text, spec, is_fulltext=False, abstract_negative_policy="strict")
-    assert c3_strict.status == "contradicted"
-    assert c3_strict.reason_code == "wrong_system"
+    assert c3_cons.reason_code == "system_unstated"
 
 
 def test_t_two_organisms_not_conflict():
