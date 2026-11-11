@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-11-14T05:11:42Z",
+  "split": "all",
+  "stratum": "live_audit",
+  "snapshot_audit": {
+    "audited_records": 40,
+    "manifest_version": "v3.2"
+  },
+  "inter_annotator_noisy": {
+    "n_double_labeled": 0,
+    "exact_agreement": 0.0,
+    "cohens_kappa": 0.0
+  },
+  "inter_annotator_all": {
+    "n_double_labeled": 40,
+    "exact_agreement": 1.0,
+    "cohens_kappa": 1.0
+  },
+  "mcnemar_3class": {
+    "b": 8,
+    "c": 1,
+    "p_value": 0.0391
+  },
+  "mcnemar_binary_qualifies": {
+    "b": 14,
+    "c": 0,
+    "p_value": 0.0001
+  },
+  "v2_macro_f1": 0.3146,
+  "v3_macro_f1": 0.6205,
+  "v2_qualifies_fp": 15,
+  "v3_qualifies_fp": 1,
+  "v3_abstention_rate": 0.225,
+  "v3_abstention_error_rate": 0.0,
+  "v3_ece_calibrated": 0.497,
+  "v2_ece_raw": 0.624
+}

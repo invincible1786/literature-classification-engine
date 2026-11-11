@@ -31,6 +31,12 @@
     "Palladous acetate",
     "Bisacetylpalladium"
   ],
+  "palladium(ii) acetate": [
+    "palladium acetate",
+    "Pd(OAc)2",
+    "Palladium diacetate",
+    "Diacetatopalladium"
+  ],
   "artemisinic acid": [
     "Artemisic acid",
     "80286-58-4",
@@ -40,5 +46,23 @@
     "CHEBI:63749",
     "2-((1R,4R,4aS,8aR)-4,7-Dimethyl-1,2,3,4,4a,5,6,8a-octahydronaphthalen-1-yl)prop-2-enoic acid",
     "1-Naphthaleneacetic acid, 1,2,3,4,4a,5,6,8a-octahydro-4,7-dimethyl-alpha-methylene-, (1R-(1alpha,4beta,4abeta,8abeta))-"
+  ],
+  "resveratrol": [
+    "trans-resveratrol",
+    "3,4',5-Trihydroxystilbene",
+    "(E)-resveratrol",
+    "Resvida",
+    "3,4',5-Stilbenetriol",
+    "3,4',5-Trihydroxy-trans-stilbene",
+    "Cuspidatin"
+  ],
+  "naringenin": [
+    "(S)-Naringenin",
+    "salipurpol",
+    "(2S)-Naringenin",
+    "Salipurol",
+    "pelargidanon",
+    "naringetol",
+    "Naringenine"
   ]
 }

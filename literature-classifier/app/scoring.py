@@ -1,16 +1,120 @@
-"""Scoring, Platt scaling confidence calibration, monotone bands, and deterministic ranking."""
-from typing import Optional, Tuple, Dict, Any, Union
+"""Scoring, MLE-fitted Platt scaling confidence calibration, monotone bands, and deterministic ranking."""
+import hashlib
+import json
 import math
+import os
+from typing import Optional, Tuple, Dict, Any, Union
 
 CONFIDENCE_KIND = "calibrated_platt_probability"
-CALIBRATION_VERSION = "platt-v1-seed30"
+CALIBRATION_VERSION = "platt-v3.3-mle"
+
+_BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CALIBRATION_PATH = os.path.join(_BASE_DIR, "config", "calibration.json")
+SPLITS_PATH = os.path.join(_BASE_DIR, "eval", "splits.json")
+
+_calibration_cache: Optional[Dict[str, Any]] = None
+
+
+class CalibrationConfigError(RuntimeError):
+    """Raised when config/calibration.json is missing, contains legacy placeholders, or fails splits audit."""
+
+
+def _compute_splits_sha256() -> Optional[str]:
+    if not os.path.exists(SPLITS_PATH):
+        return None
+    h = hashlib.sha256()
+    with open(SPLITS_PATH, "rb") as f:
+        while chunk := f.read(8192):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def is_placeholder_params(a: float, b: float) -> bool:
+    """Detect legacy hardcoded placeholder constants (-7.0, 3.15) or (7.0, -3.15)."""
+    return (
+        (abs(a - (-7.0)) < 1e-6 and abs(b - 3.15) < 1e-6)
+        or (abs(a - 7.0) < 1e-6 and abs(b - (-3.15)) < 1e-6)
+    )
+
+
+def load_calibration_config(strict_splits: bool = False, force_reload: bool = False) -> Dict[str, Any]:
+    """
+    Load MLE-fitted Platt scaling parameters from config/calibration.json (WS12-A / WS17-R3).
+    Fails loudly if the file is absent, uses legacy hardcoded placeholders, or fails splits_sha256 audit.
+    """
+    global _calibration_cache
+    if _calibration_cache is not None and not force_reload and not strict_splits:
+        return _calibration_cache
+
+    if not os.path.exists(CALIBRATION_PATH):
+        raise CalibrationConfigError(
+            f"Missing calibration config at {CALIBRATION_PATH}. Run `python -m eval.calibrate` first."
+        )
+
+    with open(CALIBRATION_PATH, "r", encoding="utf-8") as f:
+        cfg = json.load(f)
+
+    qual = cfg.get("qualifier_path", cfg)
+    a_val = qual.get("A")
+    b_val = qual.get("B")
+    if a_val is None or b_val is None:
+        raise CalibrationConfigError("calibration.json missing qualifier_path parameters (A, B).")
+    if is_placeholder_params(float(a_val), float(b_val)):
+        raise CalibrationConfigError(
+            f"Legacy placeholder calibration parameters detected (A={a_val}, B={b_val}). "
+            "Run `python -m eval.calibrate` to fit MLE parameters from dev splits."
+        )
+
+    if strict_splits:
+        recorded_sha = cfg.get("splits_sha256")
+        actual_sha = _compute_splits_sha256()
+        if not recorded_sha or not actual_sha or recorded_sha != actual_sha:
+            raise CalibrationConfigError(
+                f"splits_sha256 mismatch: calibration.json has {recorded_sha}, eval/splits.json has {actual_sha}."
+            )
+
+    _calibration_cache = cfg
+    return cfg
+
+
+def reload_calibration_config() -> Dict[str, Any]:
+    return load_calibration_config(force_reload=True)
+
+
+def _sigmoid_platt(margin: float, a: float, b: float) -> float:
+    """Evaluate P = 1 / (1 + exp(-(A * m + B))) monotonically clamped to [0.01, 0.99]."""
+    logit = a * margin + b
+    logit = max(-15.0, min(15.0, logit))
+    prob = 1.0 / (1.0 + math.exp(-logit))
+    return round(max(0.01, min(0.99, float(prob))), 4)
+
+
+def calibrate_qualifier(margin: Optional[float], strict_splits: bool = False) -> Optional[float]:
+    """Compute calibrated P(correct) on the qualifier path using MLE-fitted (A, B)."""
+    if margin is None or math.isnan(margin):
+        return None
+    cfg = load_calibration_config(strict_splits=strict_splits)
+    qual = cfg.get("qualifier_path", cfg)
+    return _sigmoid_platt(float(margin), float(qual["A"]), float(qual["B"]))
+
+
+def calibrate_negative(neg_margin: Optional[float], strict_splits: bool = False) -> Optional[float]:
+    """
+    Compute calibrated P(correct) on the evidence-based negative path
+    (different_activity, wrong_system only — WS17-R4 / D5).
+    Returns None if negative_path is not fitted.
+    """
+    if neg_margin is None or math.isnan(neg_margin):
+        return None
+    cfg = load_calibration_config(strict_splits=strict_splits)
+    neg = cfg.get("negative_path")
+    if not neg or not neg.get("fitted", False):
+        return None
+    return _sigmoid_platt(float(neg_margin), float(neg["A"]), float(neg["B"]))
 
 
 def margin_to_qualify_score(m: Optional[float]) -> Optional[float]:
-    """
-    Monotonically map NLI margin m in [-1.0, 1.0] to qualify_score in [0.0, 1.0].
-    Returns None if m is None (e.g. insufficient text or retrieval failure).
-    """
+    """Monotonically map NLI margin m in [-1.0, 1.0] to qualify_score in [0.0, 1.0]."""
     if m is None or math.isnan(m):
         return None
     score = (m + 1.0) / 2.0
@@ -18,17 +122,11 @@ def margin_to_qualify_score(m: Optional[float]) -> Optional[float]:
 
 
 def score_to_calibrated_prob(final_score: Optional[float], tau: float = 0.45) -> float:
-    """
-    Platt scaling mapping final_score in [-1.0, 1.0] to calibrated P(correct) in [0.0, 1.0].
-    Sigmoid scaling centered at tau:
-    P(correct) = 1 / (1 + exp(-7.0 * (final_score - tau)))
-    """
+    """Backward-compatible wrapper computing calibrated probability via MLE Platt map."""
     if final_score is None:
         return 0.0
-    logit = 7.0 * (final_score - tau)
-    logit = max(-15.0, min(15.0, logit))
-    prob = 1.0 / (1.0 + math.exp(-logit))
-    return round(float(prob), 4)
+    p = calibrate_qualifier(final_score)
+    return p if p is not None else 0.0
 
 
 def guard_confidence(
@@ -37,12 +135,7 @@ def guard_confidence(
     delta: float,
     cap: float = 0.65
 ) -> float:
-    """
-    Monotonic confidence formula for affirmative contrast guard rejections.
-    T = p_ent - delta
-    raw = (c_star - T) / (1.0 - T)
-    confidence = clamp(raw, 0.0, cap)
-    """
+    """Monotonic confidence formula for v2 affirmative contrast guard rejections."""
     T = p_ent - delta
     denom = max(1e-9, 1.0 - T)
     raw = (c_star - T) / denom
@@ -58,24 +151,15 @@ def calculate_confidence(
     p_ent: float = 0.0,
     delta: float = 0.00
 ) -> Optional[float]:
-    """
-    Calculate calibrated probability confidence score.
-    Returns None if m_star is None.
-    """
+    """Legacy v2 confidence helper."""
     if m_star is None or math.isnan(m_star):
         return None
-
     if guard_triggered:
         return guard_confidence(c_star=c_star, p_ent=p_ent, delta=delta, cap=0.65)
-
     if decision == "qualifies":
         return score_to_calibrated_prob(m_star, tau=tau)
-    else:
-        # Distance from threshold below tau
-        raw_prob = score_to_calibrated_prob(m_star, tau=tau)
-        # For non-qualifiers, higher confidence corresponds to being well below threshold
-        inv_prob = 1.0 - raw_prob
-        return round(max(0.0, min(1.0, inv_prob)), 4)
+    raw_prob = score_to_calibrated_prob(m_star, tau=tau)
+    return round(max(0.0, min(1.0, 1.0 - raw_prob)), 4)
 
 
 def assign_confidence_band(
@@ -84,12 +168,11 @@ def assign_confidence_band(
     runner_up_margin: Optional[float] = None
 ) -> str:
     """
-    Assign qualitative confidence band derived purely and monotonically from probability:
+    Assign qualitative confidence band derived monotonically from probability:
     - 'high':   >= 0.80
     - 'medium': 0.50 <= P < 0.80
     - 'low':    < 0.50
-    Applies runner-up ambiguity pooling: if top-2 sentence margin difference is < 0.10,
-    a 'high' band is dampened to 'medium'.
+    Applies runner-up ambiguity pooling (< 0.10 margin diff dampens high -> medium).
     """
     if confidence is None:
         return "low"
@@ -101,7 +184,6 @@ def assign_confidence_band(
     else:
         band = "low"
 
-    # Ambiguity pooling penalty
     if (
         band == "high"
         and best_margin is not None
@@ -115,14 +197,14 @@ def assign_confidence_band(
 
 def ranking_sort_key(item: Union[Dict[str, Any], Any]) -> Tuple:
     """
-    Deliberate deterministic sorting key:
-    1. Qualifiers first (qualifies < does_not_qualify)
-    2. Papers with no usable text (no_text) strictly last
-    3. Scored non-qualifiers before guard-rejected / abstained non-qualifiers
+    Deterministic sorting key:
+    1. Qualifiers first
+    2. No-text strictly last
+    3. Scored non-qualifiers before guard/abstain
     4. Calibrated confidence descending
-    5. qualify_score descending
+    5. qualify_score / ranking_score descending
     6. pub_year descending
-    7. paper_id ascending (deterministic tie-breaker)
+    7. paper_id ascending
     """
     if isinstance(item, dict):
         is_qual = (item.get("classification") == "qualifies")
@@ -172,17 +254,16 @@ def ranking_sort_key(item: Union[Dict[str, Any], Any]) -> Tuple:
         year_val = 0
 
     return (
-        0 if is_qual else 1,                   # 1. Qualifiers first
-        1 if is_no_text else 0,                # 2. No-text strictly last
-        1 if (is_abstain or guard_rejected) else 0, # 3. Scored non-qualifiers before guard/abstain
-        -conf_num,                             # 4. Confidence descending
-        -score_num,                            # 5. qualify_score descending
-        -year_val,                             # 6. pub_year descending
-        paper_id                               # 7. tie-breaker paper_id ascending
+        0 if is_qual else 1,
+        1 if is_no_text else 0,
+        1 if (is_abstain or guard_rejected) else 0,
+        -conf_num,
+        -score_num,
+        -year_val,
+        paper_id,
     )
 
 
-# Backward-compatibility aliases for legacy callers
 calculate_qualify_score = margin_to_qualify_score
 get_confidence_band = assign_confidence_band
 

@@ -1,14 +1,37 @@
 {
-  "calibration_version": "v3-logistic",
-  "fitted_at": "2026-11-07T08:49:24.500086+00:00",
-  "method": "platt_scaling_logistic",
-  "tau_center": 0.45,
-  "temperature_scale": 7.0,
-  "A": -7.0,
-  "B": 3.15,
-  "out_of_fold_brier": 0.0533,
-  "data_hash": "49971211dfcdcc25f99e12a794cfdd903a6b8b6cde093f646f00f003421c80da",
-  "qualifier_path_fitted": true,
-  "negative_path_fitted": false,
-  "negative_path_reason": "N_min < 30 (confidence set to null on negatives)"
+  "calibration_version": "platt-v3.3-mle",
+  "fitted_at": "2026-11-13T23:30:00.704188+00:00",
+  "method": "platt_scaling_logistic_mle",
+  "splits_sha256": "2e7d2ea53f19830d3971ab11922770c5d0ecc8f13cf8ae7bc3a4e1924858bf09",
+  "data_hash": "852cdbd07bb1fd9be5ce2b8a3e60f522016c3354f5e07f9bc367b54a1127da87",
+  "fit_entities": [
+    "vanillin",
+    "caffeine",
+    "curcumin",
+    "chitin"
+  ],
+  "neg_fit_window": 0.15,
+  "qualifier_path": {
+    "fitted": true,
+    "A": 4.662407,
+    "B": -0.671259,
+    "n_total": 23,
+    "n_pos": 22,
+    "n_neg": 1,
+    "out_of_fold_brier": 0.037,
+    "loo_mean_A": 4.2793,
+    "loo_std_A": 0.3708,
+    "slope_unstable_flag": false
+  },
+  "negative_path": {
+    "fitted": true,
+    "A": 0.587108,
+    "B": -1.024654,
+    "n_rows": 5,
+    "out_of_fold_brier": 0.2372,
+    "reason_codes_included": [
+      "different_activity",
+      "wrong_system"
+    ]
+  }
 }
