@@ -1,0 +1,348 @@
+{
+  "v2": {
+    "binary": null,
+    "multiclass": {
+      "n": 40,
+      "confusion_matrix": {
+        "qualifies": {
+          "qualifies": 2,
+          "does_not_qualify": 0,
+          "insufficient_evidence": 0
+        },
+        "does_not_qualify": {
+          "qualifies": 16,
+          "does_not_qualify": 21,
+          "insufficient_evidence": 0
+        },
+        "insufficient_evidence": {
+          "qualifies": 0,
+          "does_not_qualify": 1,
+          "insufficient_evidence": 0
+        }
+      },
+      "per_class": {
+        "qualifies": {
+          "tp": 2,
+          "fp": 16,
+          "fn": 0,
+          "precision": 0.1111111111111111,
+          "precision_ci": [
+            0.031018868453582787,
+            0.3280024486660421
+          ],
+          "recall": 1.0,
+          "recall_ci": [
+            0.34237195288961925,
+            1.0
+          ],
+          "f1": 0.19999999999999998
+        },
+        "does_not_qualify": {
+          "tp": 21,
+          "fp": 1,
+          "fn": 16,
+          "precision": 0.9545454545454546,
+          "precision_ci": [
+            0.7820151050048196,
+            0.9919307806988522
+          ],
+          "recall": 0.5675675675675675,
+          "recall_ci": [
+            0.40913906334200717,
+            0.713285131596487
+          ],
+          "f1": 0.711864406779661
+        },
+        "insufficient_evidence": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "precision": 0.0,
+          "precision_ci": [
+            0.0,
+            0.0
+          ],
+          "recall": 0.0,
+          "recall_ci": [
+            0.0,
+            0.7934567085261071
+          ],
+          "f1": 0.0
+        }
+      },
+      "macro_f1": 0.30395480225988697,
+      "accuracy": 0.575,
+      "accuracy_ci": [
+        0.42194800436059987,
+        0.7149083147518411
+      ],
+      "abstention_rate": 0.0,
+      "abstention_count": 0,
+      "abstention_error_rate": 1.0,
+      "abstention_error_ci": [
+        0.20654329147389294,
+        1.0
+      ],
+      "qualifies_tp": 2,
+      "qualifies_fp": 16,
+      "qualifies_fn": 0
+    },
+    "y_true_3": [
+      "qualifies",
+      "does_not_qualify",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "insufficient_evidence",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify"
+    ],
+    "y_pred_3": [
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "does_not_qualify",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify"
+    ]
+  },
+  "v3_2_before": {
+    "binary": null,
+    "multiclass": {
+      "n": 40,
+      "confusion_matrix": {
+        "qualifies": {
+          "qualifies": 2,
+          "does_not_qualify": 0,
+          "insufficient_evidence": 0
+        },
+        "does_not_qualify": {
+          "qualifies": 11,
+          "does_not_qualify": 21,
+          "insufficient_evidence": 5
+        },
+        "insufficient_evidence": {
+          "qualifies": 1,
+          "does_not_qualify": 0,
+          "insufficient_evidence": 0
+        }
+      },
+      "per_class": {
+        "qualifies": {
+          "tp": 2,
+          "fp": 12,
+          "fn": 0,
+          "precision": 0.14285714285714285,
+          "precision_ci": [
+            0.040093073737921175,
+            0.39941907763863693
+          ],
+          "recall": 1.0,
+          "recall_ci": [
+            0.34237195288961925,
+            1.0
+          ],
+          "f1": 0.25
+        },
+        "does_not_qualify": {
+          "tp": 21,
+          "fp": 0,
+          "fn": 16,
+          "precision": 1.0,
+          "precision_ci": [
+            0.8453561767357979,
+            0.9999999999999999
+          ],
+          "recall": 0.5675675675675675,
+          "recall_ci": [
+            0.40913906334200717,
+            0.713285131596487
+          ],
+          "f1": 0.7241379310344828
+        },
+        "insufficient_evidence": {
+          "tp": 0,
+          "fp": 5,
+          "fn": 1,
+          "precision": 0.0,
+          "precision_ci": [
+            0.0,
+            0.43449149475208104
+          ],
+          "recall": 0.0,
+          "recall_ci": [
+            0.0,
+            0.7934567085261071
+          ],
+          "f1": 0.0
+        }
+      },
+      "macro_f1": 0.32471264367816094,
+      "accuracy": 0.575,
+      "accuracy_ci": [
+        0.42194800436059987,
+        0.7149083147518411
+      ],
+      "abstention_rate": 0.125,
+      "abstention_count": 5,
+      "abstention_error_rate": 0.0,
+      "abstention_error_ci": [
+        0.0,
+        0.7934567085261071
+      ],
+      "qualifies_tp": 2,
+      "qualifies_fp": 12,
+      "qualifies_fn": 0
+    },
+    "y_true_3": [
+      "qualifies",
+      "does_not_qualify",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "insufficient_evidence",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify"
+    ],
+    "y_pred_3": [
+      "qualifies",
+      "does_not_qualify",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "insufficient_evidence",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "does_not_qualify",
+      "qualifies",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "insufficient_evidence",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "qualifies",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "does_not_qualify",
+      "insufficient_evidence",
+      "insufficient_evidence",
+      "insufficient_evidence"
+    ]
+  }
+}
