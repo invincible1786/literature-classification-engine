@@ -1,0 +1,1555 @@
+{
+  "manifest_version": "v3.2",
+  "generated_at": "2026-11-12T15:47:05.997820+00:00",
+  "snapshot_files_sha256": {
+    "artemisinic_acid.json": "3d6c8b1bc95df8944362a55adfe2e6219b8cb6e8cf9b3c19ff77f69302b036b3",
+    "caffeine.json": "089f0f103241ad474dc08bc46dee7c3a17f01eefb906fcbeb9c6e69739e99f19",
+    "chitin.json": "e121d8b5b1a088e169d15d7208d0e1bfbbc907aa848edcae849925e50e5dc45b",
+    "curcumin.json": "78e08643260bd6e61ff5bac02197cf564ca0c523c5ffa67f315a5bda7288064d",
+    "insect_protein.json": "59e416f9783f83f9013bcdcaabd06b9ca5209fe7633dd19b879a3f22c730c76f",
+    "lipase.json": "674f62bd7cad63eb929659564a8dcb9c4ce1c3584d7f64220fb73ed78a0829c3",
+    "palladium(ii)_acetate.json": "b12018c7f096773aa9f456c1e211522bca464c776d92bf385d2c336a79dc941b",
+    "vanillin.json": "b19b4a44aa5da61f2aaf1d8e7389a25ab700b0badcfca481899ddb8ff9f95f8b",
+    "live_audit_40.json": "727f0aab172ca6bd4b44da0055651f926aab0e5f4b281483e156791116de390e"
+  },
+  "records": {
+    "artemisinic acid::31392501": {
+      "paper_id": "31392501",
+      "entity": "artemisinic acid",
+      "sha256": "6c567ca44ca22e79662371fe9a505ad87e0d1234117d5bed66929a9de68c9db0",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::35234394": {
+      "paper_id": "35234394",
+      "entity": "artemisinic acid",
+      "sha256": "f682e690f7dc99072653baa634578ea868c740915b3675158fa0ca5c7c296b17",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::42107802": {
+      "paper_id": "42107802",
+      "entity": "artemisinic acid",
+      "sha256": "9c06a91fd37a5ffc9294e83dbcea74a10acec8989e3e027672e07ee0a989fe7b",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::40274872": {
+      "paper_id": "40274872",
+      "entity": "artemisinic acid",
+      "sha256": "7a5d08b77ecf7f1f532355c6e2656636ddacb1245fd46227970c9c7881b3df9c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::10.21203/rs.3.rs-3926665/v1": {
+      "paper_id": "10.21203/rs.3.rs-3926665/v1",
+      "entity": "artemisinic acid",
+      "sha256": "8e392e62cf68e8239c48980d49e4ea569b7feb690697f72d0869b4286c8968c5",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::42418950": {
+      "paper_id": "42418950",
+      "entity": "artemisinic acid",
+      "sha256": "b7adcd5120d1bcb43e219c7ac8596ca5d9c83589886b3917eda499c9972288d0",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::42774055": {
+      "paper_id": "42774055",
+      "entity": "artemisinic acid",
+      "sha256": "27e4916bcf92e26651f524a6e6471fc63865e79be55afac80a1091547cfee5b8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::39732992": {
+      "paper_id": "39732992",
+      "entity": "artemisinic acid",
+      "sha256": "34ea3bf05c61e4d27bf3d55a3083852b62b91b2809c53a7c18994e294ed5fa56",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::36296479": {
+      "paper_id": "36296479",
+      "entity": "artemisinic acid",
+      "sha256": "6076524f63e7172b19541e1a23827fdcee3989e307b7e159fb2b6394433eb6c6",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::38474639": {
+      "paper_id": "38474639",
+      "entity": "artemisinic acid",
+      "sha256": "a654a932ab3a2cb1e1fd9d95999576dc8c9365c5083e5847307d5abcfc4bb348",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::36528397": {
+      "paper_id": "36528397",
+      "entity": "artemisinic acid",
+      "sha256": "d564498f7008316d8f9973ad2f4fdfeaa4f6c1d1a5aa117751cc2fb9d8a67e81",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "artemisinic acid::36867394": {
+      "paper_id": "36867394",
+      "entity": "artemisinic acid",
+      "sha256": "56d96f2d0e647ef724436b52080ada44190355b9f090d8a2aa62e69caf12c929",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "artemisinic_acid.json"
+    },
+    "caffeine::PMC8810101": {
+      "paper_id": "PMC8810101",
+      "entity": "caffeine",
+      "sha256": "7c70bd52261397d0cc026cf4ea7acb4ddded13f4693fbb300ec0dce2faae622f",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810102": {
+      "paper_id": "PMC8810102",
+      "entity": "caffeine",
+      "sha256": "aa56bc2ac5879297cbf26d5dcf8e9a8e341141170b1918912b0a12320e872813",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810103": {
+      "paper_id": "PMC8810103",
+      "entity": "caffeine",
+      "sha256": "3be39f7b3ada83318e258dd5aae8dcf632ad26cab25c8f98c7c6156d374f6212",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810104": {
+      "paper_id": "PMC8810104",
+      "entity": "caffeine",
+      "sha256": "c45494d06bc195a03ed73a468b3c60cd3a31ae4416bab6d8ae8aca2cb155995c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810105": {
+      "paper_id": "PMC8810105",
+      "entity": "caffeine",
+      "sha256": "30564ebd3440b02ed5556ecd7db57cbc0ca20187c6c5a3a887117b6c9e759ef8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810106": {
+      "paper_id": "PMC8810106",
+      "entity": "caffeine",
+      "sha256": "8f312e7453c27b0460580891520cc322d1992075306b3b37f7908d47304b9b8a",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810107": {
+      "paper_id": "PMC8810107",
+      "entity": "caffeine",
+      "sha256": "080533a01b357680f88517d759704eeeffa4eac27c030ad0d0ea2da01514498e",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810108": {
+      "paper_id": "PMC8810108",
+      "entity": "caffeine",
+      "sha256": "837099e14b26b084f199ba9c076ea036fa0d22be32ccc1143272bb8da447e696",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810109": {
+      "paper_id": "PMC8810109",
+      "entity": "caffeine",
+      "sha256": "cf56dce96eac49cc3fa5f7d4daae2279ab1757366d3a2d6d328c83929f0c97c5",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::PMC8810110": {
+      "paper_id": "PMC8810110",
+      "entity": "caffeine",
+      "sha256": "f3c8f2ea002e17ba1968599e26efea390f16ec6f946c0c1f897c2d2a55d7b42d",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::42563398": {
+      "paper_id": "42563398",
+      "entity": "caffeine",
+      "sha256": "9ec59ff2579d1e5cc6392006dc484d63d97202fddeb700af81fd23616cb655a2",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::42970870": {
+      "paper_id": "42970870",
+      "entity": "caffeine",
+      "sha256": "308cd3b2e8e7f4a9c901e1789a3cde43d390e02977d1151772763035dbda3f28",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::42855060": {
+      "paper_id": "42855060",
+      "entity": "caffeine",
+      "sha256": "cae5e2972a16ce191798a768a074fbadd29dba4b54a479e1eb119004d6cafdd2",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::43003031": {
+      "paper_id": "43003031",
+      "entity": "caffeine",
+      "sha256": "587099c4209c561935a7538992a7fe7c6ec0fa490622cd66aa5f265fa501b567",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::10.21203/rs.3.rs-11403610/v1": {
+      "paper_id": "10.21203/rs.3.rs-11403610/v1",
+      "entity": "caffeine",
+      "sha256": "29719809cd75138e183849982f3aac0a41104bc0be08b9f520b8dee4a6188fe3",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "caffeine::42118061": {
+      "paper_id": "42118061",
+      "entity": "caffeine",
+      "sha256": "1e7f63678f09372bec72298581218345892a37f0d14cf681a650d2cafdd0d6a8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "caffeine.json"
+    },
+    "chitin::PMC5123456": {
+      "paper_id": "PMC5123456",
+      "entity": "chitin",
+      "sha256": "69b4049729a073aa417c2e7a7a3964f07a45be1d7b73505f990b469a8dba5774",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC5234567": {
+      "paper_id": "PMC5234567",
+      "entity": "chitin",
+      "sha256": "052607b16583f7a7f36dcc1aa04dda13f2f47850a513bdfdd56a0b1504e19551",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC5345678": {
+      "paper_id": "PMC5345678",
+      "entity": "chitin",
+      "sha256": "0304ba97e1d514bf070b53aefdad38ab3ab89fc24824e7407b7bdcf0b7b06152",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC5456789": {
+      "paper_id": "PMC5456789",
+      "entity": "chitin",
+      "sha256": "519acc9ff8806404b634cc25a20a020c5cea72be487ac6bd5fec6a7929876281",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC5567890": {
+      "paper_id": "PMC5567890",
+      "entity": "chitin",
+      "sha256": "50a81e525d1e4ed61e36011bbb26c0e0f2fcd80e0631d7af7b2ca302979199f2",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC5678901": {
+      "paper_id": "PMC5678901",
+      "entity": "chitin",
+      "sha256": "090d37c9eff8f52cd7a8471d1982324998934d6efd778bdaa008abc8186016dd",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC5789012": {
+      "paper_id": "PMC5789012",
+      "entity": "chitin",
+      "sha256": "c87579973f05b3b023fdacce79ee31b968929910a96b62a57a9b415a25e80519",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC5890123": {
+      "paper_id": "PMC5890123",
+      "entity": "chitin",
+      "sha256": "33c624548a424e52197731d187e8dbbe1df02316c16e5927f85f07d781a19af8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC5901234": {
+      "paper_id": "PMC5901234",
+      "entity": "chitin",
+      "sha256": "6b1a71b9b186515e5d48c75bf4bc53cfe6cb3751d860d61d2617ca53dd1c2c4a",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6012345": {
+      "paper_id": "PMC6012345",
+      "entity": "chitin",
+      "sha256": "ec2303834ff3ac2b7ab512e248e27f55554c7a5bd63a494ecbc87cbf60cbebe5",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6123456": {
+      "paper_id": "PMC6123456",
+      "entity": "chitin",
+      "sha256": "d87d8c07f84fc21d081010b9cc1497b50c13732d22ee1db0cfa30046fd5d50bf",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6234567": {
+      "paper_id": "PMC6234567",
+      "entity": "chitin",
+      "sha256": "9e0727ccd07ca55b39f31b7bf964a3ce75618511208c9f0e4019687ee4e8e302",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6345678": {
+      "paper_id": "PMC6345678",
+      "entity": "chitin",
+      "sha256": "662b88211ac188a649a7ce74bdf9535df5804f5c164ab6501ebc28e70e93efd8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6456789": {
+      "paper_id": "PMC6456789",
+      "entity": "chitin",
+      "sha256": "6f0bd2ddec831f5de2a19783428d211b3310c6370af18f6ffbacaf02eaebb65e",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6567890": {
+      "paper_id": "PMC6567890",
+      "entity": "chitin",
+      "sha256": "267490ac31be18ae353af7eccec19975598c35bac3814354d1d397a1805cddd4",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6678901": {
+      "paper_id": "PMC6678901",
+      "entity": "chitin",
+      "sha256": "18cb9c19ec75386faf81fbe0f181645adf3620bdc33a290c75357a9feecb7c89",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6789012": {
+      "paper_id": "PMC6789012",
+      "entity": "chitin",
+      "sha256": "7de1fcdd59b19c403616df7da6435a7edc35705469d898a99d22991dc0c47b52",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6890123": {
+      "paper_id": "PMC6890123",
+      "entity": "chitin",
+      "sha256": "0745fbf340f6249a4c037ea5327fe61a33bc621025d00f87146ea4f2606e92d1",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC6901234": {
+      "paper_id": "PMC6901234",
+      "entity": "chitin",
+      "sha256": "24daf32a3084e7fd0a6e549d886651140ad6acb9ad427c4b2f73135b416d6147",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "chitin::PMC7012345": {
+      "paper_id": "PMC7012345",
+      "entity": "chitin",
+      "sha256": "e7635a02694fa678d9ca1810196fd1de5aa8fcc96f96ac17de87f369880c7f73",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"chitin\"",
+      "snapshot_file": "chitin.json"
+    },
+    "curcumin::31568462": {
+      "paper_id": "31568462",
+      "entity": "curcumin",
+      "sha256": "9fee01040781fde81305ace67959ab8b47fa2eaf37c9605110f16138b68a964b",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::32145678": {
+      "paper_id": "32145678",
+      "entity": "curcumin",
+      "sha256": "9fe7d79460f57417bb8025da700ff09c42b278ad2b1d819294e005842016cfae",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::33214567": {
+      "paper_id": "33214567",
+      "entity": "curcumin",
+      "sha256": "5159eb2f349df2a42fed312cf1b57e24792c8929d7c4adb3d5ca3a58f6b85245",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::34125678": {
+      "paper_id": "34125678",
+      "entity": "curcumin",
+      "sha256": "c3214c266c71e0270ce51fbec58f0582cfe437d487a35a98da045c9e0569da12",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::35678901": {
+      "paper_id": "35678901",
+      "entity": "curcumin",
+      "sha256": "2d2d0fa682cd10e0ab5b11fc94abfb1a8095b360fc5e41d53abe50a52faabf9d",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::36123490": {
+      "paper_id": "36123490",
+      "entity": "curcumin",
+      "sha256": "67d994d4026a0a8d43da07dd40292a372049f57b90686a093e1618e205fd41df",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::37456789": {
+      "paper_id": "37456789",
+      "entity": "curcumin",
+      "sha256": "f55d6406774fead4726341f00eead10bb304b9e0b4b78bf11a7d204f74e09743",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::38123456": {
+      "paper_id": "38123456",
+      "entity": "curcumin",
+      "sha256": "4128553954966ee0c6c4707906b3d37db5801b0499e5dbac1947fa5ce07c7e61",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::39123490": {
+      "paper_id": "39123490",
+      "entity": "curcumin",
+      "sha256": "df6c8cb766baae438081d38e6b1aaaca421c7b1eff2a238f9f39227b3b49f779",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::40123456": {
+      "paper_id": "40123456",
+      "entity": "curcumin",
+      "sha256": "8824666f03e885b0ea6c599f2f99a5a0ecfe1a5aae52a45821ddd71028e160f5",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::41234567": {
+      "paper_id": "41234567",
+      "entity": "curcumin",
+      "sha256": "a82b265f212be17b0a246c04617def627586bc3c5fa01513645dca0f0f2d63eb",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::42123456": {
+      "paper_id": "42123456",
+      "entity": "curcumin",
+      "sha256": "f371ea9e200fcb5290649bab6d5569a95f2e4114645e42cc060e0ec387586795",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::42864385": {
+      "paper_id": "42864385",
+      "entity": "curcumin",
+      "sha256": "c4185935714632d7e925050ec3dec72cc16cd2716810ee1dee33f29247680a91",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::42860751": {
+      "paper_id": "42860751",
+      "entity": "curcumin",
+      "sha256": "1d87a5e67085e92c20e3de66adcca14849384e66d5ec23840031834fa5740d59",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::42678038": {
+      "paper_id": "42678038",
+      "entity": "curcumin",
+      "sha256": "b87480848dc6b811274f12b56649111bc2eda6f962621be38dd470dd9c12ad2d",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::42913354": {
+      "paper_id": "42913354",
+      "entity": "curcumin",
+      "sha256": "b502b056267fe3c19b784a3ebf9dfabd2af5df8d1c8dd36a1edb478713a8d2b1",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::42288133": {
+      "paper_id": "42288133",
+      "entity": "curcumin",
+      "sha256": "f60fbea05615dece70e4233ede0ce82c93cba5719dbf82564f71654486d1eef9",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::36781290": {
+      "paper_id": "36781290",
+      "entity": "curcumin",
+      "sha256": "006452222ff96e90a6de5db9a035fd98c411a97d66d289c75a5bd24b40880414",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::43123456": {
+      "paper_id": "43123456",
+      "entity": "curcumin",
+      "sha256": "b40664a7ba6e18d36a3b666aa76c53e92f0ed1d8378b3e7aac91b0f36166661c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "curcumin::43987654": {
+      "paper_id": "43987654",
+      "entity": "curcumin",
+      "sha256": "a817646f75f945f3021ce5a8b64ffec3fb2e0e87258d82e5fafef7a3c4f90865",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"curcumin\"",
+      "snapshot_file": "curcumin.json"
+    },
+    "insect_protein::PMC9123456": {
+      "paper_id": "PMC9123456",
+      "entity": "insect_protein",
+      "sha256": "803f669dfaac69b365f16add503a2cba9099a1ea7d1ce6cc25f366e988912d9c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9234567": {
+      "paper_id": "PMC9234567",
+      "entity": "insect_protein",
+      "sha256": "ebf2097d2074722f5fa835e7bd0380f4323ee3cf45e71244de2f4ac2f73cb40d",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9345678": {
+      "paper_id": "PMC9345678",
+      "entity": "insect_protein",
+      "sha256": "fd6494a2a5cad4bf6c28ed8a506ff2c270af07148837d082083c03b30a0a6cca",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9456789": {
+      "paper_id": "PMC9456789",
+      "entity": "insect_protein",
+      "sha256": "d22125a0f3c42c0021bdb9649126c0ad05af028ef487a8968375e662df82356e",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9567890": {
+      "paper_id": "PMC9567890",
+      "entity": "insect_protein",
+      "sha256": "7e142be270c7e839943bd2b28c7632bb0b04100cc05ab2b3b0b853bb89e44aa2",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9678901": {
+      "paper_id": "PMC9678901",
+      "entity": "insect_protein",
+      "sha256": "9a7798eefc3377521f002987f89606719c2e5a80b895650e056a26336b3638db",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9789012": {
+      "paper_id": "PMC9789012",
+      "entity": "insect_protein",
+      "sha256": "d02e2a09cd57b05d53773c7d5a3619e311f3ef582cc014d99030a452061c2f63",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9890123": {
+      "paper_id": "PMC9890123",
+      "entity": "insect_protein",
+      "sha256": "2f52aceed52438eff60bdde66f48ba9b12008a73144c5cd704c3583cba2ec7d3",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9901234": {
+      "paper_id": "PMC9901234",
+      "entity": "insect_protein",
+      "sha256": "694b5f08ca963a108e2fa3806617e640699f95067cc6e73f241b0c278b8e028c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC9991234": {
+      "paper_id": "PMC9991234",
+      "entity": "insect_protein",
+      "sha256": "388a29a2602978e079a59a503cf09e2b83a0f2d82fb1f98b81dda3f63a92a22c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1001234": {
+      "paper_id": "PMC1001234",
+      "entity": "insect_protein",
+      "sha256": "c1f44d18cbc35ed3c47890f087ed02367a0f6408b5a440ab160c74d742948def",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1012345": {
+      "paper_id": "PMC1012345",
+      "entity": "insect_protein",
+      "sha256": "2bccae1c6a2fc9c227f41c8cbdcc13e2c2c332be2f8054c8cde9a7f31eab3a4b",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1023456": {
+      "paper_id": "PMC1023456",
+      "entity": "insect_protein",
+      "sha256": "9f86933384ae69c46f3dcf228b1f8b71e877b51b121b58931cf8a7ff2cdf7176",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1034567": {
+      "paper_id": "PMC1034567",
+      "entity": "insect_protein",
+      "sha256": "0d71b146b794bfcf7b0ee5425a399c06d3c9ca838bc29732e346d0cfa433ffb9",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1045678": {
+      "paper_id": "PMC1045678",
+      "entity": "insect_protein",
+      "sha256": "f9dabe1a9fe6177b095cf790319d7bc503bcfc6a6fe46d702e0f73918b806a4c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1056789": {
+      "paper_id": "PMC1056789",
+      "entity": "insect_protein",
+      "sha256": "7b8c2e9fe69cbb1af31d38d820a88658381b8b45d73e985fc3acc48fba8bc7d4",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1067890": {
+      "paper_id": "PMC1067890",
+      "entity": "insect_protein",
+      "sha256": "e16ec7fa833ef8542aba49ffc54bc13c7b414a95aa3b4c7307450ed10dabeae9",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1078901": {
+      "paper_id": "PMC1078901",
+      "entity": "insect_protein",
+      "sha256": "62341c52f5be1bd7b4f3bef409976aefcba9c72aef3aa6ca8d7c4ba2df18c902",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1089012": {
+      "paper_id": "PMC1089012",
+      "entity": "insect_protein",
+      "sha256": "7e80cd8eef1b4e728961bc4db23a304d21afae2a13cc34d3c6285c735950b905",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "insect_protein::PMC1090123": {
+      "paper_id": "PMC1090123",
+      "entity": "insect_protein",
+      "sha256": "694a326cda3056257f4569c3e6881f3452d4f2cfbfe31e85981f5bdafa95ad34",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"insect_protein\"",
+      "snapshot_file": "insect_protein.json"
+    },
+    "lipase::PMC7123456": {
+      "paper_id": "PMC7123456",
+      "entity": "lipase",
+      "sha256": "3d4620613ba978ca68dce0dde06b3f3a06cdf6fe6f4ca53555cb3aee39ffa8d8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC7234567": {
+      "paper_id": "PMC7234567",
+      "entity": "lipase",
+      "sha256": "3e8367d9c09a82d8a602216a87432bbfccd1e69cbcf211259a920c62ae73e78e",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC7345678": {
+      "paper_id": "PMC7345678",
+      "entity": "lipase",
+      "sha256": "d47230a4915bf3e3d2a0246985e53e4f0207e881427d81664166e73bfe7c99a8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC7456789": {
+      "paper_id": "PMC7456789",
+      "entity": "lipase",
+      "sha256": "8e6650e6d965793d35483ed5392acea4e1289554720d85a8f31d0e3e7e7ce77d",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC7567890": {
+      "paper_id": "PMC7567890",
+      "entity": "lipase",
+      "sha256": "4836a8cac648f62f653c39298abc279bdaf0e8f2ddf48721ad652395d8f94f67",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC7678901": {
+      "paper_id": "PMC7678901",
+      "entity": "lipase",
+      "sha256": "b7e621e18d7248deae800f76f6c9235ba8657af73215b77eace1cb8034d74141",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC7789012": {
+      "paper_id": "PMC7789012",
+      "entity": "lipase",
+      "sha256": "4c4aefdcb2b5ccd227b3eebb30a00834d69394f32fd691f8e1edf69ef736f8ba",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC7890123": {
+      "paper_id": "PMC7890123",
+      "entity": "lipase",
+      "sha256": "55fd899c334e0a2c5864b3772271e11deea146aab6ba51432cf264af327bb447",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC7901234": {
+      "paper_id": "PMC7901234",
+      "entity": "lipase",
+      "sha256": "b2598c6b470e542261bc869c5403b06c8a68b3892716f90e44491fde5dda0817",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8012345": {
+      "paper_id": "PMC8012345",
+      "entity": "lipase",
+      "sha256": "54b5040e9904a44414ff44476e7bc191d830890d4ac34dd1f399be932ff882e1",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8123456": {
+      "paper_id": "PMC8123456",
+      "entity": "lipase",
+      "sha256": "5b30e77055bef021c11dddae338966952658cf775bed30ea740cb7fb3a5f8024",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8234567": {
+      "paper_id": "PMC8234567",
+      "entity": "lipase",
+      "sha256": "dce3ae3b1666bdd239549ba862fb90b5fd1bb7c5915a017dc38a90c7d93e1a59",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8345678": {
+      "paper_id": "PMC8345678",
+      "entity": "lipase",
+      "sha256": "768855a9ece492d730a844b9a5cdea73cd78acb913bcbd6ac192782ee6b9fe72",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8456789": {
+      "paper_id": "PMC8456789",
+      "entity": "lipase",
+      "sha256": "603e625eaba8ea979fec3cea90ff3e528454ff0011c7646a95914242058610a8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8567890": {
+      "paper_id": "PMC8567890",
+      "entity": "lipase",
+      "sha256": "d8529115c0288a7caa40425e38d552c7f7a34a36653d39a8108f755fe3dbb96b",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8678901": {
+      "paper_id": "PMC8678901",
+      "entity": "lipase",
+      "sha256": "e74b27233cc47a7f4e4afe05ccc485188b83d07229c13a0a84b425ec8153f2fb",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8789012": {
+      "paper_id": "PMC8789012",
+      "entity": "lipase",
+      "sha256": "d03e42878e896ef97c1bf96f366ffe051828279bfabd28b34d21bafb288bc5d1",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8890123": {
+      "paper_id": "PMC8890123",
+      "entity": "lipase",
+      "sha256": "87f2664c4e06891535dedcc3e6aa5d32f1362eecb982fac6ed74c61bad333a3a",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC8901234": {
+      "paper_id": "PMC8901234",
+      "entity": "lipase",
+      "sha256": "e409825a1f36a623b52cdbe6cd0b4b87fdb92f4146fe087e5d81e6c46363c2d3",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::PMC9012345": {
+      "paper_id": "PMC9012345",
+      "entity": "lipase",
+      "sha256": "4725c7b410301fee2a52f8a9a4a7dee5e2f14dbd3809be0a13e3803edceab8aa",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::42947235": {
+      "paper_id": "42947235",
+      "entity": "lipase",
+      "sha256": "da7bcbc24aa58fbe0cd60a19012f5f41e22a0c672dc41e425eccbd3d0570027a",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::10.21203/rs.3.rs-10983178/v1": {
+      "paper_id": "10.21203/rs.3.rs-10983178/v1",
+      "entity": "lipase",
+      "sha256": "167774a97e7c2b5520a5892916249967eb9d4646e9dd0ff54e5daf534c6703dc",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::42668381": {
+      "paper_id": "42668381",
+      "entity": "lipase",
+      "sha256": "d6fd04773befc3e3f28709847432d3d97d82e1feb8ea3875f7f6e49e48c32ed1",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::10.21203/rs.3.rs-9942287/v1": {
+      "paper_id": "10.21203/rs.3.rs-9942287/v1",
+      "entity": "lipase",
+      "sha256": "2d1518b247941bf9964ebb3b8070e4b3e92e676d969f39c1a857ca954460fc92",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::42778850": {
+      "paper_id": "42778850",
+      "entity": "lipase",
+      "sha256": "9c5f28e8e60e9511c70f90408d811f7f09bf6072bf281fcac53ca1759f15e581",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::42955152": {
+      "paper_id": "42955152",
+      "entity": "lipase",
+      "sha256": "47efbf8f412d9252d8d3480b65e6c7dc5efde28a50bf4503e5e25e488de56553",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::42655035": {
+      "paper_id": "42655035",
+      "entity": "lipase",
+      "sha256": "d91389a52a8c428c4cd1f4b24bdfa9b1a8d84e2ad337a19c48f9bef0564345be",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::None": {
+      "paper_id": "None",
+      "entity": "lipase",
+      "sha256": "96ab3cb8db192e403168c20ef192e6d417ce83e722b36e00c2c0e67420121e72",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::42801372": {
+      "paper_id": "42801372",
+      "entity": "lipase",
+      "sha256": "e50f96c22be5720e58d20204337a5a5dadab7f6aabed4401a6286a5384c3a9da",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::42248057": {
+      "paper_id": "42248057",
+      "entity": "lipase",
+      "sha256": "1eb1c1a213b77c00045f3f42539face9d7759ea571e2ab90686f68d3091cf683",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::42965697": {
+      "paper_id": "42965697",
+      "entity": "lipase",
+      "sha256": "8c68b14be22d3df4bb93c79fe9750e2b6cca8bfc12953cd2ee51f8463323cd6c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "lipase::10.21203/rs.3.rs-9989697/v1": {
+      "paper_id": "10.21203/rs.3.rs-9989697/v1",
+      "entity": "lipase",
+      "sha256": "f50e31db788e26974bcd20310b849281211b481a420c1b0825db487ca6bd13aa",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"lipase\"",
+      "snapshot_file": "lipase.json"
+    },
+    "palladium(II) acetate::40702023": {
+      "paper_id": "40702023",
+      "entity": "palladium(II) acetate",
+      "sha256": "b22dbcd6e8853031b1f3afe82c551123ea3abb7540245dcf69d26c3552e4019a",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::42052194": {
+      "paper_id": "42052194",
+      "entity": "palladium(II) acetate",
+      "sha256": "6368426f55ac4f3d24eef961c82f740ef27019d8f33596d98464c4b9155d79c6",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::42898041": {
+      "paper_id": "42898041",
+      "entity": "palladium(II) acetate",
+      "sha256": "e31ff52e02b942fac1192c181fceec42d97e2b9bb0cf745ee4e88892c46156da",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::10.22541/au.174408492.20309692/v1": {
+      "paper_id": "10.22541/au.174408492.20309692/v1",
+      "entity": "palladium(II) acetate",
+      "sha256": "83d70c0aa032d1792857cf1db9272541e16c3c23c4d14fc741efcc9f8ad639ab",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::41649389": {
+      "paper_id": "41649389",
+      "entity": "palladium(II) acetate",
+      "sha256": "6d0ddc84c0533cfa1656ed2b1dfe5cdc17288baa05e19636cec6ad7487421703",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::42340250": {
+      "paper_id": "42340250",
+      "entity": "palladium(II) acetate",
+      "sha256": "953c6d33c47c86e65acddea1348c5968d0119bbcb1b1349addbe72cca76f606a",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::39927843": {
+      "paper_id": "39927843",
+      "entity": "palladium(II) acetate",
+      "sha256": "0ad42f4caaeca93e486c3400a98e5dcbe07becce108da87919a42e4d7910ba20",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::42767251": {
+      "paper_id": "42767251",
+      "entity": "palladium(II) acetate",
+      "sha256": "8a189e824ad62b5c06f802baeddc1e6ed9f2e688842808e17fdec0466da71fcb",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::38946460": {
+      "paper_id": "38946460",
+      "entity": "palladium(II) acetate",
+      "sha256": "235651f61ced64bc7255d5e5fdf01832ec710a0e5b96fac19eb2b90426d01c68",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::38536102": {
+      "paper_id": "38536102",
+      "entity": "palladium(II) acetate",
+      "sha256": "fde4459a65f20c9a9540f694e4fb2dc9cf5e1c0f42c2d164220388c17d0e1366",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::39781333": {
+      "paper_id": "39781333",
+      "entity": "palladium(II) acetate",
+      "sha256": "11642aa66abcd1a5a21bdc6eb8f30d667a309c71e87f3119c34ea326ec9d1f8c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "palladium(II) acetate::40240426": {
+      "paper_id": "40240426",
+      "entity": "palladium(II) acetate",
+      "sha256": "8db4c215eb2741a219edb1903819ef39efa034bc63382334ee3cfa6a1927e947",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"palladium(II) acetate\"",
+      "snapshot_file": "palladium(ii)_acetate.json"
+    },
+    "vanillin::PMC42750794": {
+      "paper_id": "PMC42750794",
+      "entity": "vanillin",
+      "sha256": "e42cc0d9694d2c2a7f23bc3417e176fe490d4918b840b84ce4196f68f1a7c94f",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::PMC42642972": {
+      "paper_id": "PMC42642972",
+      "entity": "vanillin",
+      "sha256": "b5e5a1fddfa275495a508ff41dc2bf04e8fe6fdb5cfc5ba8f07c16c4ea2274b7",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::PMC42633741": {
+      "paper_id": "PMC42633741",
+      "entity": "vanillin",
+      "sha256": "14546c65da763e350a50b5d8d8e017f87aa750fbbf530bc4a9e1084322c6e563",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::PMC42949339": {
+      "paper_id": "PMC42949339",
+      "entity": "vanillin",
+      "sha256": "108c90e8f379cead6d58835813fecdd1a5d7f9f47ba1d218c0958c44e70e59a8",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::31234567": {
+      "paper_id": "31234567",
+      "entity": "vanillin",
+      "sha256": "ba1d38a5e885b04093ccfe7ea9f66ddea01030f2d53f997b867eb9e1e85940c6",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::32456789": {
+      "paper_id": "32456789",
+      "entity": "vanillin",
+      "sha256": "422cecbdc1c1c1223c6e497d039bf40d84cd0d0f5b952e0b9d34e37cdd409951",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::33678901": {
+      "paper_id": "33678901",
+      "entity": "vanillin",
+      "sha256": "763ad93c1489090df9d0f6974c2067edff6ae3414ef912efbb83b5e1a3e9dd7a",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::34890123": {
+      "paper_id": "34890123",
+      "entity": "vanillin",
+      "sha256": "667f86e3d2e01c7c5bcc9b02383d8e20b1f1bfaf2ef0953accf650ea34fb5882",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::35123490": {
+      "paper_id": "35123490",
+      "entity": "vanillin",
+      "sha256": "8a2522f511cddc212245cbbb83e36594a7122495132f2c3088a6a73d3fe06603",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::36234501": {
+      "paper_id": "36234501",
+      "entity": "vanillin",
+      "sha256": "91615f6ca860601ad9e2adf8787a04e6d25e0d7090eb64f49faacb7d8f78f496",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::42396011": {
+      "paper_id": "42396011",
+      "entity": "vanillin",
+      "sha256": "29da2bd2bb0780fc709e89b4b9cf6e1402552c9e3fd6b1d061714e20e59416f2",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::42942660": {
+      "paper_id": "42942660",
+      "entity": "vanillin",
+      "sha256": "f272d894e419c2ff41bcfd74caefd1941df69dc4063e5b890b7b97c7cdcc83ae",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::42655822": {
+      "paper_id": "42655822",
+      "entity": "vanillin",
+      "sha256": "e4a5b4b1d729f6d8502752370452b56400a67568abad04e6ff85c8793d1e3e91",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::42931697": {
+      "paper_id": "42931697",
+      "entity": "vanillin",
+      "sha256": "04bb9044485cef8efb69fb70f9cb7ba51f0de1cc1a8bb2adb2d53825aa28a6bd",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::42708265": {
+      "paper_id": "42708265",
+      "entity": "vanillin",
+      "sha256": "15168c99a4466ceb13b023a5d70ce067f2b709e6657fb9d6c3f34bb39dae5ea2",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::39345678": {
+      "paper_id": "39345678",
+      "entity": "vanillin",
+      "sha256": "d36451a2e52c78e911c208acb9566b1fb05f7d9153dac8c952e5f5e5c9b9895e",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::37123456": {
+      "paper_id": "37123456",
+      "entity": "vanillin",
+      "sha256": "aca9835e1958c5b1e6f2aaeb10c1e5244923f6c010e66791d6a4ad850c042c03",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::38234567": {
+      "paper_id": "38234567",
+      "entity": "vanillin",
+      "sha256": "76557f026a8714c457b30e95959d54e143e0f4806a4d6f640108f5930ff2ade7",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::38561234": {
+      "paper_id": "38561234",
+      "entity": "vanillin",
+      "sha256": "65cd3b3ed13501e151dffacb17b95627ff79bda6c025948dd34ed29fc8d32d9c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    },
+    "vanillin::39981245": {
+      "paper_id": "39981245",
+      "entity": "vanillin",
+      "sha256": "0f567abb337eb1945d0b7519be68a1e08395576387f265089af4fdbc1a0a0d5c",
+      "fetched_at": "2026-11-12T15:25:00Z",
+      "query_used": "TITLE_ABS:\"vanillin\"",
+      "snapshot_file": "vanillin.json"
+    }
+  },
+  "live_audit_records": {
+    "psilocybin::40177917": {
+      "paper_id": "40177917",
+      "entity": "psilocybin",
+      "sha256": "0ef4bf1680c27e037f84a22f82b96888a3958bbc2d72ee9b100900b3c7966a52",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::41474478": {
+      "paper_id": "41474478",
+      "entity": "psilocybin",
+      "sha256": "eb2726c081aa406fab7d96944b69d4adcfafa1880dfadd8621ebf163fc5e550c",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::43014316": {
+      "paper_id": "43014316",
+      "entity": "psilocybin",
+      "sha256": "1790c118ebad203fcf37d9fd036b3c9c990e95aa1afad5db0a1d69123fc92fae",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::42860751": {
+      "paper_id": "42860751",
+      "entity": "psilocybin",
+      "sha256": "a035313624aa62b7b380fd330a44932f7e4fcb248f443a47dac3c3926cf87f54",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::42922907": {
+      "paper_id": "42922907",
+      "entity": "psilocybin",
+      "sha256": "c615d7e6080d5648df67d4a047c4c42fe0dab893f9a58a8d14b17c220c75ebcc",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::42937360": {
+      "paper_id": "42937360",
+      "entity": "psilocybin",
+      "sha256": "6b47ff091a88b4b890403e2cc93f3760db0de11af75160404e1c6a4fbf4ddb73",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::10.22541/authorea.15006829/v1": {
+      "paper_id": "10.22541/authorea.15006829/v1",
+      "entity": "psilocybin",
+      "sha256": "b6afdf701a0e148e4ed69ea57ce7a1cccacdcea53d0947a2ffe8a4747557c9e8",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::42855022": {
+      "paper_id": "42855022",
+      "entity": "psilocybin",
+      "sha256": "14cb8ba5584e3ecc5b310d119fae98ceee69f951d7aa377543b87e69412736d3",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::42975895": {
+      "paper_id": "42975895",
+      "entity": "psilocybin",
+      "sha256": "da5c9e1647d079f668b0175b7b476680823daba555d0ec351ef37c2412d4a200",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "psilocybin::42988866": {
+      "paper_id": "42988866",
+      "entity": "psilocybin",
+      "sha256": "a092ca3502719fba84fea43c895c4c13ebf55cf664afd4ebe48d130fc80c88ed",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"psilocybin\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::42107802": {
+      "paper_id": "42107802",
+      "entity": "artemisinic acid",
+      "sha256": "94842cdb82748897d5e6d0b2b8c9839cdee40b9d4951208448f5887989eb0303",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::10.21203/rs.3.rs-3926665/v1": {
+      "paper_id": "10.21203/rs.3.rs-3926665/v1",
+      "entity": "artemisinic acid",
+      "sha256": "970bc5e28c5a84b99ff3bb6306c05a3f6c8dba9639c69fbdc8edf5aeb199de5c",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::42418950": {
+      "paper_id": "42418950",
+      "entity": "artemisinic acid",
+      "sha256": "b38b85840fda8de685deecf6bff6e6687d0b9a0c22a81e8d3488165078be1ff3",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::38474639": {
+      "paper_id": "38474639",
+      "entity": "artemisinic acid",
+      "sha256": "a654a932ab3a2cb1e1fd9d95999576dc8c9365c5083e5847307d5abcfc4bb348",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::40105756": {
+      "paper_id": "40105756",
+      "entity": "artemisinic acid",
+      "sha256": "b0f29adf32bbe871120cfa1d3db7939ff5a6455776fac6a0268589ca1b48cad8",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::42774055": {
+      "paper_id": "42774055",
+      "entity": "artemisinic acid",
+      "sha256": "38a1f3e983d832ee1de5db4dd9a16d55d771028c056fe8d9ecd667429e9766e7",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::39732992": {
+      "paper_id": "39732992",
+      "entity": "artemisinic acid",
+      "sha256": "32d2395c33cd8823949a84a1bafb1f3673c62d5526cdbec811260c5555a6c2ac",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::40274872": {
+      "paper_id": "40274872",
+      "entity": "artemisinic acid",
+      "sha256": "e4909a03197965895c6d9e8bdd75715436b9d861d213450863e54cb5db0f3f88",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::40510840": {
+      "paper_id": "40510840",
+      "entity": "artemisinic acid",
+      "sha256": "77cc680b5baf753fc5882c8815bd0f49aa67682a1fcbf83e494f2b598154b00d",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "artemisinic acid::36867394": {
+      "paper_id": "36867394",
+      "entity": "artemisinic acid",
+      "sha256": "c4b3a858980fc3150662243a1d11ab08a2e072b4e2c0b45b23f3cc02784a6cdd",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"artemisinic acid\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::43003031": {
+      "paper_id": "43003031",
+      "entity": "caffeine",
+      "sha256": "8b4101c91f7404a6f34ac982ec790ec737cb939fbfe0b2713732fba2686c60ba",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::42563398": {
+      "paper_id": "42563398",
+      "entity": "caffeine",
+      "sha256": "9ec59ff2579d1e5cc6392006dc484d63d97202fddeb700af81fd23616cb655a2",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::42970870": {
+      "paper_id": "42970870",
+      "entity": "caffeine",
+      "sha256": "5d93251355b23533b43a43cd503d9dcf27e31f19ebfee73f8c604bb856827940",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::10.21203/rs.3.rs-11403610/v1": {
+      "paper_id": "10.21203/rs.3.rs-11403610/v1",
+      "entity": "caffeine",
+      "sha256": "079b10f502fec7b66787aad71fbd0f5fca683affc806d6ec7365876356186109",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::41275554": {
+      "paper_id": "41275554",
+      "entity": "caffeine",
+      "sha256": "88a2cc560cd2a26e31aaa1bf587d0dbe92d82fd490f8d1bdb10d7aaebe26998a",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::42855060": {
+      "paper_id": "42855060",
+      "entity": "caffeine",
+      "sha256": "cae5e2972a16ce191798a768a074fbadd29dba4b54a479e1eb119004d6cafdd2",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::42970875": {
+      "paper_id": "42970875",
+      "entity": "caffeine",
+      "sha256": "4dbac324d5283a77c132fd1003d62fc4993526d6ff706b27a70118da313dd68a",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::42973489": {
+      "paper_id": "42973489",
+      "entity": "caffeine",
+      "sha256": "6493ed4afc26b101fdd4b21fe1889c22536be72a63f6fe15674b76ddf6ea05d5",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::42118061": {
+      "paper_id": "42118061",
+      "entity": "caffeine",
+      "sha256": "1e7f63678f09372bec72298581218345892a37f0d14cf681a650d2cafdd0d6a8",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "caffeine::41622288": {
+      "paper_id": "41622288",
+      "entity": "caffeine",
+      "sha256": "b07e363f7cbf73a0d82c9da1fba09fa2a973c57e8e52856b10e64dff8ed926ad",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"caffeine\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::41173897": {
+      "paper_id": "41173897",
+      "entity": "palladium acetate",
+      "sha256": "9236211bcb9d6314d1e9b354fb80f9b2686cfdd80b12b9a8f093ffb0e79ea632",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::42052194": {
+      "paper_id": "42052194",
+      "entity": "palladium acetate",
+      "sha256": "04aebe05c144f9c251e6761a208816c1378b08c1e076d867e7e5e048c04e2ec4",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::42340250": {
+      "paper_id": "42340250",
+      "entity": "palladium acetate",
+      "sha256": "953c6d33c47c86e65acddea1348c5968d0119bbcb1b1349addbe72cca76f606a",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::38269422": {
+      "paper_id": "38269422",
+      "entity": "palladium acetate",
+      "sha256": "6b352d3efae9d05b4b250818fd92a084d4e516fe017a729027a4aafb07b9bbe9",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::38536102": {
+      "paper_id": "38536102",
+      "entity": "palladium acetate",
+      "sha256": "bfe13273e0d2b5821c57a2da308c4d898241020e5e4ae1fad333b6093cb5f9d0",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::37747819": {
+      "paper_id": "37747819",
+      "entity": "palladium acetate",
+      "sha256": "10be20902861824c936f7eb506144aadd046f1cd6a430ed3c335df7db49b245c",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::41649389": {
+      "paper_id": "41649389",
+      "entity": "palladium acetate",
+      "sha256": "b3b0a7b863b0b03cfc8df053ec8cd39eed5ef4fe1ed32d604b880e8f58a5d7ee",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::42767251": {
+      "paper_id": "42767251",
+      "entity": "palladium acetate",
+      "sha256": "495f3d8cdf7204a89b454007973a4ea9f97a5bf14616a2af26befa5d7d66d023",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::10.22541/au.174408492.20309692/v1": {
+      "paper_id": "10.22541/au.174408492.20309692/v1",
+      "entity": "palladium acetate",
+      "sha256": "83d70c0aa032d1792857cf1db9272541e16c3c23c4d14fc741efcc9f8ad639ab",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    },
+    "palladium acetate::39705094": {
+      "paper_id": "39705094",
+      "entity": "palladium acetate",
+      "sha256": "9d0dbc2f7c86926b0ffe3aa99c1514e54f6f5eb8b56ebeb4ff94b464899e4293",
+      "fetched_at": "2026-11-13T12:50:00Z",
+      "query_used": "TITLE_ABS:\"palladium acetate\"",
+      "snapshot_file": "live_audit_40.json"
+    }
+  }
+}
