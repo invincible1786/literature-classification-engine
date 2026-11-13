@@ -374,45 +374,46 @@ curl http://127.0.0.1:8000/health
 ### Leave-One-Entity-Out (LOEO) Cross-Validation
 To guarantee that the classifier does not overfit to specific chemical nomenclature, evaluation is conducted by training/tuning on specific chemical families (e.g. flavonoids, polyphenols) and evaluating on held-out families (e.g. terpenes, alkaloids, enzymes).
 
-### Wilson Score 95% Confidence Intervals
-Instead of reporting naive point claims (e.g. "100% accuracy"), all metrics compute exact Wilson score intervals:
-- **Holdout Precision:** `1.0000` [95% Wilson CI: `0.6756 – 1.0000`]
-- **Holdout Specificity:** `1.0000` [95% Wilson CI: `0.8389 – 1.0000`]
-- **Holdout Accuracy:** `0.7000` [95% Wilson CI: `0.5457 – 0.8193`]
+### Wilson Score 95% Confidence Intervals & Stratified Held-Out Results (`N = 56`)
+Across the disjoint held-out test entities (`palladium(II) acetate`, `artemisinic acid`, `lipase`; `20` clean + `36` real Europe PMC noisy abstracts), executed with `DebertaNLIScorer` in `notebooks/evaluation.ipynb`:
+- **Qualifies Precision:** `0.9444` (`95% Wilson CI [0.7424, 0.9901]`, up from `0.6129` on `v2-baseline`)
+- **Qualifies Recall:** `0.8947` (`95% Wilson CI [0.6861, 0.9706]`)
+- **Binary Qualifies Accuracy / F1 / F0.5:** `0.9464` `[0.8539, 0.9816]` / `0.9189` / `0.9341`
+- **3-Class Macro-F1:** `0.6381` (vs. `0.5245` on `v2-baseline`; Clean `0.9118`, Noisy `0.6230`)
+- **Calibrated ECE:** `0.0695` (reduced from `0.3340` uncalibrated `v2` baseline)
 
 ### McNemar's Exact Test
-Demonstrates statistically significant improvement of the hardened v2 pipeline over the baseline v1 architecture ($b = 8, c = 0, p = 0.0078$).
+Demonstrates statistically significant improvement on the binary `qualifies` slice between `v2-baseline` and `v3.2-frozen` ($b = 11, c = 2, p = 0.0225$).
 
 ---
 
-## 11. Automated Test Suite (100% Pass Rate)
+## 11. Automated Test Suite (100% Offline Pass Rate)
 
 The project includes an automated test suite structured into three distinct tiers:
 
 ```bash
-# Tier 1: Fast deterministic unit tests (35 tests, ~4.0s)
-# Validates Reason Registry, Criterion Parser, C1/C2/C3 conditions, role polarity, truth table precedence, abstract carve-outs, lookarounds, alias vetting, and monotone bands.
+# Tier 1: Fast deterministic unit tests (50 tests)
+# Validates doc-drift against implementation.md, v3.2 features (G3, D5, D6, IUPAC bracket-depth split, title isolation, anaphora), 18-code Reason Registry, 12-rule combiner truth table, and load shedding.
 python -m pytest tests/unit -v
 
-# Tier 2: Real DeBERTa-v3 model fixture tests (10 tests, ~13.9s)
-# Evaluates must-pass cases: Q1-Q3 (qualifiers), N1-N6 (hard negatives: catalysts, reviews, case reports, background citations), D1 (dedup).
+# Tier 2: Real DeBERTa-v3 model fixture tests (12 tests)
+# Evaluates must-pass cases: Q1-Q3, N1-N6, D1, CS5 conflicting_evidence, and caffeine neutral boundary.
 python -m pytest tests/model -v
 
-# Tier 3: Live Europe PMC network integration test (~14.7s)
-# Validates live network querying, schema validation, and parsing against the Europe PMC REST API.
+# Tier 3: Live Europe PMC network integration test
 python -m pytest tests/live -m live -v
 
-# Run entire suite (100% Pass Rate):
-python -m pytest tests/unit tests/model tests/live -v
+# Run full offline suite (62/62 Passing):
+python -m pytest tests/unit tests/model -v
 ```
 
 ---
 
 ## 12. Honest Scientific Limitations
 
-1. **Abstract Paywall Truncation:** In scientific publishing, fermentation yields and synthetic methods often appear only in paywalled full text. Because the engine strictly refuses to invent evidence, papers with vague abstracts (*"We investigated yeast metabolism"*) will abstain as `insufficient_evidence` with registered reason codes (`abstract_only`, `system_unstated`).
-2. **Hyphenated Stereoisomers:** Word-boundary lookaround regexes treat hyphens as boundary characters. Locant-prefixed isomers (e.g. *o-vanillin*) may trigger initial candidate matching, leaving fine disambiguation to downstream NLI. Integrating chemical Named Entity Recognition (NER) is recommended for stereochemical isolation.
-3. **Multi-Sentence Synthetic Narratives:** When a multi-step organic reaction is described across several sentences without a summary sentence, the engine evaluates single sentences and picks the single highest-scoring sentence rather than synthesizing multi-paragraph chains.
+1. **Abstract Paywall Truncation:** In scientific publishing, fermentation yields and synthetic methods often appear only in paywalled full text. Because the engine strictly refuses to invent evidence, papers with vague abstracts will abstain as `insufficient_evidence` (`system_unstated`, `activity_unclear`).
+2. **Conservatism on Passive Negatives vs. Thin Calibration Sample:** `v3.2` routed `8/34` `does_not_qualify` test items to abstention (`19.64%` overall abstention rate), and `negative_path` Platt MLE currently rests on `n_rows = 4` dev rows (`different_activity`, `wrong_system`). See [`TECHNICAL_REPORT.md`](TECHNICAL_REPORT.md) §6 for full discussion.
+3. **Hyphenated Stereoisomers & Multi-Hop Boolean Queries:** Arbitrary multi-hop Boolean joins outside G1/G2/G3 cleanly return HTTP 422 rather than silently mis-scoring.
 
 ---
 
@@ -420,28 +421,22 @@ python -m pytest tests/unit tests/model tests/live -v
 
 - [x] **Zero Paid APIs:** Local Hugging Face DeBERTa-v3 Cross-Encoder (`cross-encoder/nli-deberta-v3-small`, revision `fa280487`).
 - [x] **Criterion-Aware Decomposition:** Separate verification for $C_1$ Entity, $C_2$ Activity, $C_3$ Host System.
-- [x] **Closed Reason Registry:** 17 registered canonical reason codes; strictly non-null reason code on any non-qualifying classification.
-- [x] **No Hallucinations:** Verbatim character offsets verified byte-for-byte (`canonical_doc[start:end] == evidence.display_text`); titles are never evidence.
-- [x] **Role / Catalyst Guard:** 15 regex patterns + role polarity awareness (veto only when `entity_role == "product"`).
-- [x] **Dual-Query Retrieval:** Union of intent-augmented and plain queries with provenance tracking (`retrieved_by: "intent" | "plain" | "both"`).
-- [x] **SHA-256 Provenance:** Every candidate record tracks `source_record_sha256 = SHA256(title + " " + abstractText)`.
-- [x] **"This Work" Epistemic Gate:** Distinguishes primary experimental discovery from passive prior-art citations.
-- [x] **Preprint Deduplication:** Reconciles bioRxiv/Nature papers and cleans raw HTML entities.
-- [x] **Platt Scaling:** Monotone qualitative confidence bands (High, Medium, Low); strictly `null` confidence on non-qualifiers.
-- [x] **FastAPI Microservice:** Asynchronous concurrency limit with polite HTTP 503 load-shedding.
-- [x] **Curator Feedback Queue:** Thread-safe append-only logging with offline validator (`eval/ingest_feedback.py`).
-- [x] **Verification:** 35/35 automated unit tests passing (100% Pass Rate).
+- [x] **Closed Reason Registry:** 18 registered reason codes (`17` reachable active codes + deprecated `system_mismatch_abstract`); non-null reason code on any non-qualifying classification.
+- [x] **No Hallucinations:** Structural title isolation and runtime slice assertion `canon_body[start:end] == evidence.display_text`.
+- [x] **Role / Catalyst Guard & Conflict Routing:** Modifier-tolerant prepositional role patterns (`R3a` veto vs. `R3b` `conflicting_evidence`).
+- [x] **Dual-Query Retrieval & SHA-256 Audit:** Union of intent-augmented and plain queries plus `data/snapshots/manifest.json` (`152` records).
+- [x] **"This Work" & Bracket-Depth Clause Splitting:** Clause-local experimental attribution + backward anaphora (`ANAPHORA_WINDOW = 2`) without corrupting IUPAC names.
+- [x] **Two-Map MLE Platt Scaling (D5):** Fitted across `eval/splits.json` dev entities with conditional null confidence on vetoes, `mention_only`, `background_citation`, and abstentions.
+- [x] **Reproducible Notebook & Report:** Executed [`notebooks/evaluation.ipynb`](notebooks/evaluation.ipynb) (no stub scorers) and [`TECHNICAL_REPORT.md`](TECHNICAL_REPORT.md).
+- [x] **Verification:** 62/62 offline tests (`50` unit + `12` real DeBERTa model tests).
 
 ---
 
-## 14. Version 3.0 (v3 Upgrade Specification)
+## 14. Version 3.2 Upgrade Summary (`v3.2-frozen`)
 
-The engine has completed the **Version 3.0 Upgrade** specified in `implementation.md`:
-1. **Three-Class Classification Taxonomy:** `qualifies`, `does_not_qualify`, and `insufficient_evidence`.
-2. **Canonical Reason Codes (`app/reasons.py`):** 17 registered codes across `veto`, `evidence-based`, `abstain`, and `metadata` categories.
-3. **Criterion Grammar Parser (`app/criterion_parser.py`):** Parses user criteria into structured `CriterionSpec` objects for G1 (product) and G2 (agent) shapes. Rejects unparsed clauses with HTTP 422 Unprocessable Entity unless `--allow-partial-criterion` is explicitly toggled.
-4. **Organism Family Gazetteer (`config/systems.json`):** Gazetteers covering `microbial`, `yeast`, `bacteria`, `fungi`, `plant`, and `mammalian` lineages.
-5. **Multi-Condition Precedence Combiner (`app/combiner.py`):** Implements strict precedence rules 1 through 11, ensuring exact truth-table mapping for all combinations.
-6. **Hand-Set Constants Register (`config/constants.md`):** Documents all hand-set constants, LOEO dev split tuning, and $\pm 20\%$ sensitivity stability margins.
-7. **Backwards Compatibility:** Running with `--pipeline v2` executes the battle-tested v2 single-sentence binary classifier.
+1. **Three-Class Taxonomy & 18-Code Registry (`app/reasons.py`):** `qualifies`, `does_not_qualify`, `insufficient_evidence`, with `mention_only` and `background_citation` classified as evidence-based `does_not_qualify`, `unstated_threshold` added as #18, and `system_mismatch_abstract` deprecated under **D6**.
+2. **G1/G2/G3 Criterion Grammar (`app/criterion_parser.py`):** Parses product/agent roles, host families (including `in_vitro`), exclusions, and unit-normalized numeric thresholds; hard HTTP 422 on unparsed clauses (`--allow-partial-criterion` opt-in).
+3. **12-Rule Deterministic Combiner (`app/combiner.py`):** `R1`–`R11` with `R3a`/`R3b` synthesis-conflict routing, audited by automated doc-drift tests (`tests/unit/test_doc_drift.py`).
+4. **Two-Map MLE Calibration (`eval/calibrate.py`):** Regularized Newton-Raphson logistic MLE on disjoint 4-entity dev split (`eval/splits.json`).
+5. **Backwards Compatibility:** `--pipeline v2` preserves legacy sentence-level binary inference cleanly (`v2-baseline` pinned at `85894a0`).
 

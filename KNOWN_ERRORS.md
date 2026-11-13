@@ -166,32 +166,39 @@ As specified in Phase 3, a hand-crafted 30-pair diagnostic probe battery was exe
 
 ---
 
-## 5. Deliberate Deviations Register (D1–D4)
+## 5. Deliberate Deviations Register (D1–D6)
 
 | Deviation ID | Topic | Decision | Justification |
 |---|---|---|---|
-| **D1** | Platt Fitting Scope | Fit Platt scaling exclusively on qualifier candidate path ($m_{\text{qualify}}$). | Non-qualifiers and abstaining paths represent categorical metadata/veto decisions, not continuous probabilities. Fitting on non-qualifiers introduces uncalibrated distortion. |
-| **D2** | Evidence Invariant | `assert canonical_doc[start:end] == evidence.display_text` | Complete elimination of hallucinated or paraphrased evidence spans. Guarantees 100% byte-exact provenance. |
-| **D3** | Constants Registry | Externalized hand-set constants in `config/constants.md` with LOEO dev tuning and $\pm 20\%$ sensitivity analysis. | Eliminates magic numbers from codebase; documents empirical stability under perturbation. |
-| **D4** | Two-Veto Exclusivity | Exactly two vetoes: prepositional role patterns (when `entity_role == "product"`) and Europe PMC `pubType=review` (when `scope == "this_study"`). | All other rejections must be evidence-based or abstentions with verbatim spans. Prevents heuristic rule sprawl. |
+| **D1** | Platt Fitting Scope | Fit qualifier MLE on positives + borderline negatives within `NEG_FIT_WINDOW = 0.15` below `tau`. | Prevents upward slope bias (`A=3.4594`, `slope_unstable_flag=false`). |
+| **D2** | Evidence Invariant | `assert canon_body[start:end] == evidence.display_text` + structural title isolation. | Eliminates paraphrased evidence spans and title leakage. |
+| **D3** | Constants Registry | Externalized hand-set constants in `config/constants.md` (`splits_sha256` verified). | Prevents hidden heuristics and dev/test contamination. |
+| **D4** | Two-Veto Exclusivity | Only `reagent_role` (subject to **R3b** conflict check) and `review_article` may override NLI support. | Prevents heuristic rule sprawl while guarding mixed abstracts. |
+| **D5** | Conditional Null Confidence | Calibrate negatives ONLY on `different_activity`/`wrong_system`; all other non-qualifiers emit `confidence: null`. | Vetoes, background citations, and abstentions are discrete outcomes, not probability posteriors. |
+| **D6** | Strict Abstract Contradictions | Explicit contradictory host organisms in abstracts resolve to `does_not_qualify(wrong_system)`. | Avoids abstention inflation on clear biological host mismatches. |
 
 ---
 
-## 6. Verification Matrix
+## 6. Verification Matrix (Clean + v3.2 Additions)
 
 | Failure Mode | Test File | Verification Check | Status |
 |---|---|---|---|
 | F1 (Review trap) | `test_v3_remediation.py` | `test_t_review_pubtype_and_we_review` | **PASSED** |
-| F2 (Role confusion) | `test_v3_remediation.py` | `test_t_role_veto_entity_object` | **PASSED** |
+| F2 (Role confusion + modifiers) | `test_v3_remediation.py` / `test_remediation_v2_tier1.py` | `test_t_role_veto_entity_object` / `test_role_patterns_detection` | **PASSED** |
 | F3 (Alias collisions) | `test_remediation_v2_tier1.py` | `test_alias_vetting_denylist` | **PASSED** |
 | F4 (Inverted ranking) | `test_robustness_tier1.py` | `test_e13_deliberate_ranking_order` | **PASSED** |
-| F5 (Uncalibrated bands) | `test_v3_remediation.py` | `test_t_null_confidence_on_abstain` | **PASSED** |
-| F6 (Retrieval starvation) | `test_unit/test_api_tier1.py` | `test_e9_zero_search_hits_returns_200` | **PASSED** |
+| F5 (Uncalibrated bands & D5) | `test_v32_features.py` | `test_ws17_r4_d5_schema_validator_and_mle_fit` | **PASSED** |
+| F6 (Retrieval starvation) | `test_api_tier1.py` | `test_e9_zero_search_hits_returns_200` | **PASSED** |
 | F7 (Duplicates & markup) | `test_remediation_v2_tier1.py` | `test_deduplication_and_markup_cleaning` | **PASSED** |
-| F8 (Host system) | `test_v3_remediation.py` | `test_t_system_mismatch_abstract` | **PASSED** |
+| F8 (Host system + D6) | `test_v32_features.py` | `test_ws14_b_c_comparative_organism_in_vitro_and_d6` | **PASSED** |
 | F9 (Role polarity G2) | `test_v3_remediation.py` | `test_t_agent_role_g2` | **PASSED** |
 | F10 (Related compound) | `test_v3_remediation.py` | `test_t_related_compound` | **PASSED** |
 | F11 (Abstract-only) | `test_v3_remediation.py` | `test_t_entity_absent_fulltext_only` | **PASSED** |
 | F12 (Dual query) | `test_api_tier1.py` | `test_e8_europe_pmc_upstream_outage_returns_502` | **PASSED** |
 | F13 (Contrast guard) | `test_grid_tier1.py` | `test_e11_criteria_grid_lexical_arming` | **PASSED** |
-| F14 (Precedence) | `test_v3_remediation.py` | `test_t_truth_table` | **PASSED** |
+| F14 (12-rule combiner precedence) | `test_v32_features.py` | `test_ws17_r5_truth_table_total_and_allow_partial` | **PASSED** |
+| F15 (IUPAC comma splitting) | `test_v32_features.py` | `test_ws15_b_bracket_depth_iupac_and_trailing_negation` | **PASSED** |
+| F16 (Title leakage) | `test_v32_features.py` | `test_ws15_a_structural_title_isolation` | **PASSED** |
+| F17 (Reagent vs synthesis conflict) | `test_v32_features.py` / `test_model_fixtures.py` | `test_ws14_a_conflicting_evidence_routing` / `test_ws14_a_cs5_conflicting_reagent_and_synthesis` | **PASSED** |
+
+For residual held-out errors on noisy real Europe PMC abstracts (`N=36`) and limitations analysis, see [`TECHNICAL_REPORT.md`](TECHNICAL_REPORT.md) (§4 and §6).
