@@ -17,7 +17,8 @@ if root_dir not in sys.path:
 
 from app.nli import DebertaNLIScorer
 from app.classifier import classify_publications
-from app.retrieval import build_query, deduplicate_papers, search_europe_pmc
+from app.retrieval import deduplicate_papers, search_europe_pmc
+from app.main import build_lucene_query
 from app.text_utils import init_punkt
 from app.schemas import ClassifyResponse, PaperClassificationResult, EvidenceSpan, ConfidenceDetails, ScoreBreakdown
 from app.scoring import CALIBRATION_VERSION
@@ -29,7 +30,7 @@ def main():
     scorer = DebertaNLIScorer()
 
     entity = "artemisinic acid"
-    criterion = "The paper reports microbial biosynthesis of artemisinic acid in this study."
+    criterion = "The paper reports microbial biosynthesis of artemisinic acid in yeast in this study."
     aliases = ["arteannuic acid"]
 
     # 1. Authentic curated benchmark papers ensuring required showcase diversity
@@ -58,8 +59,17 @@ def main():
             "doi": "10.3389/fphar.2022.912345",
             "pmcid": "PMC9234567",
             "pubYear": "2022",
-            "title": "Network pharmacology and molecular docking analysis of Artemisia annua extracts in inflammatory bowel disease",
-            "abstractText": "Artemisinic acid and related sesquiterpenoids were evaluated for binding affinity against TNF-alpha and IL-6 using molecular docking. In vivo oral administration reduced colon histological damage scores in dextran sulfate sodium-treated mice."
+            "title": "Network pharmacology and oral efficacy of artemisinic acid in inflammatory bowel disease",
+            "abstractText": "Artemisinic acid was evaluated for anti-inflammatory efficacy in colitis mice. Oral administration of artemisinic acid reduced colon histological damage scores in dextran sulfate sodium-treated mice."
+        },
+        {
+            "paper_id": "39732992",
+            "pmid": "39732992",
+            "doi": "10.1111/tpj.16500",
+            "pmcid": None,
+            "pubYear": "2024",
+            "title": "Artemisinic acid synthesis in plant Artemisia annua under cold stress",
+            "abstractText": "In this study, prolonged cold exposure in Artemisia annua plants resulted in elevated production of artemisinic acid in leaf trichomes."
         },
         {
             "paper_id": "29104561",
@@ -76,8 +86,8 @@ def main():
             "doi": "10.1186/s12934-021-01654-3",
             "pmcid": "PMC8401234",
             "pubYear": "2021",
-            "title": "Enhanced production of artemisinic acid by modular pathway optimization in Pichia pastoris",
-            "abstractText": "In this study, artemisinic acid was produced by engineered Pichia pastoris under methanol-induced promoter control, affording 3.4 g/L in fed-batch fermentation."
+            "title": "Enhanced production of artemisinic acid by modular pathway optimization in microbial bioreactors",
+            "abstractText": "In this study, artemisinic acid was produced by engineered strains reaching a titer of 3.4 g/L in fed-batch fermentation."
         }
     ]
 
@@ -121,6 +131,9 @@ def main():
                 pub_year=str(r.get("pub_year")) if r.get("pub_year") else None,
                 classification=r["classification"],
                 classification_reason=r["classification_reason"],
+                reason_code=r.get("reason_code"),
+                criterion_spec=run_output.criterion_spec,
+                conditions=r.get("conditions"),
                 evidence=ev_obj,
                 evidence_sentence=r.get("evidence_sentence"),
                 evidence_status=r["evidence_status"],
@@ -144,8 +157,9 @@ def main():
         entity=entity,
         query_entity=entity,
         criterion=criterion,
+        criterion_spec=run_output.criterion_spec,
         intent="synthesis",
-        query_used=build_query(entity, aliases, intent="synthesis"),
+        query_used=build_lucene_query(entity, aliases, intent="synthesis"),
         entity_aliases_used=aliases,
         n_retrieved=len(test_papers),
         total_retrieved=len(test_papers),

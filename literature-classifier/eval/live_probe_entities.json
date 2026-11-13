@@ -1,0 +1,21 @@
+{
+  "protocol": "fresh_unbiased_live_probe",
+  "registered_at": "2026-11-14T05:12:00Z",
+  "description": "Pre-registered entities for unbiased live evaluation of literature-classifier v3.3",
+  "queries": [
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "aliases": ["trans-resveratrol", "3,5,4'-trihydroxystilbene"],
+      "max_results": 10
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "aliases": ["4',5,7-trihydroxyflavanone", "(+-)-naringenin"],
+      "max_results": 10
+    }
+  ]
+}

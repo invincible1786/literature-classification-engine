@@ -1,0 +1,351 @@
+{
+  "n": 20,
+  "metrics": {
+    "n": 20,
+    "confusion_matrix": {
+      "qualifies": {
+        "qualifies": 1,
+        "does_not_qualify": 0,
+        "insufficient_evidence": 0
+      },
+      "does_not_qualify": {
+        "qualifies": 2,
+        "does_not_qualify": 5,
+        "insufficient_evidence": 7
+      },
+      "insufficient_evidence": {
+        "qualifies": 1,
+        "does_not_qualify": 0,
+        "insufficient_evidence": 4
+      }
+    },
+    "per_class": {
+      "qualifies": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.25,
+        "precision_ci": [
+          0.045586062644636216,
+          0.6993639475573634
+        ],
+        "recall": 1.0,
+        "recall_ci": [
+          0.20654329147389294,
+          1.0
+        ],
+        "f1": 0.4
+      },
+      "does_not_qualify": {
+        "tp": 5,
+        "fp": 0,
+        "fn": 9,
+        "precision": 1.0,
+        "precision_ci": [
+          0.5655085052479191,
+          1.0
+        ],
+        "recall": 0.35714285714285715,
+        "recall_ci": [
+          0.16344490737202735,
+          0.6123599531785959
+        ],
+        "f1": 0.5263157894736842
+      },
+      "insufficient_evidence": {
+        "tp": 4,
+        "fp": 7,
+        "fn": 1,
+        "precision": 0.36363636363636365,
+        "precision_ci": [
+          0.15166223614131383,
+          0.6462032231083628
+        ],
+        "recall": 0.8,
+        "recall_ci": [
+          0.3755282641185388,
+          0.9637768390302125
+        ],
+        "f1": 0.5000000000000001
+      }
+    },
+    "macro_f1": 0.47543859649122816,
+    "accuracy": 0.5,
+    "accuracy_ci": [
+      0.2992949144298199,
+      0.7007050855701801
+    ],
+    "abstention_rate": 0.55,
+    "abstention_count": 11,
+    "abstention_error_rate": 0.0,
+    "abstention_error_ci": [
+      0.0,
+      0.43449149475208104
+    ],
+    "qualifies_tp": 1,
+    "qualifies_fp": 3,
+    "qualifies_fn": 0
+  },
+  "rows": [
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "43008870",
+      "title": "Coupling corncob fractionation with covalent enzyme assembly for resveratrol biosynthesis from lignin-derived p-coumaric acid.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "qualifies",
+      "predicted_3class": "qualifies",
+      "predicted_reason": "qualifies",
+      "confidence": 0.9748,
+      "evidence": "Following optimization, 5-L fed-batch fermentation produced 803.85 \u00b1 10.06 mg L-1 resveratrol.",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "42942769",
+      "title": "Ethosomal Nanocarriers for Trans-Resveratrol Delivery: Formulation, Physicochemical Characterization, Stability, and In Vitro Release Performance.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "qualifies",
+      "predicted_reason": "qualifies",
+      "confidence": 0.9512,
+      "evidence": "Methods: Resveratrol-loaded ethosomes were prepared with synthetic phosphatidylcholine (Lipoid P75), ethanol, and vitamin E. Microfluidization was optimized by varying the number of high-pressure homogenization cycles and the applied pressure.",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "42873224",
+      "title": "In vitro colonic fermentation of ferulic acid and trans-resveratrol: kinetic profiling and metabolic convergence.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "does_not_qualify",
+      "predicted_reason": "mention_only",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "42942834",
+      "title": "Development and Physicochemical Characterization of Trans-Resveratrol Liposomes: Influence of Phospholipid Composition and Ultrasound-Assisted Processing.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "does_not_qualify",
+      "predicted_reason": "mention_only",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "42476403",
+      "title": "Bubble-driven Co(OH)2@MnO2 conical micromotors for sensitive detection and efficient degradation of resveratrol.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "does_not_qualify",
+      "predicted_reason": "different_activity",
+      "confidence": 0.3784,
+      "evidence": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "10.21203/rs.3.rs-11365772/v1",
+      "title": "trans-Resveratrol and \u03b5-viniferin recovery from grapevine pruning residues: process optimization and varietal screening towards industrial valorisation",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "41804801",
+      "title": "The role of reactive species in modulating stilbene biosynthesis in grapevine cells.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "insufficient_evidence",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "42520608",
+      "title": "Low-frequency polarized electric field promotes stilbene biosynthesis by redirecting phenylpropanoid flux in postharvest grapes.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "insufficient_evidence",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "42692351",
+      "title": "Dietary supplementation of resveratrol alters rumen microbiome and reduces urinary trimethylamine/trimethylamine N-oxide excretion in dairy cows.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_1_resveratrol",
+      "entity": "resveratrol",
+      "paper_id": "43017941",
+      "title": "Resveratrol improves behavior and neurochemical parameters in rats submitted to a Maple Syrup Urine Disease chemical model.",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "42214635",
+      "title": "Modular pathway engineering enables gram-scale de novo biosynthesis of narirutin in yeast.",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "insufficient_evidence",
+      "predicted_3class": "qualifies",
+      "predicted_reason": "qualifies",
+      "confidence": 0.971,
+      "evidence": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "42857650",
+      "title": "Design and multidimensional optimization of cell-free system for efficient (2S)-naringenin production.",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "qualifies",
+      "predicted_reason": "qualifies",
+      "confidence": 0.908,
+      "evidence": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "42531725",
+      "title": "Biosynthetic pathway for bioactive tetrahydroxyflavanone 7-O-glucuronides in Scutellaria barbata.",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "does_not_qualify",
+      "predicted_reason": "wrong_system",
+      "confidence": 0.3784,
+      "evidence": "Reconstitution in Nicotiana benthamiana enabled de novo production of both glucuronides, and co-expression of SbarUGDH further enhanced glucuronide accumulation.",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "10.20944/preprints202609.2171.v1",
+      "title": "Phytochemical Profiling of Non-Marketable Organs of White Onion (Allium cepa L.): A Comparative Study of Two Extraction Methods Using HPLC-DAD",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "does_not_qualify",
+      "predicted_reason": "wrong_system",
+      "confidence": 0.3784,
+      "evidence": "Phytochemical profiles were significantly influenced by both plant organ and extraction method.",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "42562518",
+      "title": "Dual regioselective glycosylation of naringenin by Deinococcus deserti amylosucrase: regioisomers identification via methylation-LC-MS/MS.",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "system_unstated",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "10.21203/rs.3.rs-9663892/v1",
+      "title": "Preparation of polyclonal antibody targeting Optic atrophy 1 (OPA1) of chicken and the effect of naringenin on OPA1 expression in the liver of broilers under heat stress",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "system_unstated",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "41814496",
+      "title": "A Scaffoldomics Platform for Modular In Vivo Enzyme Colocalisation and Its Application to Naringenin Biosynthesis.",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "insufficient_evidence",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "42730264",
+      "title": "Metabolic engineering of Saccharomyces cerevisiae for de novo biosynthesis of isoorientin.",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "42965514",
+      "title": "Functional Characterization of Isoflavonoid Synthase CYP736D1 Mediating Oxidative Aryl Migration in a Non-leguminous Plant, Iris germanica (Iridaceae).",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "does_not_qualify",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    },
+    {
+      "query_id": "probe_2_naringenin",
+      "entity": "naringenin",
+      "paper_id": "43015870",
+      "title": "Engineering a modular yeast platform integrating xylose metabolism and plant polyphenol biosynthesis.",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "gold_3class": "insufficient_evidence",
+      "predicted_3class": "insufficient_evidence",
+      "predicted_reason": "activity_unclear",
+      "confidence": null,
+      "evidence": "",
+      "stratum": "fresh_live_probe"
+    }
+  ]
+}

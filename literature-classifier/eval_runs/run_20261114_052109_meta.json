@@ -1,0 +1,19 @@
+{
+  "timestamp": "20261114_052109",
+  "run_file": "run_20261114_052109.json",
+  "execution_mode": "fastapi_http_live",
+  "health": {
+    "status": "healthy",
+    "model_name": "cross-encoder/nli-deberta-v3-small",
+    "model_revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+    "calibration_version": "platt-v3.3-mle",
+    "pipeline": "v3.2",
+    "device": "cuda"
+  },
+  "model_revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+  "calibration_version": "platt-v3.3-mle",
+  "pipeline": "v3.2",
+  "git_commit_hash": "c7f1c7cff080fd4d0859f7fd2bd8951f0c125256",
+  "git_status_short": []
+}
+

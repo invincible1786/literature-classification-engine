@@ -1,0 +1,3593 @@
+[
+  {
+    "query_id": "probe_1_resveratrol",
+    "payload": {
+      "entity": "resveratrol",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "aliases": [
+        "trans-resveratrol",
+        "3,5,4'-trihydroxystilbene"
+      ],
+      "max_results": 10
+    },
+    "timing_s": 8.86,
+    "response": {
+      "api_version": "v3",
+      "entity": "resveratrol",
+      "query_entity": "resveratrol",
+      "criterion": "Resveratrol was synthesized or biosynthesized in this work.",
+      "criterion_spec": {
+        "entity": "resveratrol",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "synthesis or production",
+        "system": null,
+        "method": null,
+        "scope": "this_study",
+        "constraints": [],
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 0.85
+      },
+      "intent": "synthesis",
+      "query_used": "TITLE_ABS:((\"resveratrol\" OR \"trans-resveratrol\" OR \"3,5,4'-trihydroxystilbene\" OR \"3,4',5-Trihydroxystilbene\") AND (synthesis OR biosynthesis OR \"produced by\" OR fermentation OR preparation OR yielded))",
+      "query_plain": "TITLE_ABS:\"resveratrol\"",
+      "model_revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+      "calibration_version": "platt-v3.3-mle",
+      "n_retrieved": 10,
+      "total_retrieved": 10,
+      "n_after_dedupe": 10,
+      "total_classified": 10,
+      "dedup_count": 1,
+      "entity_aliases_used": [
+        "trans-resveratrol",
+        "3,5,4'-trihydroxystilbene",
+        "3,4',5-Trihydroxystilbene",
+        "(E)-resveratrol",
+        "Resvida",
+        "3,4',5-Stilbenetriol",
+        "3,4',5-Trihydroxy-trans-stilbene",
+        "Cuspidatin"
+      ],
+      "aliases_used": [
+        "trans-resveratrol",
+        "3,5,4'-trihydroxystilbene",
+        "3,4',5-Trihydroxystilbene",
+        "(E)-resveratrol",
+        "Resvida",
+        "3,4',5-Stilbenetriol",
+        "3,4',5-Trihydroxy-trans-stilbene",
+        "Cuspidatin"
+      ],
+      "retrieved_by": "both",
+      "execution_time_ms": 8826.32,
+      "timings_ms": {
+        "criterion_parsing_ms": 0.000300002284348011,
+        "evaluation_ms": 4947.664000093937,
+        "total_execution_ms": 8826.32,
+        "retrieval_ms": 2347.05
+      },
+      "ensemble_size": 1,
+      "hypotheses_used": [
+        "synthesis or production"
+      ],
+      "contrast_guard_active": true,
+      "guard_arming": {
+        "spec": {
+          "entity": "resveratrol",
+          "entity_role": "product",
+          "agent_kind": null,
+          "activity": "synthesis or production",
+          "system": null,
+          "method": null,
+          "scope": "this_study",
+          "constraints": [],
+          "unparsed_clauses": [],
+          "parse_method": "rules",
+          "parse_confidence": 0.85
+        }
+      },
+      "results": [
+        {
+          "api_version": "v3",
+          "paper_id": "43008870",
+          "rank": 1,
+          "title": "Coupling corncob fractionation with covalent enzyme assembly for resveratrol biosynthesis from lignin-derived p-coumaric acid.",
+          "doi": "10.1016/j.biortech.2026.136220",
+          "pmid": "43008870",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "qualifies",
+          "classification_reason": "qualifies",
+          "reason_code": null,
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": {
+            "text": "Following optimization, 5-L fed-batch fermentation produced 803.85 \u00b1 10.06 mg L-1 resveratrol.",
+            "char_start": 1261,
+            "char_end": 1355,
+            "source": "abstract",
+            "role": "activity",
+            "raw_text": "Following optimization, 5-L fed-batch fermentation produced 803.85 \u00b1 10.06 mg L-1 resveratrol.",
+            "display_text": "Following optimization, 5-L fed-batch fermentation produced 803.85 \u00b1 10.06 mg L-1 resveratrol.",
+            "raw_start": 1261,
+            "raw_end": 1355,
+            "sentence_index": 8,
+            "verifiable_alone": true
+          },
+          "evidence_sentence": "Following optimization, 5-L fed-batch fermentation produced 803.85 \u00b1 10.06 mg L-1 resveratrol.",
+          "evidence_status": "supported",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": [
+            1261,
+            1355
+          ],
+          "source_record_sha256": "c2dee8e9241b2094cefa696a76c8aa0d536324aad6b1bd4708f918aaf17d8c7e",
+          "text_sha256": "c2dee8e9241b2094cefa696a76c8aa0d536324aad6b1bd4708f918aaf17d8c7e",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "We combined urea-KOH (UK) fractionation with pathway-entry optimization and SpyTag/SpyCatcher-mediated enzyme assembly to match the recovery of lignin-derived precursors with microbial resveratrol biosynthesis.",
+                  "display_text": "We combined urea-KOH (UK) fractionation with pathway-entry optimization and SpyTag/SpyCatcher-mediated enzyme assembly to match the recovery of lignin-derived precursors with microbial resveratrol biosynthesis.",
+                  "raw_start": 188,
+                  "raw_end": 398,
+                  "canon_start": 188,
+                  "canon_end": 398,
+                  "sentence_index": 1,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "In reconstituted cascades, this assembly increased resveratrol formation and reduced p-coumaroyl-CoA exposure, even though upstream-enzyme activity remained unchanged.",
+                  "display_text": "In reconstituted cascades, this assembly increased resveratrol formation and reduced p-coumaroyl-CoA exposure, even though upstream-enzyme activity remained unchanged.",
+                  "raw_start": 1013,
+                  "raw_end": 1180,
+                  "canon_start": 1013,
+                  "canon_end": 1180,
+                  "sentence_index": 6,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  1,
+                  6,
+                  8,
+                  10
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "supported",
+              "score": 0.9276773456949741,
+              "neg_margin": 0.05398347694426775,
+              "evidence": [
+                {
+                  "role": "activity",
+                  "raw_text": "Following optimization, 5-L fed-batch fermentation produced 803.85 \u00b1 10.06 mg L-1 resveratrol.",
+                  "display_text": "Following optimization, 5-L fed-batch fermentation produced 803.85 \u00b1 10.06 mg L-1 resveratrol.",
+                  "raw_start": 1261,
+                  "raw_end": 1355,
+                  "canon_start": 1261,
+                  "canon_end": 1355,
+                  "sentence_index": 8,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [
+                8,
+                10
+              ],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": 0.9748,
+          "confidence": {
+            "score": 0.9748,
+            "band": "High",
+            "value": 0.9748,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_band": "High",
+          "confidence_details": {
+            "score": 0.9748,
+            "band": "High",
+            "value": 0.9748,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.9276773456949741,
+            "role_score": 0.0,
+            "final_score": 0.9276773456949741,
+            "gate_flags": []
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 4,
+          "k_scored": 3,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42942769",
+          "rank": 2,
+          "title": "Ethosomal Nanocarriers for Trans-Resveratrol Delivery: Formulation, Physicochemical Characterization, Stability, and In Vitro Release Performance.",
+          "doi": "10.3390/pharmaceutics18101237",
+          "pmid": "42942769",
+          "pmcid": "PMC13708604",
+          "pub_year": "2026",
+          "classification": "qualifies",
+          "classification_reason": "qualifies",
+          "reason_code": null,
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": {
+            "text": "Methods: Resveratrol-loaded ethosomes were prepared with synthetic phosphatidylcholine (Lipoid P75), ethanol, and vitamin E. Microfluidization was optimized by varying the number of high-pressure homogenization cycles and the applied pressure.",
+            "char_start": 855,
+            "char_end": 1098,
+            "source": "abstract",
+            "role": "activity",
+            "raw_text": "Methods: Resveratrol-loaded ethosomes were prepared with synthetic phosphatidylcholine (Lipoid P75), ethanol, and vitamin E. Microfluidization was optimized by varying the number of high-pressure homogenization cycles and the applied pressure.",
+            "display_text": "Methods: Resveratrol-loaded ethosomes were prepared with synthetic phosphatidylcholine (Lipoid P75), ethanol, and vitamin E. Microfluidization was optimized by varying the number of high-pressure homogenization cycles and the applied pressure.",
+            "raw_start": 855,
+            "raw_end": 1098,
+            "sentence_index": 4,
+            "verifiable_alone": true
+          },
+          "evidence_sentence": "Methods: Resveratrol-loaded ethosomes were prepared with synthetic phosphatidylcholine (Lipoid P75), ethanol, and vitamin E. Microfluidization was optimized by varying the number of high-pressure homogenization cycles and the applied pressure.",
+          "evidence_status": "supported",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": [
+            855,
+            1098
+          ],
+          "source_record_sha256": "1e04a36b85a8c8e4bb84ebdf6aa177632dea12cc6a199967d1683fc68a68dcca",
+          "text_sha256": "1e04a36b85a8c8e4bb84ebdf6aa177632dea12cc6a199967d1683fc68a68dcca",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Background: Trans-resveratrol (3,5,4'-trihydroxystilbene) is a natural polyphenolic antioxidant widely used in anti-aging dermocosmetics for its strong radical-scavenging capacity and its activation of cell-protective pathways such as sirtuin 1 (SIRT1).",
+                  "display_text": "Background: Trans-resveratrol (3,5,4'-trihydroxystilbene) is a natural polyphenolic antioxidant widely used in anti-aging dermocosmetics for its strong radical-scavenging capacity and its activation of cell-protective pathways such as sirtuin 1 (SIRT1).",
+                  "raw_start": 0,
+                  "raw_end": 253,
+                  "canon_start": 0,
+                  "canon_end": 253,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "Objective: In this study, ethosomal nanocarriers were designed as a phospholipid-ethanol vesicular system to solubilize, stabilize, and control the release of trans-resveratrol for dermocosmetic applications.",
+                  "display_text": "Objective: In this study, ethosomal nanocarriers were designed as a phospholipid-ethanol vesicular system to solubilize, stabilize, and control the release of trans-resveratrol for dermocosmetic applications.",
+                  "raw_start": 422,
+                  "raw_end": 630,
+                  "canon_start": 422,
+                  "canon_end": 630,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  0,
+                  2,
+                  4,
+                  6,
+                  9,
+                  10,
+                  12,
+                  14
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "supported",
+              "score": 0.7809837094973773,
+              "neg_margin": -0.0163044563960284,
+              "evidence": [
+                {
+                  "role": "activity",
+                  "raw_text": "Methods: Resveratrol-loaded ethosomes were prepared with synthetic phosphatidylcholine (Lipoid P75), ethanol, and vitamin E. Microfluidization was optimized by varying the number of high-pressure homogenization cycles and the applied pressure.",
+                  "display_text": "Methods: Resveratrol-loaded ethosomes were prepared with synthetic phosphatidylcholine (Lipoid P75), ethanol, and vitamin E. Microfluidization was optimized by varying the number of high-pressure homogenization cycles and the applied pressure.",
+                  "raw_start": 855,
+                  "raw_end": 1098,
+                  "canon_start": 855,
+                  "canon_end": 1098,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [
+                4
+              ],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": 0.9512,
+          "confidence": {
+            "score": 0.9512,
+            "band": "High",
+            "value": 0.9512,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_band": "High",
+          "confidence_details": {
+            "score": 0.9512,
+            "band": "High",
+            "value": 0.9512,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.7809837094973773,
+            "role_score": 0.0,
+            "final_score": 0.7809837094973773,
+            "gate_flags": []
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": "10.20944/preprints202608.2039.v1",
+          "k_eligible": 8,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42873224",
+          "rank": 3,
+          "title": "In vitro colonic fermentation of ferulic acid and trans-resveratrol: kinetic profiling and metabolic convergence.",
+          "doi": "10.1039/d6fo03362h",
+          "pmid": "42873224",
+          "pmcid": "PMC13665988",
+          "pub_year": "2026",
+          "classification": "does_not_qualify",
+          "classification_reason": "mention_only",
+          "reason_code": "mention_only",
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "contradicted",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "7f29e2d0b7a279779f109d913e033f1f8601c3f06fe7c504d56d1c2fb39aa15f",
+          "text_sha256": "7f29e2d0b7a279779f109d913e033f1f8601c3f06fe7c504d56d1c2fb39aa15f",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Here, the bioconversion of two (poly)phenols, ferulic acid (FA) and trans-resveratrol (t-R), was followed over 48 h to assess metabolic convergence in their catabolic pathways.",
+                  "display_text": "Here, the bioconversion of two (poly)phenols, ferulic acid (FA) and trans-resveratrol (t-R), was followed over 48 h to assess metabolic convergence in their catabolic pathways.",
+                  "raw_start": 149,
+                  "raw_end": 325,
+                  "canon_start": 149,
+                  "canon_end": 325,
+                  "sentence_index": 1,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  1
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "mention_only",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.9,
+            "gate_flags": [
+              "mention_only"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 1,
+          "k_scored": 0,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42942834",
+          "rank": 4,
+          "title": "Development and Physicochemical Characterization of Trans-Resveratrol Liposomes: Influence of Phospholipid Composition and Ultrasound-Assisted Processing.",
+          "doi": "10.3390/pharmaceutics18101303",
+          "pmid": "42942834",
+          "pmcid": "PMC13708408",
+          "pub_year": "2026",
+          "classification": "does_not_qualify",
+          "classification_reason": "mention_only",
+          "reason_code": "mention_only",
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "contradicted",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "782a5433fecef882b2cf6014964bcf38abd207dd02a83ba055b2fd8fe9213e9e",
+          "text_sha256": "782a5433fecef882b2cf6014964bcf38abd207dd02a83ba055b2fd8fe9213e9e",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Background/Objectives: Trans-resveratrol is a bioactive polyphenol with limited pharmaceutical applicability due to poor aqueous solubility, chemical instability, and low bioavailability.",
+                  "display_text": "Background/Objectives: Trans-resveratrol is a bioactive polyphenol with limited pharmaceutical applicability due to poor aqueous solubility, chemical instability, and low bioavailability.",
+                  "raw_start": 0,
+                  "raw_end": 187,
+                  "canon_start": 0,
+                  "canon_end": 187,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "This study aimed to develop trans-resveratrol-containing liposomal formulations and evaluate the influence of phospholipid composition and ultrasound-assisted processing (UAP) using a conventional ultrasonic bath on their physicochemical properties and storage behavior.",
+                  "display_text": "This study aimed to develop trans-resveratrol-containing liposomal formulations and evaluate the influence of phospholipid composition and ultrasound-assisted processing (UAP) using a conventional ultrasonic bath on their physicochemical properties and storage behavior.",
+                  "raw_start": 188,
+                  "raw_end": 458,
+                  "canon_start": 188,
+                  "canon_end": 458,
+                  "sentence_index": 1,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  0,
+                  1,
+                  3,
+                  8,
+                  9
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "mention_only",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.9,
+            "gate_flags": [
+              "mention_only"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 5,
+          "k_scored": 0,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42476403",
+          "rank": 5,
+          "title": "Bubble-driven Co(OH)2@MnO2 conical micromotors for sensitive detection and efficient degradation of resveratrol.",
+          "doi": "10.1016/j.envres.2026.125291",
+          "pmid": "42476403",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "does_not_qualify",
+          "classification_reason": "different_activity",
+          "reason_code": "different_activity",
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": {
+            "text": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+            "char_start": 885,
+            "char_end": 1120,
+            "source": "abstract",
+            "role": "activity",
+            "raw_text": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+            "display_text": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+            "raw_start": 885,
+            "raw_end": 1120,
+            "sentence_index": 5,
+            "verifiable_alone": true
+          },
+          "evidence_sentence": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+          "evidence_status": "contradicted",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": [
+            885,
+            1120
+          ],
+          "source_record_sha256": "5d486ca5c8c2fbe9388ad75f9275ef6f507570d33eddc5cc56bafffd418e8591",
+          "text_sha256": "5d486ca5c8c2fbe9388ad75f9275ef6f507570d33eddc5cc56bafffd418e8591",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "The combination of excellent enzyme-like activity and self-driven ability of micromotor constructs a dynamic sensitive detection platform for resveratrol (RES, 3,4',5-trihydroxystilbene), a potential pollutant in water, with a low concentration detection limit of 0.23 \u03bcM.",
+                  "display_text": "The combination of excellent enzyme-like activity and self-driven ability of micromotor constructs a dynamic sensitive detection platform for resveratrol (RES, 3,4',5-trihydroxystilbene), a potential pollutant in water, with a low concentration detection limit of 0.23 \u03bcM.",
+                  "raw_start": 612,
+                  "raw_end": 884,
+                  "canon_start": 612,
+                  "canon_end": 884,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+                  "display_text": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+                  "raw_start": 885,
+                  "raw_end": 1120,
+                  "canon_start": 885,
+                  "canon_end": 1120,
+                  "sentence_index": 5,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  4,
+                  5,
+                  6
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "contradicted",
+              "score": -0.9,
+              "neg_margin": 0.9,
+              "evidence": [
+                {
+                  "role": "activity",
+                  "raw_text": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+                  "display_text": "In addition, hydrogen peroxide and peroxymonosulfate (PMS) were used as catalytic substrates to catalyze the micromotor to generate various reactive oxygen species (ROS), thus achieving efficient synergistic degradation of resveratrol.",
+                  "raw_start": 885,
+                  "raw_end": 1120,
+                  "canon_start": 885,
+                  "canon_end": 1120,
+                  "sentence_index": 5,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": "different_activity",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "structural_guard": "degradation_guard: degradation of resveratrol",
+                "resolved_antecedent": null
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": 0.6216,
+          "confidence": {
+            "score": 0.3784,
+            "band": "Low",
+            "value": 0.3784,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_band": "Low",
+          "confidence_details": {
+            "score": 0.3784,
+            "band": "Low",
+            "value": 0.3784,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": -0.9,
+            "role_score": 0.0,
+            "final_score": -1.0,
+            "gate_flags": [
+              "different_activity"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 3,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "10.21203/rs.3.rs-11365772/v1",
+          "rank": 6,
+          "title": "trans-Resveratrol and \u03b5-viniferin recovery from grapevine pruning residues: process optimization and varietal screening towards industrial valorisation",
+          "doi": "10.21203/rs.3.rs-11365772/v1",
+          "pmid": null,
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "cb8c99fd0ea05a5457fb0b15b1468c9d27a5e23681c2ebf8cbab59b430856849",
+          "text_sha256": "cb8c99fd0ea05a5457fb0b15b1468c9d27a5e23681c2ebf8cbab59b430856849",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "This study optimized the recovery of trans -resveratrol and \u03b5-viniferin from vine shoots using Box\u2013Behnken response surface methodology by evaluating extraction time (t), solvent mixture (S), and matrix-to-solvent ratio (R) as initial step of the circular economy task of European LIFE - Natural Agro project.",
+                  "display_text": "This study optimized the recovery of trans -resveratrol and \u03b5-viniferin from vine shoots using Box\u2013Behnken response surface methodology by evaluating extraction time (t), solvent mixture (S), and matrix-to-solvent ratio (R) as initial step of the circular economy task of European LIFE - Natural Agro project.",
+                  "raw_start": 343,
+                  "raw_end": 652,
+                  "canon_start": 343,
+                  "canon_end": 652,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "The optimal conditions were 100% ethanol, R = 0.12 g mL\u22121, and t = 35 min. Although Soxhlet extraction gave the highest extraction yield (EY%), UAE produced the most stilbene-enriched extract, with 9.50 mg g\u22121 dry extract of trans -resveratrol and 25.66 mg g\u22121 dry extract of \u03b5-viniferin, while reducing extraction time and prolonged thermal exposure.",
+                  "display_text": "The optimal conditions were 100% ethanol, R = 0.12 g mL\u22121, and t = 35 min. Although Soxhlet extraction gave the highest extraction yield (EY%), UAE produced the most stilbene-enriched extract, with 9.50 mg g\u22121 dry extract of trans -resveratrol and 25.66 mg g\u22121 dry extract of \u03b5-viniferin, while reducing extraction time and prolonged thermal exposure.",
+                  "raw_start": 805,
+                  "raw_end": 1156,
+                  "canon_start": 805,
+                  "canon_end": 1156,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  2,
+                  4,
+                  5
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 3,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "41804801",
+          "rank": 7,
+          "title": "The role of reactive species in modulating stilbene biosynthesis in grapevine cells.",
+          "doi": "10.1093/pcp/pcag033",
+          "pmid": "41804801",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "e56796b142dbcbe842802cdfa6e1b28866ec0054115eaf0f7f4e5eb518de7573",
+          "text_sha256": "e56796b142dbcbe842802cdfa6e1b28866ec0054115eaf0f7f4e5eb518de7573",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Stilbene trans-resveratrol is a key specialized metabolite in grapevine (Vitis vinifera), known for its notable antioxidant, anti-inflammatory, and anticancer properties.",
+                  "display_text": "Stilbene trans-resveratrol is a key specialized metabolite in grapevine (Vitis vinifera), known for its notable antioxidant, anti-inflammatory, and anticancer properties.",
+                  "raw_start": 0,
+                  "raw_end": 170,
+                  "canon_start": 0,
+                  "canon_end": 170,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "In this study, we investigated the roles of hydrogen peroxide, nitric oxide, peroxynitrite, and hydrogen sulfide in trans-resveratrol production in grapevine suspension-cultured cells treated with cyclodextrins and/or methyl jasmonate.",
+                  "display_text": "In this study, we investigated the roles of hydrogen peroxide, nitric oxide, peroxynitrite, and hydrogen sulfide in trans-resveratrol production in grapevine suspension-cultured cells treated with cyclodextrins and/or methyl jasmonate.",
+                  "raw_start": 428,
+                  "raw_end": 663,
+                  "canon_start": 428,
+                  "canon_end": 663,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  0,
+                  3,
+                  4,
+                  5,
+                  6,
+                  8
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 6,
+          "k_scored": 5,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42520608",
+          "rank": 8,
+          "title": "Low-frequency polarized electric field promotes stilbene biosynthesis by redirecting phenylpropanoid flux in postharvest grapes.",
+          "doi": "10.1016/j.foodchem.2026.150520",
+          "pmid": "42520608",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "1006a92027a107db609ec04d17dfa8c9b25afe8060f4b106fc6f64adbee4f868",
+          "text_sha256": "1006a92027a107db609ec04d17dfa8c9b25afe8060f4b106fc6f64adbee4f868",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Resveratrol is a health-promoting stilbenoid in grape berries, but its postharvest accumulation remains limited.",
+                  "display_text": "Resveratrol is a health-promoting stilbenoid in grape berries, but its postharvest accumulation remains limited.",
+                  "raw_start": 0,
+                  "raw_end": 112,
+                  "canon_start": 0,
+                  "canon_end": 112,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "LFPEF increased trans-resveratrol content from 3.05 to 4.42 mg/kg FW after 12 d, corresponding to an approximately 1.45-fold enhancement.",
+                  "display_text": "LFPEF increased trans-resveratrol content from 3.05 to 4.42 mg/kg FW after 12 d, corresponding to an approximately 1.45-fold enhancement.",
+                  "raw_start": 246,
+                  "raw_end": 383,
+                  "canon_start": 246,
+                  "canon_end": 383,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  0,
+                  2,
+                  5
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 3,
+          "k_scored": 2,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42692351",
+          "rank": 9,
+          "title": "Dietary supplementation of resveratrol alters rumen microbiome and reduces urinary trimethylamine/trimethylamine N-oxide excretion in dairy cows.",
+          "doi": "10.3168/jds.2026-28661",
+          "pmid": "42692351",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "c2fd89d9a9883f41ab1e34249db926a12e08d997aa46c78c5d69022457e3cc25",
+          "text_sha256": "c2fd89d9a9883f41ab1e34249db926a12e08d997aa46c78c5d69022457e3cc25",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "In this study, in vitro and in vivo experiments were combined to investigate the effects of resveratrol on rumen TMA production and urinary excretion in dairy cows.",
+                  "display_text": "In this study, in vitro and in vivo experiments were combined to investigate the effects of resveratrol on rumen TMA production and urinary excretion in dairy cows.",
+                  "raw_start": 319,
+                  "raw_end": 483,
+                  "canon_start": 319,
+                  "canon_end": 483,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "In vitro rumen fermentation was conducted with 4 resveratrol doses (0, 0.5, 5, and 50 mmol/L).",
+                  "display_text": "In vitro rumen fermentation was conducted with 4 resveratrol doses (0, 0.5, 5, and 50 mmol/L).",
+                  "raw_start": 484,
+                  "raw_end": 578,
+                  "canon_start": 484,
+                  "canon_end": 578,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  2,
+                  3,
+                  4,
+                  7,
+                  9,
+                  10,
+                  11,
+                  13,
+                  14
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.31100217811763287,
+              "neg_margin": 0.6574403941631317,
+              "evidence": [
+                {
+                  "role": "activity",
+                  "raw_text": "Cows were blocked according to parity, milk yield, and days in milk and then randomly assigned to CON (basal diet), RES2.4 (basal diet + 2.4 g resveratrol/cow/day), and RES4.8 (basal diet + 4.8 g resveratrol/cow/day).",
+                  "display_text": "Cows were blocked according to parity, milk yield, and days in milk and then randomly assigned to CON (basal diet), RES2.4 (basal diet + 2.4 g resveratrol/cow/day), and RES4.8 (basal diet + 4.8 g resveratrol/cow/day).",
+                  "raw_start": 986,
+                  "raw_end": 1203,
+                  "canon_start": 986,
+                  "canon_end": 1203,
+                  "sentence_index": 7,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.31100217811763287,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 9,
+          "k_scored": 5,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "43017941",
+          "rank": 10,
+          "title": "Resveratrol improves behavior and neurochemical parameters in rats submitted to a Maple Syrup Urine Disease chemical model.",
+          "doi": "10.1590/0001-3765202620251216",
+          "pmid": "43017941",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "resveratrol",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "synthesis or production",
+            "system": null,
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "d7b53469fa835f71e44de54cfe3931a4a4f616b5ac62fb489c60aa5d22b84adc",
+          "text_sha256": "d7b53469fa835f71e44de54cfe3931a4a4f616b5ac62fb489c60aa5d22b84adc",
+          "aliases_used": [
+            "trans-resveratrol",
+            "3,5,4'-trihydroxystilbene",
+            "3,4',5-Trihydroxystilbene",
+            "(E)-resveratrol",
+            "Resvida",
+            "3,4',5-Stilbenetriol",
+            "3,4',5-Trihydroxy-trans-stilbene",
+            "Cuspidatin"
+          ],
+          "retrieved_by": "plain",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Resveratrol is an antioxidant molecule, playing the role of a reactive species scavenger and modulating the gene expression of antioxidant enzymes.",
+                  "display_text": "Resveratrol is an antioxidant molecule, playing the role of a reactive species scavenger and modulating the gene expression of antioxidant enzymes.",
+                  "raw_start": 442,
+                  "raw_end": 589,
+                  "canon_start": 442,
+                  "canon_end": 589,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "We aimed to evaluate the resveratrol effects on behavior and neurochemical parameters in rats subjected to an MSUD protocol.",
+                  "display_text": "We aimed to evaluate the resveratrol effects on behavior and neurochemical parameters in rats subjected to an MSUD protocol.",
+                  "raw_start": 590,
+                  "raw_end": 714,
+                  "canon_start": 590,
+                  "canon_end": 714,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  2,
+                  3,
+                  4,
+                  6,
+                  7,
+                  8
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "not_required",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 6,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        }
+      ]
+    }
+  },
+  {
+    "query_id": "probe_2_naringenin",
+    "payload": {
+      "entity": "naringenin",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "aliases": [
+        "4',5,7-trihydroxyflavanone",
+        "(+-)-naringenin"
+      ],
+      "max_results": 10
+    },
+    "timing_s": 4.4,
+    "response": {
+      "api_version": "v3",
+      "entity": "naringenin",
+      "query_entity": "naringenin",
+      "criterion": "Naringenin was produced by microbial biosynthesis or fermentation in this work.",
+      "criterion_spec": {
+        "entity": "naringenin",
+        "entity_role": "product",
+        "agent_kind": null,
+        "activity": "microbial biosynthesis",
+        "system": {
+          "name": "microbial",
+          "family": "microbial",
+          "synonyms": [
+            "yeast",
+            "bacteria",
+            "bacterium",
+            "fungi",
+            "fungus",
+            "microbe",
+            "microorganism"
+          ]
+        },
+        "method": null,
+        "scope": "this_study",
+        "constraints": [],
+        "unparsed_clauses": [],
+        "parse_method": "rules",
+        "parse_confidence": 0.85
+      },
+      "intent": "synthesis",
+      "query_used": "TITLE_ABS:((\"naringenin\" OR \"4',5,7-trihydroxyflavanone\" OR \"(+-)-naringenin\" OR \"(S)-Naringenin\") AND (synthesis OR biosynthesis OR \"produced by\" OR fermentation OR preparation OR yielded))",
+      "query_plain": "TITLE_ABS:\"naringenin\"",
+      "model_revision": "fa2804872c3b4bd748f38c0185cc85775361e735",
+      "calibration_version": "platt-v3.3-mle",
+      "n_retrieved": 10,
+      "total_retrieved": 10,
+      "n_after_dedupe": 10,
+      "total_classified": 10,
+      "dedup_count": 1,
+      "entity_aliases_used": [
+        "4',5,7-trihydroxyflavanone",
+        "(+-)-naringenin",
+        "(S)-Naringenin",
+        "salipurpol",
+        "(2S)-Naringenin",
+        "Salipurol",
+        "pelargidanon",
+        "naringetol"
+      ],
+      "aliases_used": [
+        "4',5,7-trihydroxyflavanone",
+        "(+-)-naringenin",
+        "(S)-Naringenin",
+        "salipurpol",
+        "(2S)-Naringenin",
+        "Salipurol",
+        "pelargidanon",
+        "naringetol"
+      ],
+      "retrieved_by": "both",
+      "execution_time_ms": 4394.93,
+      "timings_ms": {
+        "criterion_parsing_ms": 0.000400003045797348,
+        "evaluation_ms": 971.06339992024,
+        "total_execution_ms": 4394.93,
+        "retrieval_ms": 2227.84
+      },
+      "ensemble_size": 1,
+      "hypotheses_used": [
+        "microbial biosynthesis"
+      ],
+      "contrast_guard_active": true,
+      "guard_arming": {
+        "spec": {
+          "entity": "naringenin",
+          "entity_role": "product",
+          "agent_kind": null,
+          "activity": "microbial biosynthesis",
+          "system": {
+            "name": "microbial",
+            "family": "microbial",
+            "synonyms": [
+              "yeast",
+              "bacteria",
+              "bacterium",
+              "fungi",
+              "fungus",
+              "microbe",
+              "microorganism"
+            ]
+          },
+          "method": null,
+          "scope": "this_study",
+          "constraints": [],
+          "unparsed_clauses": [],
+          "parse_method": "rules",
+          "parse_confidence": 0.85
+        }
+      },
+      "results": [
+        {
+          "api_version": "v3",
+          "paper_id": "42214635",
+          "rank": 1,
+          "title": "Modular pathway engineering enables gram-scale de novo biosynthesis of narirutin in yeast.",
+          "doi": "10.1016/j.biortech.2026.134994",
+          "pmid": "42214635",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "qualifies",
+          "classification_reason": "qualifies",
+          "reason_code": null,
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": {
+            "text": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+            "char_start": 662,
+            "char_end": 802,
+            "source": "abstract",
+            "role": "activity",
+            "raw_text": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+            "display_text": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+            "raw_start": 662,
+            "raw_end": 802,
+            "sentence_index": 4,
+            "verifiable_alone": true
+          },
+          "evidence_sentence": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+          "evidence_status": "supported",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": [
+            662,
+            802
+          ],
+          "source_record_sha256": "b6461dd779f4458b0dac430ab2384bcbb204457398c59ed5bbb65e651b593881",
+          "text_sha256": "b6461dd779f4458b0dac430ab2384bcbb204457398c59ed5bbb65e651b593881",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Subsequently, an efficient two\u2010step glycosylation module was assembled through comprehensive enzyme screening to convert naringenin to narirutin.",
+                  "display_text": "Subsequently, an efficient two\u2010step glycosylation module was assembled through comprehensive enzyme screening to convert naringenin to narirutin.",
+                  "raw_start": 516,
+                  "raw_end": 661,
+                  "canon_start": 516,
+                  "canon_end": 661,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+                  "display_text": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+                  "raw_start": 662,
+                  "raw_end": 802,
+                  "canon_start": 662,
+                  "canon_end": 802,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  3,
+                  4
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "supported",
+              "score": 0.8969457210041583,
+              "neg_margin": -0.10571349691599607,
+              "evidence": [
+                {
+                  "role": "activity",
+                  "raw_text": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+                  "display_text": "To achieve de novo production from glucose, a glycosylation module was genomically integrated into a high-yield naringenin-producing strain.",
+                  "raw_start": 662,
+                  "raw_end": 802,
+                  "canon_start": 662,
+                  "canon_end": 802,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [
+                4
+              ],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "system",
+                  "raw_text": "In this study, we engineered Saccharomyces cerevisiae for de novo narirutin biosynthesis by partitioning the biosynthetic pathway into discrete functional modules for a stepwise optimization.",
+                  "display_text": "In this study, we engineered Saccharomyces cerevisiae for de novo narirutin biosynthesis by partitioning the biosynthetic pathway into discrete functional modules for a stepwise optimization.",
+                  "raw_start": 202,
+                  "raw_end": 393,
+                  "canon_start": 202,
+                  "canon_end": 393,
+                  "sentence_index": 1,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                },
+                {
+                  "role": "system",
+                  "raw_text": "This first demonstration of gram-scale narirutin biosynthesis establishes a sustainable microbial platform and offers a blueprint for producing other flavonoid glycosides.",
+                  "display_text": "This first demonstration of gram-scale narirutin biosynthesis establishes a sustainable microbial platform and offers a blueprint for producing other flavonoid glycosides.",
+                  "raw_start": 1140,
+                  "raw_end": 1311,
+                  "canon_start": 1140,
+                  "canon_end": 1311,
+                  "sentence_index": 7,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                }
+              ],
+              "also_mentions": [
+                "plant"
+              ],
+              "reason_code": null,
+              "attached_clauses": [
+                1,
+                7
+              ],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": 0.971,
+          "confidence": {
+            "score": 0.971,
+            "band": "High",
+            "value": 0.971,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_band": "High",
+          "confidence_details": {
+            "score": 0.971,
+            "band": "High",
+            "value": 0.971,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.8969457210041583,
+            "role_score": 0.0,
+            "final_score": 0.8969457210041583,
+            "gate_flags": []
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 2,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42857650",
+          "rank": 2,
+          "title": "Design and multidimensional optimization of cell-free system for efficient (2S)-naringenin production.",
+          "doi": "10.1016/j.bidere.2026.100111",
+          "pmid": "42857650",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "qualifies",
+          "classification_reason": "qualifies",
+          "reason_code": null,
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": {
+            "text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+            "char_start": 0,
+            "char_end": 159,
+            "source": "abstract",
+            "role": "activity",
+            "raw_text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+            "display_text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+            "raw_start": 0,
+            "raw_end": 159,
+            "sentence_index": 0,
+            "verifiable_alone": true
+          },
+          "evidence_sentence": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+          "evidence_status": "supported",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": [
+            0,
+            159
+          ],
+          "source_record_sha256": "926937ceecbaf942d7099f208d1d0f869a2e4fa9abf41be5227955ba43f2619f",
+          "text_sha256": "926937ceecbaf942d7099f208d1d0f869a2e4fa9abf41be5227955ba43f2619f",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "both",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+                  "display_text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+                  "raw_start": 0,
+                  "raw_end": 159,
+                  "canon_start": 0,
+                  "canon_end": 159,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "In this study, we established and systematically optimized an Escherichia coli-based cell-free system for naringenin production.",
+                  "display_text": "In this study, we established and systematically optimized an Escherichia coli-based cell-free system for naringenin production.",
+                  "raw_start": 264,
+                  "raw_end": 392,
+                  "canon_start": 264,
+                  "canon_end": 392,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  0,
+                  2,
+                  5,
+                  6
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "supported",
+              "score": 0.634985925629735,
+              "neg_margin": 0.17831422202289104,
+              "evidence": [
+                {
+                  "role": "activity",
+                  "raw_text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+                  "display_text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+                  "raw_start": 0,
+                  "raw_end": 159,
+                  "canon_start": 0,
+                  "canon_end": 159,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [
+                0
+              ],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "system",
+                  "raw_text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+                  "display_text": "Naringenin is a valuable flavonoid with diverse pharmacological activities, but its industrial production is limited by low yields in microbial cell factories.",
+                  "raw_start": 0,
+                  "raw_end": 159,
+                  "canon_start": 0,
+                  "canon_end": 159,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                },
+                {
+                  "role": "system",
+                  "raw_text": "In this study, we established and systematically optimized an Escherichia coli-based cell-free system for naringenin production.",
+                  "display_text": "In this study, we established and systematically optimized an Escherichia coli-based cell-free system for naringenin production.",
+                  "raw_start": 264,
+                  "raw_end": 392,
+                  "canon_start": 264,
+                  "canon_end": 392,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                }
+              ],
+              "also_mentions": [
+                "cell-free",
+                "in vitro"
+              ],
+              "reason_code": null,
+              "attached_clauses": [
+                0,
+                2
+              ],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": 0.908,
+          "confidence": {
+            "score": 0.908,
+            "band": "High",
+            "value": 0.908,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_band": "High",
+          "confidence_details": {
+            "score": 0.908,
+            "band": "High",
+            "value": 0.908,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.634985925629735,
+            "role_score": 0.0,
+            "final_score": 0.634985925629735,
+            "gate_flags": []
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": "PMC13651668",
+          "k_eligible": 4,
+          "k_scored": 4,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42531725",
+          "rank": 3,
+          "title": "Biosynthetic pathway for bioactive tetrahydroxyflavanone 7-O-glucuronides in Scutellaria barbata.",
+          "doi": "10.1016/j.bioorg.2026.110292",
+          "pmid": "42531725",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "does_not_qualify",
+          "classification_reason": "wrong_system",
+          "reason_code": "wrong_system",
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": {
+            "text": "Reconstitution in Nicotiana benthamiana enabled de novo production of both glucuronides, and co-expression of SbarUGDH further enhanced glucuronide accumulation.",
+            "char_start": 1188,
+            "char_end": 1349,
+            "source": "abstract",
+            "role": "system",
+            "raw_text": "Reconstitution in Nicotiana benthamiana enabled de novo production of both glucuronides, and co-expression of SbarUGDH further enhanced glucuronide accumulation.",
+            "display_text": "Reconstitution in Nicotiana benthamiana enabled de novo production of both glucuronides, and co-expression of SbarUGDH further enhanced glucuronide accumulation.",
+            "raw_start": 1188,
+            "raw_end": 1349,
+            "sentence_index": 7,
+            "verifiable_alone": false
+          },
+          "evidence_sentence": "Reconstitution in Nicotiana benthamiana enabled de novo production of both glucuronides, and co-expression of SbarUGDH further enhanced glucuronide accumulation.",
+          "evidence_status": "contradicted",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": [
+            1188,
+            1349
+          ],
+          "source_record_sha256": "89fe93ce0ddf48929d0524dc684fae4982a5c6f51ac95159e6a837f6ea9f67ec",
+          "text_sha256": "89fe93ce0ddf48929d0524dc684fae4982a5c6f51ac95159e6a837f6ea9f67ec",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "SbarCHS1 and SbarCHI form the naringenin-producing module.",
+                  "display_text": "SbarCHS1 and SbarCHI form the naringenin-producing module.",
+                  "raw_start": 407,
+                  "raw_end": 465,
+                  "canon_start": 407,
+                  "canon_end": 465,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "Three CYP82D enzymes then catalyze regioselective A-ring hydroxylation: SbarCYP82D1 and SbarCYP82D8 function as naringenin 6-hydroxylases to generate carthamidin, whereas SbarCYP82D5 acts as an efficient naringenin 8-hydroxylase to produce isocarthamidin.",
+                  "display_text": "Three CYP82D enzymes then catalyze regioselective A-ring hydroxylation: SbarCYP82D1 and SbarCYP82D8 function as naringenin 6-hydroxylases to generate carthamidin, whereas SbarCYP82D5 acts as an efficient naringenin 8-hydroxylase to produce isocarthamidin.",
+                  "raw_start": 466,
+                  "raw_end": 721,
+                  "canon_start": 466,
+                  "canon_end": 721,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  2,
+                  3
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "supported",
+              "score": 0.8370206551626325,
+              "neg_margin": 0.0035048862919211388,
+              "evidence": [
+                {
+                  "role": "activity",
+                  "raw_text": "SbarCHS1 and SbarCHI form the naringenin-producing module.",
+                  "display_text": "SbarCHS1 and SbarCHI form the naringenin-producing module.",
+                  "raw_start": 407,
+                  "raw_end": 465,
+                  "canon_start": 407,
+                  "canon_end": 465,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [
+                2,
+                3
+              ],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "contradicted",
+              "score": -0.9,
+              "neg_margin": 0.9,
+              "evidence": [
+                {
+                  "role": "system",
+                  "raw_text": "Reconstitution in Nicotiana benthamiana enabled de novo production of both glucuronides, and co-expression of SbarUGDH further enhanced glucuronide accumulation.",
+                  "display_text": "Reconstitution in Nicotiana benthamiana enabled de novo production of both glucuronides, and co-expression of SbarUGDH further enhanced glucuronide accumulation.",
+                  "raw_start": 1188,
+                  "raw_end": 1349,
+                  "canon_start": 1188,
+                  "canon_end": 1349,
+                  "sentence_index": 7,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                }
+              ],
+              "also_mentions": [
+                "nicotiana benthamiana"
+              ],
+              "reason_code": "wrong_system",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": 0.6216,
+          "confidence": {
+            "score": 0.3784,
+            "band": "Low",
+            "value": 0.3784,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_band": "Low",
+          "confidence_details": {
+            "score": 0.3784,
+            "band": "Low",
+            "value": 0.3784,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.8370206551626325,
+            "role_score": 0.0,
+            "final_score": -1.0,
+            "gate_flags": [
+              "wrong_system"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 2,
+          "k_scored": 2,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "10.20944/preprints202609.2171.v1",
+          "rank": 4,
+          "title": "Phytochemical Profiling of Non-Marketable Organs of White Onion (Allium cepa L.): A Comparative Study of Two Extraction Methods Using HPLC-DAD",
+          "doi": "10.20944/preprints202609.2171.v1",
+          "pmid": null,
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "does_not_qualify",
+          "classification_reason": "wrong_system",
+          "reason_code": "wrong_system",
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": {
+            "text": "Phytochemical profiles were significantly influenced by both plant organ and extraction method.",
+            "char_start": 602,
+            "char_end": 697,
+            "source": "abstract",
+            "role": "system",
+            "raw_text": "Phytochemical profiles were significantly influenced by both plant organ and extraction method.",
+            "display_text": "Phytochemical profiles were significantly influenced by both plant organ and extraction method.",
+            "raw_start": 602,
+            "raw_end": 697,
+            "sentence_index": 4,
+            "verifiable_alone": false
+          },
+          "evidence_sentence": "Phytochemical profiles were significantly influenced by both plant organ and extraction method.",
+          "evidence_status": "contradicted",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": [
+            602,
+            697
+          ],
+          "source_record_sha256": "74c8e6f9e16b07d0b6d526c06c2004094632737bbb5a41b5b65e938e8198055d",
+          "text_sha256": "74c8e6f9e16b07d0b6d526c06c2004094632737bbb5a41b5b65e938e8198055d",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "In this research, white onion (Allium cepa L.) residual organs and extraction methods were evaluated to determine optimal recovery conditions for flavanones (naringenin, apigenin) and flavonols (quercetin, kaempferol, and galangin).",
+                  "display_text": "In this research, white onion (Allium cepa L.) residual organs and extraction methods were evaluated to determine optimal recovery conditions for flavanones (naringenin, apigenin) and flavonols (quercetin, kaempferol, and galangin).",
+                  "raw_start": 0,
+                  "raw_end": 232,
+                  "canon_start": 0,
+                  "canon_end": 232,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "Leaf decoction yielded higher concentrations of quercetin (0.33 mg g\u22121), naringenin (0.24 mg g\u22121), galangin (0.23 mg g\u22121), and kaempferol (0.07 mg g\u22121) compared to flower residues.",
+                  "display_text": "Leaf decoction yielded higher concentrations of quercetin (0.33 mg g\u22121), naringenin (0.24 mg g\u22121), galangin (0.23 mg g\u22121), and kaempferol (0.07 mg g\u22121) compared to flower residues.",
+                  "raw_start": 330,
+                  "raw_end": 510,
+                  "canon_start": 330,
+                  "canon_end": 510,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  0,
+                  2,
+                  5
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "contradicted",
+              "score": -0.9,
+              "neg_margin": 0.9,
+              "evidence": [
+                {
+                  "role": "system",
+                  "raw_text": "Phytochemical profiles were significantly influenced by both plant organ and extraction method.",
+                  "display_text": "Phytochemical profiles were significantly influenced by both plant organ and extraction method.",
+                  "raw_start": 602,
+                  "raw_end": 697,
+                  "canon_start": 602,
+                  "canon_end": 697,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                }
+              ],
+              "also_mentions": [
+                "plant"
+              ],
+              "reason_code": "wrong_system",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": 0.6216,
+          "confidence": {
+            "score": 0.3784,
+            "band": "Low",
+            "value": 0.3784,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_band": "Low",
+          "confidence_details": {
+            "score": 0.3784,
+            "band": "Low",
+            "value": 0.3784,
+            "method": "platt_scaling",
+            "calibration_version": "platt-v3.3-mle"
+          },
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -1.0,
+            "gate_flags": [
+              "wrong_system"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 3,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42562518",
+          "rank": 5,
+          "title": "Dual regioselective glycosylation of naringenin by Deinococcus deserti amylosucrase: regioisomers identification via methylation-LC-MS/MS.",
+          "doi": "10.1016/j.foodres.2026.119745",
+          "pmid": "42562518",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "system_unstated",
+          "reason_code": "system_unstated",
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "00fcb0c1c5f1fa0895ae0fce52bc64eb92cc15964344bc93a0cbe656a3f95292",
+          "text_sha256": "00fcb0c1c5f1fa0895ae0fce52bc64eb92cc15964344bc93a0cbe656a3f95292",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "In this study, naringenin glycosylation by amylosucrase from Deinococcus deserti (DdAS) was investigated, and a methylation derivatization-LC-MS/MS approach was applied to characterize a trace-level regioisomer.",
+                  "display_text": "In this study, naringenin glycosylation by amylosucrase from Deinococcus deserti (DdAS) was investigated, and a methylation derivatization-LC-MS/MS approach was applied to characterize a trace-level regioisomer.",
+                  "raw_start": 260,
+                  "raw_end": 471,
+                  "canon_start": 260,
+                  "canon_end": 471,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "DdAS demonstrated 2.4-fold higher transglycosylation efficiency (21.3%) toward naringenin than amylosucrase from D. geothermalis and produced two distinct monoglucoside peaks on HPLC analysis, indicating dual regioselectivity.",
+                  "display_text": "DdAS demonstrated 2.4-fold higher transglycosylation efficiency (21.3%) toward naringenin than amylosucrase from D. geothermalis and produced two distinct monoglucoside peaks on HPLC analysis, indicating dual regioselectivity.",
+                  "raw_start": 472,
+                  "raw_end": 698,
+                  "canon_start": 472,
+                  "canon_end": 698,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  2,
+                  3,
+                  6
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "supported",
+              "score": 0.952093200176023,
+              "neg_margin": -0.2323276171227917,
+              "evidence": [
+                {
+                  "role": "activity",
+                  "raw_text": "The synthesized naringenin \u03b1-glycosides exhibited 3750-fold enhanced water solubility and 4.5-fold improved antioxidant activity compared to naringenin, highlighting their potential as bioavailable functional ingredients for food and nutraceutical applications.",
+                  "display_text": "The synthesized naringenin \u03b1-glycosides exhibited 3750-fold enhanced water solubility and 4.5-fold improved antioxidant activity compared to naringenin, highlighting their potential as bioavailable functional ingredients for food and nutraceutical applications.",
+                  "raw_start": 1128,
+                  "raw_end": 1389,
+                  "canon_start": 1128,
+                  "canon_end": 1389,
+                  "sentence_index": 6,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [
+                3,
+                6
+              ],
+              "diagnostics": {}
+            },
+            "system": {
+              "name": "system",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "system_unstated",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.952093200176023,
+            "role_score": 0.0,
+            "final_score": -0.2,
+            "gate_flags": [
+              "system_unstated"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 3,
+          "k_scored": 2,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "10.21203/rs.3.rs-9663892/v1",
+          "rank": 6,
+          "title": "Preparation of polyclonal antibody targeting Optic atrophy 1 (OPA1) of chicken and the effect of naringenin on OPA1 expression in the liver of broilers under heat stress",
+          "doi": "10.21203/rs.3.rs-9663892/v1",
+          "pmid": null,
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "system_unstated",
+          "reason_code": "system_unstated",
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "d29ffef5a0f20a8a38a0165f7c1ad3277e1398ed7f585672d2a110c63a80f4ab",
+          "text_sha256": "d29ffef5a0f20a8a38a0165f7c1ad3277e1398ed7f585672d2a110c63a80f4ab",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Naringenin, a flavanone, has been reported to exert protective effects against various stressors.",
+                  "display_text": "Naringenin, a flavanone, has been reported to exert protective effects against various stressors.",
+                  "raw_start": 303,
+                  "raw_end": 400,
+                  "canon_start": 303,
+                  "canon_end": 400,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "However, direct studies examining the relationship between naringenin and heat stress remain limited, and the association between OPA1 and heat stress has been scarcely investigated.",
+                  "display_text": "However, direct studies examining the relationship between naringenin and heat stress remain limited, and the association between OPA1 and heat stress has been scarcely investigated.",
+                  "raw_start": 401,
+                  "raw_end": 583,
+                  "canon_start": 401,
+                  "canon_end": 583,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  2,
+                  3,
+                  9,
+                  10
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "system_unstated",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.2,
+            "gate_flags": [
+              "system_unstated"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 4,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "41814496",
+          "rank": 7,
+          "title": "A Scaffoldomics Platform for Modular In Vivo Enzyme Colocalisation and Its Application to Naringenin Biosynthesis.",
+          "doi": "10.1111/1751-7915.70328",
+          "pmid": "41814496",
+          "pmcid": "PMC13097670",
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "118f0a2366d328003fadafc71a3dd9c2017cc86c7056a316a57886a033fcfd2a",
+          "text_sha256": "118f0a2366d328003fadafc71a3dd9c2017cc86c7056a316a57886a033fcfd2a",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "As a proof of concept, the platform was applied to the biosynthesis of naringenin, a key flavonoid intermediate.",
+                  "display_text": "As a proof of concept, the platform was applied to the biosynthesis of naringenin, a key flavonoid intermediate.",
+                  "raw_start": 626,
+                  "raw_end": 738,
+                  "canon_start": 626,
+                  "canon_end": 738,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "Integration of a chromosomally encoded naringenin biosensor in Escherichia coli allowed for real-time detection and pathway evaluation.",
+                  "display_text": "Integration of a chromosomally encoded naringenin biosensor in Escherichia coli allowed for real-time detection and pathway evaluation.",
+                  "raw_start": 739,
+                  "raw_end": 874,
+                  "canon_start": 739,
+                  "canon_end": 874,
+                  "sentence_index": 5,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  4,
+                  5,
+                  6
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "system",
+                  "raw_text": "Insufficient product yield remains a major bottleneck in the development of microbial cell factories for fine chemical production.",
+                  "display_text": "Insufficient product yield remains a major bottleneck in the development of microbial cell factories for fine chemical production.",
+                  "raw_start": 0,
+                  "raw_end": 130,
+                  "canon_start": 0,
+                  "canon_end": 130,
+                  "sentence_index": 0,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                },
+                {
+                  "role": "system",
+                  "raw_text": "Integration of a chromosomally encoded naringenin biosensor in Escherichia coli allowed for real-time detection and pathway evaluation.",
+                  "display_text": "Integration of a chromosomally encoded naringenin biosensor in Escherichia coli allowed for real-time detection and pathway evaluation.",
+                  "raw_start": 739,
+                  "raw_end": 874,
+                  "canon_start": 739,
+                  "canon_end": 874,
+                  "sentence_index": 5,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [
+                0,
+                5
+              ],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 3,
+          "k_scored": 2,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42730264",
+          "rank": 8,
+          "title": "Metabolic engineering of Saccharomyces cerevisiae for de novo biosynthesis of isoorientin.",
+          "doi": "10.1016/j.abiote.2026.100085",
+          "pmid": "42730264",
+          "pmcid": "PMC13564134",
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "203efc38688371d4de2495681e8ae87911ba0ca378fe0c0720d0b87eb6d902a0",
+          "text_sha256": "203efc38688371d4de2495681e8ae87911ba0ca378fe0c0720d0b87eb6d902a0",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "To enhance production of the intermediate naringenin, we overexpressed key genes in the shikimic acid and naringenin pathways, reinforced the cytosolic malonyl-CoA supply, and redirected subcellular acetyl-CoA flux.",
+                  "display_text": "To enhance production of the intermediate naringenin, we overexpressed key genes in the shikimic acid and naringenin pathways, reinforced the cytosolic malonyl-CoA supply, and redirected subcellular acetyl-CoA flux.",
+                  "raw_start": 454,
+                  "raw_end": 669,
+                  "canon_start": 454,
+                  "canon_end": 669,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "After screening enzymes from diverse sources, we identified an optimized enzyme combination for luteolin biosynthesis from naringenin: CYP93G1 (from Oryza sativa L.",
+                  "display_text": "After screening enzymes from diverse sources, we identified an optimized enzyme combination for luteolin biosynthesis from naringenin: CYP93G1 (from Oryza sativa L.",
+                  "raw_start": 670,
+                  "raw_end": 834,
+                  "canon_start": 670,
+                  "canon_end": 834,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  3,
+                  4
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "system",
+                  "raw_text": "In this study, we used metabolic engineering to construct an isoorientin-producing budding yeast (Saccharomyces cerevisiae) cell factory.",
+                  "display_text": "In this study, we used metabolic engineering to construct an isoorientin-producing budding yeast (Saccharomyces cerevisiae) cell factory.",
+                  "raw_start": 316,
+                  "raw_end": 453,
+                  "canon_start": 316,
+                  "canon_end": 453,
+                  "sentence_index": 2,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                },
+                {
+                  "role": "system",
+                  "raw_text": "Therefore, we established an engineered yeast platform for isoorientin synthesis by implementing a strategy for P450 optimization, providing a framework for microbial production of glycosylated natural products.",
+                  "display_text": "Therefore, we established an engineered yeast platform for isoorientin synthesis by implementing a strategy for P450 optimization, providing a framework for microbial production of glycosylated natural products.",
+                  "raw_start": 1353,
+                  "raw_end": 1564,
+                  "canon_start": 1353,
+                  "canon_end": 1564,
+                  "sentence_index": 10,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                }
+              ],
+              "also_mentions": [
+                "arabidopsis thaliana",
+                "a. thaliana"
+              ],
+              "reason_code": null,
+              "attached_clauses": [
+                2,
+                10
+              ],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 2,
+          "k_scored": 2,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "42965514",
+          "rank": 9,
+          "title": "Functional Characterization of Isoflavonoid Synthase CYP736D1 Mediating Oxidative Aryl Migration in a Non-leguminous Plant, Iris germanica (Iridaceae).",
+          "doi": "10.1093/pcp/pcag151",
+          "pmid": "42965514",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "797e182937bec9c010c6fef6fdaf05d2bbb278d5c2ab774fa0f355bbaa4931be",
+          "text_sha256": "797e182937bec9c010c6fef6fdaf05d2bbb278d5c2ab774fa0f355bbaa4931be",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "This sequence-independent strategy successfully identified CYP736D1 as the enzyme mediating the characteristic skeletal rearrangement of naringenin to form 2-hydroxyisoflavanone.",
+                  "display_text": "This sequence-independent strategy successfully identified CYP736D1 as the enzyme mediating the characteristic skeletal rearrangement of naringenin to form 2-hydroxyisoflavanone.",
+                  "raw_start": 808,
+                  "raw_end": 986,
+                  "canon_start": 808,
+                  "canon_end": 986,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "The IFS activity was highly specific to naringenin; reactions with other flavanones (liquiritigenin, hesperetin, and pinocembrin) primarily yielded corresponding flavone or 3-hydroxyflavanones.",
+                  "display_text": "The IFS activity was highly specific to naringenin; reactions with other flavanones (liquiritigenin, hesperetin, and pinocembrin) primarily yielded corresponding flavone or 3-hydroxyflavanones.",
+                  "raw_start": 1149,
+                  "raw_end": 1342,
+                  "canon_start": 1149,
+                  "canon_end": 1342,
+                  "sentence_index": 6,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  4,
+                  6
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "system",
+                  "raw_text": "To identify the Iris IFS, we utilized an established adventitious-root culture system for Iris germanica and employed functional expression-fractionation screening of its cDNA library in yeast cells.",
+                  "display_text": "To identify the Iris IFS, we utilized an established adventitious-root culture system for Iris germanica and employed functional expression-fractionation screening of its cDNA library in yeast cells.",
+                  "raw_start": 608,
+                  "raw_end": 807,
+                  "canon_start": 608,
+                  "canon_end": 807,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [
+                3
+              ],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 2,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        },
+        {
+          "api_version": "v3",
+          "paper_id": "43015870",
+          "rank": 10,
+          "title": "Engineering a modular yeast platform integrating xylose metabolism and plant polyphenol biosynthesis.",
+          "doi": "10.1186/s13036-026-00754-6",
+          "pmid": "43015870",
+          "pmcid": null,
+          "pub_year": "2026",
+          "classification": "insufficient_evidence",
+          "classification_reason": "activity_unclear",
+          "reason_code": "activity_unclear",
+          "criterion_spec": {
+            "entity": "naringenin",
+            "entity_role": "product",
+            "agent_kind": null,
+            "activity": "microbial biosynthesis",
+            "system": {
+              "name": "microbial",
+              "family": "microbial",
+              "synonyms": [
+                "yeast",
+                "bacteria",
+                "bacterium",
+                "fungi",
+                "fungus",
+                "microbe",
+                "microorganism"
+              ]
+            },
+            "method": null,
+            "scope": "this_study",
+            "constraints": [],
+            "unparsed_clauses": [],
+            "parse_method": "rules",
+            "parse_confidence": 0.85
+          },
+          "evidence": null,
+          "evidence_sentence": null,
+          "evidence_status": "insufficient",
+          "evidence_source": "abstract_only",
+          "evidence_offsets": null,
+          "source_record_sha256": "c67ea434a39f868f8a62b8a0a7c96ada6c3dc7670837668ddc2b7ab4b18f9a66",
+          "text_sha256": "c67ea434a39f868f8a62b8a0a7c96ada6c3dc7670837668ddc2b7ab4b18f9a66",
+          "aliases_used": [
+            "4',5,7-trihydroxyflavanone",
+            "(+-)-naringenin",
+            "(S)-Naringenin",
+            "salipurpol",
+            "(2S)-Naringenin",
+            "Salipurol",
+            "pelargidanon",
+            "naringetol"
+          ],
+          "retrieved_by": "intent",
+          "conditions": {
+            "entity": {
+              "name": "entity",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "entity",
+                  "raw_text": "Results We designed and optimized a naringenin biosynthetic module through heterologous gene screening, expression balancing, and culture optimization, achieving a 42-fold improvement (54.7 mg/L in XN03 vs. 1.3 mg/L in PSNR06) in production.",
+                  "display_text": "Results We designed and optimized a naringenin biosynthetic module through heterologous gene screening, expression balancing, and culture optimization, achieving a 42-fold improvement (54.7 mg/L in XN03 vs. 1.3 mg/L in PSNR06) in production.",
+                  "raw_start": 606,
+                  "raw_end": 847,
+                  "canon_start": 606,
+                  "canon_end": 847,
+                  "sentence_index": 4,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                },
+                {
+                  "role": "entity",
+                  "raw_text": "Furthermore, we identified and implemented a previously uncharacterized flavone synthase from Artemisia argyi (AaFNS), which enabled highly efficient conversion of naringenin to apigenin with a molar conversion rate of 81%, exceeding those of previously reported enzymes in S. cerevisiae.",
+                  "display_text": "Furthermore, we identified and implemented a previously uncharacterized flavone synthase from Artemisia argyi (AaFNS), which enabled highly efficient conversion of naringenin to apigenin with a molar conversion rate of 81%, exceeding those of previously reported enzymes in S. cerevisiae.",
+                  "raw_start": 1033,
+                  "raw_end": 1321,
+                  "canon_start": 1033,
+                  "canon_end": 1321,
+                  "sentence_index": 6,
+                  "source": "abstract",
+                  "verifiable_alone": true
+                }
+              ],
+              "also_mentions": [],
+              "reason_code": null,
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "anaphora_resolved": {},
+                "non_veto_sent_indices": [
+                  4,
+                  6
+                ]
+              }
+            },
+            "activity": {
+              "name": "activity",
+              "status": "unknown",
+              "score": 0.0,
+              "neg_margin": 0.0,
+              "evidence": [],
+              "also_mentions": [],
+              "reason_code": "activity_unclear",
+              "attached_clauses": [],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {
+                "clause_gate": "no_clause_with_entity_and_finite_verb"
+              }
+            },
+            "system": {
+              "name": "system",
+              "status": "supported",
+              "score": 1.0,
+              "neg_margin": 0.0,
+              "evidence": [
+                {
+                  "role": "system",
+                  "raw_text": "Microbial production of these compounds offers a sustainable alternative to plant extraction and chemical synthesis.",
+                  "display_text": "Microbial production of these compounds offers a sustainable alternative to plant extraction and chemical synthesis.",
+                  "raw_start": 144,
+                  "raw_end": 260,
+                  "canon_start": 144,
+                  "canon_end": 260,
+                  "sentence_index": 1,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                },
+                {
+                  "role": "system",
+                  "raw_text": "Here, we present an engineering approach to develop a xylose-utilizing Saccharomyces cerevisiae platform that integrates carbon assimilation with plant polyphenol biosynthesis.",
+                  "display_text": "Here, we present an engineering approach to develop a xylose-utilizing Saccharomyces cerevisiae platform that integrates carbon assimilation with plant polyphenol biosynthesis.",
+                  "raw_start": 429,
+                  "raw_end": 605,
+                  "canon_start": 429,
+                  "canon_end": 605,
+                  "sentence_index": 3,
+                  "source": "abstract",
+                  "verifiable_alone": false
+                }
+              ],
+              "also_mentions": [
+                "plant"
+              ],
+              "reason_code": null,
+              "attached_clauses": [
+                1,
+                3,
+                6,
+                7
+              ],
+              "comparative_mentions": [],
+              "synthesis_claim_sents": [],
+              "diagnostics": {}
+            }
+          },
+          "qualify_score": null,
+          "confidence": null,
+          "confidence_band": "Low",
+          "confidence_details": null,
+          "confidence_kind": "calibrated_platt_probability",
+          "score_breakdown": {
+            "positive_margin": 0.0,
+            "role_score": 0.0,
+            "final_score": -0.3,
+            "gate_flags": [
+              "activity_unclear"
+            ]
+          },
+          "guard_reason": null,
+          "diagnostics": null,
+          "dedup_of": null,
+          "k_eligible": 2,
+          "k_scored": 1,
+          "reagent_signal": 0.0,
+          "timings_ms": {}
+        }
+      ]
+    }
+  }
+]

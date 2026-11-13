@@ -1,0 +1,989 @@
+{
+  "entity": "live_audit",
+  "total": 40,
+  "papers": [
+    {
+      "id": "40177917",
+      "pmid": "40177917",
+      "doi": "10.1111/1751-7915.70135",
+      "pmcid": "PMC11966237",
+      "title": "De Novo Biosynthesis of Antidepressant Psilocybin in Escherichia coli.",
+      "pubYear": "2025",
+      "pubType": "research-article; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Psilocybin, a tryptamine-derived alkaloid, has been granted Breakthrough Therapy designation by the U.S. FDA for treatment-resistant depression, underscoring its clinical importance. Therefore, sustainable and economic production is urgently needed. Manufacturing of psilocybin in Escherichia coli has drawn great attention. However, due to the low expression and activity of the eukaryotic cytochrome P450 enzyme PsiH in the psilocybin biosynthetic pathway, de novo synthesis of psilocybin in prokaryotic cells has been hampered. To overcome this dilemma, we herein demonstrated de novo synthesis of psilocybin in E. coli by constructing PsiH variants with N-terminal domain modifications and expressing the entire biosynthetic pathway at a concordantly low temperature. Improving the supply of precursor and engineering the P450 electron transfer chain resulted in a 33-fold increase in the titre of norbaeocystin (105.3 mg/L), a key intermediate of psilocybin biosynthesis, and a 17-fold increase in the titre of psilocybin (14 mg/L). Further enhancement of psilocybin production was achieved by converting norbaeocystin to psilocybin by overexpressing an extra copy of the methyltransferase gene psiM. Finally, 79.4 mg/L of psilocybin was produced by optimising flask fermentation conditions, a 100-fold improvement over the starting strain. Our work demonstrates the successful fungal P450 engineering to improve the catalytic activity in E. coli and will advance the sustainable production of the important antidepressant psilocybin in prokaryotic microbial cells.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "fd4cb219a99c173c0e515fd055aaff941b4e90c4b4e8d8862f15db012b4f98fd",
+      "source_record_sha256": "0ef4bf1680c27e037f84a22f82b96888a3958bbc2d72ee9b100900b3c7966a52",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 1,
+      "paper_id_in_run": "40177917"
+    },
+    {
+      "id": "41474478",
+      "pmid": "41474478",
+      "doi": "10.1007/s11274-025-04758-0",
+      "pmcid": null,
+      "title": "Psilocybin: clinical potential, mechanistic insights, and biotechnological advances for scalable production.",
+      "pubYear": "2025",
+      "pubType": "Review; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Psilocybin, a tryptamine-derived alkaloid from Psilocybe mushrooms, has emerged as a high-value biopharmaceutical candidate due to its promising applications in mental health. While clinical studies highlight its rapid and sustained antidepressant effects, current challenges lie in achieving scalable, reproducible, and cost-effective production to meet growing research and therapeutic demand. Traditional extraction from fungal biomass yields low concentrations and requires extensive downstream processing, limiting industrial viability. Chemical synthesis ensures purity but is hindered by high costs and multistep complexity. In contrast, biotechnological approaches have demonstrated significant progress toward sustainable production. Heterologous expression of psilocybin biosynthetic genes in Saccharomyces cerevisiae and Aspergillus nidulans has enabled improved metabolic flux and precursor availability, reaching titers over 200 mg/L under optimized conditions. Moreover, recent engineering Escherichia coli strains has further enhanced catalytic efficiency of key enzymes such as PsiH, achieving production levels up to 2000 mg/L, while simplifying fermentation and purification workflows. These advances establish microbial platforms as a promising route for industrial-scale biosynthesis. Beyond production, psilocybin offers an opportunity to integrate biotechnology with socio-cultural context. In regions where diversity of Psilocybe species and ancestral knowledge converge, the development of biotechnological pipelines could foster innovation in drug discovery, sustainable manufacturing, and policy reform. Overall, psilocybin exemplifies a frontier molecule in biotechnology, where metabolic engineering, synthetic biology, and bioresource valorization converge to transform a natural product into a reproducible, scalable, and globally relevant therapeutic.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "4b39215ea186de0404b507124c4cd5957b606b1f6893a4aaaa320bd693355d39",
+      "source_record_sha256": "eb2726c081aa406fab7d96944b69d4adcfafa1880dfadd8621ebf163fc5e550c",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 2,
+      "paper_id_in_run": "41474478"
+    },
+    {
+      "id": "43014316",
+      "pmid": "43014316",
+      "doi": "10.1016/j.cub.2026.10.041",
+      "pmcid": null,
+      "title": "The \"dark magic mushroom\" co-produces amatoxins and psilocybin.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "The most famous chemicals produced by mushrooms are the psychedelic compound psilocybin from \"magic mushrooms\" and amatoxins from deadly poisonous mushrooms.<sup>1</sup><sup>,</sup><sup>2</sup><sup>,</sup><sup>3</sup><sup>,</sup><sup>4</sup><sup>,</sup><sup>5</sup><sup>,</sup><sup>6</sup><sup>,</sup><sup>7</sup><sup>,</sup><sup>8</sup><sup>,</sup><sup>9</sup> These compounds are known to occur in several distantly related groups of fungi but have never been shown to co-occur within a single species. Here, we show that the \"dark magic mushroom\" Galerina indica produces both psilocybin and amatoxins. Mass spectrometry revealed psilocybin and amatoxins in mushroom tissues, and genomic analyses identified corresponding biosynthetic genes. Phylogenetic analyses suggest that G. indica acquired psilocybin biosynthesis via horizontal gene transfer after amatoxin biosynthesis was already established. These findings reveal how horizontal gene transfer can combine powerful bioactive systems in a single species, potentially altering the ecological roles of both compound classes and the evolutionary fitness of the species.<sup>10</sup><sup>,</sup><sup>11</sup>.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "d7ac21d3282642a7e6553589977a0c1a3b5e8ab52cc1d89921d1970e1c83c56f",
+      "source_record_sha256": "1790c118ebad203fcf37d9fd036b3c9c990e95aa1afad5db0a1d69123fc92fae",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 3,
+      "paper_id_in_run": "43014316"
+    },
+    {
+      "id": "42860751",
+      "pmid": "42860751",
+      "doi": "10.1097/fbp.0000000000000903",
+      "pmcid": null,
+      "title": "Psilocybin enhances conditioned place preference learning in planarians.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Psilocybin has emerged as a promising therapeutic agent, with clinical benefits attributed to enhanced neuroplasticity rather than acute pharmacological effects. However, the fundamental mechanisms underlying these effects remain poorly understood. Using planarians as a model system, we investigated whether psilocybin enhances associative learning using a conditioned place preference paradigm. Following a single exposure to 5 µM psilocybin, planarians underwent 5 days of conditioning in which light was paired with sucrose. Psilocybin-treated planarians showed a significantly greater shift in light preference compared to controls (time × group × drug interaction: F (2,38) = 3.3, P  < 0.05), with effects persisting at least 6 days post-administration. These findings demonstrate that psilocybin enhances appetitive associative learning in an invertebrate model, supporting the hypothesis that psychedelic-induced neuroplasticity operates through evolutionarily conserved serotonergic mechanisms.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "ccf2d68accafe53156b8e23ecfb4544fb3728cd8c86737ce4d8d21e97fa4f618",
+      "source_record_sha256": "a035313624aa62b7b380fd330a44932f7e4fcb248f443a47dac3c3926cf87f54",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 4,
+      "paper_id_in_run": "42860751"
+    },
+    {
+      "id": "42922907",
+      "pmid": "42922907",
+      "doi": "10.3389/fpsyt.2026.1890966",
+      "pmcid": "PMC13687007",
+      "title": "Preparing the body for psilocybin therapy: receptive and generative interoception in cancer patients.",
+      "pubYear": "2026",
+      "pubType": "research-article; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Cancer patients arrive for psilocybin therapy with bodies altered by illness and treatment - bodies that they have learned to brace against, dissociate from, or scan for threat. Research on psilocybin-assisted therapy for cancer-related depression and anxiety consistently identifies the quality of the acute subjective experience - reflected in constructs such as acceptance, surrender, boundlessness, and emotional breakthrough - as a key predictor of therapeutic benefit. Yet most preparation protocols focus on cognitive intention-setting and basic mindfulness while neglecting to address the body directly. We propose that anxiety and depression in this setting may involve a somatic substrate that has not been adequately specified. We distinguish two capacities to 'feel into the body' relevant to psychedelic therapy: interoception as perception (the perceptual access to bottom-up bodily signal) and interoceptive engagement (the broader capacity that links bodily perception to posture, breath, structural intent, and affective stance). We describe a six-category phenomenological taxonomy of somatic experiences in psilocybin therapy (exteroceptive, deep somatic, visceral, vestibular, nociceptive, emergent). We also map receptive practices, designed to improve interoception as perception, and generative practices, designed to improve interoceptive engagement. The framework is grounded in current predictive-coding accounts of interoception, but does not depend on any single neuroscientific model. An ongoing Phase 2 trial of group retreat psilocybin therapy for metastatic cancer patients will provide an initial test of our hypothesis that interoceptive training may influence therapeutic outcomes in psilocybin therapy for patients with cancer.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "6e86cdd6ebf6baa30a9bb4600b56edd3a30ad6328462ad2f2a049f427ea33398",
+      "source_record_sha256": "c615d7e6080d5648df67d4a047c4c42fe0dab893f9a58a8d14b17c220c75ebcc",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 5,
+      "paper_id_in_run": "42922907"
+    },
+    {
+      "id": "42937360",
+      "pmid": "42937360",
+      "doi": "10.1128/mmbr.00117-25",
+      "pmcid": null,
+      "title": "Magic pathways: the genes and enzymes of psilocybin biosynthesis.",
+      "pubYear": "2026",
+      "pubType": "Review; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "SUMMARYSpecies of several mushroom genera, among them <i>Psilocybe</i> and <i>Inocybe</i>, biosynthesize psilocybin, the prodrug to the powerful psychotropic and perception-altering analog, psilocin. While \"magic\" mushrooms are popular as recreational drugs, advanced clinical trials have shown that psilocybin is a valuable future (and, in some countries, available) medication against depression and anxiety. In this review article, we focus on the metabolic processes leading to psilocybin in the fungal cell and present the biosynthetic enzymes, their structures, and the reactions catalyzed. Remarkably, mushrooms have evolved psilocybin biosynthesis twice independently, involving genes and enzymes that are only distantly related or unrelated altogether. We also present routes on how this iconic natural product can be made biocatalytically <i>in vitro</i> or in heterologous hosts <i>in vivo</i>. Despite substantial progress in psilocybin research over the past decade, we present unsolved questions that remain for the current and the next generation of researchers.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "9c31851fb7c16714a6d327f778091fa1912f8acfeb8adb9cfce6c751ce8ad096",
+      "source_record_sha256": "6b47ff091a88b4b890403e2cc93f3760db0de11af75160404e1c6a4fbf4ddb73",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 6,
+      "paper_id_in_run": "42937360"
+    },
+    {
+      "id": "10.22541/authorea.15006829/v1",
+      "pmid": null,
+      "doi": "10.22541/authorea.15006829/v1",
+      "pmcid": null,
+      "title": "Beyond psilocybin: Do magic mushroom preparations contain other compounds with pharmacological effects?",
+      "pubYear": "2026",
+      "pubType": "Preprint",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "abstractText": "Psilocybin (‘magic’) mushrooms are species of mushroom-forming fungi (Agaricomycetes, Basidiomycetes) that have been used as a spiritual sacrament for thousands of years and as recreational and therapeutic drugs more recently. People who use psilocybin mushrooms have long reported that different species and preparation methods cause alterations to their pharmacological effects. In agreement with these reports, animal studies have shown differences in the effects of isolated psilocybin and psilocybin mushroom extracts, suggesting that psilocybin mushrooms may contain additional pharmacologically active compounds or adjuvants. This literature review identifies the compounds other than psilocybin/psilocin identified so far in psilocybin mushrooms and discusses their potential to cause differential effects from different psilocybin mushrooms. Several compounds have been identified in psilocybin mushrooms so far including psilocybin/psilocin related tryptamines, β-carbolines, gymnopilins, and monoamine neurotransmitters. There is not enough evidence to confirm whether these compounds have pharmacological activity or if those with proven activity are present in sufficient quantities to have any relevant effect. Some people who use mushrooms report adding active compounds from alternative sources into drug preparations to mitigate this issue of low natural occurrence of certain pharmacologically active compounds. An overview of general usage, gaps in the literature and steps forward are discussed in this review.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "6d81b162ec710e5ac2116609846beba77dee1177d7d3bc87129013b0194011a6",
+      "source_record_sha256": "b6afdf701a0e148e4ed69ea57ce7a1cccacdcea53d0947a2ffe8a4747557c9e8",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 7,
+      "paper_id_in_run": "10.22541/authorea.15006829/v1"
+    },
+    {
+      "id": "42855022",
+      "pmid": "42855022",
+      "doi": "10.1016/j.biotechadv.2026.109071",
+      "pmcid": null,
+      "title": "Engineering microbial platforms for diversified biosynthesis of antidepressant tryptophan-derived neuroactive compounds.",
+      "pubYear": "2026",
+      "pubType": "Review; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Tryptophan-drived neuroactive compounds, including serotonin, melatonin, 5-hydroxytryptophan (5-HTP), psilocybin, and related indole derivatives, represent an important class of therapeutics for depression and other neuropsychiatric disorders. However, conventional production through chemical synthesis or natural extraction remains limited by low sustainability, poor selectivity, and high manufacturing costs. Advances in synthetic biology, metabolic engineering, and enzyme engineering have enabled the development of microbial cell factories for the efficient biosynthesis of these high-value compounds. This Review highlights recent progress in engineering microbial platforms for antidepressant tryptophan derivatives, focusing on tryptophan overproduction, hydroxylation biocatalysts, downstream biosynthetic pathways, and cofactor engineering. We further discuss the emerging roles of bacterial heme-dependent tryptophan hydroxylases and AI-assisted enzyme and pathway engineering in expanding the biosynthetic toolbox. Finally, we outline current challenges and future opportunities for integrating intelligent strain design with advanced bioprocess engineering to advance the biomanufacturing of tryptophan-derived neuroactives.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "b3598ef543ec6ab17d680e3cb5a341bb4a7ff7e45b6bb45502a3294ec28dc53d",
+      "source_record_sha256": "14cb8ba5584e3ecc5b310d119fae98ceee69f951d7aa377543b87e69412736d3",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 8,
+      "paper_id_in_run": "42855022"
+    },
+    {
+      "id": "42975895",
+      "pmid": "42975895",
+      "doi": "10.1080/15360288.2026.2756950",
+      "pmcid": null,
+      "title": "Psilocybin-Assisted Therapy for Cancer-Related Psychological and Existential Distress in Adults with Cancer: An Integrative Systematic Review.",
+      "pubYear": "2026",
+      "pubType": "Review; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Psilocybin-assisted therapy has reemerged as a promising intervention for distress associated with cancer and life-threatening illness. This integrative systematic review evaluated evidence on the safety, efficacy, and therapeutic impact of psilocybin-assisted therapy in adults with cancer experiencing depression, anxiety and existential distress. Following PRISMA guidelines, PubMed, Scopus, Google Scholar, and CINAHL databases were searched from 10 August 2025 to 31 October 2025. Eleven eligible reports derived from six independent clinical cohorts met inclusion criteria. Psilocybin was generally administered as a single supervised moderate-to-high dose (25-30 mg/70 kg), within structured preparation, dosing, and integration. Across all designs, psilocybin produced rapid and enduring reductions in depression, anxiety, existential distress, and fear of death, with benefits lasting 2-6 months and, in some cases, up to 4.5 years. Qualitative findings highlighted enhanced emotional clarity, acceptance, spiritual well-being, and reconnection with meaning. Five of the 11 reports met Mixed Methods Appraisal Tool (MMAT) criteria; concerns in others involved assessor blinding, representativeness, confounding control, or mixed-methods integration. No psilocybin-related serious adverse events were reported; transient cardiovascular changes, headache, nausea, anxiety or emotional distress, and occasional brief psychotic-like symptoms occurred. Psilocybin-assisted therapy may be promising but still investigational palliative pharmacotherapy-related intervention for cancer-related psychological and existential distress.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "70c25b36173d4b743548bf8b9e19fafbfbb36149ac57f25f8dea63ebecce5db6",
+      "source_record_sha256": "da5c9e1647d079f668b0175b7b476680823daba555d0ec351ef37c2412d4a200",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 9,
+      "paper_id_in_run": "42975895"
+    },
+    {
+      "id": "42988866",
+      "pmid": "42988866",
+      "doi": "10.1038/s12276-026-01872-3",
+      "pmcid": null,
+      "title": "Psilocybin modulates nucleus accumbens activity via astrocytic transcriptional regulation.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Psilocybin is a serotonergic hallucinogen that acts primarily through 5-HT₂A receptor signaling, yet the mechanisms by which it regulates mesolimbic inhibitory tone remain poorly understood. Here we investigated how psilocybin and structurally related synthetic tryptamines modulate inhibitory signaling in the nucleus accumbens (NAc) and whether astrocyte-associated mechanisms contribute to this process. Psilocybin-like tryptamines that generalized to the psilocybin cue increased NAc neuronal activity while reducing extracellular GABA levels, identifying diminished NAc GABAergic tone as a neurochemical correlate of psilocybin-like behavioral responses. Consistent with this interpretation, local pharmacological modulation of NAc GABA receptor signaling altered psilocybin-appropriate responding. We next examined the cellular and molecular basis of this GABAergic regulation. Ex vivo whole-cell recordings revealed that psilocin, the active metabolite of psilocybin, reduced tonic GABA current in NAc medium spiny neurons without affecting miniature inhibitory postsynaptic currents, indicating preferential modulation of tonic rather than miniature synaptic inhibition. Cell-type-specific analyses further showed that psilocybin selectively reduced intracellular GABA levels in astrocytes, but not neurons. Psilocybin increased astrocytic NFATc4 and ALDH5A1 protein expression together with enhanced H3K27 acetylation, and ChIP-qPCR analysis showed increased NFATc4 occupancy at the Aldh5a1 promoter. Consistent with upstream serotonergic signaling, psilocin-induced calcium responses in astrocytes were attenuated by 5-HT₂A receptor antagonism. Together, these findings support a model in which psilocybin modulates mesolimbic inhibitory tone through astrocyte-associated regulation of NAc GABA homeostasis. Our findings further identify astrocytic NFATc4-associated transcriptional regulation as a mechanism linked to ALDH5A1 expression, astrocytic GABA homeostasis and tonic inhibitory regulation in the NAc.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "82f82b7b678be44a6d6ae29728182f31c37c83bb78f3e0408a3be45f255a166f",
+      "source_record_sha256": "a092ca3502719fba84fea43c895c4c13ebf55cf664afd4ebe48d130fc80c88ed",
+      "query_name": "Query 1: Psilocybin",
+      "entity": "psilocybin",
+      "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+      "rank_in_run": 10,
+      "paper_id_in_run": "42988866"
+    },
+    {
+      "id": "42107802",
+      "pmid": "42107802",
+      "doi": "10.1016/j.biortech.2026.134823",
+      "pmcid": null,
+      "title": "Metabolic engineering of Saccharomyces cerevisiae for efficient production of dihydroartemisinic acid.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Artemisinin is a natural antimalarial drug recommended by the World Health Organization. To address the limitations of natural supply, semi-synthetic production provides a promising alternative strategy. Current semi-synthetic routes typically rely on asymmetric heavy metal-involved hydrogenation to convert artemisinic acid (AA) to dihydroartemisinic acid (DHAA). This study aimed to construct an engineered microbial platform capable of directly producing dihydroartemisinic acid to support artemisinin semi-synthesis. The gene AaDbr2, encoding a key enzyme redirecting metabolic flux from artemisinic acid toward dihydroartemisinic acid biosynthesis, was first introduced into an artemisinic acid-producing strain, and promoter strength was optimized to enhance expression, achieving a dihydroartemisinic acid titer of 79.4 mg/L. The aldehyde dehydrogenase ALDH1 catalyzes the oxidation of artemisinic aldehyde and dihydroartemisinic aldehyde, resulting in the formation of AA and DHAA, respectively. The two genes AaDbr2 and ALDH1 were thus fused in the genome and this strategy largely increased DHAA/AA ratio from 0.6 to 4.2. Furthermore, DHAA production was improved through multiple metabolic engineering strategies, including cofactor engineering to enhance NADPH availability, regulation of diauxic growth behavior to balance cellular proliferation and product synthesis, and optimization of the P450 electron transport system. Finally, batch and fed-batch fermentation in a 5 L bioreactor further increased DHAA production, reaching a final titer of 6.8 g/L, which represents the highest reported DHAA titer to date. This study demonstrates the potential of microbial platforms for the sustainable, economical, and scalable production of dihydroartemisinic acid, paving the way for the industrial semi-synthesis of artemisinin.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "7d189558f4060bd63166a169ea5c54e1ffcbed2d970435676a227574eb880e4c",
+      "source_record_sha256": "94842cdb82748897d5e6d0b2b8c9839cdee40b9d4951208448f5887989eb0303",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 1,
+      "paper_id_in_run": "42107802"
+    },
+    {
+      "id": "10.21203/rs.3.rs-3926665/v1",
+      "pmid": null,
+      "doi": "10.21203/rs.3.rs-3926665/v1",
+      "pmcid": null,
+      "title": "Mechanism of Artemisinic acid in regulating inflammation: Insights from network pharmacology and experimental validation",
+      "pubYear": "2026",
+      "pubType": "Preprint",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "abstractText": "<title>Abstract</title>  <p>  Artemisinic acid is enriched in the well-known herbaceous plants  <italic>Artemisia annua</italic>  L. Due to the negtive anti-malarial activity of Artemisinic acid , it is only used as raw material for the synthesis of Artemisinin in industry. In fact, Artemisinic acid showed excellent effects on immune inflammation, but its mechanism is still unknown. In order to further develop and utilize Artemisinic acid, the reseach on its mechanism is conducted. In this study, network pharmacology methods were performed to analyze the potential targets of Artemisinic acid and the signaling pathways that regulate inflammation. The classic inflammation experimental methods were used, for example, Lipopolysaccharide (LPS) induces inflammation in rats, and the changes in general vital signs, hematology, cytokines, and key molecules of Interleukin-17(IL-17) signaling pathway were observed after Artemisinic acid remedy. In addition, the toxic effects of Artemisinic acid was alsoinvestigated.Research has demonstrated that artemisinin is a secure compound capable of inhibiting inflammation triggered by LPS. The inhibition of inflammation mechanism may be associated with the regulation of IL-17,  <italic>ACT1</italic>  ,  <italic>Hsp90a</italic>  ,  <italic>ERK</italic>  , and COX-2 signaling within the IL-17 signaling pathway.  </p>",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "d049b82c35dc095914f1a342ad89e31e217f686f4a7c42da0e8fd42b3ee2bb95",
+      "source_record_sha256": "970bc5e28c5a84b99ff3bb6306c05a3f6c8dba9639c69fbdc8edf5aeb199de5c",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 2,
+      "paper_id_in_run": "10.21203/rs.3.rs-3926665/v1"
+    },
+    {
+      "id": "42418950",
+      "pmid": "42418950",
+      "doi": "10.1016/j.enzmictec.2026.110930",
+      "pmcid": null,
+      "title": "Engineering AaADH1 for enhanced catalytic efficiency and solubility via substrate tunnel modulation.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Artemisinic alcohol dehydrogenase 1 (AaADH1) plays a pivotal role in the biosynthesis of artemisinic acid, a key precursor of the antimalarial drug artemisinin. However, its low catalytic activity and poor yield limit its industrial application. In this study, we employed a structure-guided protein engineering approach to improve the enzymatic properties of AaADH1. Substrate tunnel analysis identified key bottleneck residues that were subjected to alanine scanning mutagenesis. Among the resulting mutants, L366A displayed a 30% increase in activity and a 53% enhancement in catalytic efficiency (k<sub>cat</sub>/K<sub>M</sub>), along with a 5-fold higher expression level than the wild type (WT). Consequently, a saturation mutagenesis was performed at position 366. Compared to the WT, the k<sub>cat</sub>/K<sub>M</sub> of the L366V, L366I, and L366F mutants increased by 100%, 38%, and 16%, respectively. Molecular dynamics simulations revealed that mutations at L366 enhanced the flexibility of the catalytic pocket and stabilized the local secondary structure, thereby contributing to both improved activity and expression. These findings provide a rational framework for further optimization of AaADH1 for industrial artemisinic acid production.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "6743805a0ba0c8ecf33967f8882596a70301f8916178b81b342efd443b20dc96",
+      "source_record_sha256": "b38b85840fda8de685deecf6bff6e6687d0b9a0c22a81e8d3488165078be1ff3",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 3,
+      "paper_id_in_run": "42418950"
+    },
+    {
+      "id": "38474639",
+      "pmid": "38474639",
+      "doi": "10.3390/molecules29051127",
+      "pmcid": "PMC10934027",
+      "title": "Two-Phase Fermentation Systems for Microbial Production of Plant-Derived Terpenes.",
+      "pubYear": "2024",
+      "pubType": "review-article; Review; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "review-article",
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Microbial cell factories, renowned for their economic and environmental benefits, have emerged as a key trend in academic and industrial areas, particularly in the fermentation of natural compounds. Among these, plant-derived terpenes stand out as a significant class of bioactive natural products. The large-scale production of such terpenes, exemplified by artemisinic acid-a crucial precursor to artemisinin-is now feasible through microbial cell factories. In the fermentation of terpenes, two-phase fermentation technology has been widely applied due to its unique advantages. It facilitates in situ product extraction or adsorption, effectively mitigating the detrimental impact of product accumulation on microbial cells, thereby significantly bolstering the efficiency of microbial production of plant-derived terpenes. This paper reviews the latest developments in two-phase fermentation system applications, focusing on microbial fermentation of plant-derived terpenes. It also discusses the mechanisms influencing microbial biosynthesis of terpenes. Moreover, we introduce some new two-phase fermentation techniques, currently unexplored in terpene fermentation, with the aim of providing more thoughts and explorations on the future applications of two-phase fermentation technology. Lastly, we discuss several challenges in the industrial application of two-phase fermentation systems, especially in downstream processing.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "7ffc26260909261b81c50536296f4f3e065d08e10dee27e0c533a48863a8aa98",
+      "source_record_sha256": "a654a932ab3a2cb1e1fd9d95999576dc8c9365c5083e5847307d5abcfc4bb348",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 4,
+      "paper_id_in_run": "38474639"
+    },
+    {
+      "id": "40105756",
+      "pmid": "40105756",
+      "doi": "10.1021/acssynbio.4c00707",
+      "pmcid": null,
+      "title": "Combining Chemical Catalysis with Enzymatic Steps for the Synthesis of the Artemisinin Precursor Dihydroartemisinic Acid.",
+      "pubYear": "2025",
+      "pubType": "Research Support, U.S. Gov't, Non-P.H.S.; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, U.S. Gov't, Non-P.H.S.",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "The supply of artemisinin, the primary antimalarial drug recommended by the World Health Organization (WHO), is limited due to synthesis cost and supply constraints. This study explores novel chemo-enzymatic pathways for the efficient synthesis of dihydroartemisinic acid (DHAA), the penultimate precursor to artemisinin. The key concept here is to leverage the seamless integration of chemical and enzymatic steps for more thoroughly exploring synthesis alternatives. Using novoStoic, a biosynthetic pathway design tool, we identified previously unexplored carbon- and energy-balanced pathways for converting amorpha-4,11-diene (AMPD) to DHAA. For some of the enzymatically catalyzed steps lacking efficient enzymes, chemical catalysis alternatives were proposed and implemented, leading to a hybrid chemo-enzymatic pathway design. The proposed pathway converts AMPD directly to DHAA without going through artemisinic acid (AA), making it a shorter pathway compared with the existing synthesis routes for artemisinin. This effort paves the way for the systematic design of chemo-enzymatic pathways and provides insight into decision strategies between chemical synthesis and enzymatic synthesis steps. It serves as an example of how synthesis pathway design tools can be integrated with human intuition for accelerating retrosynthesis and how AI-based tools can identify and replace human intuitions to automate the decision processes. This can help reduce human-machine interventions and improve the development of future tools for synthesis planning.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "2dc86d92b203d2739a255eb14f078407f92bceefad067d17b8f3a997a98e3ff4",
+      "source_record_sha256": "b0f29adf32bbe871120cfa1d3db7939ff5a6455776fac6a0268589ca1b48cad8",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 5,
+      "paper_id_in_run": "40105756"
+    },
+    {
+      "id": "42774055",
+      "pmid": "42774055",
+      "doi": "10.3389/fcimb.2026.1950360",
+      "pmcid": "PMC13593465",
+      "title": "Artemisinins inhibited the synergistic cariogenic effect between &lt;i&gt;Candida albicans&lt;/i&gt; and &lt;i&gt;Streptococcus mutans&lt;/i&gt;.",
+      "pubYear": "2026",
+      "pubType": "research-article; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "<h4>Background</h4>Dental caries, a globally prevalent disease, burdens health and economies. Targeting <i>Candida albicans-Streptococcus mutans</i> synergism aids managing severe early childhood caries and root caries. Artemisinin, a natural antimalarial, inhibits <i>C. albicans</i> virulence via hyphal and biofilm suppression, promising to disrupt this cross-kingdom cariogenic partnership.<h4>Objective</h4>This study evaluated the inhibitory effects of seven common artemisinin compounds on the synergistic cariogenic effect of <i>C. albicans-S. mutans</i> biofilm, in order to expand the application of artemisinin compounds in the field of caries prevention.<h4>Methods</h4>Hyphal induction, biofilm formation, and CFU assays evaluated the inhibitory efficacy of the compounds against <i>C. albicans</i> and <i>S. mutans</i>. RT-qPCR examinations analyzed the expression of key virulence genes in both species. The anti-caries efficacy of artemisinin compounds was further validated in a rat caries model, demonstrated by quantitative analysis of microbial load in dental plaque and Keyes scoring for molar carious lesions.<h4>Results</h4>All seven artemisinin derivatives effectively inhibited hyphal formation in <i>C. albicans</i>. Artemisinic acid and dihydroartemisinic acid additionally exhibited direct antibacterial activity against <i>S. mutans</i>, significantly suppressing dual-species biofilm formation, EPS synthesis, and acid production. All compounds downregulated key virulence genes in both pathogens. <i>In vivo</i> studies confirmed that artemisinic acid and dihydroartemisinic acid reduced microbial colonization and caries severity, while other derivatives primarily exerted anticaries effects by inhibiting <i>C. albicans</i> colonization.<h4>Conclusion</h4>Artemisinin compounds can reduce the synergistic cariogenic virulence of <i>C. albicans</i> and <i>S. mutans</i> by inhibiting the interaction between <i>C. albicans</i> and <i>S. mutans</i>.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "ca4f64415c191cfb460dc880f8e3c8d4162541f060d8e144547ab5167201d32a",
+      "source_record_sha256": "38a1f3e983d832ee1de5db4dd9a16d55d771028c056fe8d9ecd667429e9766e7",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 6,
+      "paper_id_in_run": "42774055"
+    },
+    {
+      "id": "39732992",
+      "pmid": "39732992",
+      "doi": "10.1038/s41598-024-82551-z",
+      "pmcid": "PMC11682108",
+      "title": "Dynamic transcriptomics unveils parallel transcriptional regulation in artemisinin and phenylpropanoid biosynthesis pathways under cold stress in Artemisia annua.",
+      "pubYear": "2024",
+      "pubType": "research-article; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Cold stress, a major abiotic factor, positively modulates the synthesis of artemisinin in Artemisia annua and influences the biosynthesis of other secondary metabolites. To elucidate the changes in the synthesis of secondary metabolites under low-temperature conditions, we conducted dynamic transcriptomic and metabolite quantification analyses of A. annua leaves. The accumulation of total organic carbon (TOC) in leaves under cold stress provided ample precursors for secondary metabolite synthesis. Short-term exposure to low temperature induced a transient increase in jasmonic acid synthesis, which positively regulates the artemisinin biosynthetic pathway, contributing to artemisinin accumulation. Additionally, transcripts of genes encoding key enzymes and transcription factors in both the phenylpropanoid and artemisinin biosynthetic pathways, including PAL, C4H, ADS, and DBR2, exhibited similar expression patterns, suggesting a coordinated effect between these pathways. Prolonged exposure to low temperature sustained high levels of phenylpropanoid synthesis, leading to significant increases in lignin, flavonoids, and anthocyanin. Conversely, the final stage of the artemisinin biosynthetic pathway is inhibited under these conditions, resulting in elevated levels of dihydroartemisinic acid and artemisinic acid. Collectively, our study provides insights into the parallel transcriptional regulation of artemisinin and phenylpropanoid biosynthetic pathways in A. annua under cold stress.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "704515582d93e557a636a797bdc9ae111b938f579eba63f7efe29b41b5b5e044",
+      "source_record_sha256": "32d2395c33cd8823949a84a1bafb1f3673c62d5526cdbec811260c5555a6c2ac",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 7,
+      "paper_id_in_run": "39732992"
+    },
+    {
+      "id": "40274872",
+      "pmid": "40274872",
+      "doi": "10.1038/s41467-025-59312-1",
+      "pmcid": "PMC12022088",
+      "title": "Dihydroartemisinic acid dehydrogenase-mediated alternative route for artemisinin biosynthesis.",
+      "pubYear": "2025",
+      "pubType": "research-article; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Dihydroartemisinic acid (DHAA) converts into antimalarial drug artemisinin (ART) by auto-oxidation. High production of artemisinic acid (AA) has been achieved by fermentation of engineered Saccharomyces cerevisiae, and AA can be converted into ART through DHAA by chemical synthesis. However, there is no enzyme reported to catalyze the conversion of AA to DHAA. Here, we report a dihydroartemisinic acid dehydrogenase (AaDHAADH) from Artemisia annua L, which catalyzes the bidirectional conversion between AA and DHAA. An optimized mutant AaDHAADH (P26L) is obtained through site-directed mutagenesis and its activity toward AA is 2.82 times that of the original gene. De novo synthesis of DHAA is achieved in S. cerevisiae using the targeted optimized gene AaDHAADH (P26L). Furthermore, 3.97 g/L of DHAA is obtained by fermentation of engineered S. cerevisiae in 5 L bioreactor. The discovery of AaDHAADH provides a more convenient and efficient alternative route for ART biosynthesis.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "31b340c3ca3359f1dc948be2a7a7077f94538d1c9c61b2f4e30993be8cf907d0",
+      "source_record_sha256": "e4909a03197965895c6d9e8bdd75715436b9d861d213450863e54cb5db0f3f88",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 8,
+      "paper_id_in_run": "40274872"
+    },
+    {
+      "id": "40510840",
+      "pmid": "40510840",
+      "doi": "10.1016/j.biotno.2025.05.003",
+      "pmcid": "PMC12159492",
+      "title": "Supercritical CO&lt;sub&gt;2&lt;/sub&gt; extraction of artemisinin from &lt;i&gt;Artemisia annua&lt;/i&gt; plant and the biotechnological production of artemisinin precursors: A dual-focus review.",
+      "pubYear": "2025",
+      "pubType": "review-article; Review; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "review-article",
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Artemisinin, a vital compound renowned for its potent antimalarial properties, has garnered significant attention due to its therapeutic importance and critical role in combating malaria. The extraction process is essential in recovering artemisinin from <i>Artemisia annua</i> L. plant. Supercritical carbon dioxide (scCO<sub>2</sub>) extraction has emerged as a highly effective and eco-friendly technique, offering improved efficiency, selectivity, and greener processing than conventional solvent-based methods. Despite this advancement, plant-derived artemisinin faces challenges in meeting global demand due to naturally low yields, seasonal variation, and agricultural limitations. Biotechnological advances have enabled the microbial production of artemisinin precursors, such as artemisinic acid and amorphadiene, which can be chemically or enzymatically converted into artemisinin, providing a scalable and sustainable production route. Despite the significance of both approaches, existing literature often treats them in isolation. Therefore, this work provides a comprehensive review, integrating scCO<sub>2</sub> extraction technologies with microbial-based fermentation strategies for producing artemisinin and its precursors. Key parameters influencing scCO<sub>2</sub> extraction efficiency, such as CO<sub>2</sub> flow rate, temperature, co-solvent use, and pressure, are analyzed alongside fermentation bioprocess factors such as strain selection, pH, dissolved oxygen levels, carbon sources, and fermentation modes. By evaluating these complementary strategies, this review provides a holistic perspective aimed at improving artemisinin production yield, for accessibility and sustainability, ensuring a reliable global supply. It concludes by highlighting current challenges and proposing future directions necessary for optimizing the integrated production pipeline of artemisinin and its precursors.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "d8de24be422ae886b01016962e085fd77b75e86749b0aa9142154b621873f24d",
+      "source_record_sha256": "77cc680b5baf753fc5882c8815bd0f49aa67682a1fcbf83e494f2b598154b00d",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 9,
+      "paper_id_in_run": "40510840"
+    },
+    {
+      "id": "36867394",
+      "pmid": "36867394",
+      "doi": "10.1002/asia.202300162",
+      "pmcid": null,
+      "title": "Late-Stage C(sp<sup>2</sup> )-H Arylation of Artemisinic Acid and Arteannuin B: Effect of Olefin Migration Towards Synthesis of C-13 Arylated Artemisinin Derivatives.",
+      "pubYear": "2023",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "In recent years, C-H bond functionalization has emerged as a pivotal tool for late-stage functionalization of complex natural products for the synthesis of potent biologically active derivatives. Artemisinin and its C-12 functionalized semi-synthetic derivatives are well-known clinically used anti-malarial drugs due to the presence of the essential 1,2,4-trioxane pharmacophore. However, in the wake of parasite developing resistance against artemisinin-based drugs, we conceptualized the synthesis of C-13 functionalized artemisinin derivatives as new antimalarials. In this regard, we envisaged that artemisinic acid could be a suitable precursor for the synthesis of C-13 functionalized artemisinin derivatives. Herein, we report C-13 arylation of artemisinic acid, a sesquiterpene acid and our attempts towards synthesis of C-13 arylated artemisinin derivatives. However, all our efforts resulted in the formation of a novel ring-contracted rearranged product. Additionally, we have extended our developed protocol for C-13 arylation of arteannuin B, a sesquiterpene lactone epoxide considered to be the biogenetic precursor of artemisinic acid. Indeed, the synthesis of C-13 arylated arteannuin B renders our developed protocol to be effective in sesquiterpene lactone as well.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "4bfa57b0b123651c8acaae5811e54061816ae94c898fa2b6c0276ecb043e5f1c",
+      "source_record_sha256": "c4b3a858980fc3150662243a1d11ab08a2e072b4e2c0b45b23f3cc02784a6cdd",
+      "query_name": "Query 2: Artemisinic Acid",
+      "entity": "artemisinic acid",
+      "criterion": "The compound was produced by engineered microbial biosynthesis in this study.",
+      "rank_in_run": 10,
+      "paper_id_in_run": "36867394"
+    },
+    {
+      "id": "43003031",
+      "pmid": "43003031",
+      "doi": "10.1016/j.foodchem.2026.152017",
+      "pmcid": null,
+      "title": "Functional characterization and safety assessment of tea-derived Aspergillus sydowii, a core microbe capable of concurrent theabrownins production and caffeine degradation.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "The distinct quality of dark tea is predominantly formed in pile fermentation by a consortium of functional microbes, yet their specific roles remain poorly understood. In this study, Aspergillus sydowii was isolated from dark tea, and thoroughly investigated for its functional characteristics and potential safety risk. A. sydowii-driving fermentation reduced the fresh, bitter, astringent taste, while imparting stale, thick, and mellow in final fermented tea. Intriguingly, A. sydowii demonstrates remarkable capacity for producing theabrownins and degrading caffeine, with theabrownins up to 157.77 g/kg and caffeine low to 4.81 g/kg. 51 differential metabolites were identified, with hydrolysis/polymerization of catechins, degradation of caffeine, deglycosylation of flavonoid glycosides, and N-ethyl-2-pyrrolidinone substitution of flavan-3-ols. Under the tested 9-day fermentation conditions, no detectable levels of mycotoxins were found in A. sydowii-fermented tea. This work provides a benchmark for the safe application of A. sydowii in the industrial production of high-theabrownins low-caffeine dark tea.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "c0b363d6477abaf3c51aa0c4041fb2edc48bbf7dcb0c8c00fedaac104074aab2",
+      "source_record_sha256": "8b4101c91f7404a6f34ac982ec790ec737cb939fbfe0b2713732fba2686c60ba",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 1,
+      "paper_id_in_run": "43003031"
+    },
+    {
+      "id": "42563398",
+      "pmid": "42563398",
+      "doi": "10.1111/pce.70805",
+      "pmcid": null,
+      "title": "CsBPC6-CsNACX2-CsTCS1 Module Positively Regulates Caffeine Biosynthesis Under PEG-Induced Drought Stress in Tea Plants (Camellia sinensis).",
+      "pubYear": "2026",
+      "pubType": "Research Support, Non-U.S. Gov't; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Caffeine biosynthesis in tea plants (Camellia sinensis) is dynamically regulated by environmental cues; however, the mechanisms linking early drought signals to caffeine accumulation remain unclear. Here, we show that acute PEG-induced osmotic stress induces rapid caffeine accumulation, accompanied by transcriptional activation of the key biosynthetic gene CsTCS1. Through integrative analyses, including GWAS and co-expression network modeling, we identified a CsBPC6-CsNACX2-CsTCS1 module as a central regulatory hub. Mechanistically, CsNACX2 directly binds the promoter of the caffeine synthase gene CsTCS1, activating its transcription and promoting caffeine accumulation. Moreover, the drought-responsive transcription factor CsBPC6 acts upstream to transactivate CsNACX2. Functional validation using gene silencing and transient overexpression assays confirmed that the CsBPC6-CsNACX2-CsTCS1 module positively regulates caffeine biosynthesis under PEG-induced drought conditions. Collectively, our findings uncover a previously uncharacterized drought-responsive transcriptional module governing caffeine biosynthesis, providing new mechanistic insights into how environmental cues regulate secondary metabolism in tea plants.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "08c2b60c3a92d73f0206056150edd120b9d4a1283f596b3f59576e2e9e4b5967",
+      "source_record_sha256": "9ec59ff2579d1e5cc6392006dc484d63d97202fddeb700af81fd23616cb655a2",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 2,
+      "paper_id_in_run": "42563398"
+    },
+    {
+      "id": "42970870",
+      "pmid": "42970870",
+      "doi": "10.1016/j.foodchem.2026.151759",
+      "pmcid": null,
+      "title": "Identification of potential regulators of caffeine biosynthesis in shading- and nano‑selenium-treated tea leaves based on integrated bioinformatics and AlphaFold3 analysis.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Caffeine is an important flavor and bioactive compound in tea, yet external stimuli-induced regulatory networks of caffeine biosynthesis remain largely unclear. Our study showed that shading and nano‑selenium (SeNPs) treatments respectively increased caffeine content in tea leaves from 35.96 mg/g to approximately 43 mg/g, whereas their combined treatment exerted a synergistic effect, raising it to 51.12 mg/g. Correlation of transcriptome with caffeine content and treatment factors via WGCNA and Mantel tests identified 4 key gene modules and 64 transcription factors (TFs). To accelerate TF screening, we established a rapid and high-throughput screening strategy by integrating AlphaFold3 with JASPAR motif prediction, resulting in 10 candidate TF-DNA complexes. Subsequent validation in yeast and tobacco systems confirmed that CsTSO1 directly binds to the promoter of CsSAMS. Our study uncovers how shading and SeNPs modulate caffeine biosynthesis in tea plants, and provide an AI-assisted framework for efficient TF screening in plant metabolic network.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "d5d94cb49b4407fcc95b4208ec3af154d7805e674e018b816683c87db6b3de14",
+      "source_record_sha256": "5d93251355b23533b43a43cd503d9dcf27e31f19ebfee73f8c604bb856827940",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 3,
+      "paper_id_in_run": "42970870"
+    },
+    {
+      "id": "10.21203/rs.3.rs-11403610/v1",
+      "pmid": null,
+      "doi": "10.21203/rs.3.rs-11403610/v1",
+      "pmcid": null,
+      "title": "Fate and Antioxidant Activity of Matcha Catechins during Lactic Acid Bacteria Fermentation",
+      "pubYear": "2026",
+      "pubType": "Preprint",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "abstractText": "<title>Abstract</title>  <p>Matcha is widely applied in fermented foods because of its abundant catechins, dietary fiber and health effects, but the fate of catechins during lactic acid bacteria (LAB) fermentation and its underlying mechanisms remain poorly understood. Hence, the effects of LAB (Lactobacillus bulgaricus and Streptococcus thermophilus) fermentation on the catechins release from matcha, and its relationship with antioxidant capacity were investigated. The results showed that aqueous extraction yielded 43% free catechins, whereas 70% methanol recovered nearly 90%. LAB fermentation increased the concentrations of TPC, catechin, CG, GC, GCG, EGC, EGCG, gallic acid, and caffeine. Lactose co-fermentation dramatically elevated catechin release (230.8%) and gallic acid (127.4%) while reducing the proportion of total epicatechin-type catechins. Mechanistically, LAB fermentation promotes EGCG and ECG conversion into EGC, catechin, and gallic acid via multiple pathways. Antioxidant assays revealed that DPPH, •OH, and •O₂⁻ scavenging capacities and total reducing power correlated positively with the epicatechin-type catechins concentrations, especially EGCG and EGC. Overall, matcha catechins release during LAB fermentation is co-regulated by acidochemical desorption, dietary fiber degradation, and enzymatic bioconversion. Matcha dosage, lactose availability, and strain metabolic activity collectively determine the final catechins profile, release degree, and antioxidant performance. These findings provide a theoretical basis and practical guidance for fermented matcha products.</p>",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "7200b3801ba292acdbf80b249861f244d221a126a3ff106936fd6c0ef3752b8f",
+      "source_record_sha256": "079b10f502fec7b66787aad71fbd0f5fca683affc806d6ec7365876356186109",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 4,
+      "paper_id_in_run": "10.21203/rs.3.rs-11403610/v1"
+    },
+    {
+      "id": "41275554",
+      "pmid": "41275554",
+      "doi": "10.1016/j.foodchem.2025.147228",
+      "pmcid": null,
+      "title": "Preparation of high polyphenol-low caffeine instant tea powder by exploring and regulating the changes of key functional compounds during kombucha fermentation.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "This study unveils the changes and composition of the main functional compounds during kombucha fermentation, and introduces metal ions as nutrients to regulate caffeine content in the fermentation liquid to prepare high polyphenol-low caffeine instant tea powder. Results showed an overall increasing trend in total phenol contents of fermentation liquid with green tea leaves (GTF) during fermentation. Day 6 was the optimal fermentation time, when GTF was rich in organic acids, with a total phenol content of 3.22 g/L. The introduction of 16.28 mg/L Cu<sup>2+</sup> reduced the caffeine content of fermentation liquid (Cu-GTF) to 164.29 mg/L, at which point multiple caffeine degradation pathways existed in Cu-GTF. Moreover, kombucha instant powder (Cu-KG) was successfully prepared under optimal drying conditions. Compared to commercially available products, Cu-KG exhibited a good antioxidant effect and special vanilla flavor. These results provide a theoretical foundation for the development of novel kombucha products with customized functional factors.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "2c1bded0015294bcc0974ad9c4342061ff78be6b0a1503ea123a14c22ea76d10",
+      "source_record_sha256": "88a2cc560cd2a26e31aaa1bf587d0dbe92d82fd490f8d1bdb10d7aaebe26998a",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 5,
+      "paper_id_in_run": "41275554"
+    },
+    {
+      "id": "42855060",
+      "pmid": "42855060",
+      "doi": "10.3168/jds.2026-29000",
+      "pmcid": null,
+      "title": "Effect of coffee lyophilizate addition on the physicochemical properties and bioactive profile of yogurt during storage.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "This study investigated the effect of caffeinated Arabica and decaffeinated coffee lyophilizate (0.6 g/100 g), incorporated either before or after fermentation, on the phenolic compound profile, caffeine and diterpene content, antioxidant activity, and physicochemical properties of yogurt during 20 d of refrigerated storage. Yogurts were produced from commercially available pasteurized and homogenized cow's milk (2.0% fat) using a thermophilic starter culture comprising Streptococcus thermophilus, Lactobacillus acidophilus, and Bifidobacterium animalis ssp. lactis (Lyofast SAB 440B). Total phenolic losses during lyophilization amounted to 14.0% and 19.0% for caffeinated and decaffeinated preparations, respectively, with feruloylquinic acid isomers showing the highest susceptibility to degradation (losses of 55-72%). Coffee enrichment resulted in an approximately 9-10-fold increase in total phenolic content relative to control yogurt, with overall phenolic retention reaching 73-85% of theoretical values. After-fermentation addition yielded higher extractable phenolic content, while before-fermentation addition was associated with lower extractable phenolics but superior hydroxyl radical scavenging capacity (OHSC), potentially reflecting the formation of polyphenol-protein complexes during fermentation. Oxygen radical absorbance capacity (ORAC) increased significantly during storage in before-fermentation variants, suggesting progressive release of bound phenolics through starter culture-mediated proteolysis. Decaffeinated lyophilizate added before fermentation produced the firmest yogurt gel, an effect potentially attributable to polyphenol-casein interactions and possible caffeine-mediated modification of starter culture activity. Addition timing rather than coffee type was the primary determinant of surface optical properties. The majority of bioactive compound profiles and physicochemical parameters showed no systematic changes during the 20-d storage period, although significant storage-related changes were observed for selected antioxidant activity indices, textural parameters, surface gloss, and diterpene content in specific treatment groups. These findings indicate that coffee lyophilizate is a promising functional ingredient for yogurt enrichment, with the timing of addition being a critical process parameter that influences bioactive compound availability, antioxidant functionality, and textural quality.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "83cd393c6e1b3e0d823e0471ce9c21043fec2485b0183e19f9be7334024f15b2",
+      "source_record_sha256": "cae5e2972a16ce191798a768a074fbadd29dba4b54a479e1eb119004d6cafdd2",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 6,
+      "paper_id_in_run": "42855060"
+    },
+    {
+      "id": "42970875",
+      "pmid": "42970875",
+      "doi": "10.1016/j.foodchem.2026.151839",
+      "pmcid": null,
+      "title": "Analysis of the effect of dynamic fermentation treatment on the quality of congou black tea using nontargeted metabolomics.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Fermentation critically shapes black tea flavor. Although dynamic fermentation offers potential for quality improvement, its underlying mechanisms remain unclear. In this study, we combined nontargeted metabolomics, electronic tongue analysis, and chemometrics to investigate the effects of dynamic and traditional static pile fermentation on the sensory profile and nonvolatile metabolites of Ninghong Congou black tea. Dynamic fermentation increased tea infusion lightness (L*) and yellowness (b*) by 2.65% and 1.88%, respectively, while significantly reducing bitterness and astringency. These sensory changes were associated with decreased bitter compounds including polyphenols, caffeine, and ester catechins and increased levels of key quality components, including theaflavins and thearubigins. Nontargeted metabolomics revealed 63 differential metabolites, primarily flavonoids, catechins, and phenolic acids. Dynamic fermentation accelerated the oxidative degradation of these compounds, which may contribute to improved flavor quality. This study provides a theoretical and technical basis for optimizing fermentation to produce high-quality black tea.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "55748ab2b91655925fce180701118c2ef8890c832fa8ee37a2803eb997ca16f3",
+      "source_record_sha256": "4dbac324d5283a77c132fd1003d62fc4993526d6ff706b27a70118da313dd68a",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 7,
+      "paper_id_in_run": "42970875"
+    },
+    {
+      "id": "42973489",
+      "pmid": "42973489",
+      "doi": "10.3389/fnut.2026.1951952",
+      "pmcid": "PMC13724418",
+      "title": "Metabolic characteristics and chemical basis of matcha from cultivars with different leaf colors.",
+      "pubYear": "2026",
+      "pubType": "research-article; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Matcha is widely used in the food, health, and cosmetic industries due to its high nutritional value and distinctive sensory properties. However, traditional matcha products are predominantly produced from green-leaf tea cultivars, which greatly limits product diversity. This study systematically compared the sensory attributes, metabolite composition, and volatile metabolite profiles of matcha produced from green-, purple-, and yellow-leaf tea cultivars to explore the biochemical basis of flavor diversity. Principal component analysis of metabolite profiles clearly separated the samples according to leaf color phenotypes, confirming a strong chemical basis for sensory differentiation among the studied cultivar groups. Green matcha was characterized by higher levels of umami amino acids and lower contents of catechins and caffeine, resulting in a fresh taste with reduced bitterness and astringency. Purple matcha showed elevated levels of ester-type catechins, caffeine, and anthocyanin-related flavonoids, leading to pronounced astringency and lingering bitterness. Yellow matcha contained the highest levels of total amino acids and theanine, contributing to a mellow taste. KEGG pathway analysis revealed that flavonoid biosynthesis and amino acid metabolism are the major pathways associated with metabolic divergence among these cultivars. Volatile analysis indicated that dihydroactinidiolide and leaf alcohol derivatives were predominant volatile compounds potentially associated with the characteristic aroma profiles. These findings provide a biochemical foundation for developing novel matcha products based on cultivars displaying distinct leaf coloration.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "261aed838f2726e1d8d9c0fdb6441a43f64292cbb0f5ed34afdf2a1b0429343a",
+      "source_record_sha256": "6493ed4afc26b101fdd4b21fe1889c22536be72a63f6fe15674b76ddf6ea05d5",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 8,
+      "paper_id_in_run": "42973489"
+    },
+    {
+      "id": "42118061",
+      "pmid": "42118061",
+      "doi": "10.1093/ndt/gfag107",
+      "pmcid": null,
+      "title": "Coffee consumption and chronic kidney disease.",
+      "pubYear": "2026",
+      "pubType": "Review; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Coffee is one of the most widely consumed beverages globally. Caffeine has been linked to antioxidant, anti-inflammatory, antifibrotic, and anticancer effects. However, the relationship between caffeine consumption and the risk of chronic kidney disease (CKD) has yielded conflicting findings. Research on the health effects of caffeine relies mainly on exploratory observational studies, which may be affected by biases such as residual confounding. Variations in behaviour, health status, intake, and metabolism also influence outcomes. A comprehensive understanding of the mechanisms and population-specific factors mediating the impact of caffeine on kidney health is essential. In this article, we describe the metabolism and mechanism of action of caffeine, as well as its potential adverse effects. We synthesize current evidence and clarify the complex relationship between caffeine, CKD, and cardiovascular disease. Current evidence suggests that moderate caffeine intake is probably safe in CKD and may be potentially beneficial. Stronger evidence is needed before robust recommendations can be made for clinical practice.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "9de5a1cf08a0b1f759a3c1dbe21c968b16a46ae82f4d808219c95ed6c7485c6b",
+      "source_record_sha256": "1e7f63678f09372bec72298581218345892a37f0d14cf681a650d2cafdd0d6a8",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 9,
+      "paper_id_in_run": "42118061"
+    },
+    {
+      "id": "41622288",
+      "pmid": "41622288",
+      "doi": "10.1186/s41065-026-00648-z",
+      "pmcid": "PMC12954933",
+      "title": "Unraveling the complexities of caffeine: metabolism, genetics, evolution, and health.",
+      "pubYear": "2026",
+      "pubType": "review-article; Review; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "review-article",
+          "Review",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Caffeine (1,3,7-trimethylxanthine) is the most widely consumed psychoactive substance globally, yet individuals differ strikingly in their physiological and health responses. These differences arise from the combined effects of genetic variation, evolutionary history, lifestyle exposures, and cultural practices. In this review, we synthesize current knowledge on the pharmacokinetics of caffeine, emphasizing the central role of the hepatic enzyme CYP1A2 and its transcriptional regulator AHR in determining metabolic rate. We summarize functional polymorphisms, haplotypes, and genome-wide association signals that underlie the spectrum from slow to rapid metabolizers, and integrate population-genetic and ancient DNA evidence to reveal how evolutionary pressures have shaped global patterns of caffeine tolerance. We further examine non-genetic modulators—including smoking, pregnancy, diet, and commonly prescribed medications—that dynamically influence CYP1A2 activity. Finally, we discuss how genetic variation interacts with coffee and tea’s diverse bioactive components to influence cardiovascular, neurological, and metabolic outcomes. By uniting pharmacogenomics, evolutionary genetics, and epidemiology, this review highlights the need for personalized caffeine intake recommendations that account for genetic background, beverage preparation methods, and individual health status.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "ea1c9da0907b87c1d56e37cb74d7ac9d6d598ade99dd8042efd36423955b48eb",
+      "source_record_sha256": "b07e363f7cbf73a0d82c9da1fba09fa2a973c57e8e52856b10e64dff8ed926ad",
+      "query_name": "Query 3: Caffeine",
+      "entity": "caffeine",
+      "criterion": "Caffeine was chemically synthesized in this work.",
+      "rank_in_run": 10,
+      "paper_id_in_run": "41622288"
+    },
+    {
+      "id": "41173897",
+      "pmid": "41173897",
+      "doi": "10.1038/s41598-025-20149-9",
+      "pmcid": "PMC12578875",
+      "title": "Metal-organic framework (Pd-DTPA-MOF)-based materials as heterogeneous catalysts for C-S cross-coupling reactions.",
+      "pubYear": "2025",
+      "pubType": "research-article; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "This report highlights the development of an innovative and efficient metal-organic framework (MOF) synthesized through a hydrothermal reaction utilizing palladium acetate salt and DTPA as the organic ligand. Detailed analyses of the synthesized MOF were performed using techniques such as FT-IR, TGA, XRD, EDS, BET, SEM, and ICP. The resulting Pd-DTPA-MOF demonstrated exceptional efficiency and performance in C-S cross-coupling reactions under mild conditions. Additionally, this nanostructured material offers multiple benefits, including high product yields, a simple synthesis process, and environmentally friendly characteristics. Importantly, the versatile Pd-DTPA-MOF nanocatalyst can be easily recovered from the reaction mixture via centrifugation and reused for up to four consecutive cycles with only a slight decline in catalytic activity.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "1c54fd8cd20b7f34e4d0c0b13e83e4486fe47e80a517007d4f3195bb20bf9c55",
+      "source_record_sha256": "9236211bcb9d6314d1e9b354fb80f9b2686cfdd80b12b9a8f093ffb0e79ea632",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 1,
+      "paper_id_in_run": "41173897"
+    },
+    {
+      "id": "42052194",
+      "pmid": "42052194",
+      "doi": "10.1039/d5ra08145a",
+      "pmcid": "PMC13118169",
+      "title": "A palladium complex of 2,2'-(propane-1,3-diylbis(oxy))dibenzenaminium chloride on SBA-15 as a returnable, environmental and selective nanostructured-catalyst in the Suzuki C-C coupling reaction.",
+      "pubYear": "2026",
+      "pubType": "research-article; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "research-article",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "In this work, mesoporous SBA-15 was synthesized by a simple procedure using P123 and TEOS in HCl acidic conditions, followed by calcination at 550 °C. 2,2'-(Propane-1,3-diylbis(oxy))dibenzenaminium chloride ligand (PO(BA)) as ligand was synthesized from 2-nitrophenol and 1,3-dibromopropane, following reduction of nitro groups. The step-by-step synthesis of the PO(BA) ligand was confirmed by <sup>1</sup>H NMR and <sup>13</sup>C NMR. 3-Iodopropyltriethoxysilane (IPTES) was synthesized from 3-chloropropyltriethoxysilane (CPTES) in dry acetone. Then, the mesoporous SBA-15 surface was modified by IPTES and next it was functionalized by PO(BA). Finally, immobilized PO(BA) on SBA-15 became complex with palladium acetate (Pd-PO(BA)@SBA-15). The prepared Pd-PO(BA)@SBA-15 was characterized by SEM, ICP, TGA/DSC, EDS, BET/BJH, and WDX techniques. TGA and BET/BJH methods showed high thermal stability of this catalyst up to 230 °C and a high surface area for this catalyst. Then, the catalytic usage of Pd-PO(BA)@SBA-15 was investigated in the selective carbon-carbon bond formation. Various aryl halides (including aryl iodides (Ar-I) and aryl bromides (Ar-Br), having electron-donating or electron-withdrawing functional groups) and some derivatives of phenylboronic acid (such as phenylboronic acid, 4-methoxyphenylboronic acid and 4-formylphenylboronic acid) were investigated and all biphenyl products were obtained with high yields and TOF values. NMR spectroscopy was used to determine the synthesized biphenyl products. Pd-PO(BA)@SBA-15 catalyst was shown to be reusable without significant loss in its performance in the Suzuki-Miyaura cross-coupling reaction.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "44bf4820436e8563a219cc400658142d6fa7854135623e664ea3054b4aa7cb73",
+      "source_record_sha256": "04aebe05c144f9c251e6761a208816c1378b08c1e076d867e7e5e048c04e2ec4",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 2,
+      "paper_id_in_run": "42052194"
+    },
+    {
+      "id": "42340250",
+      "pmid": "42340250",
+      "doi": "10.1021/jacs.6c06432",
+      "pmcid": null,
+      "title": "Repetitive Ethylene Insertion into the Pd-OAc Bond: Synthesis of Heterotelechelic Polyethylene and Effective Copolymerization of Ethylene with Vinyl or Allyl Acetate.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Palladium-catalyzed oxidative functionalization of ethylene, exemplified by Wacker oxidation, has been fundamental in organic chemistry. Despite the potentially versatile reactivity of Pd-alkyl intermediates formed after oxypalladation of ethylene, explorations of their subsequent reactions are limited due to the rapid β-H elimination. Here we found that the palladium acetate complex bearing a phosphine-sulfonate ligand containing a 2,5-dichlorothiophene-3,4-diyl backbone enables multiple ethylene insertion into the Pd-OAc bond by suppressing the competing β-H elimination. This reactivity provides access to heterotelechelic polyethylene and facilitates the copolymerization of ethylene with vinyl acetate or allyl acetate.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "4ef74a0c4718de45d1bf76b0b1d11dc4050367af40287880bdcc5e6a538971f8",
+      "source_record_sha256": "953c6d33c47c86e65acddea1348c5968d0119bbcb1b1349addbe72cca76f606a",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 3,
+      "paper_id_in_run": "42340250"
+    },
+    {
+      "id": "38269422",
+      "pmid": "38269422",
+      "doi": "10.1002/chem.202303794",
+      "pmcid": null,
+      "title": "Synthesis of 1,1'-Bicarbazoles by Sequential Iron(III)- and Palladium(II)-Catalyzed Oxidative Coupling Reactions.",
+      "pubYear": "2024",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "The iron(III)-catalyzed oxidative coupling of diarylamines to 2,2'-bis(arylamino)-1,1'-biaryls and subsequent twofold palladium(II)-catalyzed oxidative cyclization provide a convergent synthetic route to 1,1'-bicarbazoles. Screening a range of different palladium(II) salts led to palladium(II) acetate, pivalate, and hexafluoroacetylacetonate as the most efficient catalysts. Remarkably, the twofold palladium(II)-catalyzed oxidative cyclization can also be performed under argon. The mechanism for the oxidative cyclization under an inert gas presumably involves regeneration of the catalytically active palladium(II) species by oxidative addition of pivalic acid.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "7626dd85e48b201f7d9e0b6f4f5ce7ad7e196a64f2be3eff8ddc6967db460d5a",
+      "source_record_sha256": "6b352d3efae9d05b4b250818fd92a084d4e516fe017a729027a4aafb07b9bbe9",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 4,
+      "paper_id_in_run": "38269422"
+    },
+    {
+      "id": "38536102",
+      "pmid": "38536102",
+      "doi": "10.1021/acs.joc.4c00023",
+      "pmcid": null,
+      "title": "Resin-Immobilized Palladium Acetate and Alcohol Dehydrogenase for Chemoenzymatic Enantioselective Synthesis of Chiral Diarylmethanols.",
+      "pubYear": "2024",
+      "pubType": "Research Support, Non-U.S. Gov't; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "The enantioselective synthesis of chiral diarylmethanols is highly desirable in synthetic chemistry and the pharmaceutical industry, but it remains challenging, especially in terms of green and sustainable production. Herein, a resin-immobilized palladium acetate catalyst was fabricated with high activity, stability, and reusability in Suzuki cross-coupling reaction of acyl halides with boronic acids, and the coimmobilization of alcohol dehydrogenase and glucose dehydrogenase on resin supports was also conducted for asymmetric bioreduction of diaryl ketones. Experimental results revealed that the physicochemical properties of the resins and the immobilization modes played important roles in affecting their catalytic performances. These two catalysts enabled the construction of a chemoenzymatic cascade for the enantioselective synthesis of a series of chiral diarylmethanols in high yields (83-90%) and enantioselectivities (87-98% ee). In addition, the asymmetric synthesis of the antihistaminic and anticholinergic drugs (<i>S</i>)-neobenodine and (<i>S</i>)-carbinoxamine was also achieved from the chiral diarylmethanol precursors, demonstrating the synthetic utility of the chemoenzymatic cascade.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "c6e9b41a0afc3f203026d68ef379ad9e437f5d0938c1a99e3a768a038956a037",
+      "source_record_sha256": "bfe13273e0d2b5821c57a2da308c4d898241020e5e4ae1fad333b6093cb5f9d0",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 5,
+      "paper_id_in_run": "38536102"
+    },
+    {
+      "id": "37747819",
+      "pmid": "37747819",
+      "doi": "10.1021/acs.joc.3c01770",
+      "pmcid": null,
+      "title": "Synthesis of Trifluoromethylated Dibenzoxepines via Palladium-Catalyzed Tandem C-O Bond Formation/C-H Arylation.",
+      "pubYear": "2023",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "A palladium-catalyzed cyclization reaction of phenols with trifluoromethyl-containing <i>ortho</i>-bromo-β-chlorostyrenes has been developed. In the presence of palladium(II) acetate, tricyclohexylphosphine, and cesium carbonate, a variety of 6-trifluoromethyldibenzo[<i>b</i>,<i>d</i>]oxepines were prepared in moderate to good yields through the tandem O-alkenylation of general phenols and subsequent C-H arylation.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "73e2ed8b13665ab996ab3e145206cfd9565cc4fdc47f2737719d8583e73f99c3",
+      "source_record_sha256": "10be20902861824c936f7eb506144aadd046f1cd6a430ed3c335df7db49b245c",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 6,
+      "paper_id_in_run": "37747819"
+    },
+    {
+      "id": "41649389",
+      "pmid": "41649389",
+      "doi": "10.1039/d5ob01963j",
+      "pmcid": null,
+      "title": "Synthesis of cinnamic esters and acids &lt;i&gt;via&lt;/i&gt; palladium-catalyzed reactions of aryl diazonium salts and their biological evaluation.",
+      "pubYear": "2026",
+      "pubType": "Research Support, Non-U.S. Gov't; Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Research Support, Non-U.S. Gov't",
+          "Journal Article"
+        ]
+      },
+      "abstractText": "A straightforward and efficient strategy has been established for the synthesis of cinnamic esters and cinnamic acids through the reaction of acrylic anhydride and aryl diazonium salts in a variety of solvents. The reaction to obtain cinnamic esters proceeds smoothly at room temperature in the presence of palladium acetate. In contrast, the formation of cinnamic acids requires basic conditions and is effectively achieved using K<sub>2</sub>CO<sub>3</sub> at 80 °C in a DMF/H<sub>2</sub>O solvent system. All the desired products were obtained in good yield. The approach offers several notable advantages, including operational simplicity, readily available and inexpensive starting materials, mild reaction conditions, and good product yields. The antioxidant potential of the synthesized cinnamic esters was assessed through radical scavenging activity (RSA) assays, along with their inhibitory effects on amyloid-β (Aβ) aggregation. Most compounds displayed a satisfactory range of RSA, while a subset of the derivatives exhibited moderate Aβ aggregation inhibitory activity.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "ce14ac7ed9cb0a443fc3477d8933a928e0e270e74b04a8790703ad23d370fd4f",
+      "source_record_sha256": "b3b0a7b863b0b03cfc8df053ec8cd39eed5ef4fe1ed32d604b880e8f58a5d7ee",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 7,
+      "paper_id_in_run": "41649389"
+    },
+    {
+      "id": "42767251",
+      "pmid": "42767251",
+      "doi": "10.1088/1361-6528/aeaa5f",
+      "pmcid": null,
+      "title": "Preparation and catalytic performance of Pd/CaCO&lt;sub&gt;3&lt;/sub&gt;catalysts for low-temperature carbon monoxide oxidation.",
+      "pubYear": "2026",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "To develop low-cost, high-performance catalysts for low-temperature carbon monoxide (CO) oxidation, a low-crystallinity calcite-type CaCO<sub>3</sub>support was prepared by calcining calcium citrate at 500 °C. Pd based catalysts with Pd loadings of 0.2-2 wt.% over the obtained CaCO<sub>3</sub>supports were synthesized via excess impregnation, using palladium acetate as the precursor and acetone as the solvent. The Pd/CaCO<sub>3</sub>catalysts were systematically characterized by XRD, N<sub>2</sub>adsorption-desorption, TEM, EDS and XPS, and their low-temperature CO oxidation performance was evaluated. All catalysts exhibit mesoporous features with Type IV isotherms and Type H3 hysteresis loops, and 0.5Pd/CaCO<sub>3</sub>displays the optimal specific surface area, pore volume and pore size. The average Pd particle size increases from 1.86 nm to 4.23 nm with rising Pd loading, and 0.5Pd/CaCO<sub>3</sub>possesses highly dispersed ultrafine Pd particles of 2.21 nm. The control sample 0.5Pd/precipitated CaCO<sub>3</sub>has a<i>T</i><sub>100</sub>of 140 °C, while 0.5Pd/CaCO<sub>3</sub>achieves complete CO conversion at 120 °C and retains stable conversion over 120 h of continuous testing, verifying the advantage of the self-made support. The better performance for calcining samples arises from the synergistic effect of Pd<sup>0</sup>and Pd<sup>2+</sup>, highly dispersed Pd nanoparticles, a developed mesoporous structure and the defect anchoring effect. This study provides a scalable, low-cost and efficient Pd-based catalytic approach for low-temperature CO oxidation.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "4f55e3c947f91c111a9d498a6890028ac4740673115c9346cbd8d2cb3471be0f",
+      "source_record_sha256": "495f3d8cdf7204a89b454007973a4ea9f97a5bf14616a2af26befa5d7d66d023",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 8,
+      "paper_id_in_run": "42767251"
+    },
+    {
+      "id": "10.22541/au.174408492.20309692/v1",
+      "pmid": null,
+      "doi": "10.22541/au.174408492.20309692/v1",
+      "pmcid": null,
+      "title": "Facile Preparation of Pd-BN Nanocatalyst for Suzuki Reaction: Synergistic Boron Nitride Effect in a Green Solvent System",
+      "pubYear": "2025",
+      "pubType": "Preprint",
+      "pubTypeList": {
+        "pubType": [
+          "Preprint"
+        ]
+      },
+      "abstractText": "A scalable in situ pyrolysis strategy was developed for the synthesis of Pd/BN nanocatalysts using melamine, boric acid, and palladium acetate as precursors. Strong electronic interactions between Pd nanoparticles and the BN support significantly enhanced catalytic performance, enabling highly efficient Suzuki coupling reactions. The Pd/BN catalyst achieved up to 99% yield across a broad substrate scope under ambient conditions in a 50% aqueous ethanol system. Additionally, it exhibited excellent stability and recyclability, maintaining high catalytic activity over at least ten cycles with minimal deactivation. Experimental studies and density functional theory (DFT) calculations confirmed that charge transfer at the Pd/BN interface lowered the energy barrier of the rate-determining step, accelerating reaction kinetics. The combination of mild conditions, high efficiency, and operational simplicity highlights the sustainability and scalability of this catalytic system, making it a strong candidate for industrial applications.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "3dcd5cf84ea6d33e67ec5ef5e3254fa4168831324da163f3f1a17ba1f2b2b23e",
+      "source_record_sha256": "83d70c0aa032d1792857cf1db9272541e16c3c23c4d14fc741efcc9f8ad639ab",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 9,
+      "paper_id_in_run": "10.22541/au.174408492.20309692/v1"
+    },
+    {
+      "id": "39705094",
+      "pmid": "39705094",
+      "doi": "10.1021/acs.joc.4c02145",
+      "pmcid": null,
+      "title": "Synthesis, Reactivity and Aromatic Characteristics of Porphyrinoids Derived from <i>N</i>-Alkylcarbaporphyrin-2-Carbaldehydes: Isolation of Nickel(II) and Palladium(II) Complexes, Weakly Diatropic 21-Oxycarbaporphyrins and Strongly Aromatic Trioxycarbaporphyrins.",
+      "pubYear": "2025",
+      "pubType": "Journal Article",
+      "pubTypeList": {
+        "pubType": [
+          "Journal Article"
+        ]
+      },
+      "abstractText": "Acid catalyzed condensation of <i>N</i>-alkyltripyrranes with trialdehydes derived from 1,3-cyclopentadiene or methyl-1,3-cyclopentadiene, followed by oxidation with aqueous ferric chloride solutions, gave 23-alkyl-21-carbaporphyrin-2-carbaldehydes in 22-27% yield together with weakly aromatic oxycarbaporphyrins. The carbaporphyrins reacted with palladium(II) acetate or nickel(II) acetate to give organometallic complexes but in both cases alkyl group migration took place to generate 21-alkyl derivatives. Although this type of reactivity had been observed previously for palladium complexes, this is the first time the phenomenon has been seen in nickel(II) carbaporphyrins. Reactions with nickel(II) acetate in refluxing DMF for longer time periods primarily led to decomposition but unusual byproducts were identified. These could be obtained in higher yields by reacting the carbaporphyrin aldehydes with 5 equiv of (bis(trifluoroacetoxy)iodo)benzene in the presence of grade 3 alumina. Decarbonylation and oxidation generate a trioxocyclopentane moiety that is embedded in the porphyrinoid macrocycle. The new system has strongly aromatic properties that are evident from the proton NMR spectra, nucleus independent chemical shift (NICS) calculations and anisotropy of induced ring current plots.",
+      "source": "europe_pmc",
+      "retrieved_at": "2026-11-13T12:50:00Z",
+      "sha256": "37522442a7a9d3ab27863a1a4e540074e68ac8a78dac261e9f4c8511cd3538cc",
+      "source_record_sha256": "9d0dbc2f7c86926b0ffe3aa99c1514e54f6f5eb8b56ebeb4ff94b464899e4293",
+      "query_name": "Query 4: Palladium Acetate",
+      "entity": "palladium acetate",
+      "criterion": "Palladium acetate was synthesized or prepared as a product in this work.",
+      "rank_in_run": 10,
+      "paper_id_in_run": "39705094"
+    }
+  ]
+}

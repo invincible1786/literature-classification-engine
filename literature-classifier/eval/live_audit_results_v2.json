@@ -1,0 +1,749 @@
+{
+  "pipeline": "v2",
+  "multiclass": {
+    "n": 40,
+    "confusion_matrix": {
+      "qualifies": {
+        "qualifies": 2,
+        "does_not_qualify": 0,
+        "insufficient_evidence": 0
+      },
+      "does_not_qualify": {
+        "qualifies": 15,
+        "does_not_qualify": 22,
+        "insufficient_evidence": 0
+      },
+      "insufficient_evidence": {
+        "qualifies": 0,
+        "does_not_qualify": 1,
+        "insufficient_evidence": 0
+      }
+    },
+    "per_class": {
+      "qualifies": {
+        "tp": 2,
+        "fp": 15,
+        "fn": 0,
+        "precision": 0.11764705882352941,
+        "precision_ci": [
+          0.03287908001292092,
+          0.3433684249770991
+        ],
+        "recall": 1.0,
+        "recall_ci": [
+          0.34237195288961925,
+          1.0
+        ],
+        "f1": 0.21052631578947367
+      },
+      "does_not_qualify": {
+        "tp": 22,
+        "fp": 1,
+        "fn": 15,
+        "precision": 0.9565217391304348,
+        "precision_ci": [
+          0.7900841350594088,
+          0.9922835330378734
+        ],
+        "recall": 0.5945945945945946,
+        "recall_ci": [
+          0.4348568313132931,
+          0.7365370416005986
+        ],
+        "f1": 0.7333333333333334
+      },
+      "insufficient_evidence": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "precision": 0.0,
+        "precision_ci": [
+          0.0,
+          0.0
+        ],
+        "recall": 0.0,
+        "recall_ci": [
+          0.0,
+          0.7934567085261071
+        ],
+        "f1": 0.0
+      }
+    },
+    "macro_f1": 0.3146198830409357,
+    "accuracy": 0.6,
+    "accuracy_ci": [
+      0.445956198273935,
+      0.7365188938759863
+    ],
+    "abstention_rate": 0.0,
+    "abstention_count": 0,
+    "abstention_error_rate": 1.0,
+    "abstention_error_ci": [
+      0.20654329147389294,
+      1.0
+    ],
+    "qualifies_tp": 2,
+    "qualifies_fp": 15,
+    "qualifies_fn": 0
+  },
+  "binary_qualifies_slice": {
+    "n": 40,
+    "tp": 2,
+    "fp": 15,
+    "tn": 23,
+    "fn": 0,
+    "accuracy": 0.625,
+    "accuracy_ci": [
+      0.47032160054531913,
+      0.7577722646420829
+    ],
+    "precision": 0.11764705882352941,
+    "precision_ci": [
+      0.03287908001292092,
+      0.3433684249770991
+    ],
+    "recall": 1.0,
+    "recall_ci": [
+      0.34237195288961925,
+      1.0
+    ],
+    "specificity": 0.6052631578947368,
+    "specificity_ci": [
+      0.4471758699869596,
+      0.7440214073638108
+    ],
+    "f1": 0.21052631578947367,
+    "f05": 0.14285714285714288
+  },
+  "by_stratum": {},
+  "ece_calibrated": 0.8435,
+  "ece_raw_baseline": 0.624,
+  "ece_bins": [
+    {
+      "bin": "0.0-0.1",
+      "count": 6,
+      "mean_conf": 0.0077,
+      "empirical_acc": 0.8333
+    },
+    {
+      "bin": "0.1-0.2",
+      "count": 14,
+      "mean_conf": 0.135,
+      "empirical_acc": 1.0
+    },
+    {
+      "bin": "0.2-0.3",
+      "count": 2,
+      "mean_conf": 0.2696,
+      "empirical_acc": 1.0
+    },
+    {
+      "bin": "0.3-0.4",
+      "count": 1,
+      "mean_conf": 0.3626,
+      "empirical_acc": 1.0
+    },
+    {
+      "bin": "0.4-0.5",
+      "count": 0,
+      "mean_conf": null,
+      "empirical_acc": null
+    },
+    {
+      "bin": "0.5-0.6",
+      "count": 0,
+      "mean_conf": null,
+      "empirical_acc": null
+    },
+    {
+      "bin": "0.6-0.7",
+      "count": 0,
+      "mean_conf": null,
+      "empirical_acc": null
+    },
+    {
+      "bin": "0.7-0.8",
+      "count": 0,
+      "mean_conf": null,
+      "empirical_acc": null
+    },
+    {
+      "bin": "0.8-0.9",
+      "count": 0,
+      "mean_conf": null,
+      "empirical_acc": null
+    },
+    {
+      "bin": "0.9-1.0",
+      "count": 17,
+      "mean_conf": 0.9751,
+      "empirical_acc": 0.1176
+    }
+  ],
+  "y_true_3": [
+    "qualifies",
+    "does_not_qualify",
+    "qualifies",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "insufficient_evidence",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify"
+  ],
+  "y_pred_3": [
+    "qualifies",
+    "qualifies",
+    "qualifies",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "qualifies",
+    "qualifies",
+    "qualifies",
+    "does_not_qualify",
+    "qualifies",
+    "qualifies",
+    "qualifies",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "qualifies",
+    "qualifies",
+    "qualifies",
+    "qualifies",
+    "qualifies",
+    "qualifies",
+    "qualifies",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "qualifies",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify",
+    "does_not_qualify"
+  ],
+  "traces": [
+    {
+      "entity": "psilocybin",
+      "paper_id": "40177917",
+      "stratum": "live_audit",
+      "category": "microbial_biosynthesis",
+      "gold": "qualifies",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9792,
+      "evidence": "To overcome this dilemma, we herein demonstrated de novo synthesis of psilocybin in E. coli by constructing PsiH variants with N-terminal domain modifications and expressing the entire biosynthetic pathway at a concordantly low temperature.",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "41474478",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9794,
+      "evidence": "Heterologous expression of psilocybin biosynthetic genes in Saccharomyces cerevisiae and Aspergillus nidulans has enabled improved metabolic flux and precursor availability, reaching titers over 200 mg/L under optimized conditions.",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "43014316",
+      "stratum": "live_audit",
+      "category": "fungal_biosynthesis",
+      "gold": "qualifies",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9797,
+      "evidence": "Phylogenetic analyses suggest that G. indica acquired psilocybin biosynthesis via horizontal gene transfer after amatoxin biosynthesis was already established.",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "42860751",
+      "stratum": "live_audit",
+      "category": "pharmacology",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.12,
+      "evidence": "No sufficient evidence found in abstract",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "42922907",
+      "stratum": "live_audit",
+      "category": "clinical_trial",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.3626,
+      "evidence": "Preparing the body for psilocybin therapy: receptive and generative interoception in cancer patients.. Cancer patients arrive for psilocybin therapy with bodies altered by illness and treatment - bodies that they have learned to brace against, dissociate from, or scan for threat.",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "42937360",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.15,
+      "evidence": "No sufficient evidence found in abstract (review article)",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "10.22541/authorea.15006829/v1",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.15,
+      "evidence": "No sufficient evidence found in abstract (review article)",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "42855022",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.15,
+      "evidence": "No sufficient evidence found in abstract (review article)",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "42975895",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.15,
+      "evidence": "No sufficient evidence found in abstract (review article)",
+      "conditions": null
+    },
+    {
+      "entity": "psilocybin",
+      "paper_id": "42988866",
+      "stratum": "live_audit",
+      "category": "neurobiology",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9742,
+      "evidence": "Psilocybin increased astrocytic NFATc4 and ALDH5A1 protein expression together with enhanced H3K27 acetylation, and ChIP-qPCR analysis showed increased NFATc4 occupancy at the Aldh5a1 promoter.",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "42107802",
+      "stratum": "live_audit",
+      "category": "dihydro_derivative_synthesis",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9789,
+      "evidence": "The gene AaDbr2, encoding a key enzyme redirecting metabolic flux from artemisinic acid toward dihydroartemisinic acid biosynthesis, was first introduced into an artemisinic acid-producing strain, and promoter strength was optimized to enhance expression, achieving a dihydroartemisinic acid titer of 79.4 mg/L.",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "10.21203/rs.3.rs-3926665/v1",
+      "stratum": "live_audit",
+      "category": "pharmacology",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9526,
+      "evidence": "Abstract Artemisinic acid is enriched in the well-known herbaceous plants Artemisia annua L. Due to the negtive anti-malarial activity of Artemisinic acid , it is only used as raw material for the synthesis of Artemisinin in industry.",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "42418950",
+      "stratum": "live_audit",
+      "category": "protein_engineering",
+      "gold": "insufficient_evidence",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.0464,
+      "evidence": "These findings provide a rational framework for further optimization of AaADH1 for industrial artemisinic acid production.",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "38474639",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.972,
+      "evidence": "The large-scale production of such terpenes, exemplified by artemisinic acid-a crucial precursor to artemisinin-is now feasible through microbial cell factories.",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "40105756",
+      "stratum": "live_audit",
+      "category": "bypass_route",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9607,
+      "evidence": "The proposed pathway converts AMPD directly to DHAA without going through artemisinic acid (AA), making it a shorter pathway compared with the existing synthesis routes for artemisinin.",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "42774055",
+      "stratum": "live_audit",
+      "category": "antimicrobial",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9707,
+      "evidence": "Artemisinic acid and dihydroartemisinic acid additionally exhibited direct antibacterial activity against S. mutans, significantly suppressing dual-species biofilm formation, EPS synthesis, and acid production.",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "39732992",
+      "stratum": "live_audit",
+      "category": "plant_biology",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.12,
+      "evidence": "No sufficient evidence found in abstract",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "40274872",
+      "stratum": "live_audit",
+      "category": "background_citation",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.2768,
+      "evidence": "High production of artemisinic acid (AA) has been achieved by fermentation of engineered Saccharomyces cerevisiae, and AA can be converted into ART through DHAA by chemical synthesis.",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "40510840",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.15,
+      "evidence": "No sufficient evidence found in abstract (review article)",
+      "conditions": null
+    },
+    {
+      "entity": "artemisinic acid",
+      "paper_id": "36867394",
+      "stratum": "live_audit",
+      "category": "chemical_derivatization",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9764,
+      "evidence": "Late-Stage C(sp2 )-H Arylation of Artemisinic Acid and Arteannuin B: Effect of Olefin Migration Towards Synthesis of C-13 Arylated Artemisinin Derivatives.. In recent years, C-H bond functionalization has emerged as a pivotal tool for late-stage functionalization of complex natural products for the synthesis of potent biologically active derivatives.",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "43003031",
+      "stratum": "live_audit",
+      "category": "microbial_degradation",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9792,
+      "evidence": "Intriguingly, A. sydowii demonstrates remarkable capacity for producing theabrownins and degrading caffeine, with theabrownins up to 157.77 g/kg and caffeine low to 4.81 g/kg. 51 differential metabolites were identified, with hydrolysis/polymerization of catechins, degradation of caffeine, deglycosylation of flavonoid glycosides, and N-ethyl-2-pyrrolidinone substitution of flavan-3-ols.",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "42563398",
+      "stratum": "live_audit",
+      "category": "plant_biosynthesis",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9789,
+      "evidence": "Here, we show that acute PEG-induced osmotic stress induces rapid caffeine accumulation, accompanied by transcriptional activation of the key biosynthetic gene CsTCS1.",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "42970870",
+      "stratum": "live_audit",
+      "category": "plant_biosynthesis",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9764,
+      "evidence": "Our study uncovers how shading and SeNPs modulate caffeine biosynthesis in tea plants, and provide an AI-assisted framework for efficient TF screening in plant metabolic network.",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "10.21203/rs.3.rs-11403610/v1",
+      "stratum": "live_audit",
+      "category": "food_fermentation",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9804,
+      "evidence": "LAB fermentation increased the concentrations of TPC, catechin, CG, GC, GCG, EGC, EGCG, gallic acid, and caffeine.",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "41275554",
+      "stratum": "live_audit",
+      "category": "food_fermentation_degradation",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9781,
+      "evidence": "Preparation of high polyphenol-low caffeine instant tea powder by exploring and regulating the changes of key functional compounds during kombucha fermentation.. This study unveils the changes and composition of the main functional compounds during kombucha fermentation, and introduces metal ions as nutrients to regulate caffeine content in the fermentation liquid to prepare high polyphenol-low caffeine instant tea powder.",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "42855060",
+      "stratum": "live_audit",
+      "category": "food_formulation",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.98,
+      "evidence": "Effect of coffee lyophilizate addition on the physicochemical properties and bioactive profile of yogurt during storage.. This study investigated the effect of caffeinated Arabica and decaffeinated coffee lyophilizate (0.6 g/100 g), incorporated either before or after fermentation, on the phenolic compound profile, caffeine and diterpene content, antioxidant activity, and physicochemical properties of yogurt during 20 d of refrigerated storage.",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "42970875",
+      "stratum": "live_audit",
+      "category": "metabolomics",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.12,
+      "evidence": "No sufficient evidence found in abstract",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "42973489",
+      "stratum": "live_audit",
+      "category": "metabolomics",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.12,
+      "evidence": "No sufficient evidence found in abstract",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "42118061",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.15,
+      "evidence": "No sufficient evidence found in abstract (review article)",
+      "conditions": null
+    },
+    {
+      "entity": "caffeine",
+      "paper_id": "41622288",
+      "stratum": "live_audit",
+      "category": "review",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.15,
+      "evidence": "No sufficient evidence found in abstract (review article)",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "41173897",
+      "stratum": "live_audit",
+      "category": "catalyst_precursor",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.0,
+      "evidence": "Metal-organic framework (Pd-DTPA-MOF)-based materials as heterogeneous catalysts for C-S cross-coupling reactions.. This report highlights the development of an innovative and efficient metal-organic framework (MOF) synthesized through a hydrothermal reaction utilizing palladium acetate salt and DTPA as the organic ligand.",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "42052194",
+      "stratum": "live_audit",
+      "category": "catalyst_reagent",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.12,
+      "evidence": "No sufficient evidence found in abstract",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "42340250",
+      "stratum": "live_audit",
+      "category": "catalyst_complex",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.12,
+      "evidence": "No sufficient evidence found in abstract",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "38269422",
+      "stratum": "live_audit",
+      "category": "catalyst",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.12,
+      "evidence": "No sufficient evidence found in abstract",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "38536102",
+      "stratum": "live_audit",
+      "category": "catalyst",
+      "gold": "does_not_qualify",
+      "pred": "qualifies",
+      "reason_code": null,
+      "confidence": 0.9796,
+      "evidence": "Resin-Immobilized Palladium Acetate and Alcohol Dehydrogenase for Chemoenzymatic Enantioselective Synthesis of Chiral Diarylmethanols.. The enantioselective synthesis of chiral diarylmethanols is highly desirable in synthetic chemistry and the pharmaceutical industry, but it remains challenging, especially in terms of green and sustainable production.",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "37747819",
+      "stratum": "live_audit",
+      "category": "catalyst",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.0,
+      "evidence": "In the presence of palladium(II) acetate, tricyclohexylphosphine, and cesium carbonate, a variety of 6-trifluoromethyldibenzo[b,d]oxepines were prepared in moderate to good yields through the tandem O-alkenylation of general phenols and subsequent C-H arylation.",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "41649389",
+      "stratum": "live_audit",
+      "category": "catalyst",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.0,
+      "evidence": "The reaction to obtain cinnamic esters proceeds smoothly at room temperature in the presence of palladium acetate.",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "42767251",
+      "stratum": "live_audit",
+      "category": "catalyst_precursor",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.0,
+      "evidence": "Pd based catalysts with Pd loadings of 0.2-2 wt.% over the obtained CaCO3supports were synthesized via excess impregnation, using palladium acetate as the precursor and acetone as the solvent.",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "10.22541/au.174408492.20309692/v1",
+      "stratum": "live_audit",
+      "category": "catalyst_precursor",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.0,
+      "evidence": "A scalable in situ pyrolysis strategy was developed for the synthesis of Pd/BN nanocatalysts using melamine, boric acid, and palladium acetate as precursors.",
+      "conditions": null
+    },
+    {
+      "entity": "palladium acetate",
+      "paper_id": "39705094",
+      "stratum": "live_audit",
+      "category": "reactant",
+      "gold": "does_not_qualify",
+      "pred": "does_not_qualify",
+      "reason_code": null,
+      "confidence": 0.2624,
+      "evidence": "The carbaporphyrins reacted with palladium(II) acetate or nickel(II) acetate to give organometallic complexes but in both cases alkyl group migration took place to generate 21-alkyl derivatives.",
+      "conditions": null
+    }
+  ]
+}
