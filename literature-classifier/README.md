@@ -9,36 +9,37 @@
 ---
 
 ## Table of Contents
-1. [Executive Summary & v3.2 Architecture Highlights](#1-executive-summary--v32-architecture-highlights)
-2. [Guide for the Research Scientist & Bioinformatician](#2-guide-for-the-research-scientist--bioinformatician)
-   - [2.1 The Scientific Problem This Solves](#21-the-scientific-problem-this-solves)
-   - [2.2 Granular Breakdown of API Features](#22-granular-breakdown-of-api-features)
-   - [2.3 Reason Code Registry & Three-Class Outcomes](#23-reason-code-registry--three-class-outcomes)
-   - [2.4 Deliberate Deviations (D1–D6)](#24-deliberate-deviations-d1d6)
-   - [2.5 Honest Shortcomings & Technical Caveats](#25-honest-shortcomings--technical-caveats)
-3. [Step-by-Step Implementation & Run Guide](#3-step-by-step-implementation--run-guide)
-   - [3.1 System Prerequisites](#31-system-prerequisites)
-   - [3.2 Installation & Setup](#32-installation--setup)
-   - [3.3 Starting the FastAPI Service](#33-starting-the-fastapi-service)
-   - [3.4 Interacting with the API](#34-interacting-with-the-api)
-   - [3.5 Running the Automated Test Suite](#35-running-the-automated-test-suite)
-   - [3.6 Offline Batch Processing via CLI (`--pipeline v3` / `--pipeline v2`)](#36-offline-batch-processing-via-cli)
-4. [Pipeline Architecture & 12-Rule Combiner](#4-pipeline-architecture--12-rule-combiner)
-5. [Criterion Parser & Enumerated Grammar (G1 / G2 / G3)](#5-criterion-parser--enumerated-grammar-g1--g2--g3)
-6. [Scoring, Calibration, and Ranking Specification](#6-scoring-calibration-and-ranking-specification)
-7. [Evaluation Strategy & Curator Feedback Queue](#7-evaluation-strategy--curator-feedback-queue)
-8. [Repository File & Directory Map](#8-repository-file--directory-map)
+1. [Executive Summary & Architecture Highlights](#1-executive-summary--architecture-highlights)
+2. [Documentation Roadmap (Which Document to Read)](#2-documentation-roadmap-which-document-to-read)
+3. [Quickstart: How to Run the Codebase](#3-quickstart-how-to-run-the-codebase)
+   - [3.1 Prerequisites & One-Time Setup](#31-prerequisites--one-time-setup)
+   - [3.2 Workflow 1: FastAPI Service & Live API Queries](#32-workflow-1-fastapi-service--live-api-queries)
+   - [3.3 Workflow 2: Automated Test Suite (78 Tests Green)](#33-workflow-2-automated-test-suite-78-tests-green)
+   - [3.4 Workflow 3: Invariant Verification Suite](#34-workflow-3-invariant-verification-suite)
+   - [3.5 Workflow 4: Offline Evaluation & Platt Calibration](#35-workflow-4-offline-evaluation--platt-calibration)
+   - [3.6 Workflow 5: Reproducible Evaluation Notebook](#36-workflow-5-reproducible-evaluation-notebook)
+4. [Guide for the Research Scientist & Bioinformatician](#4-guide-for-the-research-scientist--bioinformatician)
+   - [4.1 The Scientific Problem This Solves](#41-the-scientific-problem-this-solves)
+   - [4.2 Granular Breakdown of API Features](#42-granular-breakdown-of-api-features)
+   - [4.3 Reason Code Registry & Three-Class Outcomes](#43-reason-code-registry--three-class-outcomes)
+   - [4.4 Deliberate Deviations (D1–D6)](#44-deliberate-deviations-d1d6)
+   - [4.5 Honest Shortcomings & Technical Caveats](#45-honest-shortcomings--technical-caveats)
+5. [Pipeline Architecture & 12-Rule Combiner](#5-pipeline-architecture--12-rule-combiner)
+6. [Criterion Parser & Enumerated Grammar (G1 / G2 / G3)](#6-criterion-parser--enumerated-grammar-g1--g2--g3)
+7. [Scoring, Calibration, and Ranking Specification](#7-scoring-calibration-and-ranking-specification)
+8. [Evaluation Strategy & Curator Feedback Queue](#8-evaluation-strategy--curator-feedback-queue)
+9. [Repository File & Directory Map](#9-repository-file--directory-map)
 
 ---
 
-## 1. Executive Summary & v3.2 Architecture Highlights
+## 1. Executive Summary & Architecture Highlights
 
 The **Mini Literature Classification Engine** is a specialized, production-grade biomedical literature mining system built for **Loopworm Private Limited**. Its core mission is to automatically retrieve scientific publications from the public **Europe PMC** repository for a given biological or chemical entity and determine whether each publication **genuinely satisfies a specific natural-language criterion** (such as microbial biosynthesis or chemical synthesis) versus **merely mentioning the entity in passing**.
 
 ### Core Architecture Highlights (`v3.2`)
 
 - **Criterion-Aware Multi-Condition Decomposition:** Decomposes user queries into three independent conditions:
-  1. **C1 Entity:** Entity matching with lookaround regexes, length $\ge 5$, related compound guards, and prepositional role polarity (plus **R3b** synthesis-conflict routing).
+  1. **C1 Entity:** Entity matching with lookaround regexes, length $\ge 5$, related compound guards (e.g. *dihydroartemisinic acid* vs. *artemisinic acid*), and prepositional role polarity (plus **R3b** synthesis-conflict routing).
   2. **C2 Activity:** Clause-local competing-hypothesis NLI over requested activity vs. alternatives (with IUPAC bracket-depth clause splitting, backward chemical anaphora resolution, and G3 numeric/exclusion verification).
   3. **C3 System:** Host organism verification against `config/systems.json` gazetteer with comparative-clause exclusion (`Unlike E. coli, yeast...`), `in_vitro` separation, and **D6** strict abstract contradiction handling.
 - **Three-Class Outcomes ("Never Merge Unknown with No"):**
@@ -56,9 +57,149 @@ The **Mini Literature Classification Engine** is a specialized, production-grade
 
 ---
 
-## 2. Guide for the Research Scientist & Bioinformatician
+## 2. Documentation Roadmap (Which Document to Read)
 
-### 2.1 The Scientific Problem This Solves
+The repository provides focused documentation for different technical stakeholders:
+
+| Document | Primary Audience & Purpose | Key Highlights |
+| :--- | :--- | :--- |
+| **[`README.md`](README.md)** | **Start Here:** System overview, developer quickstart, API run guide, and architecture summary. | Installation, running FastAPI service, API examples, reason code registry, and CLI commands. |
+| **[`TECHNICAL_REPORT.md`](TECHNICAL_REPORT.md)** | **Scientific Evaluation & Reviewer Audit:** Formal response to evaluation challenge. | v1 vs. v3.2 benchmark tables (+33.1% precision gain, 91.7% FP reduction), McNemar tests ($p=0.0225$), ECE calibration audit (-79.2% error), case studies, and operational boundaries. |
+| **[`ARCHITECTURE.md`](ARCHITECTURE.md)** | **Deep Architectural Specification:** System design and data-flow reference. | 5-stage pipeline, 12-rule combiner state machine ($R_1$–$R_{11}$), $C_1/C_2/C_3$ condition evaluators, contrast hypotheses, and title/evidence invariants. |
+| **[`KNOWN_ERRORS.md`](KNOWN_ERRORS.md)** | **Error Taxonomy & Boundary Cases:** Catalogue of known failure modes and edge cases. | Paywall abstract omissions, hyphenated stereoisomers, multi-paragraph total synthesis narratives, and mitigation strategies. |
+| **[`notebooks/evaluation.ipynb`](notebooks/evaluation.ipynb)** | **Interactive Evaluation Notebook:** Executable and fully reproducible data science audit. | Real DeBERTa-v3 inference, stratified clean vs. noisy evaluation, confusion matrices, and reliability diagrams. |
+| **[`config/constants.md`](config/constants.md)** | **Constants Register:** Pinned numeric parameters. | Register of all operational constants ($	au$, $\delta$, windows, weights) and LOEO sensitivity bounds. |
+
+### Recommended Reading Paths
+* **For Scientific Evaluators & Bioinformatics Reviewers:** Read [`TECHNICAL_REPORT.md`](TECHNICAL_REPORT.md) for the challenge response, benchmark metrics, and concrete paper examples $
+ightarrow$ inspect [`notebooks/evaluation.ipynb`](notebooks/evaluation.ipynb) for reproducible evidence.
+* **For Software Engineers & System Integrators:** Read Section 3 below to run the service and tests $
+ightarrow$ consult [`ARCHITECTURE.md`](ARCHITECTURE.md) for data contracts and the 12-rule combiner logic.
+* **For Bio-Curators & Pipeline Operators:** Review Section 4 for criterion grammar, 3-class outcomes, and reason codes $
+ightarrow$ use the Swagger UI at `http://127.0.0.1:8000/docs`.
+
+---
+
+## 3. Quickstart: How to Run the Codebase
+
+### 3.1 Prerequisites & One-Time Setup
+
+- **Operating System:** Windows 10/11, Ubuntu 20.04+, or macOS
+- **Python:** Python 3.11 (tested on 3.11.0)
+- **RAM / Hardware:** 4 GB minimum (8 GB+ recommended). CUDA GPU is auto-detected; runs cleanly on CPU as well.
+
+```bash
+# 1. Navigate to the project root
+cd literature-classifier
+
+# 2. Create and activate a virtual environment
+python -m venv venv
+# Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+# Linux / macOS:
+source venv/bin/activate
+
+# 3. Install pinned dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# 4. Bootstrap NLTK Punkt tokenizer resources
+python -m app.setup_nltk
+```
+
+---
+
+### 3.2 Workflow 1: FastAPI Service & Live API Queries
+
+Start the live REST API service on `localhost:8000`:
+```bash
+uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+* **Service Health Check:**
+  ```bash
+  curl http://127.0.0.1:8000/health
+  # Response: {"status":"healthy","model_name":"cross-encoder/nli-deberta-v3-small","calibration_version":"platt-v3.3-mle","pipeline":"v3.2","device":"cuda"}
+  ```
+* **Interactive Swagger UI:** Open your browser at **[http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)** to test and inspect all endpoints interactively.
+* **Live Classification Query (cURL):**
+  ```bash
+  curl -X POST "http://127.0.0.1:8000/classify" \
+       -H "Content-Type: application/json" \
+       -d '{
+         "entity": "psilocybin",
+         "criterion": "Psilocybin was synthesized or biosynthesized in this work.",
+         "aliases": ["psilocybine", "4-phosphoryloxy-DMT"],
+         "max_results": 5
+       }'
+  ```
+
+---
+
+### 3.3 Workflow 2: Automated Test Suite (78 Tests Green)
+
+Execute the multi-tiered automated test suite:
+```bash
+# Tier 1: Fast deterministic unit tests (66 tests covering remediation, parser, conditions, schemas)
+python -m pytest tests/unit -v
+
+# Tier 2: Real DeBERTa-v3 cross-encoder model fixture tests (12 tests)
+python -m pytest tests/model -v
+
+python -m pytest tests/unit/test_doc_drift.py -v
+
+# Run the complete test suite (unit + model):
+python -m pytest tests/unit tests/model -v
+```
+
+---
+
+### 3.4 Workflow 3: Invariant Verification Suite
+
+Run contract invariant checking across all live classification results (checking invariants a–k: slice offsets, sentence capitalization, terminal punctuation, title exclusion, null confidence on abstention):
+```bash
+python eval_runs/check_invariants.py eval_runs/run_20261114_052109.json
+# Output: OVERALL INVARIANT SUMMARY: 0 violations across all queries
+```
+
+---
+
+### 3.5 Workflow 4: Offline Evaluation & Platt Calibration
+
+Run offline evaluation against the 56 held-out test papers without live external network calls:
+```bash
+# Compare legacy v2 baseline vs. v3.2 multi-condition engine on test split:
+python -m eval.run --pipeline both --split test
+
+# Refit out-of-fold logistic MLE Platt scaling parameters on dev entities:
+python -m eval.calibrate
+
+# Run offline CLI batch classification on local snapshot:
+python -m app.cli --entity vanillin \
+                  --criterion "The paper describes the synthesis or production of vanillin." \
+                  --pipeline v3 \
+                  --offline \
+                  --output sample_output.json
+```
+
+---
+
+### 3.6 Workflow 5: Reproducible Evaluation Notebook
+
+Execute the evaluation notebook non-interactively or launch it in Jupyter:
+```bash
+# Headless notebook execution (executes cells and writes verified outputs):
+python scripts/run_notebook.py
+
+# Or launch interactively in your browser:
+jupyter notebook notebooks/evaluation.ipynb
+```
+
+---
+
+## 4. Guide for the Research Scientist & Bioinformatician
+
+### 4.1 The Scientific Problem This Solves
 
 In automated bio-curation pipelines (e.g. identifying microbial hosts that synthesize target metabolites, discovering novel enzyme pathways, or mining natural product titers), standard keyword search and generic embedding models fail due to **topical saturation without semantic satisfaction**:
 
@@ -68,7 +209,7 @@ In automated bio-curation pipelines (e.g. identifying microbial hosts that synth
 
 ---
 
-### 2.2 Granular Breakdown of API Features
+### 4.2 Granular Breakdown of API Features
 
 When querying `POST /classify`, the researcher receives a structured response conforming to the v3 specification:
 
@@ -77,14 +218,14 @@ When querying `POST /classify`, the researcher receives a structured response co
 | **Enumerated Grammar Spec** | `criterion_spec` | Structured parse representing entity role (`product` vs `agent`), agent kind, activity, target system, and scope. |
 | **Dual Retrieval Tracking** | `retrieved_by` | Tracks whether the publication was found via `intent`, `plain` entity search, or `both`. |
 | **Condition Decomposition** | `conditions: {entity, activity, system}` | Detailed status (`supported`, `contradicted`, `unknown`, `not_required`), raw feature score, also-mentioned organisms, and condition evidence spans. |
-| **Machine-Readable Reason Code** | `reason_code` | Discloses the exact registered reason code for any non-qualifying or abstained result (e.g. `reagent_role`, `system_mismatch_abstract`). |
+| **Machine-Readable Reason Code** | `reason_code` | Discloses the exact registered reason code for any non-qualifying or abstained result (e.g. `reagent_role`, `wrong_system`). |
 | **Exact Verbatim Evidence** | `evidence: {raw_text, display_text, raw_start, raw_end, role, verifiable_alone}` | Returns exact verbatim evidence with character slice offsets guaranteed byte-for-byte in canonical text. |
 | **Source Record Audit Hash** | `source_record_sha256` | SHA-256 hash of the uncleaned raw record for verifiable reproducibility and auditing. |
 | **Monotone Calibrated Confidence** | `confidence: {value, band, method, calibration_version}` | Honest uncertainty estimation; null on abstentions and uncalibrated negatives. |
 
 ---
 
-### 2.3 Reason Code Registry & Three-Class Outcomes (18 Registered Codes)
+### 4.3 Reason Code Registry & Three-Class Outcomes (18 Registered Codes)
 
 Every non-qualifying or abstained result carries a registered reason code from `app/reasons.py` (17 reachable active codes plus deprecated `system_mismatch_abstract`):
 
@@ -111,7 +252,7 @@ Every non-qualifying or abstained result carries a registered reason code from `
 
 ---
 
-### 2.4 Deliberate Deviations (D1–D6)
+### 4.4 Deliberate Deviations (D1–D6)
 
 | ID | Deviation | Rationale | Architectural Mitigation |
 |---|---|---|---|
@@ -124,7 +265,7 @@ Every non-qualifying or abstained result carries a registered reason code from `
 
 ---
 
-### 2.5 Honest Shortcomings & Technical Caveats
+### 4.5 Honest Shortcomings & Technical Caveats
 
 1. **Abstract Paywall Truncation:** In scientific publishing, fermentation yields and synthetic methods often appear only in paywalled full text. Because the engine strictly refuses to invent evidence, papers with vague abstracts (*"We investigated yeast metabolism"*) will abstain as `insufficient_evidence`.
 2. **Hyphenated Stereoisomers:** Word-boundary lookaround regexes treat hyphens as boundary characters. Locant-prefixed isomers (e.g. *o-vanillin*) may trigger initial candidate matching, leaving fine disambiguation to downstream NLI. Integrating chemical Named Entity Recognition (NER) is recommended for stereochemical isolation.
@@ -132,123 +273,7 @@ Every non-qualifying or abstained result carries a registered reason code from `
 
 ---
 
-## 3. Step-by-Step Implementation & Run Guide
-
-### 3.1 System Prerequisites
-
-- **OS:** Windows 10/11, Ubuntu 20.04+, macOS
-- **Python:** Python 3.11 (tested on 3.11.0)
-- **RAM:** 4 GB minimum (8 GB+ recommended)
-- **Accelerator:** CPU-only supported; CUDA GPU accelerates batch NLI.
-
----
-
-### 3.2 Installation & Setup
-
-```bash
-cd loopworm/literature-classifier
-
-# Create virtual environment
-python -m venv venv
-
-# Windows (PowerShell):
-.\venv\Scripts\Activate.ps1
-
-# Linux / macOS:
-source venv/bin/activate
-
-# Install pinned dependencies
-pip install --upgrade pip
-pip install -r requirements.txt
-
-# Bootstrap NLTK Punkt tokenizer resources
-python -m app.setup_nltk
-```
-
----
-
-### 3.3 Starting the FastAPI Service
-
-```bash
-uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
-```
-
----
-
-### 3.4 Interacting with the API
-
-#### Interactive Swagger Documentation:
-Open your browser and navigate to: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-#### Example Request:
-```bash
-curl -X POST "http://127.0.0.1:8000/classify" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "entity": "artemisinic acid",
-       "criterion": "The paper reports microbial biosynthesis of artemisinic acid in yeast in this study.",
-       "max_results": 10,
-       "expand_aliases": true,
-       "pipeline": "v3"
-     }'
-```
-
-#### Curator Feedback Submission:
-```bash
-curl -X POST "http://127.0.0.1:8000/feedback" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "paper_id": "42107802",
-       "entity": "artemisinic acid",
-       "criterion": "The paper reports microbial biosynthesis of artemisinic acid in yeast in this study.",
-       "suggested_label": "qualifies",
-       "notes": "Verified 25 g/L yeast titer paper."
-     }'
-```
-
----
-
-### 3.5 Running the Automated Test Suite
-
-```bash
-# Tier 1: Fast deterministic unit tests (including v3 remediation suite)
-python -m pytest tests/unit -v
-
-# Tier 2: Real DeBERTa-v3 model fixture tests (Q1-Q3, N1-N6, D1)
-python -m pytest tests/model -v
-
-# Tier 3: Live Europe PMC network integration test
-python -m pytest tests/live -m live -v
-
-# Run entire test suite:
-python -m pytest tests/unit tests/model tests/live -v
-```
-
----
-
-### 3.6 Offline Batch Processing via CLI
-
-The CLI supports both `--pipeline v3` (default multi-condition 3-class) and `--pipeline v2` (legacy sentence-level binary):
-
-```bash
-# Run v3 pipeline offline on cached snapshots:
-python -m app.cli --entity vanillin \
-                  --criterion "The paper describes the synthesis or production of vanillin." \
-                  --pipeline v3 \
-                  --offline \
-                  --output sample_output.json
-
-# Run legacy v2 pipeline:
-python -m app.cli --entity vanillin \
-                  --criterion "The paper describes the synthesis or production of vanillin." \
-                  --pipeline v2 \
-                  --offline \
-                  --output v2_output.json
-```
-
----
-
-## 4. Pipeline Architecture & 12-Rule Combiner
+## 5. Pipeline Architecture & 12-Rule Combiner
 
 The v3.2 decision layer executes a strict **12-rule** precedence combiner (`RULES` in `app/combiner.py`: `R1`–`R11` with `R3a`/`R3b`; first matching rule wins):
 
@@ -269,7 +294,7 @@ R11 all_satisfied                 -> qualifies (None)
 
 ---
 
-## 5. Criterion Parser & Enumerated Grammar (G1 / G2 / G3)
+## 6. Criterion Parser & Enumerated Grammar (G1 / G2 / G3)
 
 The engine enforces a published grammar. Unrecognized clauses raise HTTP 422 errors unless `--allow-partial-criterion` is supplied:
 
@@ -287,7 +312,7 @@ The engine enforces a published grammar. Unrecognized clauses raise HTTP 422 err
 
 ---
 
-## 6. Scoring, Calibration, and Ranking Specification
+## 7. Scoring, Calibration, and Ranking Specification
 
 ### Per-Condition Scoring
 - **C1 Entity Score:** `1.0` if matched, `-0.95` if reagent role triggered, `0.0` if abstract-only unknown.
@@ -303,7 +328,7 @@ $$P(\text{correct}) = \frac{1}{1 + \exp(-(A \cdot x + B))}$$
 
 ---
 
-## 7. Evaluation Strategy & Curator Feedback Queue
+## 8. Evaluation Strategy & Curator Feedback Queue
 
 1. **Leave-One-Entity-Out (LOEO) & Strict Held-Out Test Split (`eval/splits.json`):** Dev entities (`vanillin`, `caffeine`, `curcumin`, `chitin`) are strictly disjoint from held-out test entities (`palladium(II) acetate`, `artemisinic acid`, `lipase`).
 2. **Stratified `clean` + Real Europe PMC `noisy` Benchmark (`152` records):** Reproducibly audited via SHA-256 `data/snapshots/manifest.json` and executed with real `DebertaNLIScorer` via `python -m eval.run --pipeline both --split test` and [`notebooks/evaluation.ipynb`](notebooks/evaluation.ipynb).
@@ -312,7 +337,7 @@ $$P(\text{correct}) = \frac{1}{1 + \exp(-(A \cdot x + B))}$$
 
 ---
 
-## 8. Repository File & Directory Map
+## 9. Repository File & Directory Map
 
 ```text
 loopworm/
@@ -350,14 +375,13 @@ loopworm/
 │   │   └── labels.csv         # 152-row clean + noisy ground truth dataset
 │   ├── notebooks/
 │   │   └── evaluation.ipynb   # Executed offline reproducible DeBERTa evaluation notebook
-│   ├── tests/                 # Tier 1 unit (50 tests), Tier 2 real DeBERTa model (12 tests), Tier 3 live
+│   ├── tests/                 # Tier 1 unit (66 tests), Tier 2 real DeBERTa model (12 tests), Tier 3 live
 │   ├── TECHNICAL_REPORT.md    # Brief technical report (improvements, metrics, limitations)
 │   ├── sample_output.json     # Canonical sample JSON payload (v3.2 schema)
 │   └── README.md              # Technical documentation and user guide
 ├── ARCHITECTURE.md            # Detailed system design specification
 ├── KNOWN_ERRORS.md            # Empirical error taxonomy and failure mode case studies
 ├── TECHNICAL_REPORT.md        # Mirrored technical report
-├── implementation.md          # Canonical v3.2 implementation plan specification
 └── Project.md                 # Master project documentation
 ```
 

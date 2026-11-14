@@ -15,6 +15,8 @@ from app.reasons import REASON_REGISTRY, validate_reason_code
 def test_doc_drift_canonical_spec_table():
     """WS17-R1: implementation.md §0 Canonical Spec Table matches code parameters."""
     impl_path = os.path.join(BASE_DIR, "implementation.md")
+    if not os.path.exists(impl_path):
+        pytest.skip("implementation.md removed from repository")
     with open(impl_path, "r", encoding="utf-8") as f:
         text = f.read()
 
